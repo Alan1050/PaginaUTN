@@ -1,0 +1,284 @@
+/* Estilos para los textos */
+h1 {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.Text1 {
+    color: #2ecc71;
+    font-weight: 800;
+}
+
+.Text2 {
+    background: linear-gradient(45deg, rgb(14, 124, 0), rgb(1, 5, 0));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    font-weight: 800;
+    background-size: 200% auto;
+    transition: background-position 0.5s ease;
+}
+
+.Text2:hover {
+    background-position: right center;
+}
+
+hr {
+    border: none;
+    height: 3px;
+    background: linear-gradient(to right, #2ecc71, rgb(92, 250, 0));
+    margin: 20px auto 40px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 2px;
+    animation: growWidth 2.5s ease-out forwards;
+    transform-origin: left;
+}
+
+@keyframes growWidth {
+    0% {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+
+a {
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+a:hover {
+    transform: translateY(-5px);
+}
+
+/* CONTENEDOR PRINCIPAL (AMBAS VERSIONES) */
+.LogosCarrerasContainer,
+.LogosCarrerasMobileContainer {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ========== VERSIÓN DESKTOP ========== */
+.LogosCarrerasGrid1,
+.LogosCarrerasGrid2 {
+    display: grid;
+    gap: 25px;
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 40px;
+}
+
+.LogosCarrerasGrid1 {
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.LogosCarrerasGrid2 {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+/* ========== VERSIÓN MÓVIL ========== */
+.LogosCarrerasMobileGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 logos por fila en móvil */
+    gap: 20px;
+    align-items: center;
+    justify-items: center;
+}
+
+.LogosCarrerasMobileContainer a img,
+.LogosCarrerasContainer a img {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(20%);
+    transition: all 0.3s ease;
+}
+
+.LogosCarrerasMobileContainer a:hover img,
+.LogosCarrerasContainer a:hover img {
+    border-radius: 50%;
+    filter: grayscale(0%);
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 42, 255, 0.2);
+}
+
+/* ========== MEDIA QUERIES ========== */
+
+/* Tablet */
+@media (max-width: 1200px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    .LogosCarrerasGrid1 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .LogosCarrerasGrid2 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .LogosCarrerasMobileGrid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .LogosCarrerasContainer a img,
+    .LogosCarrerasMobileContainer a img {
+        max-width: 160px;
+    }
+}
+
+/* Tablet pequeña / Móvil grande */
+@media (max-width: 900px) {
+    .LogosCarrerasGrid1 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .LogosCarrerasGrid2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .LogosCarrerasMobileGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Móvil (aquí cambia a la versión móvil automáticamente) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    /* Ocultar versión desktop, mostrar versión móvil (controlado por React) */
+    .LogosCarrerasMobileGrid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    
+    .LogosCarrerasContainer a img,
+    .LogosCarrerasMobileContainer a img {
+        max-width: 130px;
+        padding: 8px;
+    }
+    
+    hr {
+        margin: 15px auto 30px;
+        width: 90%;
+    }
+}
+
+/* Móvil pequeño */
+@media (max-width: 600px) {
+    .LogosCarrerasMobileGrid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+    
+    .LogosCarrerasContainer a img,
+    .LogosCarrerasMobileContainer a img {
+        max-width: 110px;
+    }
+}
+
+/* Móvil muy pequeño */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    .LogosCarrerasMobileGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .LogosCarrerasContainer a img,
+    .LogosCarrerasMobileContainer a img {
+        max-width: 120px;
+    }
+    
+    .LogosCarrerasContainer,
+    .LogosCarrerasMobileContainer {
+        padding: 0 15px;
+    }
+}
+
+/* Móvil extra pequeño */
+@media (max-width: 360px) {
+    .LogosCarrerasMobileGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .LogosCarrerasContainer a img,
+    .LogosCarrerasMobileContainer a img {
+        max-width: 100px;
+    }
+}
+
+/* Animación para los logos */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.LogosCarrerasContainer a,
+.LogosCarrerasMobileContainer a {
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+/* Animación escalonada para versión desktop */
+.LogosCarrerasGrid1 a:nth-child(1) { animation-delay: 0.1s; }
+.LogosCarrerasGrid1 a:nth-child(2) { animation-delay: 0.2s; }
+.LogosCarrerasGrid1 a:nth-child(3) { animation-delay: 0.3s; }
+.LogosCarrerasGrid1 a:nth-child(4) { animation-delay: 0.4s; }
+.LogosCarrerasGrid1 a:nth-child(5) { animation-delay: 0.5s; }
+.LogosCarrerasGrid1 a:nth-child(6) { animation-delay: 0.6s; }
+.LogosCarrerasGrid1 a:nth-child(7) { animation-delay: 0.7s; }
+
+.LogosCarrerasGrid2 a:nth-child(1) { animation-delay: 0.8s; }
+.LogosCarrerasGrid2 a:nth-child(2) { animation-delay: 0.9s; }
+.LogosCarrerasGrid2 a:nth-child(3) { animation-delay: 1.0s; }
+.LogosCarrerasGrid2 a:nth-child(4) { animation-delay: 1.1s; }
+.LogosCarrerasGrid2 a:nth-child(5) { animation-delay: 1.2s; }
+.LogosCarrerasGrid2 a:nth-child(6) { animation-delay: 1.3s; }
+
+/* Animación escalonada para versión móvil (todos en un solo array) */
+.LogosCarrerasMobileGrid a:nth-child(1) { animation-delay: 0.1s; }
+.LogosCarrerasMobileGrid a:nth-child(2) { animation-delay: 0.2s; }
+.LogosCarrerasMobileGrid a:nth-child(3) { animation-delay: 0.3s; }
+.LogosCarrerasMobileGrid a:nth-child(4) { animation-delay: 0.4s; }
+.LogosCarrerasMobileGrid a:nth-child(5) { animation-delay: 0.5s; }
+.LogosCarrerasMobileGrid a:nth-child(6) { animation-delay: 0.6s; }
+.LogosCarrerasMobileGrid a:nth-child(7) { animation-delay: 0.7s; }
+.LogosCarrerasMobileGrid a:nth-child(8) { animation-delay: 0.8s; }
+.LogosCarrerasMobileGrid a:nth-child(9) { animation-delay: 0.9s; }
+.LogosCarrerasMobileGrid a:nth-child(10) { animation-delay: 1.0s; }
+.LogosCarrerasMobileGrid a:nth-child(11) { animation-delay: 1.1s; }
+.LogosCarrerasMobileGrid a:nth-child(12) { animation-delay: 1.2s; }
+.LogosCarrerasMobileGrid a:nth-child(13) { animation-delay: 1.3s; }

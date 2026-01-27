@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #007bff;
+    --primary-color: #0e5d00;
     --secondary-color: #6c757d;
     --text-color: #333;
     --white: #ffffff;
@@ -74,7 +74,8 @@
 
 .Navegacion > ul > li a:hover {
     color: var(--primary-color);
-    background-color: rgba(0, 123, 255, 0.1);
+    background-color: rgba(0, 255, 26, 0.324);
+    cursor: pointer;
 }
 
 .IconosNav {
