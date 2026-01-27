@@ -1,0 +1,302 @@
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --text-color: #333;
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Nav {
+    background-color: white;
+    display: grid;
+    grid-template-columns: .25fr 1.75fr;
+    width: 100%;
+    padding: 10px 20px;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    min-height: 80px;
+    position: relative;
+}
+
+.Logos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    align-items: center;
+}
+
+.Logos > img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    object-fit: contain;
+}
+
+.Navegacion {
+    display: grid;
+    grid-template-columns: 1.75fr .25fr;
+    gap: 20px;
+    align-items: center;
+    justify-self: end;
+    width: 100%;
+    max-width: 800px;
+}
+
+.Navegacion > ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.Navegacion > ul > li {
+    text-align: center;
+}
+
+.Navegacion > ul > li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 15px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: var(--transition);
+    display: block;
+}
+
+.Navegacion > ul > li a:hover {
+    color: var(--primary-color);
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+.IconosNav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    align-items: center;
+    justify-items: center;
+    height: 100%;
+}
+
+.IconoCalendario {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 5px;
+}
+.IconoAppSiga{
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 5px;
+}
+
+.IconosNav img:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+/* BOTÓN HAMBURGUESA - CORREGIDO */
+.HamburgerMenu {
+    display: none; /* Oculto en desktop */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+    position: relative;
+    margin-left: auto;
+}
+
+.HamburgerLine {
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-color);
+    border-radius: 3px;
+    transition: var(--transition);
+}
+
+.HamburgerMenu.active .HamburgerLine:nth-child(1) {
+    transform: translateY(10.5px) rotate(45deg);
+}
+
+.HamburgerMenu.active .HamburgerLine:nth-child(2) {
+    opacity: 0;
+}
+
+.HamburgerMenu.active .HamburgerLine:nth-child(3) {
+    transform: translateY(-10.5px) rotate(-45deg);
+}
+
+/* MENÚ MÓVIL */
+.MobileMenu {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: var(--white);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    padding: 80px 20px 20px;
+    transition: right 0.4s ease;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.MobileMenu.active {
+    right: 0;
+}
+
+.MobileMenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.MobileMenu li {
+    margin-bottom: 20px;
+}
+
+.MobileMenu a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 18px;
+    font-weight: 600;
+    padding: 12px 15px;
+    display: block;
+    border-radius: 5px;
+    transition: var(--transition);
+}
+
+.MobileMenu a:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+    color: var(--primary-color);
+}
+
+.MobileIcons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.MobileIcons img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.Overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.Overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 1024px) {
+    .Nav {
+        grid-template-columns: .3fr 1.7fr;
+        padding: 10px 15px;
+    }
+    
+    .Logos {
+        gap: 10px;
+    }
+    
+    .Logos > img {
+        max-width: 120px;
+    }
+}
+
+/* CORRECCIÓN PRINCIPAL - 768px */
+@media (max-width: 768px) {
+    .Nav {
+        grid-template-columns: 1fr auto !important;
+        grid-template-areas: "logos hamburger" !important;
+        padding: 10px 15px !important;
+        min-height: 70px !important;
+    }
+    
+    .Logos {
+        grid-area: logos !important;
+        align-self: center !important;
+        justify-self: start !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px !important;
+    }
+    
+    .HamburgerMenu {
+        display: flex !important;
+        grid-area: hamburger !important;
+        justify-self: end !important;
+        align-self: center !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        margin-left: 0 !important;
+    }
+    
+    .Navegacion {
+        display: none !important;
+    }
+    
+    .Logos > img {
+        max-width: 100px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .Nav {
+        padding: 8px 10px !important;
+    }
+    
+    .Logos {
+        gap: 8px !important;
+    }
+    
+    .Logos > img {
+        max-width: 80px !important;
+    }
+    
+    .MobileMenu {
+        width: 85% !important;
+        padding: 70px 15px 15px !important;
+    }
+    
+    .MobileMenu a {
+        font-size: 16px !important;
+        padding: 10px 12px !important;
+    }
+}
