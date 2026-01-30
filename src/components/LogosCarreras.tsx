@@ -13,42 +13,53 @@ import LogoLGDT from '../assets/logos/LGDT.png';
 import LogoLGT from '../assets/logos/LGT.png';
 import LogoLINM from '../assets/logos/LINM.png';
 import LogoLSP from '../assets/logos/LSP.png';
+import LogoLPS from '../assets/logos/LPS.png';
+
+// Interfaz para los logos
+interface Logo {
+  id: number;
+  src: string;
+  alt: string;
+  label: string;
+  nombre: string;
+}
 
 function LogosCarreras() {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
   useEffect(() => {
-    // Función para verificar si es móvil
     const checkIfMobile = () => {
       setIsMobile(window.innerWidth <= 768);
     };
 
-    // Verificar al cargar
     checkIfMobile();
-
-    // Escuchar cambios de tamaño
     window.addEventListener('resize', checkIfMobile);
-
-    // Limpiar evento
     return () => window.removeEventListener('resize', checkIfMobile);
   }, []);
 
-  // Todos los logos en un array para fácil manipulación
-  const allLogos = [
-    { id: 1, src: LogoLINM, alt: "Licenciatura en Negocios y Mercadotecnia", label: "LINM" },
-    { id: 2, src: LogoLAD, alt: "Licenciatura en Administración", label: "LAD" },
-    { id: 3, src: LogoLGDT, alt: "Licenciatura en Gestión y Desarrollo Turístico", label: "LGDT" },
-    { id: 4, src: LogoLGT, alt: "Licenciatura en Gastronomía", label: "LGT" },
-    { id: 5, src: LogoITIID, alt: "Ingeniería en Tecnologías de la Información e Innovación", label: "ITIID" },
-    { id: 6, src: LogoIA, alt: "Técnico Superior Universitario en Inteligencia Artificial", label: "IA" },
-    { id: 7, src: LogoIMS, alt: "Ingeniería en Microelectrónica y Semiconductores", label: "IMS" },
-    { id: 8, src: LogoLSP, alt: "Licenciatura en Seguridad Pública", label: "LSP" },
-    { id: 9, src: LogoIAL, alt: "Ingeniería en Alimentos", label: "IAL" },
-    { id: 10, src: LogoIC, alt: "Ingeniería Civil", label: "IC" },
-    { id: 11, src: LogoILI, alt: "Ingeniería en Logística Internacional", label: "ILI" },
-    { id: 12, src: LogoIMI, alt: "Ingeniería en Mantenimiento Industrial", label: "IMI" },
-    { id: 13, src: LogoIMT, alt: "Ingeniería en Mecatrónica", label: "IMT" },
+  // Datos de carreras con tipo Logo[]
+  const allLogos: Logo[] = [
+    { id: 1, src: LogoIMS, alt: "Logotipo Carrera Ingenieria en Microelectronica y Semiconductores", label: "IMS", nombre: "ingenieria-microelectronica" },
+    { id: 2, src: LogoIAL, alt: "Logotipo Carrera Ingenieria en Alimentos", label: "IAL", nombre: "ingenieria-alimentos" },
+    { id: 3, src: LogoIA, alt: "Logotipo Carrera Tecnico Superior Universitario en Inteligencia Artificial", label: "IA", nombre: "inteligencia-artificial" },
+    { id: 4, src: LogoIMI, alt: "Logotipo Carrera Ingenieria en Mantenimiento Industrial", label: "IMI", nombre: "ingenieria-mantenimiento-industrial" },
+    { id: 5, src: LogoIMT, alt: "Logotipo Carrera Ingenieria en Mecatronica", label: "IMT", nombre: "ingenieria-mecatronica" },
+    { id: 6, src: LogoLGDT, alt: "Logotipo Carrera Licenciatura en Gestión y Desarrollo Turistico", label: "LGDT", nombre: "gestion-desarrollo-turistico" },
+    { id: 7, src: LogoLAD, alt: "Logotipo Carrera Licenciatura en Administración", label: "LAD", nombre: "administracion" },
+    { id: 8, src: LogoLPS, alt: "Logotipo Carrera Licenciatura en Psicologia", label: "LPS", nombre: "psicologia" },
+    { id: 9, src: LogoITIID, alt: "Logotipo Carrera Ingenieria en Tecnologias de la Información e Innovación Digital", label: "ITIID", nombre: "tecnologias-informacion" },
+    { id: 10, src: LogoIC, alt: "Logotipo Carrera Ingenieria Civil", label: "IC", nombre: "ingenieria-civil" },
+    { id: 11, src: LogoLINM, alt: "Logotipo Carrera Licenciatura en Negocios y Mercadotecnia", label: "LINM", nombre: "negocios-mercadotecnia" },
+    { id: 12, src: LogoLSP, alt: "Logotipo Carrera Licenciatura en Seguridad Publica", label: "LSP", nombre: "seguridad-publica" },
+    { id: 13, src: LogoILI, alt: "Logotipo Carrera Ingenieria en Logistica Internacional", label: "ILI", nombre: "logistica-internacional" },
+    { id: 14, src: LogoLGT, alt: "Logotipo Carrera Licenciatura en Gastronomia", label: "LGT", nombre: "gastronomia" },
   ];
+
+  // Función con tipos explícitos
+  const handleLogoClick = (carreraNombre: string, carreraLabel: string): void => {
+    console.log(`Redirigiendo a carrera: ${carreraNombre} (${carreraLabel})`);
+    // Puedes agregar aquí analytics, tracking, etc.
+  };
 
   return (
     <section className="LogosCarrerasSection">
@@ -62,16 +73,28 @@ function LogosCarreras() {
       {!isMobile && (
         <div className='LogosCarrerasContainer'> 
           <div className='LogosCarrerasGrid1'>
-            {allLogos.slice(0, 7).map(logo => (
-              <a key={logo.id} href={`#${logo.label.toLowerCase()}`} aria-label={logo.alt}>
+            {allLogos.slice(0, 7).map((logo: Logo) => (
+              <a 
+                key={logo.id} 
+                href={`/Carrera/${logo.label}`} 
+                onClick={() => handleLogoClick(logo.nombre, logo.label)}
+                aria-label={logo.alt}
+                className="logo-link"
+              >
                 <img src={logo.src} alt={logo.alt} />
               </a>
             ))}
           </div>
           
           <div className='LogosCarrerasGrid2'>
-            {allLogos.slice(7).map(logo => (
-              <a key={logo.id} href={`#${logo.label.toLowerCase()}`} aria-label={logo.alt}>
+            {allLogos.slice(7).map((logo: Logo) => (
+              <a 
+                key={logo.id} 
+                href={`/Carrera/${logo.label}`} 
+                onClick={() => handleLogoClick(logo.nombre, logo.label)}
+                aria-label={logo.alt}
+                className="logo-link"
+              >
                 <img src={logo.src} alt={logo.alt} />
               </a>
             ))}
@@ -83,8 +106,14 @@ function LogosCarreras() {
       {isMobile && (
         <div className='LogosCarrerasMobileContainer'>
           <div className='LogosCarrerasMobileGrid'>
-            {allLogos.map(logo => (
-              <a key={logo.id} href={`#${logo.label.toLowerCase()}`} aria-label={logo.alt}>
+            {allLogos.map((logo: Logo) => (
+              <a 
+                key={logo.id} 
+                href={`/Carrera/${logo.label}`} 
+                onClick={() => handleLogoClick(logo.nombre, logo.label)}
+                aria-label={logo.alt}
+                className="logo-link"
+              >
                 <img src={logo.src} alt={logo.alt} />
               </a>
             ))}

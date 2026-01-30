@@ -48,7 +48,7 @@ function Nav() {
                 {/* Navegación normal (escritorio) */}
                 <div className="Navegacion">
                     <ul>
-                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href={'/'}>Inicio</a></li>
                         <li><a href="#quienes-somos">¿Quienes Somos?</a></li>
                         <li><a href="#aspirantes">Aspirantes</a></li>
                         <li><a href="#comunidad">Comunidad UTNay</a></li>
@@ -80,7 +80,7 @@ function Nav() {
                 aria-hidden={!isMenuOpen}
             >
                 <ul>
-                    <li><a href="#inicio" onClick={closeMenu}>Inicio</a></li>
+                    <li><a href={'/'} onClick={closeMenu}>Inicio</a></li>
                     <li><a href="#quienes-somos" onClick={closeMenu}>¿Quienes Somos?</a></li>
                     <li><a href="#aspirantes" onClick={closeMenu}>Aspirantes</a></li>
                     <li><a href="#comunidad" onClick={closeMenu}>Comunidad UTNay</a></li>

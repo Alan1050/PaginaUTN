@@ -1,0 +1,112 @@
+/* Estilos base */
+.accesos-container {
+    background-image: url(../assets/banner/572227192_1302210361943148_4806063049610667150_n.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 92vh;
+    position: relative;
+    margin-top: -30px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+
+}
+
+/* Gradiente overlay ajustado */
+.accesos-container::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, 
+        rgba(0, 67, 52, 0.9) 0%,    
+        rgba(0, 67, 52, 0.7) 20%,
+        rgba(0, 67, 52, 0.5) 40%,
+        rgba(0, 67, 52, 0.3) 60%,
+        rgba(0, 67, 52, 0.1) 80%,
+        transparent 100%          
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
+.ContainerButton1, .ContainerButton2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    z-index: 100;
+    position: relative;
+    padding: 0 20px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Estilos para las imágenes/logos */
+.ContainerButton1 a, .ContainerButton2 a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.ContainerButton1 img, .ContainerButton2 img {
+    width: 90%;
+    height: auto;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)); /* Sombra para mejor contraste */
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover para los logos */
+.ContainerButton1 a:hover img, .ContainerButton2 a:hover img {
+    transform: scale(1.1);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+}
+
+/* Versión mobile */
+@media (max-width: 768px) {
+    .accesos-container {
+        height: auto;
+        min-height: 94vh;
+        grid-template-rows: auto auto;
+        padding: 40px 20px;
+    }
+    
+    .ContainerButton1, .ContainerButton2 {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+    
+    .ContainerButton1 img, .ContainerButton2 img {
+        max-width: 100px;
+        max-height: 100px;
+    }
+    
+    /* Gradiente overlay para mobile */
+    .accesos-container::before {
+        background: linear-gradient(to top, 
+            rgba(0, 67, 52, 0.95) 0%,
+            rgba(0, 67, 52, 0.85) 20%,
+            rgba(0, 67, 52, 0.7) 40%,
+            rgba(0, 67, 52, 0.5) 60%,
+            rgba(0, 67, 52, 0.2) 80%,
+            transparent 100%
+        );
+    }
+}
+
+/* Versión tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .ContainerButton1, .ContainerButton2 {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 15px;
+    }
+    
+    .ContainerButton1 img, .ContainerButton2 img {
+        max-width: 100px;
+        max-height: 100px;
+    }
+}

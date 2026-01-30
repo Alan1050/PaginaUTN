@@ -1,0 +1,164 @@
+.Carrera {
+  transition: background-color 0.5s ease;
+}
+
+.CarreraHeader {
+  position: relative;
+  overflow: hidden;
+}
+
+.CarreraHeader::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.2) 100%);
+  z-index: 0;
+}
+
+.TituloCarrera {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.CarreraContent {
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
+}
+
+.InfoCard {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.InfoCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.BannerImg{
+  width: 100%;
+  height: 85vh; 
+  object-fit: cover;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .BannerImg{
+  width: 100%;
+  height: 30vh; 
+  object-fit: cover;
+}
+  .CarreraHeader {
+    padding: 1.5rem 1rem !important;
+  }
+  
+  .TituloCarrera {
+    font-size: 1.8rem !important;
+  }
+  
+  .CarreraContent {
+    padding: 1.5rem 1rem !important;
+  }
+}
+
+/* Carrera.css - Complemento al CSS existente */
+
+/* Ocultar scrollbar en el carrusel móvil */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Estilos para el carrusel de cuatrimestres en móvil */
+.cuatrimestre-carrusel {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  padding: 0.5rem 0;
+  gap: 0.5rem;
+  scroll-behavior: smooth;
+}
+
+.cuatrimestre-carrusel::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Botones de navegación del carrusel */
+.carrusel-nav-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.carrusel-nav-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Responsive para el plan de estudios */
+@media (max-width: 768px) {
+  .cuatrimestre-carrusel {
+    scroll-snap-type: x mandatory;
+  }
+  
+  .cuatrimestre-carrusel button {
+    scroll-snap-align: center;
+  }
+  
+  /* Mejorar apariencia de las tarjetas de materias en móvil */
+  .materia-card {
+    padding: 1.25rem !important;
+  }
+  
+  .materia-card h4 {
+    font-size: 1rem !important;
+  }
+}
+
+/* Animaciones suaves */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animación para cambiar de cuatrimestre */
+.cuatrimestre-content {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Mejoras de accesibilidad */
+button:focus {
+  outline: 2px solid rgba(0, 0, 0, 0.3);
+  outline-offset: 2px;
+}
+
+/* Estilo para el indicador de cuatrimestre actual en móvil */
+.cuatrimestre-indicator {
+  font-weight: bold;
+  color: inherit;
+  margin: 0 0.5rem;
+}
