@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import './Accesos.css';
 import logoVinculacion from '../assets/logos/LOGO VINCULACION.png';
 import logoBecas from '../assets/logos/LOGO BECAS.png';
@@ -10,18 +9,6 @@ import logoBuzon from '../assets/logos/LOGO BUZON SUGERENCIAS.png';
 import logoCultura from '../assets/logos/LOGO CULTURA DE PAZ.png';
 
 function Accesos() {
-  const [isMobile, setIsMobile] = useState<boolean>(false);
-
-  useEffect(() => {
-    const checkIfMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    checkIfMobile();
-    window.addEventListener('resize', checkIfMobile);
-    return () => window.removeEventListener('resize', checkIfMobile);
-  }, []);
-
 
   return (
     <section className="accesos-container">
