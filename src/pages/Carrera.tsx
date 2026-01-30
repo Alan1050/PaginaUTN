@@ -26,6 +26,7 @@ import PlanLGDT from "../assets/planesEstudio/LGDT.jpg";
 import PlanLINM from "../assets/planesEstudio/LINM.jpg";
 import PlanLSP from "../assets/planesEstudio/LSP.jpg";
 import PlanLGT from "../assets/planesEstudio/LGT.jpg";
+import logoFace from "../assets/logos/logo-de-facebook.png"
 
 //Planes de estudio PDF
 import PlanIAL_PDF from "../assets/planesEstudio/pdf/IAL.pdf";
@@ -55,6 +56,9 @@ interface CarreraInfo {
   planEstudioPDF?: string;
   campoLaboral: string[];
   tsu: string;
+  extension: string;
+  facebook: string;
+  label2: string;
 }
 
 // Interfaz para las materias
@@ -91,6 +95,7 @@ function Carrera() {
     return () => window.removeEventListener("resize", checkIfMobile);
   }, []);
 
+
   // Datos completos de todas las carreras
   const carreras: CarreraInfo[] = [
     {
@@ -106,6 +111,9 @@ function Carrera() {
       planEstudio: "",
       campoLaboral: [],
       tsu: "Tecnico Superior Universitario en Microelectrónica y Sistemas Embebidos",
+      extension: "4003", 
+      facebook: "https://www.facebook.com/idgsutnay", 
+      label2: "Ingeniería en Tecnologias de la Información e Innovación Digital UT Nayarit" 
     },
     {
       id: 2,
@@ -131,6 +139,9 @@ function Carrera() {
         "Consultoría en innovación de productos y procesos alimenticios",
       ],
       tsu: "Tecnico Superior Universitario en Tecnología de Alimentos",
+      extension: "1704", 
+      facebook: "https://www.facebook.com/IAutnay", 
+      label2: "ITB UT Nayarit"
     },
     {
       id: 3,
@@ -155,6 +166,9 @@ function Carrera() {
         "Impulsar iniciativas que promuevan la inclusión y la responsabilidad social a través del uso de tecnologías de inteligencia artificial.",
       ],
       tsu: "Tecnico Superior Universitario en Inteligencia Artificial",
+      extension: "4003", 
+      facebook: "https://www.facebook.com/idgsutnay",
+      label2: "Ingeniería en Tecnologias de la Información e Innovación Digital UT Nayarit"
     },
     {
       id: 4,
@@ -177,6 +191,9 @@ function Carrera() {
         "Contribuir a reducir costos y mejorar la disponibilidad de equipos y sistemas, fortaleciendo la competitividad de las organizaciones en las que laboran.",
       ],
       tsu: "Tecnico Superior Universitario en Mantenimiento Industrial",
+      extension: "2104 y 2106", 
+      facebook: "https://www.facebook.com/profile.php?id=100057164151875",
+      label2: "MI-MT Universidad Tecnológica de Nayarit"
     },
     {
       id: 5,
@@ -187,8 +204,7 @@ function Carrera() {
       nombreCompleto: "Ingenieria en Mecatronica",
       descripcion: "",
       duracion: "",
-      egreasdo:
-        "El egresado de la Ingeniería en Mecatrónica podrá desarrollar proyectos de automatización y control, a través del diseño, operación y aplicación de nuevas tecnologías. Así como operar y mantener los sistemas de procesos de producción con equipo automatizado y/o robótico para satisfacer las necesidades del sector productivo.",
+      egreasdo: "El egresado de la Ingeniería en Mecatrónica podrá desarrollar proyectos de automatización y control, a través del diseño, operación y aplicación de nuevas tecnologías. Así como operar y mantener los sistemas de procesos de producción con equipo automatizado y/o robótico para satisfacer las necesidades del sector productivo.",
       planEstudio: "",
       planEstudioPDF: "",
       campoLaboral: [
@@ -199,6 +215,9 @@ function Carrera() {
         "Optimización de procesos mediante sistemas automatizados y robóticos",
       ],
       tsu: "Tecnico Superior Universitario en Instalaciones Electricas Eficientes",
+      extension: "2104 y 2106", 
+      facebook: "https://www.facebook.com/profile.php?id=100057164151875", 
+      label2: "MI-MT Universidad Tecnológica de Nayarit"
     },
     {
       id: 6,
@@ -224,6 +243,9 @@ function Carrera() {
         "Consultoría en la implementación de políticas turísticas y sustentables",
       ],
       tsu: "Tecnico Superior Universitario en Turismo",
+      extension: "1901", 
+      facebook: "https://www.facebook.com/utnayturismo", 
+      label2: "Turismo UTNay"
     },
     {
       id: 7,
@@ -239,6 +261,9 @@ function Carrera() {
       planEstudioPDF: PlanLAD_PDF,
       campoLaboral: [],
       tsu: "Tecnico Superior Universitario en Emprendimiento, Formulación y Evaluación de Proyectos",
+      extension: "1801", 
+      facebook: "https://www.facebook.com/aep.igp.ldeis.utnay", 
+      label2: "Administración UTNayarit"
     },
     {
       id: 8,
@@ -254,6 +279,10 @@ function Carrera() {
       planEstudioPDF: "",
       campoLaboral: [],
       tsu: "Tecnico Superior Universitario en Psicología",
+      extension: "1801", 
+      facebook: "#",
+      label2: "NO DISPONIBLE"
+
     },
     {
       id: 9,
@@ -270,6 +299,9 @@ function Carrera() {
       planEstudioPDF: PlanITIID_PDF,
       campoLaboral: [],
       tsu: "Técnico Superior Universitario en Desarrollo de Software Multiplataforma",
+      extension: "4003", 
+      facebook: "https://www.facebook.com/idgsutnay", 
+      label2: "Ingeniería en Tecnologias de la Información e Innovación Digital UT Nayarit"
     },
     {
       id: 10,
@@ -285,6 +317,9 @@ function Carrera() {
       planEstudioPDF: PlanIC_PDF,
       campoLaboral: [],
       tsu: "Técnico Superior Universitario en Construcción",
+      extension: "1704", 
+      facebook: "https://www.facebook.com/UTNIngCivil", 
+      label2: "Ingeniería Civil UTN"
     },
     {
       id: 11,
@@ -301,6 +336,10 @@ function Carrera() {
       planEstudioPDF: PlanLINM_PDF,
       campoLaboral: [],
       tsu: "Técnico Superior Universitario en Mercadotecnia",
+      extension: "1801", 
+      facebook: "https://www.facebook.com/mercadotecniautnayarit", 
+      label2: "Mercadotecnia UT de Nayarit"
+
     },
     {
       id: 12,
@@ -316,6 +355,9 @@ function Carrera() {
       planEstudioPDF: PlanLSP_PDF,
       campoLaboral: [],
       tsu: "Técnico Superior Universitario en Seguridad Pública",
+      extension: "3808", 
+      facebook: "https://www.facebook.com/LSPUTNay",
+      label2: "UTNAY Lic. en Seguridad Pública"
     },
     {
       id: 13,
@@ -331,6 +373,9 @@ function Carrera() {
       planEstudioPDF: PlanILI_PDF,
       campoLaboral: [],
       tsu: "Técnico Superior Universitario en Operaciones Logísticas y Comercio Exterior",
+      extension: "1604", 
+      facebook: "https://www.facebook.com/profile.php?id=100057583722524",
+      label2: "Logística Internacional UTN"
     },
     {
       id: 14,
@@ -346,6 +391,9 @@ function Carrera() {
       planEstudioPDF: PlanLGT_PDF,
       campoLaboral: [],
       tsu: "Técnico Superior Universitario en Gastronomía",
+      extension: "1601", 
+      facebook: "https://www.facebook.com/GastronomiaUTNAY", 
+      label2: "Gastronomía UTNAY"
     },
   ];
 
@@ -384,7 +432,7 @@ function Carrera() {
         materias: [
           { id: "IAL301", nombre: "Cálculo Integral" },
           { id: "IAL302", nombre: "Desarrollo del Pensamiento y Toma de Decisiones" },
-          { id: "IAL303", nombre: "Ingles II" },
+          { id: "IAL303", nombre: "Ingles III" },
           { id: "IAL304", nombre: "Proyecto Integradora I" },
           { id: "IAL305", nombre: "Quimica de Alimentos" },
           { id: "IAL306", nombre: "Tecnologia de Alimentos I" },
@@ -395,71 +443,324 @@ function Carrera() {
         id: 4,
         nombre: "Cuarto",
         materias: [
-          { id: "IAL401", nombre: "Operaciones Unitarias II" },
-          { id: "IAL402", nombre: "Tecnología de Alimentos I" },
-          { id: "IAL403", nombre: "Ingeniería de Reactores" },
-          { id: "IAL404", nombre: "Microbiología Industrial" },
+          { id: "IAL401", nombre: "Analisis de Alimentos" },
+          { id: "IAL402", nombre: "Calculo de Varias Variables" },
+          { id: "IAL403", nombre: "Eitca Profesional" },
+          { id: "IAL404", nombre: "Ingles IV" },
+          { id: "IAL405", nombre: "Inocuidad Alimentaria Alimentos" },
+          { id: "IAL406", nombre: "Microbiologia de Alimentos" },
+          { id: "IAL407", nombre: "Tecnologia de Alimentos II" },
         ]
       },
       {
         id: 5,
         nombre: "Quinto",
         materias: [
-          { id: "IAL501", nombre: "Tecnología de Alimentos II" },
-          { id: "IAL502", nombre: "Diseño de Plantas" },
-          { id: "IAL503", nombre: "Control de Calidad" },
-          { id: "IAL504", nombre: "Optativa I" },
+          { id: "IAL501", nombre: "Administracion de la Producción" },
+          { id: "IAL502", nombre: "Ecuaciones Diferenciales" },
+          { id: "IAL503", nombre: "Ingles V" },
+          { id: "IAL504", nombre: "Liderazgo de Equipos de Alto Desempeño" },
+          { id: "IAL505", nombre: "Proyecto Integradora II" },
+          { id: "IAL506", nombre: "Sistemas de Calidad " },
+          { id: "IAL507", nombre: "Tecnologia de Alimentos III" },
         ]
       },
       {
         id: 6,
         nombre: "Sexto",
         materias: [
-          { id: "IAL601", nombre: "Embalaje y Envasado" },
-          { id: "IAL602", nombre: "Ingeniería Económica" },
-          { id: "IAL603", nombre: "Biotecnología Alimentaria" },
-          { id: "IAL604", nombre: "Optativa II" },
+          { id: "IAL601", nombre: "Estadia en el Sector Productivo" },
         ]
       },
       {
         id: 7,
         nombre: "Séptimo",
         materias: [
-          { id: "IAL701", nombre: "Desarrollo de Productos" },
-          { id: "IAL702", nombre: "Gestión Ambiental" },
-          { id: "IAL703", nombre: "Toxicología de Alimentos" },
-          { id: "IAL704", nombre: "Optativa III" },
+          { id: "IAL701", nombre: "Balance de Materia y Energía" },
+          { id: "IAL702", nombre: "Bioquímica" },
+          { id: "IAL703", nombre: "Diseño de Experimentos" },
+          { id: "IAL704", nombre: "Habilidades Gerenciales" },
+          { id: "IAL705", nombre: "Ingles VI" },
+          { id: "IAL706", nombre: "Operaciones Unitarias I" },
+          { id: "IAL707", nombre: "Termodinamica" },
         ]
       },
       {
         id: 8,
         nombre: "Octavo",
         materias: [
-          { id: "IAL801", nombre: "Administración de Empresas" },
-          { id: "IAL802", nombre: "Legislación Alimentaria" },
-          { id: "IAL803", nombre: "Seminario de Investigación" },
-          { id: "IAL804", nombre: "Optativa IV" },
+          { id: "IAL801", nombre: "Emprendimiento e Innovación" },
+          { id: "IAL802", nombre: "Estandarización de Procesos Alimentarios" },
+          { id: "IAL803", nombre: "Formulación y Evaluación de Proyectos" },
+          { id: "IAL804", nombre: "Gestión de la Producción" },
+          { id: "IAL805", nombre: "Industrias Alimentarias Sostenibles" },
+          { id: "IAL806", nombre: "Ingles VII" },
+          { id: "IAL807", nombre: "Operaciones Unitarias" },
         ]
       },
       {
         id: 9,
         nombre: "Noveno",
         materias: [
-          { id: "IAL901", nombre: "Residencia Profesional" },
-          { id: "IAL902", nombre: "Proyecto Integrador" },
+          { id: "IAL901", nombre: "Bioingeniría" },
+          { id: "IAL902", nombre: "Consultoría y Capacitación a Empresas" },
+          { id: "IAL903", nombre: "Diseño de Plantas" },
+          { id: "IAL904", nombre: "Diseño de Procesos" },
+          { id: "IAL905", nombre: "Ingles VIII" },
+          { id: "IAL906", nombre: "Operaciones Unitarias III" },
+          { id: "IAL907", nombre: "Proyecto Integrador III" },
         ]
       },
       {
         id: 10,
         nombre: "Décimo",
         materias: [
-          { id: "IAL1001", nombre: "Proyecto Terminal" },
-          { id: "IAL1002", nombre: "Prácticas Profesionales" },
-          { id: "IAL1003", nombre: "Seminario de Titulación" },
+          { id: "IAL1001", nombre: "Estadia en el Sector Productivo" },
         ]
       }
     ],
-    
+    IA: [
+      {
+        id: 1,
+        nombre: "Primero",
+        materias: [
+          { id: "IA101", nombre: "Comunicación y Habilidades Digitales" },
+          { id: "IA102", nombre: "Física"  },
+          { id: "IA103", nombre: "Ingles I"  },
+          { id: "IA104", nombre: "Desarrollo Humano y Valores" },
+          { id: "IA105", nombre: "Fundamentos de Redes" },
+          { id: "IA106", nombre: "Fundamentos de Programación" },
+          { id: "IA107", nombre: "Fundamentos Matemáticos" },
+        ]
+      },
+      {
+        id: 2,
+        nombre: "Segundo",
+        materias: [
+          { id: "IA201", nombre: "Calculo Diferencial" },
+          { id: "IA202", nombre: "Probabilidad y Estadistica"  },
+          { id: "IA203", nombre: "Programacion Estructurada" },
+          { id: "IA204", nombre: "Conmutación y Enrutamiento de Redes" },
+          { id: "IA205", nombre: "Sistemas Operativos" },
+          { id: "IA206", nombre: "Habilidades Socioemocionales y Manejo de Conflictos" },
+          { id: "IA207", nombre: "Ingles II" },
+        ]
+      },
+      {
+        id: 3,
+        nombre: "Tercero",
+        materias: [
+          { id: "IA301", nombre: "Cálculo Integral" },
+          { id: "IA302", nombre: "Ingles III" },
+          { id: "IA303", nombre: "Desarrollo del Pensamiento y Toma de Decisiones" },
+          { id: "IA304", nombre: "Proyecto Integradora I" },
+          { id: "IA305", nombre: "Bases de Datos" },
+          { id: "IA306", nombre: "Programación Orientada a Objetos" },
+          { id: "IA307", nombre: "Topicos de Calidad para el Diseño de Software" },
+        ]
+      },
+      {
+        id: 4,
+        nombre: "Cuarto",
+        materias: [
+          { id: "IA401", nombre: "Aprendizaje Profundo Deep Learning" },
+          { id: "IA402", nombre: "Calculo de Varias Variables" },
+          { id: "IA403", nombre: "Eitca Profesional" },
+          { id: "IA404", nombre: "Ingles IV" },
+          { id: "IA405", nombre: "Metodologia No Code" },
+          { id: "IA406", nombre: "Sistemas Embebidos" },
+          { id: "IA407", nombre: "Sistemas de Optimización Inteligente" },
+        ]
+      },
+      {
+        id: 5,
+        nombre: "Quinto",
+        materias: [
+          { id: "IA501", nombre: "Ingles V" },
+          { id: "IA502", nombre: "Liderazgo de Equipos de Alto Desempeño" },
+          { id: "IA503", nombre: "Proyecto Integrador II" },
+          { id: "IA504", nombre: "Aprendizaje Maquina" },
+          { id: "IA505", nombre: "Ecuaciones Diferenciales" },
+          { id: "IA506", nombre: "Fundamentos de Visíon por Computadora" },
+          { id: "IA507", nombre: "Mineria de Datos" },
+          { id: "IA508", nombre: "Estandares y Metricas para el Desarrollo de Software" },
+        ]
+      },
+      {
+        id: 6,
+        nombre: "Sexto",
+        materias: [
+          { id: "IA601", nombre: "Estadia en el Sector Productivo" },
+        ]
+      },
+      {
+        id: 7,
+        nombre: "Séptimo",
+        materias: [
+          { id: "IA701", nombre: "Habilidades Gerenciales" },
+          { id: "IA702", nombre: "Ingles VI" },
+          { id: "IA703", nombre: "Etica y Legislación en Tecnologias de la Información" },
+          { id: "IA704", nombre: "Formulación de Proyectos de Tecnologia" },
+          { id: "IA705", nombre: "Fundamentos de Inteligencia Artificial" },
+          { id: "IA706", nombre: "Mineria de Texto" },
+          { id: "IA707", nombre: "Seguridad Informatica" },
+        ]
+      },
+      {
+        id: 8,
+        nombre: "Octavo",
+        materias: [
+          { id: "IA801", nombre: "Ingles VII" },
+          { id: "IA802", nombre: "Programación para Inteligencia Artificial" },
+          { id: "IA803", nombre: "Electronica Digital" },
+          { id: "IA804", nombre: "Gestion de Proyectos de Tecnología" },
+          { id: "IA805", nombre: "Informatica Forense" },
+          { id: "IA806", nombre: "Analisis de Regresion" },
+          { id: "IA807", nombre: "Programacion para Inteligencia Artificial" },
+          { id: "IA808", nombre: "Administración de Servidores" },
+        ]
+      },
+      {
+        id: 9,
+        nombre: "Noveno",
+        materias: [
+          { id: "IA901", nombre: "Ingles VIII" },
+          { id: "IA902", nombre: "Proyecto Integrador III" },
+          { id: "IA903", nombre: "Ciencia de Datos" },
+          { id: "IA904", nombre: "Evaluación de Proyectos de Tecnologia" },
+          { id: "IA905", nombre: "Internet de las Cosas" },
+          { id: "IA906", nombre: "Sistemas Inteligentes" },
+          { id: "IA907", nombre: "Tecnologias Disruptivas" },
+        ]
+      },
+      {
+        id: 10,
+        nombre: "Décimo",
+        materias: [
+          { id: "IA1001", nombre: "Estadia en el Sector Productivo" },
+        ]
+      }
+    ],
+    IMI: [
+      {
+        id: 1,
+        nombre: "Primero",
+        materias: [
+          { id: "IMI101", nombre: "Comunicación y Habilidades Digitales" },
+          { id: "IMI102", nombre: "Desarrollo Humano y Valores"  },
+          { id: "IMI103", nombre: "Dibujo Industrial"  },
+          { id: "IMI104", nombre: "Fundamentos del Mantenimiento" },
+          { id: "IMI105", nombre: "Fundamentos Matematicos" },
+          { id: "IMI106", nombre: "Ingles I" },
+          { id: "IMI107", nombre: "Seguridad Industrial" },
+        ]
+      },
+      {
+        id: 2,
+        nombre: "Segundo",
+        materias: [
+          { id: "IMI201", nombre: "Calculo Diferencial" },
+          { id: "IMI202", nombre: "Fisica"  },
+          { id: "IMI203", nombre: "Gestión del Mantenimiento" },
+          { id: "IMI204", nombre: "Habilidades Socioemocionales y Manejo de Conflictos" },
+          { id: "IMI205", nombre: "Ingles II" },
+          { id: "IMI206", nombre: "Probabilidad y Estadistica" },
+          { id: "IMI207", nombre: "Termodinamica" },
+        ]
+      },
+      {
+        id: 3,
+        nombre: "Tercero",
+        materias: [
+          { id: "IMI301", nombre: "Cálculo Integral" },
+          { id: "IMI302", nombre: "Desarrollo del Pensamiento y Toma de Decisiones" },
+          { id: "IMI303", nombre: "Electronica Analogica" },
+          { id: "IMI304", nombre: "Ingles III" },
+          { id: "IMI305", nombre: "Maquinas y Mexanismos" },
+          { id: "IMI306", nombre: "Proyecto Integrador I" },
+          { id: "IMI307", nombre: "Sistemas Electricos" },
+        ]
+      },
+      {
+        id: 4,
+        nombre: "Cuarto",
+        materias: [
+          { id: "IMI401", nombre: "Calculo de Varias Variables" },
+          { id: "IMI402", nombre: "Electronica Digital" },
+          { id: "IMI403", nombre: "Eitca Profesional" },
+          { id: "IMI404", nombre: "Ingles IV" },
+          { id: "IMI405", nombre: "Mantenimiento a Procesos de Manufactura" },
+          { id: "IMI406", nombre: "Maquinas Electricas" },
+          { id: "IMI407", nombre: "Sistemas Neumaticos e Hidraulicos" },
+        ]
+      },
+      {
+        id: 5,
+        nombre: "Quinto",
+        materias: [
+          { id: "IMI501", nombre: "Ciencia de los Materiales" },
+          { id: "IMI502", nombre: "Automatización y Robotica" },
+          { id: "IMI503", nombre: "Ecuaciones Diferenciales" },
+          { id: "IMI504", nombre: "Ingles V" },
+          { id: "IMI505", nombre: "Liderazgo de Equipos de Alto Desempeño" },
+          { id: "IMI506", nombre: "Proyecto Integrador II" },
+          { id: "IMI507", nombre: "Sistemas Termicos e Industriales" },
+        ]
+      },
+      {
+        id: 6,
+        nombre: "Sexto",
+        materias: [
+          { id: "IMI601", nombre: "Estadia en el Sector Productivo" },
+        ]
+      },
+      {
+        id: 7,
+        nombre: "Séptimo",
+        materias: [
+          { id: "IMI701", nombre: "Administración Estrategica para Mantenimiento" },
+          { id: "IMI702", nombre: "Fisica para Ingenieria" },
+          { id: "IMI703", nombre: "Habilidades Gerenciales" },
+          { id: "IMI704", nombre: "Ingles VI" },
+          { id: "IMI705", nombre: "Instalaciones Electricas" },
+          { id: "IMI706", nombre: "Metodos y Sistemas de Trabajo" },
+          { id: "IMI707", nombre: "Tribología" },
+        ]
+      },
+      {
+        id: 8,
+        nombre: "Octavo",
+        materias: [
+          { id: "IMI801", nombre: "Ensayos Destructivos" },
+          { id: "IMI802", nombre: "Ingenieria Economica" },
+          { id: "IMI803", nombre: "Ingles VII" },
+          { id: "IMI804", nombre: "Mantenimiento Predictivo Mecanico" },
+          { id: "IMI805", nombre: "Protocolos de Operación y Mantenimiento" },
+          { id: "IMI806", nombre: "Sistemas Automatizados y Redes Industriales" },
+          { id: "IMI807", nombre: "Tecnicas TPM y RCM" },
+        ]
+      },
+      {
+        id: 9,
+        nombre: "Noveno",
+        materias: [
+          { id: "IMI901", nombre: "Ensayos Destructivos" },
+          { id: "IMI902", nombre: "Gestión Ambiental" },
+          { id: "IMI903", nombre: "Gestión de Talento Humano" },
+          { id: "IMI904", nombre: "Ingles VIII" },
+          { id: "IMI905", nombre: "Manufactura Asistida por Computadora" },
+          { id: "IMI906", nombre: "Proyecto Integrador" },
+          { id: "IMI907", nombre: "Visualización y Control de Procesos" },
+        ]
+      },
+      {
+        id: 10,
+        nombre: "Décimo",
+        materias: [
+          { id: "IMI1001", nombre: "Estadia en el Sector Productivo" },
+        ]
+      }
+    ],
   };
 
   // Encontrar la carrera basada en el parámetro de la URL
@@ -744,7 +1045,7 @@ function Carrera() {
                     backgroundColor: `${carreraSeleccionada.color}08`,
                     borderRight: isMobile ? "none" : `1px solid ${carreraSeleccionada.color}20`,
                     overflowY: "auto",
-                    maxHeight: isMobile ? "none" : "500px",
+                    maxHeight: isMobile ? "none" : "550px",
                   }}
                 >
                   <div style={{ padding: isMobile ? "1rem" : "1.5rem" }}>
@@ -1002,6 +1303,27 @@ function Carrera() {
             </div>
           </div>
         </div>
+
+<p 
+  className="buttonFace"
+  style={{ 
+    backgroundColor: carreraSeleccionada.color, 
+  }}
+>
+  <a 
+    href={carreraSeleccionada.facebook} 
+    target="_blank" 
+    rel="noopener noreferrer" // IMPORTANTE: seguridad
+    className="enlaceFace"
+  > 
+    <img 
+      src={logoFace} 
+      alt="Logo Facebook" 
+      className="logoFace"
+    /> 
+    {carreraSeleccionada.label2}
+  </a>
+</p>
 
         {/* Botón para volver */}
         <div

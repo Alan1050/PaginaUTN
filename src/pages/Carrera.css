@@ -41,6 +41,37 @@
   object-fit: cover;
 }
 
+.buttonFace{
+    padding: 1rem;
+    border-Radius: 8px;
+    width: 60%;
+    margin: 2rem auto 0;
+    align-Items: center;
+    text-Align: center;
+    margin-Top: 2rem;
+    font-Size: 0.9rem; 
+    color: white;
+}
+
+.enlaceFace{
+      text-Decoration: none;
+      color: white;
+      font-Size: 1.3rem; 
+      display: flex;
+      align-Items: center;
+      gap: 0.5rem;
+      justify-Content: center;
+      width: 100%;
+}
+
+.logoFace{
+        width: 30px; 
+        height: 30px;
+        background-Color: white;
+        border-Radius: 50%; 
+        border: none;
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -54,6 +85,13 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+    .buttonFace{
+    width: 90%;
+}
+
+.enlaceFace{
+      font-Size: 1rem; 
+}
   .BannerImg{
   width: 100%;
   height: 30vh; 
