@@ -1313,7 +1313,7 @@ function Carrera() {
   <a 
     href={carreraSeleccionada.facebook} 
     target="_blank" 
-    rel="noopener noreferrer" // IMPORTANTE: seguridad
+    rel="noopener noreferrer" 
     className="enlaceFace"
   > 
     <img 
@@ -1324,6 +1324,10 @@ function Carrera() {
     {carreraSeleccionada.label2}
   </a>
 </p>
+
+<h2 style={{marginTop: "40px", textAlign: "center", fontFamily: "Arial", color: carreraSeleccionada.color }}>
+  311 211 98 00 EXT {carreraSeleccionada.extension}
+</h2>
 
         {/* Botón para volver */}
         <div
