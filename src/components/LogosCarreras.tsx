@@ -40,7 +40,7 @@ function LogosCarreras() {
   // Datos de carreras con tipo Logo[]
   const allLogos: Logo[] = [
     { id: 1, src: LogoIMS, alt: "Logotipo Carrera Ingenieria en Microelectronica y Semiconductores", label: "IMS", nombre: "ingenieria-microelectronica" },
-    { id: 2, src: LogoIAL, alt: "Logotipo Carrera Ingenieria en Alimentos", label: "IAL", nombre: "ingenieria-alimentos" },
+    { id: 2, src: LogoIAL, alt: "Logotipo Carrera Ingenieria en Alimentos", label: "ial", nombre: "ingenieria-alimentos" },
     { id: 3, src: LogoIA, alt: "Logotipo Carrera Tecnico Superior Universitario en Inteligencia Artificial", label: "IA", nombre: "inteligencia-artificial" },
     { id: 4, src: LogoIMI, alt: "Logotipo Carrera Ingenieria en Mantenimiento Industrial", label: "IMI", nombre: "ingenieria-mantenimiento-industrial" },
     { id: 5, src: LogoIMT, alt: "Logotipo Carrera Ingenieria en Mecatronica", label: "IMT", nombre: "ingenieria-mecatronica" },
@@ -90,7 +90,7 @@ function LogosCarreras() {
             {allLogos.slice(7).map((logo: Logo) => (
               <a 
                 key={logo.id} 
-                href={`/Carrera/${logo.label}`} 
+                href={`/carrera/${logo.label}`} 
                 onClick={() => handleLogoClick(logo.nombre, logo.label)}
                 aria-label={logo.alt}
                 className="logo-link"
