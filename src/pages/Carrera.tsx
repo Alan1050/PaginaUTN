@@ -15,7 +15,6 @@ import LogoLGT from "../assets/logos/LGT.png";
 import LogoLINM from "../assets/logos/LINM.png";
 import LogoLSP from "../assets/logos/LSP.png";
 import LogoLPS from "../assets/logos/LPS.png";
-import Banner from "../assets/banner/IAL-1.png";
 import PlanIAL from "../assets/planesEstudio/IAL.jpg";
 import PlanIC from "../assets/planesEstudio/IC.jpg";
 import PlanILI from "../assets/planesEstudio/ILI.jpg";
@@ -41,6 +40,23 @@ import PlanLSP_PDF from "../assets/planesEstudio/pdf/LSP.pdf";
 import PlanLGT_PDF from "../assets/planesEstudio/pdf/LGT.pdf";
 import PlanIA_PDF from "../assets/planesEstudio/pdf/IA.pdf";
 
+//Baners
+import bannerIAL from "../assets/banner/bannerIAL.jpg";
+import bannerIC from "../assets/banner/bannerIC.jpg";
+import bannerILI from "../assets/banner/bannerILI.jpg";
+import bannerIMI from "../assets/banner/bannerIMI.jpg";
+import bannerITIID from "../assets/banner/bannerITIID.jpg";
+import bannerLAD from "../assets/banner/bannerLAD.jpg";
+import bannerLGDT from "../assets/banner/bannerLGDT.jpg";
+import bannerLINM from "../assets/banner/bannerLINM.jpg";
+import bannerLSP from "../assets/banner/bannerLSP.jpg";
+import bannerLGT from "../assets/banner/bannerLGT.jpg";
+import bannerIA from "../assets/banner/bannerIA.jpg";
+import bannerIMS from "../assets/banner/bannerIMS.jpg";
+import bannerIMT from "../assets/banner/bannerIMT.jpg";
+import bannerLPS from "../assets/banner/bannerLPS.jpg";
+
+
 // Interfaz para los datos de carrera
 interface CarreraInfo {
   id: number;
@@ -49,8 +65,7 @@ interface CarreraInfo {
   label: string;
   color: string;
   nombreCompleto: string;
-  descripcion: string;
-  duracion: string;
+  banner: string;
   egreasdo: string;
   planEstudio?: string;
   planEstudioPDF?: string;
@@ -108,9 +123,8 @@ const label = nombre; // Asigna a una variable con el nombre correcto
       label: "IMS",
       color: "#0f391f",
       nombreCompleto: "Ingeniería en Microelectrónica y Semiconductores",
-      descripcion: "",
-      duracion: "",
       egreasdo: "",
+      banner: bannerIMS,
       planEstudio: "",
       campoLaboral: [],
       tsu: "Tecnico Superior Universitario en Microelectrónica y Sistemas Embebidos",
@@ -125,8 +139,7 @@ const label = nombre; // Asigna a una variable con el nombre correcto
       label: "IAL",
       color: "#771e1b",
       nombreCompleto: "Ingeniería en Alimentos",
-      descripcion: "",
-      duracion: "",
+      banner: bannerIAL,
       egreasdo:
         "El egresado de Ingeniería en Alimentos incluye la capacidad de diseñar, planear, evaluar y mejorar procesos de producción de alimentos. También debe ser capaz de garantizar la calidad e inocuidad de los productos.",
       planEstudio: PlanIAL,
@@ -152,10 +165,9 @@ const label = nombre; // Asigna a una variable con el nombre correcto
       alt: "Logotipo Carrera Técnico Superior Universitario en Inteligencia Artificial",
       label: "IA",
       color: "#43296e",
+      banner: bannerIA,
       nombreCompleto:
         "Técnico Superior Universitario en Inteligencia Artificial",
-      descripcion: "",
-      duracion: "",
       egreasdo:
         "El egresado en Técnico Superior Universitario en Ingeniería Artificial podrá desarrollar aplicaciones que incluyan la implementación de sistemas de inteligencia artificial que permitan optimizar el rendimiento de una organización, para resolver problemas del sector productivo, con un enfoque de inclusión, compromiso con la responsabilidad social, equidad social y de género, excelencia, innovación y sostenibilidad para social o interculturalidad.",
       planEstudio: "",
@@ -179,9 +191,8 @@ const label = nombre; // Asigna a una variable con el nombre correcto
       alt: "Logotipo Carrera Ingenieria en Mantenimiento Industrial",
       label: "IMI",
       color: "#4c1706",
+      banner: bannerIMI,
       nombreCompleto: "Ingenieria en Mantenimiento Industrial",
-      descripcion: "",
-      duracion: "",
       egreasdo:
         "El perfil de egreso consiste en diseñar estrategias de mantenimiento mediante el análisis de factores humanos, tecnológicos, económicos y financieros, para la elaboración y administración del plan maestro de mantenimiento que garantice la disponibilidad y confiabilidad de la planta, contribuyendo a la competitividad de la empresa. Además, el egresado estará capacitado para optimizar las actividades del mantenimiento y las condiciones de operación de los equipos a través de técnicas y herramientas de confiabilidad, con el fin de incrementar la eficiencia global de los equipos y reducir los costos de mantenimiento, apoyando la sustentabilidad y la competitividad de la organización. También podrá validar estudios de ingeniería y proyectos técnico-económicos mediante análisis de factibilidad para mejorar la mantenibilidad de los equipos e instalaciones.",
       planEstudio: PlanIMI,
@@ -204,9 +215,8 @@ const label = nombre; // Asigna a una variable con el nombre correcto
       alt: "Logotipo Carrera Ingenieria en Mecatronica",
       label: "IMT",
       color: "#023a5d",
+      banner: bannerIMT,
       nombreCompleto: "Ingenieria en Mecatronica",
-      descripcion: "",
-      duracion: "",
       egreasdo: "El egresado de la Ingeniería en Mecatrónica podrá desarrollar proyectos de automatización y control, a través del diseño, operación y aplicación de nuevas tecnologías. Así como operar y mantener los sistemas de procesos de producción con equipo automatizado y/o robótico para satisfacer las necesidades del sector productivo.",
       planEstudio: "",
       planEstudioPDF: "",
@@ -229,8 +239,7 @@ const label = nombre; // Asigna a una variable con el nombre correcto
       label: "LGDT",
       color: "#024319",
       nombreCompleto: "Licenciatura en Gestión y Desarrollo Turístico",
-      descripcion: "",
-      duracion: "",
+      banner: bannerLGDT,
       egreasdo:
         "El egresado de la licenciatura en Gestión y Desarrollo Turístico podrá: *Coordinar la presentación de servicios turísticos. *Dirigir la operación de establecimientos de hospedaje. *Desarrollar planes de venta de servicios de hospedaje, eventos y centros de consumo. *Formular proyectos de turismo cultural y de naturaleza. *Impulsar el desarrollo sustentable del sector turismo.",
       planEstudio: PlanLGDT,
@@ -257,8 +266,7 @@ const label = nombre; // Asigna a una variable con el nombre correcto
       label: "LAD",
       color: "#48254c",
       nombreCompleto: "Licenciatura en Administración",
-      descripcion: "",
-      duracion: "",
+      banner: bannerLAD,
       egreasdo: "",
       planEstudio: PlanLAD,
       planEstudioPDF: PlanLAD_PDF,
@@ -274,9 +282,8 @@ const label = nombre; // Asigna a una variable con el nombre correcto
       alt: "Logotipo Carrera Licenciatura en Psicología",
       label: "LPS",
       color: "#e5b40b",
+      banner: bannerLPS,
       nombreCompleto: "Licenciatura en Psicología",
-      descripcion: "",
-      duracion: "",
       egreasdo: "",
       planEstudio: "",
       planEstudioPDF: "",
@@ -293,10 +300,9 @@ const label = nombre; // Asigna a una variable con el nombre correcto
       alt: "Logotipo Carrera Ingenieria en Tecnologias de la Información e Innovación Digital",
       label: "ITIID",
       color: "#23777a",
+      banner: bannerITIID,
       nombreCompleto:
         "Ingenieria en Tecnologias de la Información e Innovación Digital",
-      descripcion: "",
-      duracion: "",
       egreasdo: "",
       planEstudio: PlanITIID,
       planEstudioPDF: PlanITIID_PDF,
@@ -312,9 +318,8 @@ const label = nombre; // Asigna a una variable con el nombre correcto
       alt: "Logotipo Carrera Ingenieria Civil",
       label: "IC",
       color: "#420305",
+      banner: bannerIC,
       nombreCompleto: "Ingenieria Civil",
-      descripcion: "",
-      duracion: "",
       egreasdo: "",
       planEstudio: PlanIC,
       planEstudioPDF: PlanIC_PDF,
@@ -329,11 +334,10 @@ const label = nombre; // Asigna a una variable con el nombre correcto
       src: LogoLINM,
       alt: "Logotipo Carrera Licenciatura en Negocios y Mercadotecnia",
       label: "LINM",
+      banner: bannerLINM,
       color: "#2a2c61",
       nombreCompleto:
         "Licenciatura en Negocios y Mercadotecnia",
-      descripcion: "",
-      duracion: "",
       egreasdo: "",
       planEstudio: PlanLINM,
       planEstudioPDF: PlanLINM_PDF,
@@ -349,10 +353,9 @@ const label = nombre; // Asigna a una variable con el nombre correcto
       src: LogoLSP,
       alt: "Logotipo Carrera Licenciatura en Seguridad Pública",
       label: "LSP",
+      banner: bannerLSP,
       color: "#413f40",
       nombreCompleto: "Licenciatura en Seguridad Pública",
-      descripcion: "",
-      duracion: "",
       egreasdo: "",
       planEstudio: PlanLSP,
       planEstudioPDF: PlanLSP_PDF,
@@ -369,9 +372,8 @@ const label = nombre; // Asigna a una variable con el nombre correcto
       label: "ILI",
       color: "#4d7b2a",
       nombreCompleto: "Ingenieria en Logistica Internacional",
-      descripcion: "",
-      duracion: "",
       egreasdo: "",
+      banner: bannerILI,
       planEstudio: PlanILI,
       planEstudioPDF: PlanILI_PDF,
       campoLaboral: [],
@@ -387,9 +389,8 @@ const label = nombre; // Asigna a una variable con el nombre correcto
       label: "LGT",
       color: "#a67e16",
       nombreCompleto: "Licenciatura en Gastronomía",
-      descripcion: "",
-      duracion: "",
       egreasdo: "",
+      banner: bannerLGT,
       planEstudio: PlanLGT,
       planEstudioPDF: PlanLGT_PDF,
       campoLaboral: [],
@@ -2082,7 +2083,7 @@ const label = nombre; // Asigna a una variable con el nombre correcto
     >
       {/* Banner de la carrera */}
       <img
-        src={Banner}
+        src={carreraSeleccionada.banner}
         className="BannerImg"
         alt="Banner Carrera"
       />
