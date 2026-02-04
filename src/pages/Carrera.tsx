@@ -76,6 +76,7 @@ interface Cuatrimestre {
 
 function Carrera() {
   const { nombre } = useParams<{ nombre: string }>();
+const label = nombre; // Asigna a una variable con el nombre correcto
   const [isMobile, setIsMobile] = useState(false);
   const [carreraSeleccionada, setCarreraSeleccionada] = useState<CarreraInfo | null>(null);
   const [cuatrimestreActivo, setCuatrimestreActivo] = useState<number>(1);
@@ -85,6 +86,7 @@ function Carrera() {
   const cuatrimestresContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    
     const checkIfMobile = () => {
       setIsMobile(window.innerWidth <= 768);
     };
@@ -93,6 +95,7 @@ function Carrera() {
     window.addEventListener("resize", checkIfMobile);
 
     return () => window.removeEventListener("resize", checkIfMobile);
+    
   }, []);
 
 
@@ -399,6 +402,126 @@ function Carrera() {
 
   // Datos de materias por carrera (ejemplo para IAL)
   const materiasPorCarrera: Record<string, Cuatrimestre[]> = {
+    IMS: [
+      {
+        id: 1,
+        nombre: "Primero",
+        materias: [
+          { id: "IMS101", nombre: "Ingles I" },
+          { id: "IMS102", nombre: "Desarrollo Humano y Valores"  },
+          { id: "IMS103", nombre: "Fundamentos Matemáticos",  },
+          { id: "IMS104", nombre: "Química Básica" },
+          { id: "IMS105", nombre: "Metodología de la Programación" },
+          { id: "IMS106", nombre: "Mediciones Eléctricas en Semiconductores" },
+          { id: "IMS107", nombre: "Comunicación y Habilidades Digitales" },
+        ]
+      },
+      {
+        id: 2,
+        nombre: "Segundo",
+        materias: [
+          { id: "IMS201", nombre: "Inglés II" },
+          { id: "IMS202", nombre: "Habilidades Socioemocionales y Manejo de Conflictos"  },
+          { id: "IMS203", nombre: "Cálculo Diferencial" },
+          { id: "IMS204", nombre: "Física" },
+          { id: "IMS205", nombre: "Probabilidad y Estadística" },
+          { id: "IMS206", nombre: "Física del estado Sólido" },
+          { id: "IMS207", nombre: "Calidad y Normatividad Industrial" },
+        ]
+      },
+      {
+        id: 3,
+        nombre: "Tercero",
+        materias: [
+          { id: "IMS301", nombre: "Inglés III" },
+          { id: "IMS302", nombre: "Desarrollo del Pensamiento y Toma de Decisiones" },
+          { id: "IMS303", nombre: "Cálculo Integral" },
+          { id: "IMS304", nombre: "Diseño Experimental de Procesos" },
+          { id: "IMS305", nombre: "Circuitos Eléctricos" },
+          { id: "IMS306", nombre: "Dispositivos Semiconductores" },
+          { id: "IMS307", nombre: "Proyecto Integrador I" },
+        ]
+      },
+      {
+        id: 4,
+        nombre: "Cuarto",
+        materias: [
+          { id: "IMS401", nombre: "Inglés IV" },
+          { id: "IMS402", nombre: "Ética Profesional" },
+          { id: "IMS403", nombre: "Cálculo de Varias Variables" },
+          { id: "IMS404", nombre: "Mantenimiento y Seguridad Industrial" },
+          { id: "IMS405", nombre: "Electrónica Analógica" },
+          { id: "IMS406", nombre: "Manufactura Microelectrónica" },
+          { id: "IMS407", nombre: "Sistemas Digitales" },
+        ]
+      },
+      {
+        id: 5,
+        nombre: "Quinto",
+        materias: [
+          { id: "IMS501", nombre: "Inglés V" },
+          { id: "IMS502", nombre: "Liderazgo de Equipos de Alto Desempeño" },
+          { id: "IMS503", nombre: "Ecuaciones Diferenciales" },
+          { id: "IMS504", nombre: "Logística" },
+          { id: "IMS505", nombre: "Diseño y Ensamble de PCB" },
+          { id: "IMS506", nombre: "Procesos de Manufactura de Semiconductores" },
+          { id: "IMS507", nombre: "Proyecto Integrador II" },
+        ]
+      },
+      {
+        id: 6,
+        nombre: "Sexto",
+        materias: [
+          { id: "IMS601", nombre: "Estadia en el Sector Productivo" },
+        ]
+      },
+      {
+        id: 7,
+        nombre: "Séptimo",
+        materias: [
+          { id: "IMS701", nombre: "Inglés VI" },
+          { id: "IMS702", nombre: "Habilidades Gerenciales" },
+          { id: "IMS703", nombre: "Arquitectura de Microprocesadores" },
+          { id: "IMS704", nombre: "Electromagnetismo y Señales" },
+          { id: "IMS705", nombre: "Programación Avanzada" },
+          { id: "IMS706", nombre: "Circuitos Amplificadores Integrados" },
+          { id: "IMS707", nombre: "Caracterización de Dispositivos Semiconductores" },
+        ]
+      },
+      {
+        id: 8,
+        nombre: "Octavo",
+        materias: [
+          { id: "IMS801", nombre: "Inglés VII" },
+          { id: "IMS802", nombre: "Evaluación y Administración de Proyectos" },
+          { id: "IMS803", nombre: "Diseño de Sistemas Integrados Digitales" },
+          { id: "IMS804", nombre: "Electrónica de Potencia" },
+          { id: "IMS805", nombre: "Programación de Sistemas Embebidos" },
+          { id: "IMS806", nombre: "Amplificadores Diferenciales y Multietapa" },
+          { id: "IMS807", nombre: "Optoelectrónica" },
+        ]
+      },
+      {
+        id: 9,
+        nombre: "Noveno",
+        materias: [
+          { id: "IMS901", nombre: "Inglés VIII" },
+          { id: "IMS902", nombre: "Administración del Mantenimiento" },
+          { id: "IMS903", nombre: "Diseño de Circuitos Integrados Analógicos" },
+          { id: "IMS904", nombre: "Enrutamiento de Circuitos Integrados" },
+          { id: "IMS905", nombre: "Verificación de Circuitos Integrados" },
+          { id: "IMS906", nombre: "Respuesta en Frecuencia" },
+          { id: "IMS907", nombre: "Proyecto Integrador III" },
+        ]
+      },
+      {
+        id: 10,
+        nombre: "Décimo",
+        materias: [
+          { id: "IMS1001", nombre: "Estadia en el Sector Productivo" },
+        ]
+      }
+    ],
     IAL: [
       {
         id: 1,
@@ -761,16 +884,1098 @@ function Carrera() {
         ]
       }
     ],
+    IMT: [
+      {
+        id: 1,
+        nombre: "Primero",
+        materias: [
+          { id: "IMT101", nombre: "Comunicación y Habilidades Digitales" },
+          { id: "IMT102", nombre: "Desarrollo Humano y Valores"  },
+          { id: "IMT103", nombre: "Fundamentos Matematicos"  },
+          { id: "IMT104", nombre: "Ingles I" },
+          { id: "IMT105", nombre: "Metodologia de la Programacion" },
+          { id: "IMT106", nombre: "Metrologia" },
+          { id: "IMT107", nombre: "Procesos Industriales" },
+        ]
+      },
+      {
+        id: 2,
+        nombre: "Segundo",
+        materias: [
+          { id: "IMT201", nombre: "Calculo Diferencial" },
+          { id: "IMT202", nombre: "Circuitos Electronicos"  },
+          { id: "IMT203", nombre: "Dibujo para la Ingenieria" },
+          { id: "IMT204", nombre: "Fisica" },
+          { id: "IMT205", nombre: "Habilidades Socioemocionales y Manejo de Conflictos" },
+          { id: "IMT206", nombre: "Ingles II" },
+          { id: "IMT207", nombre: "Probabilidad y Estadistica" },
+        ]
+      },
+      {
+        id: 3,
+        nombre: "Tercero",
+        materias: [
+          { id: "IMT301", nombre: "Cálculo Integral" },
+          { id: "IMT302", nombre: "Desarrollo del Pensamiento y Toma de Decisiones" },
+          { id: "IMT303", nombre: "Electronica Analogica y de Potencia" },
+          { id: "IMT304", nombre: "Electrónica Digital" },
+          { id: "IMT305", nombre: "Elementos Mecanicos" },
+          { id: "IMT306", nombre: "Ingles III" },
+          { id: "IMT307", nombre: "Proyecto Integrador I" },
+        ]
+      },
+      {
+        id: 4,
+        nombre: "Cuarto",
+        materias: [
+          { id: "IMT401", nombre: "Calculo de Varias Variables" },
+          { id: "IMT402", nombre: "Estructura y Propiedades de los Materiales" },
+          { id: "IMT403", nombre: "Eitca Profesional" },
+          { id: "IMT404", nombre: "Ingles IV" },
+          { id: "IMT405", nombre: "Instalaciones Eléctricas en Baja y Media Tensión" },
+          { id: "IMT406", nombre: "Potencia Eléctrica" },
+          { id: "IMT407", nombre: "Pruebas y Control de Máquinas Eléctricas" },
+        ]
+      },
+      {
+        id: 5,
+        nombre: "Quinto",
+        materias: [
+          { id: "IMT501", nombre: "•Controladores y Actuadores Industriales" },
+          { id: "IMT502", nombre: "Ecuaciones Diferenciales" },
+          { id: "IMT503", nombre: "Ingles V" },
+          { id: "IMT504", nombre: "Liderazgo de Equipos de Alto Desempeño" },
+          { id: "IMT505", nombre: "Proyecto Integrador II" },
+          { id: "IMT506", nombre: "Subestaciones y Protecciones Eléctricas" },
+          { id: "IMT507", nombre: "Sustentabilidad Energética" },
+        ]
+      },
+      {
+        id: 6,
+        nombre: "Sexto",
+        materias: [
+          { id: "IMT601", nombre: "Estadia en el Sector Productivo" },
+        ]
+      },
+      {
+        id: 7,
+        nombre: "Séptimo",
+        materias: [
+          { id: "IMT701", nombre: "Análisis de Mecanismos" },
+          { id: "IMT702", nombre: "Cinemática y Dinámica de Robots" },
+          { id: "IMT703", nombre: "Habilidades Gerenciales" },
+          { id: "IMT704", nombre: "Ingles VI" },
+          { id: "IMT705", nombre: "Instrumentación Virtual" },
+          { id: "IMT706", nombre: "Modelado y Simulación de Sistemas" },
+          { id: "IMT707", nombre: "Sistemas Embebidos" },
+        ]
+      },
+      {
+        id: 8,
+        nombre: "Octavo",
+        materias: [
+          { id: "IMT801", nombre: "Diseño Asistido por Computadora" },
+          { id: "IMT802", nombre: "Diseño de Sistemas Mecatrónicos" },
+          { id: "IMT803", nombre: "Diseño Mecánico" },
+          { id: "IMT804", nombre: "Ingeniería de Control" },
+          { id: "IMT805", nombre: "Ingles VII" },
+          { id: "IMT806", nombre: "Programación de Robots Industriales" },
+          { id: "IMT807", nombre: "Sistemas CAM CNC" },
+        ]
+      },
+      {
+        id: 9,
+        nombre: "Noveno",
+        materias: [
+          { id: "IMT901", nombre: "Administración de Mantenimiento" },
+          { id: "IMT902", nombre: "Control Avanzado" },
+          { id: "IMT903", nombre: "Ingeniería Asistida por Computadora" },
+          { id: "IMT904", nombre: "Ingles VIII" },
+          { id: "IMT905", nombre: "Proyecto Integrador III" },
+          { id: "IMT906", nombre: "Sistemas de Manufactura Flexible" },
+          { id: "IMT907", nombre: "• Sistemas Eléctricos Industriales" },
+        ]
+      },
+      {
+        id: 10,
+        nombre: "Décimo",
+        materias: [
+          { id: "IMT1001", nombre: "Estadia en el Sector Productivo" },
+        ]
+      }
+    ],
+    LGDT: [
+      {
+        id: 1,
+        nombre: "Primero",
+        materias: [
+          { id: "LGDT101", nombre: "Comunicación y Habilidades Digitales" },
+          { id: "LGDT102", nombre: "Desarrollo Humano y Valores"  },
+          { id: "LGDT103", nombre: "Fundamentos de Economía",  },
+          { id: "LGDT104", nombre: "Geografia y Patrimonio" },
+          { id: "LGDT105", nombre: "Inglés I" },
+          { id: "LGDT106", nombre: "Introducción al Turismo" },
+          { id: "LGDT107", nombre: "Matemáticas Aplicadas en el Turismo" },
+        ]
+      },
+      {
+        id: 2,
+        nombre: "Segundo",
+        materias: [
+          { id: "LGDT201", nombre: "Administracion" },
+          { id: "LGDT202", nombre: "Habilidades Socioemocionales y Manejo de Conflictos"  },
+          { id: "LGDT203", nombre: "Inglés II" },
+          { id: "LGDT204", nombre: "Probabilidad y Estadística" },
+          { id: "LGDT205", nombre: "Servicios de Alimentos y Bebidas" },
+          { id: "LGDT206", nombre: "Servicios de Viaje y Transportación" },
+          { id: "LGDT207", nombre: "Sustentabilidad en el Turismo" },
+        ]
+      },
+      {
+        id: 3,
+        nombre: "Tercero",
+        materias: [
+          { id: "LGDT301", nombre: "Capital Humano" },
+          { id: "LGDT302", nombre: "Turismhilidad Aplicada al Turismo" },
+          { id: "LGDT303", nombre: "Desarrollo del Pensamiento y Toma de Decisiones" },
+          { id: "LGDT304", nombre: "Gestión de Calidad" },
+          { id: "LGDT305", nombre: "Hospitalidad y Alojamiento" },
+          { id: "LGDT306", nombre: "Ingles III" },
+          { id: "LGDT307", nombre: "Proyecto Integrador" },
+        ]
+      },
+      {
+        id: 4,
+        nombre: "Cuarto",
+        materias: [
+          { id: "LGDT401", nombre: "Diagnóstico Turístico" },
+          { id: "LGDT402", nombre: "Etica Protesional" },
+          { id: "LGDT403", nombre: "Inglés IV" },
+          { id: "LGDT404", nombre: "Mercadotecnia y Comercialización" },
+          { id: "LGDT405", nombre: "Operación de Servicios de Alimentos y Bebidas" },
+          { id: "LGDT406", nombre: "Operación de Servicios de Hospedaje" },
+          { id: "LGDT407", nombre: "Turismo Cultural y de Naturaleza" },
+        ]
+      },
+      {
+        id: 5,
+        nombre: "Quinto",
+        materias: [
+          { id: "LGDT501", nombre: "Animación Turística y Sociocultural" },
+          { id: "LGDT502", nombre: "Capacitación de Capital Humano" },
+          { id: "LGDT503", nombre: "Diseño de Experiencias Turísticas" },
+          { id: "LGDT504", nombre: "Inglés V" },
+          { id: "LGDT505", nombre: "Liderazgo de Equipos de Alto Desempeño" },
+          { id: "LGDT506", nombre: "Plan de Negocios" },
+          { id: "LGDT507", nombre: "Proyecto Integrador II" },
+        ]
+      },
+      {
+        id: 6,
+        nombre: "Sexto",
+        materias: [
+          { id: "LGDT601", nombre: "Estadia en el Sector Productivo" },
+        ]
+      },
+      {
+        id: 7,
+        nombre: "Séptimo",
+        materias: [
+          { id: "LGDT701", nombre: "Análisis e Interpretación de Información para el Sector Turístico" },
+          { id: "LGDT702", nombre: "Desarrollo Regional" },
+          { id: "LGDT703", nombre: "Economía para el Turismo" },
+          { id: "LGDT704", nombre: "Gestión y Planificación Turística" },
+          { id: "LGDT705", nombre: "Habilidades Gerenciales" },
+          { id: "LGDT706", nombre: "Inglés VI" },
+          { id: "LGDT707", nombre: "Instrumentos para el Desarrollo Sustentable" },
+        ]
+      },
+      {
+        id: 8,
+        nombre: "Octavo",
+        materias: [
+          { id: "LGDT801", nombre: "Calidad y Responsabilidad Social" },
+          { id: "LGDT802", nombre: "Consultoria Turistica I" },
+          { id: "LGDT803", nombre: "Desarrollo de Proyectos Emprendedores para el Turismo I" },
+          { id: "LGDT804", nombre: "Finanzas para el Turismo" },
+          { id: "LGDT805", nombre: "Ingles VII" },
+          { id: "LGDT806", nombre: "Mercadotecnia Digital" },
+          { id: "LGDT807", nombre: "Tendencias del Turismo" },
+        ]
+      },
+      {
+        id: 9,
+        nombre: "Noveno",
+        materias: [
+          { id: "LGDT901", nombre: "Consultoría Turística II" },
+          { id: "LGDT902", nombre: "Desarrollo de Proyectos Emprendedores para el Turismo II" },
+          { id: "LGDT903", nombre: "Destinos Turísticos Inteligentes" },
+          { id: "LGDT904", nombre: "Dirección y Logística de Eventos" },
+          { id: "LGDT905", nombre: "Inglés VIII" },
+          { id: "LGDT906", nombre: "Proyecto Integrador III" },
+          { id: "LGDT907", nombre: "Seminario de Investigación Aplicada al Turismo" },
+        ]
+      },
+      {
+        id: 10,
+        nombre: "Décimo",
+        materias: [
+          { id: "LGDT1001", nombre: "Estadia en el Sector Productivo" },
+        ]
+      }
+    ],
+    LAD: [
+      {
+        id: 1,
+        nombre: "Primero",
+        materias: [
+          { id: "LAD101", nombre: "Comunicación y Habilidades Digitales" },
+          { id: "LAD102", nombre: "Contabilidad I"  },
+          { id: "LAD103", nombre: "Desarrollo Humano y Valores",  },
+          { id: "LAD104", nombre: "Fundamentos de Administración" },
+          { id: "LAD105", nombre: "Fundamentos Matemáticos" },
+          { id: "LAD106", nombre: "Inglés l" },
+          { id: "LAD107", nombre: "Marco Legal de las Organizaciones" },
+        ]
+      },
+      {
+        id: 2,
+        nombre: "Segundo",
+        materias: [
+          { id: "LAD201", nombre: "Contabilidad II" },
+          { id: "LAD202", nombre: "Derecho Corporativo"  },
+          { id: "LAD203", nombre: "Habilidades Socioemocionales y Manejo de Conflictos" },
+          { id: "LAD204", nombre: "Ingles II" },
+          { id: "LAD205", nombre: "Microeconomía" },
+          { id: "LAD206", nombre: "Planeación Estratégica" },
+          { id: "LAD207", nombre: "Probabilidad y Estadística" },
+        ]
+      },
+      {
+        id: 3,
+        nombre: "Tercero",
+        materias: [
+          { id: "LAD301", nombre: "Análisis Financiero" },
+          { id: "LAD302", nombre: "Desarrollo del Pensamiento y Toma de Decisiones." },
+          { id: "LAD303", nombre: "Fundamentos de Calidad" },
+          { id: "LAD304", nombre: "Fundamentos de Mercadotecnia" },
+          { id: "LAD305", nombre: "Inglés III" },
+          { id: "LAD306", nombre: "Macroeconomia" },
+          { id: "LAD307", nombre: "Proyecto Integrador I" },
+        ]
+      },
+      {
+        id: 4,
+        nombre: "Cuarto",
+        materias: [
+          { id: "LAD401", nombre: "Administración de Proyectos I" },
+          { id: "LAD402", nombre: "Estudio de Mercado" },
+          { id: "LAD403", nombre: "Estudio Técnico y Organizacional" },
+          { id: "LAD404", nombre: "Etica Profesional" },
+          { id: "LAD405", nombre: "Fundamentos de Sistemas de Producción" },
+          { id: "LAD406", nombre: "Inglés IV" },
+          { id: "LAD407", nombre: "Innovación y Emprendimiento" },
+        ]
+      },
+      {
+        id: 5,
+        nombre: "Quinto",
+        materias: [
+          { id: "LAD501", nombre: "Administración de Proyectos II" },
+          { id: "LAD502", nombre: "Diagnóstico Local y Regional" },
+          { id: "LAD503", nombre: "Estudio Financiero" },
+          { id: "LAD504", nombre: "Inglés V" },
+          { id: "LAD505", nombre: "Evaluación Financiera de Proyectos" },
+          { id: "LAD506", nombre: "Liderazgo de Equipos de Alto Desempeño" },
+          { id: "LAD507", nombre: "Proyecto Integrador II" },
+        ]
+      },
+      {
+        id: 6,
+        nombre: "Sexto",
+        materias: [
+          { id: "LAD601", nombre: "Estadia en el Sector Productivo" },
+        ]
+      },
+      {
+        id: 7,
+        nombre: "Séptimo",
+        materias: [
+          { id: "LAD701", nombre: "Administración de la Producción" },
+          { id: "LAD702", nombre: "Gestión del Talento Humano" },
+          { id: "LAD703", nombre: "Habilidades Gerenciales" },
+          { id: "LAD704", nombre: "Inglés VI" },
+          { id: "LAD705", nombre: "Mercadotecnia Estratégica" },
+          { id: "LAD706", nombre: "Proyectos de Innovación Sostenibles" },
+          { id: "LAD707", nombre: "Tecnologías Aplicadas a los Negocios" },
+        ]
+      },
+      {
+        id: 8,
+        nombre: "Octavo",
+        materias: [
+          { id: "LAD801", nombre: "Administración y Gestión de la Calidad" },
+          { id: "LAD802", nombre: "Dirección Estratégica" },
+          { id: "LAD803", nombre: "Evaluación en el Desempeño del Capital Humano" },
+          { id: "LAD804", nombre: "Inglés VII" },
+          { id: "LAD805", nombre: "Investigación de Operaciones" },
+          { id: "LAD806", nombre: "Modelos de Negocios" },
+          { id: "LAD807", nombre: "Sistemas de la Información Aplicados en la Organización" },
+        ]
+      },
+      {
+        id: 9,
+        nombre: "Noveno",
+        materias: [
+          { id: "LAD901", nombre: "Comercio y Logística Internacional" },
+          { id: "LAD902", nombre: "Consultoría Empresarial" },
+          { id: "LAD903", nombre: "Desarrollo en Proyectos de Emprendimiento Social" },
+          { id: "LAD904", nombre: "Finanzas Corporativas" },
+          { id: "LAD905", nombre: "Gestión de la Propiedad Intelectual" },
+          { id: "LAD906", nombre: "Inglés VIII" },
+          { id: "LAD907", nombre: "Integrador III" },
+        ]
+      },
+      {
+        id: 10,
+        nombre: "Décimo",
+        materias: [
+          { id: "LAD1001", nombre: "Estadia en el Sector Productivo" },
+        ]
+      }
+    ],
+    ITIID: [
+      {
+        id: 1,
+        nombre: "Primero",
+        materias: [
+          { id: "ITIID101", nombre: "Comunicación y Habilidades Digitales" },
+          { id: "ITIID102", nombre: "Inglés l"  },
+          { id: "ITIID103", nombre: "Desarrollo Humano y Valores",  },
+          { id: "ITIID104", nombre: "Fundamentos de Redes" },
+          { id: "ITIID105", nombre: "Fundamentos de Programación" },
+          { id: "ITIID106", nombre: "Fundamentos Matemáticos" },
+          { id: "ITIID107", nombre: "Física" },
+        ]
+      },
+      {
+        id: 2,
+        nombre: "Segundo",
+        materias: [
+          { id: "ITIID201", nombre: "Cálculo Diferencial" },
+          { id: "ITIID202", nombre: "Probabilidad y Estadística"  },
+          { id: "ITIID203", nombre: "Programación Estructurada" },
+          { id: "ITIID204", nombre: "Conmutación y Enrutamiento de Redes" },
+          { id: "ITIID205", nombre: "Sistemas Operativos" },
+          { id: "ITIID206", nombre: "Habilidades Socioemocionales y Manejo de Conflictos" },
+          { id: "ITIID207", nombre: "Inglés II" },
+        ]
+      },
+      {
+        id: 3,
+        nombre: "Tercero",
+        materias: [
+          { id: "ITIID301", nombre: "Cálculo Integral" },
+          { id: "ITIID302", nombre: "Inglés II!" },
+          { id: "ITIID303", nombre: "Desarrollo del Pensamiento y Toma de Decisiones" },
+          { id: "ITIID304", nombre: "Proyecto Integrador l" },
+          { id: "ITIID305", nombre: "Bases de Datos" },
+          { id: "ITIID306", nombre: "Programación Orientada a Objetos" },
+          { id: "ITIID307", nombre: "Tópicos de Calidad para el Diseño de Software" },
+        ]
+      },
+      {
+        id: 4,
+        nombre: "Cuarto",
+        materias: [
+          { id: "ITIID401", nombre: "Análisis y Diseño de Software" },
+          { id: "ITIID402", nombre: "Aplicaciones Web" },
+          { id: "ITIID403", nombre: "Calculo de Varias Variables" },
+          { id: "ITIID404", nombre: "Desarrollo de Aplicaciones Móviles" },
+          { id: "ITIID405", nombre: "Estructura de Datos" },
+          { id: "ITIID406", nombre: "Ética Profesional" },
+          { id: "ITIID407", nombre: "Inglés IV" },
+        ]
+      },
+      {
+        id: 5,
+        nombre: "Quinto",
+        materias: [
+          { id: "ITIID501", nombre: "Inglés V" },
+          { id: "ITIID502", nombre: "Liderazgo de Equipos de Alto Desempeño" },
+          { id: "ITIID503", nombre: "Proyecto Integrador II" },
+          { id: "ITIID504", nombre: "Aplicaciones Web Orientadas a Servicios" },
+          { id: "ITIID505", nombre: "Bases se Datos Avanzadas" },
+          { id: "ITIID506", nombre: "Ecuaciones Diferenciales" },
+          { id: "ITIID507", nombre: "Estándares Y Métricas Para El Desarrollo De Software" },
+        ]
+      },
+      {
+        id: 6,
+        nombre: "Sexto",
+        materias: [
+          { id: "ITIID601", nombre: "Estadia en el Sector Productivo" },
+        ]
+      },
+      {
+        id: 7,
+        nombre: "Séptimo",
+        materias: [
+          { id: "ITIID701", nombre: "Habilidades Gerenciales" },
+          { id: "ITIID702", nombre: "Ingles VI" },
+          { id: "ITIID703", nombre: "Etica y Legislación en Tecnologias de la Información" },
+          { id: "ITIID704", nombre: "Formulación de Proyectos de Tecnologia" },
+          { id: "ITIID705", nombre: "Fundamentos de Inteligencia Artificial" },
+          { id: "ITIID706", nombre: "Bases de Datos en la Nube" },
+          { id: "ITIID707", nombre: "Seguridad Informatica" },
+        ]
+      },
+      {
+        id: 8,
+        nombre: "Octavo",
+        materias: [
+          { id: "ITIID801", nombre: "Ingles VII" },
+          { id: "ITIID802", nombre: "Programación para Inteligencia Artificial" },
+          { id: "ITIID803", nombre: "Electronica Digital" },
+          { id: "ITIID804", nombre: "Gestion de Proyectos de Tecnología" },
+          { id: "ITIID805", nombre: "Informatica Forense" },
+          { id: "ITIID806", nombre: "Programación Móvil Avanzada" },
+          { id: "ITIID807", nombre: "Programacion para Inteligencia Artificial" },
+          { id: "ITIID808", nombre: "Administración de Servidores" },
+        ]
+      },
+      {
+        id: 9,
+        nombre: "Noveno",
+        materias: [
+          { id: "ITIID901", nombre: "Ingles VIII" },
+          { id: "ITIID902", nombre: "Frameworks para el Desarrollo Multiplataforma" },
+          { id: "ITIID903", nombre: "Proyecto Integrador III" },
+          { id: "ITIID904", nombre: "Ciencia de Datos" },
+          { id: "ITIID905", nombre: "Evaluación de Proyectos de Tecnología" },
+          { id: "ITIID906", nombre: "Internet de las Cosas" },
+          { id: "ITIID907", nombre: "Tecnologias Disruptivas" },
+        ]
+      },
+      {
+        id: 10,
+        nombre: "Décimo",
+        materias: [
+          { id: "ITIID1001", nombre: "Estadia en el Sector Productivo" },
+        ]
+      }
+    ],
+    IC: [
+      {
+        id: 1,
+        nombre: "Primero",
+        materias: [
+          { id: "IC101", nombre: "Comunicación y Habilidades Digitales" },
+          { id: "IC102", nombre: "Construcción I"  },
+          { id: "IC103", nombre: "Desarrollo Humano y Valores",  },
+          { id: "IC104", nombre: "Dibujo Arquitectonico y Estructural" },
+          { id: "IC105", nombre: "Fundamentos Matemáticos" },
+          { id: "IC106", nombre: "Ingles I" },
+          { id: "IC107", nombre: "Ofimatica" },
+        ]
+      },
+      {
+        id: 2,
+        nombre: "Segundo",
+        materias: [
+          { id: "IC201", nombre: "Cálculo Diferencial" },
+          { id: "IC202", nombre: "Construcción II"  },
+          { id: "IC203", nombre: "Física" },
+          { id: "IC204", nombre: "Habilidades Socioemocionales y Manejo de Conflictos" },
+          { id: "IC205", nombre: "Inglés II" },
+          { id: "IC206", nombre: "Probabilidad y Estadística" },
+          { id: "IC207", nombre: "Topografía I" },
+        ]
+      },
+      {
+        id: 3,
+        nombre: "Tercero",
+        materias: [
+          { id: "IC301", nombre: "Análisis de Costos I" },
+          { id: "IC302", nombre: "Cálculo Integral" },
+          { id: "IC303", nombre: "Construcción III" },
+          { id: "IC304", nombre: "Desarrollo del Pensamiento y Toma de Decisiones" },
+          { id: "IC305", nombre: "Inglés III" },
+          { id: "IC306", nombre: "Proyecto Integrador l" },
+          { id: "IC307", nombre: "Topografía II" },
+        ]
+      },
+      {
+        id: 4,
+        nombre: "Cuarto",
+        materias: [
+          { id: "IC401", nombre: "Análisis de Costos II" },
+          { id: "IC402", nombre: "Cálculo de Varias Variables" },
+          { id: "IC403", nombre: "Control de Calidad de Materiales" },
+          { id: "IC404", nombre: "Etica Profesional" },
+          { id: "IC405", nombre: "Inglés IV" },
+          { id: "IC406", nombre: "Mecánica de Suelos I" },
+          { id: "IC407", nombre: "Resistencia de Materiales" },
+        ]
+      },
+      {
+        id: 5,
+        nombre: "Quinto",
+        materias: [
+          { id: "IC501", nombre: "Administración y Supervisión de Obra" },
+          { id: "IC502", nombre: "Análisis Estructural" },
+          { id: "IC503", nombre: "Ecuaciones Diferenciales" },
+          { id: "IC504", nombre: "Hidráulica" },
+          { id: "IC505", nombre: "Inglés V" },
+          { id: "IC506", nombre: "Liderazgo de Equipos de Alto Desempeño" },
+          { id: "IC507", nombre: "Proyecto Integrador II" },
+        ]
+      },
+      {
+        id: 6,
+        nombre: "Sexto",
+        materias: [
+          { id: "IC601", nombre: "Estadia en el Sector Productivo" },
+        ]
+      },
+      {
+        id: 7,
+        nombre: "Séptimo",
+        materias: [
+          { id: "IC701", nombre: "Diseño de Elementos de Concreto y Mampostería" },
+          { id: "IC702", nombre: "Habilidades Gerenciales" },
+          { id: "IC703", nombre: "Hidráulica de Canales" },
+          { id: "IC704", nombre: "Ingeniería de Costos" },
+          { id: "IC705", nombre: "Inglés VI" },
+          { id: "IC706", nombre: "Mecánica de Suelos II" },
+          { id: "IC707", nombre: "MovilidadInfraestructura del Transporte" },
+        ]
+      },
+      {
+        id: 8,
+        nombre: "Octavo",
+        materias: [
+          { id: "IC801", nombre: "Agua Potable y Alcantarillado" },
+          { id: "IC802", nombre: "Cimentaciones" },
+          { id: "IC803", nombre: "Diseño de Elementos de Acero" },
+          { id: "IC804", nombre: "Diseño de Instalaciones en Edificaciones" },
+          { id: "IC805", nombre: "Diseño de Pavimentos" },
+          { id: "IC806", nombre: "Inglés VII" },
+          { id: "IC807", nombre: "Planeación y Programación de Obra" },
+        ]
+      },
+      {
+        id: 9,
+        nombre: "Noveno",
+        materias: [
+          { id: "IC901", nombre: "Inglés VIII" },
+          { id: "IC902", nombre: "Licitaciones de Obra Pública" },
+          { id: "IC903", nombre: "Obras Hidráulicas" },
+          { id: "IC904", nombre: "Proyecto Estructural Asistido" },
+          { id: "IC905", nombre: "Proyecto Geométrico de Caminos" },
+          { id: "IC906", nombre: "Proyecto Integrador III" },
+          { id: "IC907", nombre: "Temas Selectos de Ingeniería" },
+        ]
+      },
+      {
+        id: 10,
+        nombre: "Décimo",
+        materias: [
+          { id: "IC1001", nombre: "Estadia en el Sector Productivo" },
+        ]
+      }
+    ],
+    LINM: [
+      {
+        id: 1,
+        nombre: "Primero",
+        materias: [
+          { id: "LINM101", nombre: "Comunicación y Habilidades Digitales" },
+          { id: "LINM102", nombre: "Desarrollo Humano y Valores"  },
+          { id: "LINM103", nombre: "Fundamentos de Administración y Entorno Empresarial",  },
+          { id: "LINM104", nombre: "Informática" },
+          { id: "LINM105", nombre: "Inglés I" },
+          { id: "LINM106", nombre: "Matemáticas" },
+          { id: "LINM107", nombre: "Mercadotecnia" },
+        ]
+      },
+      {
+        id: 2,
+        nombre: "Segundo",
+        materias: [
+          { id: "LINM201", nombre: "Comportamiento del Consumidor" },
+          { id: "LINM202", nombre: "Contabilidad para Negocios"  },
+          { id: "LINM203", nombre: "Economia" },
+          { id: "LINM204", nombre: "Estadistica I" },
+          { id: "LINM205", nombre: "Habilidades Socioemocionales y Manejo de Conflictos" },
+          { id: "LINM206", nombre: "Ingles II" },
+          { id: "LINM207", nombre: "Planeación Estrategica" },
+        ]
+      },
+      {
+        id: 3,
+        nombre: "Tercero",
+        materias: [
+          { id: "LINM301", nombre: "Estadística II" },
+          { id: "LINM302", nombre: "Preciegias de Productoo y Precio" },
+          { id: "LINM303", nombre: "Ingles III" },
+          { id: "LINM304", nombre: "Legislación Comercial" },
+          { id: "LINM305", nombre: "Proyecto Integrador 1" },
+          { id: "LINM306", nombre: "Sistema de Investigación de Mercados I" },
+          { id: "LINM307", nombre: "Desarrollo del Pensamiento y Toma de Decisiones" },
+        ]
+      },
+      {
+        id: 4,
+        nombre: "Cuarto",
+        materias: [
+          { id: "LINM401", nombre: "Ética Profesional" },
+          { id: "LINM402", nombre: "Inglés IV" },
+          { id: "LINM403", nombre: "Administración del Tiempo" },
+          { id: "LINM404", nombre: "Diseño Digital y Multimedia" },
+          { id: "LINM405", nombre: "Gestión de Ventas" },
+          { id: "LINM406", nombre: "Mezcla Promocional" },
+          { id: "LINM407", nombre: "Sistema de Investigación de Mercados II" },
+        ]
+      },
+      {
+        id: 5,
+        nombre: "Quinto",
+        materias: [
+          { id: "LINM501", nombre: "Liderazgo de Equipos de Alto Desempeño" },
+          { id: "LINM502", nombre: "Inglés V" },
+          { id: "LINM503", nombre: "Logística y Distribución" },
+          { id: "LINM504", nombre: "Mercadotecnia Digital I" },
+          { id: "LINM505", nombre: "Mercadotecnia Estratégica" },
+          { id: "LINM506", nombre: "Mercadotecnia de Servicios" },
+          { id: "LINM507", nombre: "Proyecto Integrador II" },
+        ]
+      },
+      {
+        id: 6,
+        nombre: "Sexto",
+        materias: [
+          { id: "LINM601", nombre: "Estadia en el Sector Productivo" },
+        ]
+      },
+      {
+        id: 7,
+        nombre: "Séptimo",
+        materias: [
+          { id: "LINM701", nombre: "Desarrollo de Nuevos Productos" },
+          { id: "LINM702", nombre: "Estadística Aplicada a los Negocios" },
+          { id: "LINM703", nombre: "Habilidades Gerenciales" },
+          { id: "LINM704", nombre: "Mercadotecnia Internacional" },
+          { id: "LINM705", nombre: "Planeación y Organización del Trabajo" },
+          { id: "LINM706", nombre: "•Tendencias del Mercado y Consumidor Global" },
+          { id: "LINM707", nombre: "Inglés VI" },
+        ]
+      },
+      {
+        id: 8,
+        nombre: "Octavo",
+        materias: [
+          { id: "LINM801", nombre: "Administración de la Producción" },
+          { id: "LINM802", nombre: "Gestión de la Calidad" },
+          { id: "LINM803", nombre: "Gestión del Talento Humano" },
+          { id: "LINM804", nombre: "Inglés VII" },
+          { id: "LINM805", nombre: "Inteligencia de Mercados" },
+          { id: "LINM806", nombre: "Inteligencia Financiera" },
+          { id: "LINM807", nombre: "Mercadotecnia Digital II" },
+        ]
+      },
+      {
+        id: 9,
+        nombre: "Noveno",
+        materias: [
+          { id: "LINM901", nombre: "Cadena de Suministro" },
+          { id: "LINM902", nombre: "Comunicación Integral de la Mercadotecnia" },
+          { id: "LINM903", nombre: "Cultura Emprendedora" },
+          { id: "LINM904", nombre: "Derecho Corporativo" },
+          { id: "LINM905", nombre: "Inglés VIII" },
+          { id: "LINM906", nombre: "Plan de Negocios" },
+          { id: "LINM907", nombre: "Proyecto Integrador III" },
+        ]
+      },
+      {
+        id: 10,
+        nombre: "Décimo",
+        materias: [
+          { id: "LINM1001", nombre: "Estadia en el Sector Productivo" },
+        ]
+      }
+    ],
+    LSP: [
+      {
+        id: 1,
+        nombre: "Primero",
+        materias: [
+          { id: "LSP101", nombre: "Capacidad Física y Orden Cerrado I" },
+          { id: "LSP102", nombre: "Comunicación y Habilidades Digitales"  },
+          { id: "LSP103", nombre: "Desarrollo Humano y Valores",  },
+          { id: "LSP104", nombre: "Informática Aplicada" },
+          { id: "LSP105", nombre: "Inglés I" },
+          { id: "LSP106", nombre: "Marco Juridico de la Función Policial" },
+          { id: "LSP107", nombre: "Matemáticas Aplicadas" },
+        ]
+      },
+      {
+        id: 2,
+        nombre: "Segundo",
+        materias: [
+          { id: "LSP201", nombre: "Capacidad Física y Orden Cerrado II" },
+          { id: "LSP202", nombre: "Derechos Humanos"  },
+          { id: "LSP203", nombre: "Estructura Geografica y Socioemocional" },
+          { id: "LSP204", nombre: "Habilidades Socioemocionales y Manejo de Conflictos" },
+          { id: "LSP205", nombre: "Inglés II" },
+          { id: "LSP206", nombre: "Proximidad Social" },
+          { id: "LSP207", nombre: "Tránsito y Vialidad" },
+        ]
+      },
+      {
+        id: 3,
+        nombre: "Tercero",
+        materias: [
+          { id: "LSP301", nombre: "Acondicionamiento Físico I" },
+          { id: "LSP302", nombre: "Desarrollo del Pensamiento y Toma de Decisiones" },
+          { id: "LSP303", nombre: "Fundamentos de Criminalistica" },
+          { id: "LSP304", nombre: "Inglés III" },
+          { id: "LSP305", nombre: "Prevención del Delito" },
+          { id: "LSP306", nombre: "Proyecto Integrador I" },
+          { id: "LSP307", nombre: "Uso Diferenciado y Proporcional de la Fuerza" },
+        ]
+      },
+      {
+        id: 4,
+        nombre: "Cuarto",
+        materias: [
+          { id: "LSP401", nombre: "Armamento y Tiro Policial" },
+          { id: "LSP402", nombre: "Ética Profesional" },
+          { id: "LSP403", nombre: "Inglés IV" },
+          { id: "LSP404", nombre: "Probabilidad y Estadística" },
+          { id: "LSP405", nombre: "Protección Civil" },
+          { id: "LSP406", nombre: "Psicología Aplicada a la Función Policial" },
+          { id: "LSP407", nombre: "Técnicas y Tácticas Policiales I" },
+        ]
+      },
+      {
+        id: 5,
+        nombre: "Quinto",
+        materias: [
+          { id: "LSP501", nombre: "Actuación Inicial en el Lugar de Intervención" },
+          { id: "LSP502", nombre: "Inglés V" },
+          { id: "LSP503", nombre: "Liderazgo de Equipos de Alto Desempeño" },
+          { id: "LSP504", nombre: "Métodos y Técnicas de Investigación" },
+          { id: "LSP505", nombre: "Proyecto Integrador II" },
+          { id: "LSP506", nombre: "Seguridad Penitenciaria" },
+          { id: "LSP507", nombre: "Técnicas y Tácticas Policiales II" },
+        ]
+      },
+      {
+        id: 6,
+        nombre: "Sexto",
+        materias: [
+          { id: "LSP601", nombre: "Estadia en el Sector Productivo" },
+        ]
+      },
+      {
+        id: 7,
+        nombre: "Séptimo",
+        materias: [
+          { id: "LSP701", nombre: "Acondicionamiento Físico II" },
+          { id: "LSP702", nombre: "Administración para la Seguridad Pública" },
+          { id: "LSP703", nombre: "Elementos Materiales Probatorios" },
+          { id: "LSP704", nombre: "Habilidades Gerenciales" },
+          { id: "LSP705", nombre: "Inglés VI" },
+          { id: "LSP706", nombre: "Marco Normativo Aplicable a los Proyectos de Seguridad" },
+          { id: "LSP707", nombre: "Protocolos Aplicables en Materia de Seguridad." },
+        ]
+      },
+      {
+        id: 8,
+        nombre: "Octavo",
+        materias: [
+          { id: "LSP801", nombre: "Acondicionamiento Físico III" },
+          { id: "LSP802", nombre: "Gobierno y Política Criminal" },
+          { id: "LSP803", nombre: "Inglés VII" },
+          { id: "LSP804", nombre: "Inteligencia Operativa Policial" },
+          { id: "LSP805", nombre: "Procesamiento del Lugar de Intervención" },
+          { id: "LSP806", nombre: "Servicios Periciales y Forenses" },
+          { id: "LSP807", nombre: "Técnicas de Entrevista" },
+        ]
+      },
+      {
+        id: 9,
+        nombre: "Noveno",
+        materias: [
+          { id: "LSP901", nombre: "Acondicionamiento Físico IV" },
+          { id: "LSP902", nombre: "Análisis del Fenómeno Delictivo" },
+          { id: "LSP903", nombre: "Inglés VIII" },
+          { id: "LSP904", nombre: "Integración de Carpetas de Investigación" },
+          { id: "LSP905", nombre: "Pensamiento Innovador Aplicado a la Seguridad" },
+          { id: "LSP906", nombre: "Proyecto Integrador III" },
+          { id: "LSP907", nombre: "Sistema Penal Acusario" },
+        ]
+      },
+      {
+        id: 10,
+        nombre: "Décimo",
+        materias: [
+          { id: "LSP1001", nombre: "Estadia en el Sector Productivo" },
+        ]
+      }
+    ],
+    ILI: [
+      {
+        id: 1,
+        nombre: "Primero",
+        materias: [
+          { id: "ILI101", nombre: "Comunicación Y Habilidades Digitales" },
+          { id: "ILI102", nombre: "Economía Internacional"  },
+          { id: "ILI103", nombre: "Estructura Organizacional",  },
+          { id: "ILI104", nombre: "Fundamentos Matemáticos" },
+          { id: "ILI105", nombre: "Inglés l" },
+          { id: "ILI106", nombre: "Normatividad Aplicada al Comercio Exterior l" },
+          { id: "ILI107", nombre: "Desarrollo Humano y Valores" },
+        ]
+      },
+      {
+        id: 2,
+        nombre: "Segundo",
+        materias: [
+          { id: "ILI201", nombre: "Cálculo Diferencial" },
+          { id: "ILI202", nombre: "Clasificación Arancelaria I"  },
+          { id: "ILI203", nombre: "Fundamentos de Logística" },
+          { id: "ILI204", nombre: "Habilidades Socioemocionales y Manejo De Conflictos" },
+          { id: "ILI205", nombre: "Inglés II" },
+          { id: "ILI206", nombre: "Mercadotecnia Internacional" },
+          { id: "ILI207", nombre: "Normatividad Aplicada al Comercio Exterior II" },
+        ]
+      },
+      {
+        id: 3,
+        nombre: "Tercero",
+        materias: [
+          { id: "ILI301", nombre: "Administración de Ventas" },
+          { id: "ILI302", nombre: "Cálculo Integral" },
+          { id: "ILI303", nombre: "Clasificación Arancelaria II" },
+          { id: "ILI304", nombre: "Desarrollo del Pensamiento y Toma de Decisiones" },
+          { id: "ILI305", nombre: "Fisica" },
+          { id: "ILI306", nombre: "Inglés III" },
+          { id: "ILI307", nombre: "Proyecto Integrador l" },
+        ]
+      },
+      {
+        id: 4,
+        nombre: "Cuarto",
+        materias: [
+          { id: "ILI401", nombre: "Cálculo de Varias Variables" },
+          { id: "ILI402", nombre: "Clasificación Arancelaria III" },
+          { id: "ILI403", nombre: "Ética Profesional" },
+          { id: "ILI404", nombre: "Inglés IV" },
+          { id: "ILI405", nombre: "Presupuestos Logísticos" },
+          { id: "ILI406", nombre: "Probabilidad y Estadística" },
+          { id: "ILI407", nombre: "Trámites Legales Aplicados" },
+        ]
+      },
+      {
+        id: 5,
+        nombre: "Quinto",
+        materias: [
+          { id: "ILI501", nombre: "Contribuciones al Comercio Exterior" },
+          { id: "ILI502", nombre: "Ecuaciones Diferenciales" },
+          { id: "ILI503", nombre: "Inglés V" },
+          { id: "ILI504", nombre: "Liderazgo de Equipos de Alto Desempeño" },
+          { id: "ILI505", nombre: "Pedimentos y su Legislación" },
+          { id: "ILI506", nombre: "Proyecto Integrador II" },
+          { id: "ILI507", nombre: "Seguimiento Logístico" },
+        ]
+      },
+      {
+        id: 6,
+        nombre: "Sexto",
+        materias: [
+          { id: "ILI601", nombre: "Estadia en el Sector Productivo" },
+        ]
+      },
+      {
+        id: 7,
+        nombre: "Séptimo",
+        materias: [
+          { id: "ILI701", nombre: "Contabilidad Básica" },
+          { id: "ILI702", nombre: "Envase, Empaque y Embalaje" },
+          { id: "ILI703", nombre: "Gestión de Cadena de Suministro" },
+          { id: "ILI704", nombre: "Habilidades Gerenciales" },
+          { id: "ILI705", nombre: "Inglés VII" },
+          { id: "ILI706", nombre: "Seguridad en la Cadena de Suministro" },
+          { id: "ILI707", nombre: "Gestión de Operación Aduanera" },
+        ]
+      },
+      {
+        id: 8,
+        nombre: "Octavo",
+        materias: [
+          { id: "ILI801", nombre: "Administración de Operaciones de Tráfico I" },
+          { id: "ILI802", nombre: "Administración de Sistemas Logísticos" },
+          { id: "ILI803", nombre: "Cumplimiento Normativo" },
+          { id: "ILI804", nombre: "Finanzas Internacionales" },
+          { id: "ILI805", nombre: "Inglés VII" },
+          { id: "ILI806", nombre: "Investigación de Operaciones" },
+          { id: "ILI807", nombre: "Metodología de la Investigación" },
+        ]
+      },
+      {
+        id: 9,
+        nombre: "Noveno",
+        materias: [
+          { id: "ILI901", nombre: "Administración de Operaciones de Tráfico II" },
+          { id: "ILI902", nombre: "Administración de Proyectos con Enfoque Sostenible" },
+          { id: "ILI903", nombre: "Gestión de la Calidad en la Logística" },
+          { id: "ILI904", nombre: "Logística de Transporte" },
+          { id: "ILI905", nombre: "Proyecto Integrador III" },
+          { id: "ILI906", nombre: "Infracciones y Sanciones y Medios de Defensa" },
+          { id: "ILI907", nombre: "Inglés VIII" },
+        ]
+      },
+      {
+        id: 10,
+        nombre: "Décimo",
+        materias: [
+          { id: "ILI1001", nombre: "Estadia en el Sector Productivo" },
+        ]
+      }
+    ],
+    LGT: [
+      {
+        id: 1,
+        nombre: "Primero",
+        materias: [
+          { id: "LGT101", nombre: "Bases Culinarias I" },
+          { id: "LGT102", nombre: "Comunicación y Habilidades Digitales"  },
+          { id: "LGT103", nombre: "Desarrollo Humano y Valores",  },
+          { id: "LGT104", nombre: "Inglés I" },
+          { id: "LGT105", nombre: "Introducción a la Gastronomía" },
+          { id: "LGT106", nombre: "Matemáticas Aplicadas a la Gastronomia" },
+          { id: "LGT107", nombre: "Seguridad e Higiene en los Alimentos" },
+        ]
+      },
+      {
+        id: 2,
+        nombre: "Segundo",
+        materias: [
+          { id: "LGT201", nombre: "Bases Culinarias II" },
+          { id: "LGT202", nombre: "Estandarización de Platillos"  },
+          { id: "LGT203", nombre: "Fundamentos de Nutrición" },
+          { id: "LGT204", nombre: "Habilidades Socioemocionales y Manejo De Conflictos" },
+          { id: "LGT205", nombre: "Inglés II" },
+          { id: "LGT206", nombre: "Panadería" },
+          { id: "LGT207", nombre: "Servicio de Alimentos y Bebidas" },
+        ]
+      },
+      {
+        id: 3,
+        nombre: "Tercero",
+        materias: [
+          { id: "LGT301", nombre: "Bases Culinarias III" },
+          { id: "LGT302", nombre: "Costos y Presupuestos" },
+          { id: "LGT303", nombre: "Pensamiento y Toma de Decisiones" },
+          { id: "LGT304", nombre: "Inglés III" },
+          { id: "LGT305", nombre: "Operación de Bar" },
+          { id: "LGT306", nombre: "Pasteleria" },
+          { id: "LGT307", nombre: "Proyecto Integrador I" },
+        ]
+      },
+      {
+        id: 4,
+        nombre: "Cuarto",
+        materias: [
+          { id: "LGT401", nombre: "Administración de Alimentos y Bebidas" },
+          { id: "LGT402", nombre: "Ética Profesional" },
+          { id: "LGT403", nombre: "Francés I" },
+          { id: "LGT404", nombre: "Fundamentos de Vitivinicultura" },
+          { id: "LGT405", nombre: "Inglés IV" },
+          { id: "LGT406", nombre: "Mercadotecnia de Servicios Gastronómicos" },
+          { id: "LGT407", nombre: "Reposteria" },
+        ]
+      },
+      {
+        id: 5,
+        nombre: "Quinto",
+        materias: [
+          { id: "LGT501", nombre: "Conformación de Menús" },
+          { id: "LGT502", nombre: "Francés II" },
+          { id: "LGT503", nombre: "Inglés V" },
+          { id: "LGT504", nombre: "Liderazgo de Equipos de Alto Desempeño" },
+          { id: "LGT505", nombre: "Logística de Eventos" },
+          { id: "LGT506", nombre: "Metodologia de la Investigación Aplicada a la Gastronomía" },
+          { id: "LGT507", nombre: "Proyecto Integrador II" },
+        ]
+      },
+      {
+        id: 6,
+        nombre: "Sexto",
+        materias: [
+          { id: "LGT601", nombre: "Estadia en el Sector Productivo" },
+        ]
+      },
+      {
+        id: 7,
+        nombre: "Séptimo",
+        materias: [
+          { id: "LGT701", nombre: "Administración de Procesos Gastronomicos" },
+          { id: "LGT702", nombre: "Cocina Asiática" },
+          { id: "LGT703", nombre: "Cocina Mexicana I" },
+          { id: "LGT704", nombre: "Contabilidad" },
+          { id: "LGT705", nombre: "Habilidades Gerenciales" },
+          { id: "LGT706", nombre: "Inglés VI" },
+          { id: "LGT707", nombre: "Patrimonio Gastronómico de México" },
+        ]
+      },
+      {
+        id: 8,
+        nombre: "Octavo",
+        materias: [
+          { id: "LGT801", nombre: "Análisis e Interpretación Financiera" },
+          { id: "LGT802", nombre: "Bebidas Destiladas Mexicanas" },
+          { id: "LGT803", nombre: "Cocina Europea" },
+          { id: "LGT804", nombre: "Cocina Mexicana II" },
+          { id: "LGT805", nombre: "Ingeniería de Menú" },
+          { id: "LGT806", nombre: "Inglés VII" },
+          { id: "LGT807", nombre: "Planeación y Administración del Trabajo" },
+        ]
+      },
+      {
+        id: 9,
+        nombre: "Noveno",
+        materias: [
+          { id: "LGT901", nombre: "Cocina Contemporánea" },
+          { id: "LGT902", nombre: "Desarrollo de Negocios Gastronómicos" },
+          { id: "LGT903", nombre: "Gestión de la Calidad en Procesos Gastronómicos" },
+          { id: "LGT904", nombre: "Inglés VIII" },
+          { id: "LGT905", nombre: "Mixología" },
+          { id: "LGT906", nombre: "Proyecto Integrador III" },
+          { id: "LGT907", nombre: "Optativa Ahumados" },
+          { id: "LGT908", nombre: "Optativa Cocina Regional" },
+          { id: "LGT909", nombre: "Optativa Escultura Culinaria"},
+          { id: "LGT910", nombre: "Optativa Vitivinicultura de las Regiones de México" },
+        ]
+      },
+      {
+        id: 10,
+        nombre: "Décimo",
+        materias: [
+          { id: "LGT1001", nombre: "Estadia en el Sector Productivo" },
+        ]
+      }
+    ],
   };
 
   // Encontrar la carrera basada en el parámetro de la URL
   useEffect(() => {
-    if (nombre) {
-      const carreraEncontrada = carreras.find(
-        (c) =>
-          c.nombreCompleto.toLowerCase().includes(nombre.toLowerCase()) ||
-          c.label.toLowerCase() === nombre.toLowerCase(),
-      );
+  if (label) {
+    const carreraEncontrada = carreras.find(
+      (c) => c.label.toLowerCase() === label.toLowerCase()
+    );
 
       if (carreraEncontrada) {
         setCarreraSeleccionada(carreraEncontrada);
@@ -1037,17 +2242,18 @@ function Carrera() {
               </div>
 
               {/* Contenedor principal del plan */}
-              <div style={{ display: "flex", flexDirection: isMobile ? "column" : "row", minHeight: "500px" }}>
+              <div style={{ display: "flex", flexDirection: isMobile ? "column" : "row", minHeight: "500px" }} >
                 {/* Panel lateral con cuatrimestres */}
-                <div
-                  style={{
-                    width: isMobile ? "100%" : "250px",
-                    backgroundColor: `${carreraSeleccionada.color}08`,
-                    borderRight: isMobile ? "none" : `1px solid ${carreraSeleccionada.color}20`,
-                    overflowY: "auto",
-                    maxHeight: isMobile ? "none" : "550px",
-                  }}
-                >
+<div
+  style={{
+    width: isMobile ? "100%" : "250px",
+    backgroundColor: `${carreraSeleccionada.color}08`,
+    borderRight: isMobile ? "none" : `1px solid ${carreraSeleccionada.color}20`,
+    overflowY: "scroll", // Cambia de "auto" a "scroll"
+    maxHeight: isMobile ? "none" : "550px",
+  }}
+  className="lat"
+>
                   <div style={{ padding: isMobile ? "1rem" : "1.5rem" }}>
                     <h3 style={{ color: carreraSeleccionada.color, marginBottom: "1rem", fontSize: isMobile ? "1.1rem" : "1.2rem" }}>
                       <i className="fas fa-calendar-alt" style={{ marginRight: "0.5rem" }}></i>

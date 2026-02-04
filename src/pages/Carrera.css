@@ -110,14 +110,7 @@
   }
 }
 
-/* Carrera.css - Complemento al CSS existente */
 
-/* Ocultar scrollbar en el carrusel móvil */
-::-webkit-scrollbar {
-  display: none;
-}
-
-/* Estilos para el carrusel de cuatrimestres en móvil */
 .cuatrimestre-carrusel {
   display: flex;
   overflow-x: auto;
@@ -126,6 +119,36 @@
   padding: 0.5rem 0;
   gap: 0.5rem;
   scroll-behavior: smooth;
+}
+
+/* Scrollbar para el panel lateral - Siempre visible */
+.lat {
+  /* Para navegadores basados en WebKit (Chrome, Safari, Edge) */
+  overflow-y: scroll !important; /* Forzar scroll */
+  scrollbar-width: thin !important; /* Firefox */
+  scrollbar-color: var(--color-carrera, #aaaaaa) #f1f1f1 !important; /* Firefox */
+}
+
+.lat::-webkit-scrollbar {
+  width: 8px !important;
+  height: 8px !important;
+}
+
+.lat::-webkit-scrollbar-track {
+  background-color: #f1f1f1 !important;
+  border-radius: 10px !important;
+}
+
+.lat::-webkit-scrollbar-thumb {
+  background-color: var(--color-carrera, #aaaaaa) !important;
+  border-radius: 10px !important;
+  border: 2px solid #f1f1f1 !important;
+}
+
+/* Hacerlo más visible */
+.lat::-webkit-scrollbar-thumb {
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .cuatrimestre-carrusel::-webkit-scrollbar {

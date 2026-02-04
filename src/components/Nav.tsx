@@ -41,8 +41,8 @@ function Nav() {
         <>
             <div className='Nav'>
                 <div className="Logos">
-                    <img src={LogoUTyP} alt="Logo UTyP" className="LogoUTN"/>
-                    <img src={LogoUTN} alt="Logo UTN" className="LogoUTyP"/>
+                    <img src={LogoUTN} alt="Logo UTN" className="LogoUTN"/>
+                    <img src={LogoUTyP} alt="Logo UTyP" className="LogoUTyP"/>
                 </div>
                 
                 {/* Navegación normal (escritorio) */}

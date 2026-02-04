@@ -172,8 +172,8 @@ a:hover {
     
     .LogosCarrerasContainer a img,
     .LogosCarrerasMobileContainer a img {
-        max-width: 130px;
-        padding: 8px;
+        max-width: 150px;
+        padding: 0px;
     }
     
     hr {

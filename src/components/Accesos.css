@@ -1,6 +1,6 @@
 /* Estilos base */
 .accesos-container {
-    background-image: url(../assets/banner/572227192_1302210361943148_4806063049610667150_n.jpg);
+    background-image: url(../assets/banner/DRON.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -81,8 +81,8 @@
     }
     
     .ContainerButton1 img, .ContainerButton2 img {
-        max-width: 100px;
-        max-height: 100px;
+        max-width: 130px;
+        max-height: 130px;
     }
     
     /* Gradiente overlay para mobile */
