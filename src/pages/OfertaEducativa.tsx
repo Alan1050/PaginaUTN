@@ -113,7 +113,6 @@ function OfertaEducativa() {
     ];
 
     const scrollRef = useRef<HTMLDivElement>(null);
-    const [canScrollLeft, setCanScrollLeft] = useState(false);
     const [canScrollRight, setCanScrollRight] = useState(true);
     const [isDesktop, setIsDesktop] = useState(false);
 
@@ -173,7 +172,6 @@ function OfertaEducativa() {
     const checkScroll = () => {
         if (scrollRef.current) {
             const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-            setCanScrollLeft(scrollLeft > 0);
             setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 1);
         }
     };
