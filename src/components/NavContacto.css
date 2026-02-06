@@ -1,0 +1,402 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+/* Contenedor principal - MÁS COMPACTO */
+.nav-contacto-contenedor{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 6px 40px; /* Más compacto */
+    background-color: #10504b;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor de redes sociales - ICONOS MUY JUNTOS */
+.nav-contacto-redes{
+    display: flex;
+    align-items: center;
+    gap: 10px; /* MUY juntos - de 15px a 10px */
+    justify-content: flex-start;
+}
+
+/* Enlaces de redes sociales - COMPLETAMENTE CIRCULARES */
+.nav-contacto-red-social{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+    padding: 8px; /* Padding igual en todos lados */
+    border-radius: 50%; /* HACER TODO CIRCULAR */
+    width: 50px; /* Ancho fijo circular */
+    height: 50px; /* Alto fijo circular */
+    justify-content: center;
+    position: relative;
+}
+
+.nav-contacto-red-social:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Iconos de redes sociales - CENTRADOS EN EL CÍRCULO */
+.nav-contacto-icono{
+    width: 35px; 
+    height: 35px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 60%;
+    transition: all 0.3s ease;
+    background-color: white;
+}
+
+.nav-contacto-icono svg{
+    width: 20px; /* Un poco más grande */
+    height: 20px;
+    fill: #10504b; /* Blanco por defecto */
+    transition: fill 0.3s ease;
+}
+
+/* Cambiar color de SVG en hover */
+.nav-contacto-red-social:hover .nav-contacto-icono svg{
+    fill: #10504b; /* Verde institucional en hover */
+}
+
+/* Botón de oferta educativa - CON FLECHA */
+.nav-contacto-btn-oferta{
+    background-color: #005d27;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 6px 15px 6px 12px; /* Más espacio a la derecha para la flecha */
+    border-radius: 20px; /* Más redondeado */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    margin-left: 8px; /* Menor margen */
+    font-size: 14px;
+    min-height: 36px;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-contacto-btn-oferta span {
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease;
+    margin-right: 5px; /* Espacio para la flecha */
+}
+
+/* Flecha del botón */
+.nav-contacto-btn-flecha {
+    position: relative;
+    z-index: 2;
+    width: 16px;
+    height: 16px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.nav-contacto-btn-flecha svg {
+    width: 100%;
+    height: 100%;
+    fill: white;
+}
+
+/* Efecto hover del botón */
+.nav-contacto-btn-oferta:hover {
+    background-color: #0a4700;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-color: white;
+    padding-right: 30px; /* Más espacio para la flecha */
+}
+
+.nav-contacto-btn-oferta:hover span {
+    transform: translateX(-5px);
+}
+
+.nav-contacto-btn-oferta:hover .nav-contacto-btn-flecha {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Efecto de deslizamiento */
+.nav-contacto-btn-oferta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s ease;
+}
+
+.nav-contacto-btn-oferta:hover::before {
+    left: 100%;
+}
+
+/* Sección de teléfono - MÁS COMPACTA */
+.nav-contacto-telefono{
+    display: flex;
+    align-items: center;
+    gap: 6px; /* Muy juntos */
+    justify-content: flex-end;
+}
+
+.nav-contacto-telefono-icono{
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.nav-contacto-telefono-icono:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.nav-contacto-telefono-icono svg{
+    width: 14px;
+    height: 14px;
+    fill: white;
+}
+
+.nav-contacto-telefono-numero{
+    font-size: 14px; /* Más pequeño */
+    font-weight: 600;
+    color: white;
+    letter-spacing: 0.5px;
+}
+
+/* RESPONSIVE CON ICONOS AÚN MÁS JUNTOS */
+
+@media (max-width: 1024px) {
+    .nav-contacto-contenedor{
+        padding: 5px 30px;
+        grid-template-columns: 1.2fr 0.8fr;
+    }
+    
+    .nav-contacto-redes{
+        gap: 8px; /* Más juntos */
+    }
+    
+    .nav-contacto-red-social{
+        width: 45px; /* Más pequeño */
+        height: 45px;
+        padding: 7px;
+    }
+    
+    .nav-contacto-icono{
+        width: 22px;
+        height: 22px;
+    }
+    
+    .nav-contacto-icono svg{
+        width: 18px;
+        height: 18px;
+    }
+    
+    .nav-contacto-btn-oferta{
+        padding: 5px 12px 5px 10px;
+        font-size: 13px;
+        margin-left: 6px;
+        min-height: 34px;
+    }
+    
+    .nav-contacto-btn-oferta:hover {
+        padding-right: 25px;
+    }
+    
+    .nav-contacto-btn-flecha {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .nav-contacto-telefono{
+        gap: 5px;
+    }
+    
+    .nav-contacto-telefono-numero{
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-contacto-contenedor{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: 12px;
+        padding: 8px 20px;
+    }
+    
+    .nav-contacto-redes{
+        justify-content: center;
+        order: 2;
+        gap: 6px; /* Muy juntos */
+    }
+    
+    .nav-contacto-telefono{
+        justify-content: center;
+        order: 1;
+        gap: 4px;
+    }
+    
+    .nav-contacto-red-social{
+        width: 42px;
+        height: 42px;
+        padding: 6px;
+    }
+    
+    .nav-contacto-icono{
+        width: 20px;
+        height: 20px;
+    }
+    
+    .nav-contacto-icono svg{
+        width: 16px;
+        height: 16px;
+    }
+    
+    .nav-contacto-btn-oferta{
+        margin-left: 5px;
+        padding: 4px 10px 4px 8px;
+        font-size: 12px;
+        min-height: 32px;
+    }
+    
+    .nav-contacto-btn-oferta:hover {
+        padding-right: 22px;
+    }
+    
+    .nav-contacto-btn-flecha {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-contacto-redes{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px; /* Mínimo espacio */
+    }
+    
+    .nav-contacto-red-social{
+        width: 40px;
+        height: 40px;
+        padding: 5px;
+    }
+    
+    .nav-contacto-icono{
+        width: 18px;
+        height: 18px;
+    }
+    
+    .nav-contacto-icono svg{
+        width: 14px;
+        height: 14px;
+    }
+    
+    .nav-contacto-btn-oferta{
+        margin-left: 0;
+        padding: 3px 8px 3px 6px;
+        font-size: 11px;
+        min-height: 30px;
+        border-radius: 18px;
+    }
+    
+    .nav-contacto-btn-oferta:hover {
+        padding-right: 20px;
+    }
+    
+    .nav-contacto-btn-flecha {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .nav-contacto-telefono-numero{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-contacto-contenedor{
+        padding: 6px 15px;
+        gap: 10px;
+    }
+    
+    .nav-contacto-redes{
+        gap: 4px;
+    }
+    
+    .nav-contacto-red-social{
+        width: 38px;
+        height: 38px;
+        padding: 4px;
+    }
+    
+    .nav-contacto-btn-oferta{
+        padding: 2px 6px 2px 5px;
+        font-size: 10px;
+        min-height: 28px;
+    }
+    
+    .nav-contacto-btn-oferta:hover {
+        padding-right: 18px;
+    }
+    
+    .nav-contacto-telefono-icono{
+        width: 24px;
+        height: 24px;
+    }
+    
+    .nav-contacto-telefono-icono svg{
+        width: 12px;
+        height: 12px;
+    }
+}
+
+/* Versión ultra compacta */
+@media (max-width: 360px) {
+    .nav-contacto-contenedor{
+        padding: 4px 10px;
+    }
+    
+    .nav-contacto-redes{
+        gap: 3px;
+    }
+    
+    .nav-contacto-red-social{
+        width: 36px;
+        height: 36px;
+    }
+    
+    .nav-contacto-btn-oferta{
+        padding: 2px 5px 2px 4px;
+        font-size: 9px;
+        min-height: 26px;
+    }
+    
+    .nav-contacto-btn-oferta:hover {
+        padding-right: 16px;
+    }
+    
+    .nav-contacto-telefono-numero{
+        font-size: 11px;
+    }
+}

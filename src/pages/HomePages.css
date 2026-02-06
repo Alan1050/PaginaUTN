@@ -2,13 +2,13 @@
 .imagen-contenedor {
   position: relative;
   width: 100%;
-  height: 600px;
+  height: 90vh;
   overflow: hidden;
 }
 
 .ImagenPrincipal {
   width: 100%;
-  height: 100%;
+  height: 95vh;
   object-fit: cover;
   object-position: center;
 }
@@ -19,7 +19,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, rgba(21, 171, 84, 0.7), transparent);
+  background: linear-gradient(to right, #0A514C, transparent);
 }
 
 .texto-overlay {
@@ -103,5 +103,168 @@
   .texto-overlay {
     font-size: 2rem;
     max-width: 50%;
+  }
+}
+
+/* Redes Sociales Lateral */
+
+.redes-sociales-sidebar {
+  position: absolute;  
+  right: 0 !important;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  display: none;
+}
+
+.redes-sociales-contenedor {
+  background: #ffffff4f;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid white;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.redes-sociales-contenedor:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  transform: scale(1.02);
+  background-color: white;
+}
+
+.red-social-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  width: 100%;
+  position: relative;
+}
+
+.red-social-link:hover {
+  background-color: rgba(255, 255, 255, 0.377);
+  transform: translateY(-5px);
+}
+
+.red-social-icono {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgb(1, 102, 18);
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.red-social-icono svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+}
+
+.red-social-link:hover .red-social-icono {
+  background-color: white;
+  transform: scale(1.1);
+  border-color: white;
+}
+
+.red-social-link:hover .red-social-icono svg {
+  fill: #10504b;
+}
+
+/* Colores específicos para hover de cada red social */
+.red-social-link:nth-child(1):hover .red-social-icono {
+  background-color: #1877F2; /* Facebook blue */
+}
+
+.red-social-link:nth-child(2):hover .red-social-icono {
+  background-color: #E1306C; /* Instagram pink */
+}
+
+.red-social-link:nth-child(3):hover .red-social-icono {
+  background-color: #000000; /* TikTok black */
+}
+
+.red-social-link:hover .red-social-icono svg {
+  fill: white !important;
+}
+
+.red-social-link:hover .red-social-texto {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Mostrar solo en desktop */
+@media (min-width: 1024px) {
+  .redes-sociales-sidebar {
+    display: block;
+  }
+}
+
+/* Ajuste para pantallas grandes */
+@media (min-width: 1440px) {
+  .redes-sociales-sidebar {
+    right: 50px;
+  }
+  
+  .redes-sociales-contenedor {
+    padding: 25px 15px;
+    gap: 25px;
+  }
+  
+  .red-social-icono {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .red-social-icono svg {
+    width: 26px;
+    height: 26px;
+  }
+  
+  .red-social-texto {
+    font-size: 14px;
+  }
+}
+
+/* Ajuste para tablet horizontal */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .redes-sociales-sidebar {
+    right: 20px;
+  }
+  
+  .redes-sociales-contenedor {
+    padding: 15px 10px;
+    gap: 18px;
+  }
+  
+  .red-social-icono {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .red-social-icono svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .red-social-texto {
+    font-size: 12px;
+  }
+}
+
+/* Ocultar completamente en móvil */
+@media (max-width: 767px) {
+  .redes-sociales-sidebar {
+    display: none !important;
   }
 }

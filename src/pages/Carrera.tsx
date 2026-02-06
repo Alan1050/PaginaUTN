@@ -1,6 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
+
 import "./Carrera.css";
+
+// Logos de las Carreras:
+
 import LogoIA from "../assets/logos/IA.png";
 import LogoIAL from "../assets/logos/IAL.png";
 import LogoIC from "../assets/logos/IC.png";
@@ -15,6 +19,9 @@ import LogoLGT from "../assets/logos/LGT.png";
 import LogoLINM from "../assets/logos/LINM.png";
 import LogoLSP from "../assets/logos/LSP.png";
 import LogoLPS from "../assets/logos/LPS.png";
+
+// Planes de estudio imagenes:
+
 import PlanIAL from "../assets/planesEstudio/IAL.jpg";
 import PlanIC from "../assets/planesEstudio/IC.jpg";
 import PlanILI from "../assets/planesEstudio/ILI.jpg";
@@ -27,7 +34,8 @@ import PlanLSP from "../assets/planesEstudio/LSP.jpg";
 import PlanLGT from "../assets/planesEstudio/LGT.jpg";
 import logoFace from "../assets/logos/logo-de-facebook.png"
 
-//Planes de estudio PDF
+// Planes de estudio PDF:
+
 import PlanIAL_PDF from "../assets/planesEstudio/pdf/IAL.pdf";
 import PlanIC_PDF from "../assets/planesEstudio/pdf/IC.pdf";
 import PlanILI_PDF from "../assets/planesEstudio/pdf/ILI.pdf";
@@ -40,7 +48,8 @@ import PlanLSP_PDF from "../assets/planesEstudio/pdf/LSP.pdf";
 import PlanLGT_PDF from "../assets/planesEstudio/pdf/LGT.pdf";
 import PlanIA_PDF from "../assets/planesEstudio/pdf/IA.pdf";
 
-//Baners
+// Baners:
+
 import bannerIAL from "../assets/banner/bannerIAL.jpg";
 import bannerIC from "../assets/banner/bannerIC.jpg";
 import bannerILI from "../assets/banner/bannerILI.jpg";
@@ -2546,7 +2555,7 @@ const label = nombre; // Asigna a una variable con el nombre correcto
           }}
         >
           <a
-            href="/"
+            href="/OfertaEducativa"
             style={{
               backgroundColor: carreraSeleccionada.color,
               color: "white",

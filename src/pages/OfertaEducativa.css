@@ -1,0 +1,754 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ========== BANNER PRINCIPAL ========== */
+.ofertaEducativaContainerPrincipal {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                      url('../assets/banner/Index.jpg');
+    width: 100%;
+    height: 90vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.ofertaEducativaContainerPrincipal h1 {
+    color: white;
+    text-align: center;
+    font-size: 4rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* ========== ESTILOS PARA TÍTULOS Y TEXTO ========== */
+.Text1 {
+    color: #2ecc71;
+    font-weight: 800;
+}
+
+.Text2 {
+    background: linear-gradient(45deg, rgb(14, 124, 0), rgb(1, 5, 0));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    font-weight: 800;
+    background-size: 200% auto;
+    transition: background-position 0.5s ease;
+}
+
+.Text2:hover {
+    background-position: right center;
+}
+
+hr {
+    border: none;
+    height: 3px;
+    background: linear-gradient(to right, #2ecc71, rgb(92, 250, 0));
+    margin: 20px auto 40px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 2px;
+    animation: growWidth 2.5s ease-out forwards;
+    transform-origin: left;
+}
+
+@keyframes growWidth {
+    0% {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+
+/* ========== CONTENIDO PRINCIPAL ========== */
+.ofertaEducativaContent {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* ========== SECCIÓN DE FILTROS ========== */
+
+
+.filtrosTitulo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.filtrosTitulo h2 {
+    color: #10504b;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.filtrosTitulo p {
+    color: #6c757d;
+    font-size: 1.1rem;
+}
+
+/* ========== BURBUJAS DE FILTRO (DESKTOP) ========== */
+.filtrosBurbujas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.filtroBurbuja {
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 50px;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: inherit;
+    font-size: 1rem;
+    color: #495057;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.filtroBurbuja:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    border-color: #10504b;
+    background-color: #f8ffff;
+}
+
+.filtroBurbuja.activo {
+    background: linear-gradient(135deg, #10504b 0%, #217571 100%);
+    color: white;
+    border-color: #10504b;
+    box-shadow: 0 8px 20px rgba(16, 80, 75, 0.3);
+}
+
+.filtroBurbuja.activo .burbujaTexto,
+.filtroBurbuja.activo .burbujaCantidad {
+    color: white;
+}
+
+.burbujaTexto {
+    font-weight: 500;
+    text-align: center;
+    flex-grow: 1;
+    overflow: visible;
+    text-overflow: clip;
+    max-width: none;
+}
+
+.burbujaCantidad {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    min-width: auto;
+    width: auto;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.filtroBurbuja.activo .burbujaCantidad {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* ========== CONTENEDOR DE LOGOS ========== */
+.carrerasContainer {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.carrerasGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-bottom: 30px;
+    align-items: center;
+    justify-items: center;
+}
+
+/* Efecto de hover */
+.carreraCard a {
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carreraLogoContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.carreraLogo {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(20%);
+    transition: all 0.3s ease;
+}
+
+.carreraCard:hover .carreraLogo {
+    border-radius: 50%;
+    filter: grayscale(0%);
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 42, 255, 0.2);
+}
+
+/* ========== ANIMACIONES ESCALONADAS ========== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación escalonada para las tarjetas */
+.carrerasGrid .carreraCard:nth-child(1) { animation-delay: 0.1s; }
+.carrerasGrid .carreraCard:nth-child(2) { animation-delay: 0.2s; }
+.carrerasGrid .carreraCard:nth-child(3) { animation-delay: 0.3s; }
+.carrerasGrid .carreraCard:nth-child(4) { animation-delay: 0.4s; }
+.carrerasGrid .carreraCard:nth-child(5) { animation-delay: 0.5s; }
+.carrerasGrid .carreraCard:nth-child(6) { animation-delay: 0.6s; }
+.carrerasGrid .carreraCard:nth-child(7) { animation-delay: 0.7s; }
+.carrerasGrid .carreraCard:nth-child(8) { animation-delay: 0.8s; }
+.carrerasGrid .carreraCard:nth-child(9) { animation-delay: 0.9s; }
+.carrerasGrid .carreraCard:nth-child(10) { animation-delay: 1.0s; }
+.carrerasGrid .carreraCard:nth-child(11) { animation-delay: 1.1s; }
+.carrerasGrid .carreraCard:nth-child(12) { animation-delay: 1.2s; }
+.carrerasGrid .carreraCard:nth-child(13) { animation-delay: 1.3s; }
+.carrerasGrid .carreraCard:nth-child(14) { animation-delay: 1.4s; }
+
+/* ========== FILTRO ACTIVO INFO ========== */
+.filtroActivoInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    background: #e8f4f3;
+    border-radius: 10px;
+    border-left: 5px solid #10504b;
+    margin-top: 20px;
+}
+
+.filtroActivoInfo span {
+    color: #10504b;
+    font-size: 1.1rem;
+}
+
+.limpiarFiltro {
+    background: none;
+    border: 2px solid #10504b;
+    color: #10504b;
+    padding: 8px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.limpiarFiltro:hover {
+    background: #10504b;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* ========== SIN RESULTADOS ========== */
+.sinResultados {
+    text-align: center;
+    padding: 60px 20px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    margin: 30px 0;
+}
+
+.sinResultados p {
+    color: #6c757d;
+    font-size: 1.2rem;
+}
+
+/* ========== RESULTADOS CONTADOR ========== */
+.resultadosContador {
+    text-align: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-top: 3px solid #10504b;
+}
+
+.resultadosContador p {
+    color: #495057;
+    font-size: 1.1rem;
+}
+
+.resultadosContador strong {
+    color: #10504b;
+}
+
+/* ========== RESPONSIVE ========== */
+
+/* Tablet (901px - 1200px) */
+@media (max-width: 1200px) {
+    .carrerasGrid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    
+    .carreraLogo {
+        max-width: 160px;
+    }
+}
+
+/* Tablet pequeña (769px - 900px) */
+@media (max-width: 900px) {
+    /* Burbujas con scroll horizontal */
+    .filtrosBurbujas {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        gap: 12px;
+        padding: 15px 5px;
+        margin: 0 -5px 20px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        scrollbar-color: #10504b #f1f1f1;
+    }
+    
+    /* Estilo de scrollbar para navegadores WebKit */
+    .filtrosBurbujas::-webkit-scrollbar {
+        height: 6px;
+    }
+    
+    .filtrosBurbujas::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+    
+    .filtrosBurbujas::-webkit-scrollbar-thumb {
+        background: #10504b;
+        border-radius: 10px;
+    }
+    
+    .filtroBurbuja {
+        padding: 12px 20px;
+        flex-shrink: 0;
+        min-width: fit-content;
+    }
+    
+    .burbujaTexto {
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+    
+    .carrerasGrid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
+
+/* Móvil (601px - 768px) */
+@media (max-width: 768px) {
+    .ofertaEducativaContainerPrincipal {
+        height: 50vh;
+    }
+    
+    .ofertaEducativaContainerPrincipal h1 {
+        font-size: 2.5rem;
+    }
+    
+    .ofertaEducativaContent {
+        padding: 30px 15px;
+    }
+    
+    .filtrosContainer {
+        padding: 20px 15px;
+    }
+    
+    .filtrosTitulo h2 {
+        font-size: 1.7rem;
+    }
+    
+    .filtrosBurbujas {
+        padding: 12px 5px;
+        gap: 10px;
+    }
+    
+    .filtroBurbuja {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+        min-width: fit-content;
+    }
+    
+    .burbujaTexto {
+        font-size: 0.85rem;
+    }
+    
+    .burbujaCantidad {
+        padding: 3px 8px;
+        font-size: 0.8rem;
+    }
+    
+    .carrerasGrid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+    
+    .carreraLogo {
+        max-width: 120px;
+    }
+    
+    hr {
+        margin: 15px auto 30px;
+        width: 90%;
+    }
+}
+
+/* Móvil pequeño (481px - 600px) */
+@media (max-width: 600px) {
+    .filtrosBurbujas {
+        padding: 10px 5px;
+        gap: 8px;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .filtroBurbuja {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+    
+    .burbujaTexto {
+        font-size: 0.8rem;
+    }
+    
+    .burbujaCantidad {
+        padding: 2px 6px;
+        font-size: 0.75rem;
+    }
+    
+    .carrerasGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .carreraLogo {
+        max-width: 130px;
+    }
+
+    
+}
+
+/* Móvil muy pequeño (361px - 480px) */
+@media (max-width: 480px) {
+    .ofertaEducativaContainerPrincipal h1 {
+        font-size: 1.8rem;
+    }
+
+    .ofertaEducativaContainerPrincipal{
+            height: 40vh;
+    }
+    
+    .filtrosBurbujas {
+        justify-content: flex-start;
+        padding: 8px 5px;
+    }
+    
+    .filtroBurbuja {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .burbujaTexto {
+        font-size: 0.75rem;
+    }
+    
+    .burbujaCantidad {
+        padding: 2px 5px;
+        font-size: 0.7rem;
+    }
+    
+    .carrerasGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .carreraLogo {
+        max-width: 110px;
+    }
+    
+    .filtroActivoInfo {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        padding: 12px;
+    }
+    
+    .limpiarFiltro {
+        padding: 6px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Móvil extra pequeño (hasta 360px) */
+@media (max-width: 360px) {
+    .ofertaEducativaContainerPrincipal h1 {
+        font-size: 1.6rem;
+    }
+    
+    .filtrosBurbujas {
+        gap: 6px;
+        padding: 6px 5px;
+    }
+    
+    .filtroBurbuja {
+        padding: 7px 10px;
+        font-size: 0.75rem;
+    }
+    
+    .burbujaTexto {
+        font-size: 0.7rem;
+    }
+    
+    .carrerasGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .carreraLogo {
+        max-width: 90px;
+    }
+    
+    .ofertaEducativaContent {
+        padding: 20px 10px;
+    }
+}
+
+/* Indicador visual de que hay más contenido para scrollear */
+@media (max-width: 900px) {
+    .filtrosContainer {
+        position: relative;
+    }
+    
+    .filtrosContainer::after {
+        content: '';
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        background: linear-gradient(to right, transparent, #f8f9fa);
+        pointer-events: none;
+        z-index: 1;
+    }
+}
+
+
+
+
+
+/* Redes Sociales Lateral */
+
+.redes-sociales-sidebar {
+  position: absolute;  
+  right: 0 !important;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  display: none;
+}
+
+.redes-sociales-contenedor {
+  background: #ffffff4f;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid white;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.redes-sociales-contenedor:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  transform: scale(1.02);
+  background-color: white;
+}
+
+.red-social-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  width: 100%;
+  position: relative;
+}
+
+.red-social-link:hover {
+  background-color: rgba(255, 255, 255, 0.377);
+  transform: translateY(-5px);
+}
+
+.red-social-icono {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgb(1, 102, 18);
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.red-social-icono svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+}
+
+.red-social-link:hover .red-social-icono {
+  background-color: white;
+  transform: scale(1.1);
+  border-color: white;
+}
+
+.red-social-link:hover .red-social-icono svg {
+  fill: #10504b;
+}
+
+/* Colores específicos para hover de cada red social */
+.red-social-link:nth-child(1):hover .red-social-icono {
+  background-color: #1877F2; /* Facebook blue */
+}
+
+.red-social-link:nth-child(2):hover .red-social-icono {
+  background-color: #E1306C; /* Instagram pink */
+}
+
+.red-social-link:nth-child(3):hover .red-social-icono {
+  background-color: #000000; /* TikTok black */
+}
+
+.red-social-link:hover .red-social-icono svg {
+  fill: white !important;
+}
+
+.red-social-link:hover .red-social-texto {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Mostrar solo en desktop */
+@media (min-width: 1024px) {
+  .redes-sociales-sidebar {
+    display: block;
+  }
+}
+
+/* Ajuste para pantallas grandes */
+@media (min-width: 1440px) {
+  .redes-sociales-sidebar {
+    right: 50px;
+  }
+  
+  .redes-sociales-contenedor {
+    padding: 25px 15px;
+    gap: 25px;
+  }
+  
+  .red-social-icono {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .red-social-icono svg {
+    width: 26px;
+    height: 26px;
+  }
+  
+  .red-social-texto {
+    font-size: 14px;
+  }
+}
+
+/* Ajuste para tablet horizontal */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .redes-sociales-sidebar {
+    right: 20px;
+  }
+  
+  .redes-sociales-contenedor {
+    padding: 15px 10px;
+    gap: 18px;
+  }
+  
+  .red-social-icono {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .red-social-icono svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .red-social-texto {
+    font-size: 12px;
+  }
+}
+
+/* Ocultar completamente en móvil */
+@media (max-width: 767px) {
+  .redes-sociales-sidebar {
+    display: none !important;
+  }
+}

@@ -3,7 +3,7 @@ import logoVinculacion from '../assets/logos/LOGO VINCULACION.png';
 import logoBecas from '../assets/logos/LOGO BECAS.png';
 import logoRecorrido from '../assets/logos/LOGO RECORRIDO.png';
 import logoInvestigacion from '../assets/logos/LOGO INVESTIGACION.png';
-import logoTransparencia from '../assets/logos/LOGO INVESTIGACION.png';
+import logoTransparencia from '../assets/logos/LOGO TRANSPARENCIA.png';
 import logoComite from '../assets/logos/LOGO COMITE DE ETICA.png';
 import logoBuzon from '../assets/logos/LOGO BUZON SUGERENCIAS.png';
 import logoCultura from '../assets/logos/LOGO CULTURA DE PAZ.png';

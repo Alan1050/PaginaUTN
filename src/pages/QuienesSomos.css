@@ -1,0 +1,539 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Banner principal */
+.quienesSomosContainerPrincipal {
+    background-image: url('../assets/banner/Index.jpg');
+    width: 100%;
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.quienesSomosContainerPrincipal h1 {
+    color: white;
+    text-align: center;
+    font-size: 4rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    padding: 20px;
+}
+
+/* Contenido principal */
+.quienesSomosContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+/* Contenedor de secciones */
+.sections-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Item de sección */
+.section-item {
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-item.active {
+    border-color: #2e7d32;
+    box-shadow: 0 6px 20px rgba(46, 125, 50, 0.15);
+}
+
+/* Encabezado de sección */
+.section-header {
+    background-color: #10504b;
+    padding: 24px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    min-height: 80px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Efecto de animación diagonal al hacer hover */
+.section-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg, 
+        transparent 0%, 
+        transparent 65%, 
+        #217571 65%, 
+        #217571 100%
+    );
+    background-size: 400% 400%;
+    background-position: 100% 100%;
+    transition: all 0.5s ease;
+    z-index: -1;
+    opacity: 0;
+}
+
+.section-header:hover::before {
+    opacity: 1;
+    background-position: 0% 0%;
+    animation: diagonalHover 0.5s ease forwards;
+}
+
+/* Alternativa con efecto de gradiente diagonal más suave */
+.section-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        #217571 0%,
+        #217571 25%,
+        #10504b 25%,
+        #10504b 100%
+    );
+    background-size: 300% 300%;
+    background-position: 100% 100%;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+    opacity: 0;
+}
+
+.section-header:hover::after {
+    opacity: 1;
+    background-position: 0% 0%;
+}
+
+/* Versión alternativa con clip-path */
+.section-header .hover-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #217571;
+    clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%);
+    transition: clip-path 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    z-index: -1;
+}
+
+.section-header:hover .hover-effect {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+/* Animación diagonal personalizada */
+@keyframes diagonalHover {
+    0% {
+        background-position: 100% 100%;
+        clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%);
+    }
+    25% {
+        clip-path: polygon(75% 75%, 100% 100%, 100% 100%, 100% 100%);
+    }
+    50% {
+        clip-path: polygon(50% 50%, 100% 100%, 100% 100%, 100% 100%);
+    }
+    75% {
+        clip-path: polygon(25% 25%, 100% 100%, 100% 100%, 100% 100%);
+    }
+    100% {
+        background-position: 0% 0%;
+        clip-path: polygon(0% 0%, 100% 100%, 100% 100%, 100% 100%);
+    }
+}
+
+.section-header:hover .diagonal-sweep {
+    transform: translateX(0) translateY(0);
+}
+
+.section-item.active h2 {
+    color: black;
+}
+
+.section-item.active .section-header {
+    background-color: rgba(46, 125, 50, 0.05);
+}
+
+.section-header h2 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    flex: 1;
+    position: relative;
+    z-index: 2;
+}
+
+.section-header:focus {
+    outline: 2px solid #2e7d32;
+    outline-offset: 2px;
+}
+
+/* Icono de toggle */
+.toggle-icon {
+    font-size: 2rem;
+    font-weight: 300;
+    color: #ffffff;
+    min-width: 40px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.section-item.active .toggle-icon {
+    transform: rotate(180deg);
+    color: #2e7d32;
+}
+
+.section-header:hover .toggle-icon {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+/* Contenido de sección */
+.section-content {
+    padding: 30px;
+    background-color: white;
+    animation: slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-content p {
+    color: #4a5568;
+    line-height: 1.8;
+    font-size: 1.125rem;
+    margin: 0;
+}
+
+/* Lista de valores */
+.valores-list {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.valores-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid #e2e8f0;
+    line-height: 1.7;
+    color: #4a5568;
+    font-size: 1.125rem;
+}
+
+.valores-list li:last-child {
+    border-bottom: none;
+}
+
+.valores-list strong {
+    color: #2d3748;
+    font-weight: 600;
+    display: inline-block;
+    min-width: 140px;
+}
+
+/* Animación de despliegue */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+        max-height: 0;
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        max-height: 1000px;
+    }
+}
+
+/* Animación de barrido diagonal */
+@keyframes diagonalSweep {
+    0% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) translateY(0) rotate(45deg);
+        opacity: 1;
+    }
+}
+
+/* Efecto de brillo diagonal */
+.diagonal-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        135deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.1) 25%,
+        rgba(255, 255, 255, 0.2) 50%,
+        transparent 100%
+    );
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    transition: transform 0.7s ease;
+    z-index: -1;
+}
+
+.section-header:hover .diagonal-glow {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .quienesSomosContainerPrincipal h1 {
+        font-size: 2.5rem;
+    }
+    
+    .quienesSomosContent {
+        padding: 40px 15px;
+    }
+    
+    .section-header {
+        padding: 20px;
+        min-height: 70px;
+    }
+    
+    .section-header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .section-content {
+        padding: 20px;
+    }
+    
+    .valores-list strong {
+        min-width: 120px;
+        display: block;
+        margin-bottom: 4px;
+    }
+    
+    .toggle-icon {
+        font-size: 1.8rem;
+        min-width: 35px;
+    }
+    
+    /* Simplificar animaciones en móvil */
+    .section-header::before,
+    .section-header::after {
+        transition: all 0.3s ease;
+    }
+}
+
+@media (max-width: 480px) {
+    .quienesSomosContainerPrincipal {
+        height: 60vh;
+    }
+    
+    .quienesSomosContainerPrincipal h1 {
+        font-size: 2rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.1rem;
+    }
+    
+    .section-content p,
+    .valores-list li {
+        font-size: 1rem;
+    }
+    
+    /* Animaciones más simples para móvil */
+    .section-header:hover::before,
+    .section-header:hover::after {
+        animation: none;
+        opacity: 1;
+        background-position: 50% 50%;
+    }
+}
+
+
+
+
+
+
+/* Redes Sociales Lateral ======================================================== */
+
+.redes-sociales-sidebar {
+  position: absolute;  
+  right: 0 !important;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  display: none;
+}
+
+.redes-sociales-contenedor {
+  background: #ffffff4f;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid white;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.redes-sociales-contenedor:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  transform: scale(1.02);
+  background-color: white;
+}
+
+.red-social-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  width: 100%;
+  position: relative;
+}
+
+.red-social-link:hover {
+  background-color: rgba(255, 255, 255, 0.377);
+  transform: translateY(-5px);
+}
+
+.red-social-icono {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgb(1, 102, 18);
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.red-social-icono svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+}
+
+.red-social-link:hover .red-social-icono {
+  background-color: white;
+  transform: scale(1.1);
+  border-color: white;
+}
+
+.red-social-link:hover .red-social-icono svg {
+  fill: #10504b;
+}
+
+/* Colores específicos para hover de cada red social */
+.red-social-link:nth-child(1):hover .red-social-icono {
+  background-color: #1877F2; /* Facebook blue */
+}
+
+.red-social-link:nth-child(2):hover .red-social-icono {
+  background-color: #E1306C; /* Instagram pink */
+}
+
+.red-social-link:nth-child(3):hover .red-social-icono {
+  background-color: #000000; /* TikTok black */
+}
+
+.red-social-link:hover .red-social-icono svg {
+  fill: white !important;
+}
+
+.red-social-link:hover .red-social-texto {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Mostrar solo en desktop */
+@media (min-width: 1024px) {
+  .redes-sociales-sidebar {
+    display: block;
+  }
+}
+
+/* Ajuste para pantallas grandes */
+@media (min-width: 1440px) {
+  .redes-sociales-sidebar {
+    right: 50px;
+  }
+  
+  .redes-sociales-contenedor {
+    padding: 25px 15px;
+    gap: 25px;
+  }
+  
+  .red-social-icono {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .red-social-icono svg {
+    width: 26px;
+    height: 26px;
+  }
+  
+  .red-social-texto {
+    font-size: 14px;
+  }
+}
+
+/* Ajuste para tablet horizontal */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .redes-sociales-sidebar {
+    right: 20px;
+  }
+  
+  .redes-sociales-contenedor {
+    padding: 15px 10px;
+    gap: 18px;
+  }
+  
+  .red-social-icono {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .red-social-icono svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .red-social-texto {
+    font-size: 12px;
+  }
+}
+
+
+@media (max-width: 767px) {
+  .redes-sociales-sidebar {
+    display: none !important;
+  }
+}
