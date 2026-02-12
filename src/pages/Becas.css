@@ -728,8 +728,21 @@
         letter-spacing: 8px;
     }
     
-    .logosContainerBecas {
-        grid-template-columns: repeat(2, 1fr);
+  .logosContainerBecas {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        position: relative;
+    }
+
+        .beca-card {
+        width: 100%;
+        margin-bottom: 0;
+        transition: all 0.3s ease;
+    }
+
+    .beca-card.active {
+        margin-bottom: 20px;
     }
     
     .beca-info-header {
@@ -740,11 +753,67 @@
     .beca-info-titulo {
         font-size: 1.8rem;
     }
+
+      /* Contenedor de información que aparecerá debajo de la tarjeta activa */
+    .beca-info-section {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        opacity: 1;
+        transform: none;
+        transition: all 0.3s ease;
+    }
+
+    .beca-info-section.visible {
+        display: block;
+    }
+
+    .beca-info-detallada {
+        margin-top: 0;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        animation: slideDown 0.3s ease;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Ocultar el hover info en móvil (no es táctil amigable) */
+    .beca-hover-info {
+        display: none;
+    }
+
+    /* Mejorar la experiencia táctil */
+    .beca-card {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .beca-card:active {
+        transform: scale(0.98);
+    }
+
+    /* Ajustar posición del botón de cerrar */
+    .close-info-btn {
+        top: 10px;
+        right: 10px;
+        width: 35px;
+        height: 35px;
+        font-size: 24px;
+    }
 }
 
 @media (max-width: 768px) {
     .banner-container {
-        height: 60vh;
+        height: 30vh;
     }
     
     .carousel-title {

@@ -1,5 +1,5 @@
 .FooterContent{
-        background-color: rgb(10, 81, 76);
+    background-color: rgb(10, 81, 76);
 }
 
 .FooterContentImage{
@@ -38,4 +38,64 @@
 .footer-pt2{
     display: grid;
     grid-template-rows: 1fr 1fr;
+}
+
+.contactItem{
+    color: white;
+    padding-left: 250px;
+    padding-bottom: 20px;
+}
+
+.contactItem:nth-child(1){
+    padding-top: 40px;
+}
+
+@media (max-width: 480px) {
+.FooterContentImage{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.logoUTFooter{
+    width: 90%;
+    margin-left: 15px;
+    margin-top: 50px;
+}
+
+.imagesFooter{
+    display: grid;
+    grid-template-columns: 1.5fr .5fr;
+    margin-left: 20px;
+    padding-right: 00px;
+    padding-left: 0px;
+    margin-top: 40px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.logoCulturaPazFooter{
+    width: 90%;
+}
+
+.logoGobiernoUT{
+    width: 100%;
+    border-radius: 5px;
+    margin: auto;
+}
+
+.footer-pt2{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.contactItem{
+    color: white;
+    padding-left: 0px;
+    padding-bottom: 20px;
+}
+
+.contactItem:nth-child(1){
+    padding-top: 00px;
+}
+
 }

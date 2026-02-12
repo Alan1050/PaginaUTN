@@ -508,7 +508,7 @@ function Nav() {
                         
                         {isMobileComunidadOpen && (
                             <ul className="mobile-dropdown-menu comunidad-mobile-menu">
-                                {/* Estudiantes con submenú móvil */}
+                                
                                 <li 
                                     className={`mobile-has-submenu ${activeMobileSubmenu === 'estudiantes' ? 'active' : ''}`}
                                 >
@@ -549,11 +549,161 @@ function Nav() {
                                     )}
                                 </li>
                                 
-                                {/* Los demás submenús móviles siguen el mismo patrón */}
-                                {/* ... */}
+                                <li 
+                                    className={`mobile-has-submenu ${activeMobileSubmenu === 'docentes' ? 'active' : ''}`}
+                                >
+                                    <div 
+                                        className="mobile-submenu-trigger"
+                                        onClick={() => toggleMobileSubmenu('docentes')}
+                                    >
+                                        <span>Docentes</span>
+                                        <span className={`mobile-submenu-arrow ${activeMobileSubmenu === 'docentes' ? 'rotated' : ''}`}>▶</span>
+                                    </div>
+                                    
+                                    {activeMobileSubmenu === 'docentes' && (
+                                        <ul className="mobile-submenu">
+                                            <li>
+                                                <a 
+                                                    href="https://utn.appsiga.net" 
+                                                    target="_blank" 
+                                                    rel="noopener noreferrer"
+                                                    onClick={(e) => { e.stopPropagation(); closeMenu(); }}
+                                                >
+                                                    APPSIGA
+                                                </a>
+                                            </li>
+                                            <li><a href="/" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Comité de Ética</a></li>
+                                            <li><a href="/Vinculacion" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Vinculación</a></li>
+                                            <li>
+                                                <a 
+                                                    href={CalendarioEscolar} 
+                                                    target="_blank" 
+                                                    rel="noopener noreferrer"
+                                                    onClick={(e) => { e.stopPropagation(); closeMenu(); }}
+                                                >
+                                                    Calendario Escolar
+                                                </a>
+                                            </li>
+                                            
+                                        </ul>
+                                    )}
+                                </li>
+                                
+                                <li 
+                                    className={`mobile-has-submenu ${activeMobileSubmenu === 'administrativo' ? 'active' : ''}`}
+                                >
+                                    <div 
+                                        className="mobile-submenu-trigger"
+                                        onClick={() => toggleMobileSubmenu('administrativo')}
+                                    >
+                                        <span>Administrativos</span>
+                                        <span className={`mobile-submenu-arrow ${activeMobileSubmenu === 'administrativo' ? 'rotated' : ''}`}>▶</span>
+                                    </div>
+                                    
+                                    {activeMobileSubmenu === 'administrativo' && (
+                                        <ul className="mobile-submenu">
+                                            <li>
+                                                <a 
+                                                    href="https://utn.appsiga.net" 
+                                                    target="_blank" 
+                                                    rel="noopener noreferrer"
+                                                    onClick={(e) => { e.stopPropagation(); closeMenu(); }}
+                                                >
+                                                    APPSIGA
+                                                </a>
+                                            </li>
+                                            <li><a href="/" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Comité de Ética</a></li>
+                                            <li><a href="/Vinculacion" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Vinculación</a></li>
+                                            <li>
+                                                <a 
+                                                    href={CalendarioEscolar} 
+                                                    target="_blank" 
+                                                    rel="noopener noreferrer"
+                                                    onClick={(e) => { e.stopPropagation(); closeMenu(); }}
+                                                >
+                                                    Calendario Escolar
+                                                </a>
+                                            </li>
+                                            
+                                        </ul>
+                                    )}
+                                </li>
+
+                                <li 
+                                    className={`mobile-has-submenu ${activeMobileSubmenu === 'egresado' ? 'active' : ''}`}
+                                >
+                                    <div 
+                                        className="mobile-submenu-trigger"
+                                        onClick={() => toggleMobileSubmenu('egresado')}
+                                    >
+                                        <span>Egresados</span>
+                                        <span className={`mobile-submenu-arrow ${activeMobileSubmenu === 'egresado' ? 'rotated' : ''}`}>▶</span>
+                                    </div>
+                                    
+                                    {activeMobileSubmenu === 'egresado' && (
+                                        <ul className="mobile-submenu">
+                                            <li>
+                                                <a 
+                                                    href="/" 
+                                                    onClick={(e) => { e.stopPropagation(); closeMenu(); }}
+                                                >
+                                                    Bolsa de Trabajo
+                                                </a>
+                                            </li>
+                                            <li><a href="/" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Educación Continua</a></li>
+                                            <li><a href="/" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Incubadora de Negocios</a></li>
+                                            <li>
+                                                <a 
+                                                    href="/"
+                                                    onClick={(e) => { e.stopPropagation(); closeMenu(); }}
+                                                >
+                                                    ECECUT
+                                                </a>
+                                            </li>
+                                            <li><a href="/" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>CEELEX</a></li>
+                                        </ul>
+                                    )}
+                                </li>
+
+                                <li 
+                                    className={`mobile-has-submenu ${activeMobileSubmenu === 'empresarios' ? 'active' : ''}`}
+                                >
+                                    <div 
+                                        className="mobile-submenu-trigger"
+                                        onClick={() => toggleMobileSubmenu('empresarios')}
+                                    >
+                                        <span>Empresarios</span>
+                                        <span className={`mobile-submenu-arrow ${activeMobileSubmenu === 'empresarios' ? 'rotated' : ''}`}>▶</span>
+                                    </div>
+                                    
+                                    {activeMobileSubmenu === 'empresarios' && (
+                                        <ul className="mobile-submenu">
+                                            <li>
+                                                <a 
+                                                    href="/" 
+                                                    onClick={(e) => { e.stopPropagation(); closeMenu(); }}
+                                                >
+                                                    Incubadora de Negocios
+                                                </a>
+                                            </li>
+                                            <li><a href="/" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>CEELEX</a></li>
+                                            <li><a href="/" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>ECECUT</a></li>
+                                            <li>
+                                                <a 
+                                                    href="/"
+                                                    onClick={(e) => { e.stopPropagation(); closeMenu(); }}
+                                                >
+                                                    Educación Continua
+                                                </a>
+                                            </li>
+                                            <li><a href="/" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Servicios al Sector Productivo</a></li>
+                                        </ul>
+                                    )}
+                                </li>
                             </ul>
                         )}
                     </li>
+                    
                 </ul>
                 <div className="MobileIcons">
                     <a href={CalendarioEscolar} target="_blank" rel="noopener noreferrer">

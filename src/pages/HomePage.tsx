@@ -1,12 +1,24 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import LogosCarreras from "../components/LogosCarreras.tsx";
 import ImagenPrincipal from "../assets/banner/Index.jpg";
+import bannerAdminision from '../assets/banner/bannerAdmision.jpg'
 import ImagenNuevaCarrera from "../assets/banner/NuevaCarrera.jpg";
 import Swal from "sweetalert2";
 import Accesos from "../components/Accesos.tsx";
 import "./HomePages.css";
 
 function HomePage() {
+ const banners = [ImagenPrincipal, bannerAdminision];
+  const [indiceActual, setIndiceActual] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndiceActual((prev) => (prev + 1) % banners.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [banners.length]);
+
   useEffect(() => {
     const mostrarAlertaBienvenida = () => {
       const ultimaAlerta = localStorage.getItem("alertaBienvenidaMostrada");
@@ -56,13 +68,27 @@ function HomePage() {
 
   return (
     <>
-      <div className="imagen-contenedor">
+      <div className="imagen-contenedor" style={{backgroundColor: "rgb(10,81,76)"}}>
+ {banners.map((banner, index) => (
         <img
-          src={ImagenPrincipal}
-          className="ImagenPrincipal"
-          alt="Banner principal de la Universidad Tecnológica de Nayarit"
+          key={index}
+          src={banner}
+          alt={`Banner ${index + 1} - Universidad Tecnológica de Nayarit`}
           loading="lazy"
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            opacity: index === indiceActual ? 1 : 0,
+            transition: 'opacity 1.5s ease-in-out',
+            visibility: index === indiceActual ? 'visible' : 'hidden',
+            
+          }}
         />
+      ))}
 
         {/* Barra lateral de redes sociales */}
         <div className="redes-sociales-sidebar">

@@ -81,8 +81,8 @@
     }
     
     .ContainerButton1 img, .ContainerButton2 img {
-        max-width: 130px;
-        max-height: 130px;
+        width: 100%;
+        height: auto;
     }
     
     /* Gradiente overlay para mobile */

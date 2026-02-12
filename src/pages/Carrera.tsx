@@ -2503,7 +2503,7 @@ useEffect(() => {
       }}
     >
 
-{carreraSeleccionada.label !== "LPS" && carreraSeleccionada.banner && carreraSeleccionada.banner.length > 0 && (
+{carreraSeleccionada.banner && carreraSeleccionada.banner.length > 0 && (
   <div
   className="imageContainerCarrera" 
   style={{ 
@@ -2743,6 +2743,7 @@ useEffect(() => {
                         {carreraSeleccionada.egreasdo &&
                           carreraSeleccionada.egreasdo.trim() !== "" && (
                             <p
+                            className="text"
                               style={{
                                 fontSize: "1.1rem",
                                 lineHeight: "1.6",
@@ -2876,7 +2877,7 @@ useEffect(() => {
                   )}
                 </div>
 
-                {/* Campo Laboral con efecto acordeón */}
+                {/* Competencia Profesional con efecto acordeón */}
                 <div
                   className={`section-item ${activeSection === "competencia-laboral" ? "active" : ""}`}
                   style={
@@ -2910,7 +2911,7 @@ useEffect(() => {
                         gap: "0.5rem",
                       }}
                     >
-                      Competencias Profesionales
+                      📈 Competencias Profesionales
                     </h2>
                     <span className="toggle-icon">
                       {activeSection === "competencia-laboral" ? "−" : "+"}

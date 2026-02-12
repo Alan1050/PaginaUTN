@@ -357,7 +357,16 @@ button:focus {
   }
 }
 
-
 .imageContainerCarrera{
   height: 80vh;
 }
+
+@media (max-width: 480px) {
+  .imageContainerCarrera{
+  height: 25vh;
+}
+.text{
+ font-size: 1px;
+}
+}
+

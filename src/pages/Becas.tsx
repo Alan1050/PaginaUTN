@@ -43,6 +43,7 @@ function Becas() {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
   const [selectedBeca, setSelectedBeca] = useState<BecaInfo | null>(null);
   const [isInfoVisible, setIsInfoVisible] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= 992);
 
   const slides = [bannerBecas, imagen2, imagen3];
 
@@ -119,6 +120,16 @@ function Becas() {
     }
   }, [selectedBeca]);
 
+  // Detectar cambios en el tamaño de la pantalla
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 992);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const goToSlide = (index: number): void => {
     setCurrentSlide(index);
   };
@@ -135,10 +146,26 @@ function Becas() {
 
   const handleBecaClick = (becaId: string, e: React.MouseEvent<HTMLAnchorElement>): void => {
     e.preventDefault();
+    
     if (selectedBeca?.id === becaId) {
       setSelectedBeca(null);
     } else {
       setSelectedBeca(becasInfo[becaId as keyof BecasInfoType]);
+      
+      // En móvil, hacer scroll hacia la tarjeta seleccionada
+      if (isMobile) {
+        setTimeout(() => {
+          const card = e.currentTarget;
+          const rect = card.getBoundingClientRect();
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          const targetY = rect.top + scrollTop - 20;
+          
+          window.scrollTo({
+            top: targetY,
+            behavior: 'smooth'
+          });
+        }, 100);
+      }
     }
   };
 
@@ -202,154 +229,285 @@ function Becas() {
 
         <div className="logosContainerBecas">
           {(Object.values(becasInfo) as BecaInfo[]).map((beca) => (
-            <a
-              key={beca.id}
-              href="#"
-              onClick={(e) => handleBecaClick(beca.id, e)}
-              className={`beca-card ${selectedBeca?.id === beca.id ? "active" : ""}`}
-              style={{ 
-                '--beca-gradient': beca.gradient, 
-                '--beca-light': beca.lightGradient 
-              } as React.CSSProperties}
-            >
-              <div className="beca-icon-wrapper">
-                <div className="icon-glow"></div>
-                <img src={beca.icono} alt="" className="iconBecas" />
-                <div className="beca-hover-info">
-                  <span>Ver detalles</span>
+            <React.Fragment key={beca.id}>
+              <a
+                href="#"
+                onClick={(e) => handleBecaClick(beca.id, e)}
+                className={`beca-card ${selectedBeca?.id === beca.id ? "active" : ""}`}
+                style={{ 
+                  '--beca-gradient': beca.gradient, 
+                  '--beca-light': beca.lightGradient 
+                } as React.CSSProperties}
+              >
+                <div className="beca-icon-wrapper">
+                  <div className="icon-glow"></div>
+                  <img src={beca.icono} alt="" className="iconBecas" />
+                  <div className="beca-hover-info">
+                    <span>Ver detalles</span>
+                  </div>
                 </div>
-              </div>
-              <h3 className="beca-titulo">{beca.titulo}</h3>
-              <p className="beca-descripcion-corta">{beca.descripcion.substring(0, 60)}...</p>
-            </a>
+                <h3 className="beca-titulo">{beca.titulo}</h3>
+                <p className="beca-descripcion-corta">{beca.descripcion.substring(0, 60)}...</p>
+              </a>
+              
+              {/* En móvil, mostrar la información detallada debajo de la tarjeta */}
+              {isMobile && selectedBeca?.id === beca.id && (
+                <div className="beca-info-mobile">
+                  <div 
+                    className="beca-info-detallada"
+                    style={{ 
+                      background: selectedBeca.lightGradient,
+                      borderTop: `4px solid ${selectedBeca.color}`
+                    }}
+                  >
+                    <button 
+                      className="close-info-btn"
+                      onClick={() => setSelectedBeca(null)}
+                      aria-label="Cerrar información"
+                    >
+                      <span>×</span>
+                    </button>
+                    
+                    <div className="beca-info-header">
+                      <div 
+                        className="beca-info-icon"
+                        style={{ background: selectedBeca.gradient }}
+                      >
+                        <img src={selectedBeca.icono} alt={selectedBeca.titulo} />
+                      </div>
+                      <div className="beca-info-title-wrapper">
+                        <h2 className="beca-info-titulo">{selectedBeca.titulo}</h2>
+                        <p className="beca-info-descripcion">{selectedBeca.descripcion}</p>
+                      </div>
+                    </div>
+
+                    <div className="beca-info-content">
+                      {selectedBeca.id === "academica" && selectedBeca.descuentos && (
+                        <div className="descuentos-table-container">
+                          <h3 className="info-subtitulo">
+                            <span className="sub-icon">📊</span>
+                            Descuentos por promedio
+                          </h3>
+                          <div className="descuentos-grid">
+                            {selectedBeca.descuentos.map((item, index) => (
+                              <div key={index} className="descuento-item">
+                                <span className="rango">{item.rango}</span>
+                                <span 
+                                  className="porcentaje"
+                                  style={{ background: selectedBeca.gradient }}
+                                >
+                                  {item.descuento}
+                                </span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {selectedBeca.id === "familia" && selectedBeca.casos && (
+                        <div className="casos-container">
+                          <h3 className="info-subtitulo">
+                            <span className="sub-icon">👨‍👩‍👧‍👦</span>
+                            Casos elegibles
+                          </h3>
+                          <ul className="casos-lista">
+                            {selectedBeca.casos.map((caso, index) => (
+                              <li key={index}>
+                                <span className="caso-numero">{index + 1}</span>
+                                <span className="caso-texto">{caso}</span>
+                              </li>
+                            ))}
+                          </ul>
+                          <div className="beneficio-destacado">
+                            <span className="destacado-icon">🎯</span>
+                            <p>Exención del <strong>100%</strong> en el pago de colegiatura cuatrimestral</p>
+                          </div>
+                        </div>
+                      )}
+
+                      {selectedBeca.id === "compañeros" && (
+                        <div className="compañeros-container">
+                          <div className="proceso-card">
+                            <h3 className="info-subtitulo">
+                              <span className="sub-icon">🗳️</span>
+                              Proceso de selección
+                            </h3>
+                            <div className="proceso-steps">
+                              <div className="step">
+                                <span className="step-number">1</span>
+                                <p>Votación democrática</p>
+                              </div>
+                              <div className="step">
+                                <span className="step-number">2</span>
+                                <p>Elección por compañeros de grupo</p>
+                              </div>
+                              <div className="step">
+                                <span className="step-number">3</span>
+                                <p>Exención del 100% en colegiatura</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
+                      {selectedBeca.id === "deportiva" && selectedBeca.meritos && (
+                        <div className="meritos-container">
+                          <h3 className="info-subtitulo">
+                            <span className="sub-icon">🏆</span>
+                            Méritos deportivos
+                          </h3>
+                          <div className="meritos-grid">
+                            {selectedBeca.meritos.map((merito, index) => (
+                              <div key={index} className="merito-card">
+                                <div className="merito-nivel">{merito.nivel}</div>
+                                <div 
+                                  className="merito-descuento"
+                                  style={{ background: selectedBeca.gradient }}
+                                >
+                                  {merito.descuento}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                          <p className="merito-extra">* Aplica también para méritos culturales</p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </React.Fragment>
           ))}
         </div>
 
-        <div className={`beca-info-section ${isInfoVisible ? "visible" : ""}`} style={{marginBottom: "40px"}}>
-          {selectedBeca && (
-            <div 
-              className="beca-info-detallada"
-              style={{ 
-                background: selectedBeca.lightGradient,
-                borderTop: `4px solid ${selectedBeca.color}`
-              }}
-            >
-              <button 
-                className="close-info-btn"
-                onClick={() => setSelectedBeca(null)}
-                aria-label="Cerrar información"
+        {/* En desktop, mantener la sección de información separada */}
+        {!isMobile && (
+          <div className={`beca-info-section ${isInfoVisible ? "visible" : ""}`} style={{marginBottom: "40px"}}>
+            {selectedBeca && (
+              <div 
+                className="beca-info-detallada"
+                style={{ 
+                  background: selectedBeca.lightGradient,
+                  borderTop: `4px solid ${selectedBeca.color}`
+                }}
               >
-                <span>×</span>
-              </button>
-              
-              <div className="beca-info-header">
-                <div 
-                  className="beca-info-icon"
-                  style={{ background: selectedBeca.gradient }}
+                <button 
+                  className="close-info-btn"
+                  onClick={() => setSelectedBeca(null)}
+                  aria-label="Cerrar información"
                 >
-                  <img src={selectedBeca.icono} alt={selectedBeca.titulo} />
-                </div>
-                <div className="beca-info-title-wrapper">
-                  <h2 className="beca-info-titulo">{selectedBeca.titulo}</h2>
-                  <p className="beca-info-descripcion">{selectedBeca.descripcion}</p>
-                </div>
-              </div>
-
-              <div className="beca-info-content">
-                {selectedBeca.id === "academica" && selectedBeca.descuentos && (
-                  <div className="descuentos-table-container">
-                    <h3 className="info-subtitulo">
-                      <span className="sub-icon">📊</span>
-                      Descuentos por promedio
-                    </h3>
-                    <div className="descuentos-grid">
-                      {selectedBeca.descuentos.map((item, index) => (
-                        <div key={index} className="descuento-item">
-                          <span className="rango">{item.rango}</span>
-                          <span 
-                            className="porcentaje"
-                            style={{ background: selectedBeca.gradient }}
-                          >
-                            {item.descuento}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
+                  <span>×</span>
+                </button>
+                
+                <div className="beca-info-header">
+                  <div 
+                    className="beca-info-icon"
+                    style={{ background: selectedBeca.gradient }}
+                  >
+                    <img src={selectedBeca.icono} alt={selectedBeca.titulo} />
                   </div>
-                )}
-
-                {selectedBeca.id === "familia" && selectedBeca.casos && (
-                  <div className="casos-container">
-                    <h3 className="info-subtitulo">
-                      <span className="sub-icon">👨‍👩‍👧‍👦</span>
-                      Casos elegibles
-                    </h3>
-                    <ul className="casos-lista">
-                      {selectedBeca.casos.map((caso, index) => (
-                        <li key={index}>
-                          <span className="caso-numero">{index + 1}</span>
-                          <span className="caso-texto">{caso}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="beneficio-destacado">
-                      <span className="destacado-icon">🎯</span>
-                      <p>Exención del <strong>100%</strong> en el pago de colegiatura cuatrimestral</p>
-                    </div>
+                  <div className="beca-info-title-wrapper">
+                    <h2 className="beca-info-titulo">{selectedBeca.titulo}</h2>
+                    <p className="beca-info-descripcion">{selectedBeca.descripcion}</p>
                   </div>
-                )}
+                </div>
 
-                {selectedBeca.id === "compañeros" && (
-                  <div className="compañeros-container">
-                    <div className="proceso-card">
+                <div className="beca-info-content">
+                  {selectedBeca.id === "academica" && selectedBeca.descuentos && (
+                    <div className="descuentos-table-container">
                       <h3 className="info-subtitulo">
-                        <span className="sub-icon">🗳️</span>
-                        Proceso de selección
+                        <span className="sub-icon">📊</span>
+                        Descuentos por promedio
                       </h3>
-                      <div className="proceso-steps">
-                        <div className="step">
-                          <span className="step-number">1</span>
-                          <p>Votación democrática</p>
-                        </div>
-                        <div className="step">
-                          <span className="step-number">2</span>
-                          <p>Elección por compañeros de grupo</p>
-                        </div>
-                        <div className="step">
-                          <span className="step-number">3</span>
-                          <p>Exención del 100% en colegiatura</p>
+                      <div className="descuentos-grid">
+                        {selectedBeca.descuentos.map((item, index) => (
+                          <div key={index} className="descuento-item">
+                            <span className="rango">{item.rango}</span>
+                            <span 
+                              className="porcentaje"
+                              style={{ background: selectedBeca.gradient }}
+                            >
+                              {item.descuento}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {selectedBeca.id === "familia" && selectedBeca.casos && (
+                    <div className="casos-container">
+                      <h3 className="info-subtitulo">
+                        <span className="sub-icon">👨‍👩‍👧‍👦</span>
+                        Casos elegibles
+                      </h3>
+                      <ul className="casos-lista">
+                        {selectedBeca.casos.map((caso, index) => (
+                          <li key={index}>
+                            <span className="caso-numero">{index + 1}</span>
+                            <span className="caso-texto">{caso}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="beneficio-destacado">
+                        <span className="destacado-icon">🎯</span>
+                        <p>Exención del <strong>100%</strong> en el pago de colegiatura cuatrimestral</p>
+                      </div>
+                    </div>
+                  )}
+
+                  {selectedBeca.id === "compañeros" && (
+                    <div className="compañeros-container">
+                      <div className="proceso-card">
+                        <h3 className="info-subtitulo">
+                          <span className="sub-icon">🗳️</span>
+                          Proceso de selección
+                        </h3>
+                        <div className="proceso-steps">
+                          <div className="step">
+                            <span className="step-number">1</span>
+                            <p>Votación democrática</p>
+                          </div>
+                          <div className="step">
+                            <span className="step-number">2</span>
+                            <p>Elección por compañeros de grupo</p>
+                          </div>
+                          <div className="step">
+                            <span className="step-number">3</span>
+                            <p>Exención del 100% en colegiatura</p>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                )}
+                  )}
 
-                {selectedBeca.id === "deportiva" && selectedBeca.meritos && (
-                  <div className="meritos-container">
-                    <h3 className="info-subtitulo">
-                      <span className="sub-icon">🏆</span>
-                      Méritos deportivos
-                    </h3>
-                    <div className="meritos-grid">
-                      {selectedBeca.meritos.map((merito, index) => (
-                        <div key={index} className="merito-card">
-                          <div className="merito-nivel">{merito.nivel}</div>
-                          <div 
-                            className="merito-descuento"
-                            style={{ background: selectedBeca.gradient }}
-                          >
-                            {merito.descuento}
+                  {selectedBeca.id === "deportiva" && selectedBeca.meritos && (
+                    <div className="meritos-container">
+                      <h3 className="info-subtitulo">
+                        <span className="sub-icon">🏆</span>
+                        Méritos deportivos
+                      </h3>
+                      <div className="meritos-grid">
+                        {selectedBeca.meritos.map((merito, index) => (
+                          <div key={index} className="merito-card">
+                            <div className="merito-nivel">{merito.nivel}</div>
+                            <div 
+                              className="merito-descuento"
+                              style={{ background: selectedBeca.gradient }}
+                            >
+                              {merito.descuento}
+                            </div>
                           </div>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
+                      <p className="merito-extra">* Aplica también para méritos culturales</p>
                     </div>
-                    <p className="merito-extra">* Aplica también para méritos culturales</p>
-                  </div>
-                )}
+                  )}
+                </div>
               </div>
-            </div>
-          )}
-        </div>
+            )}
+          </div>
+        )}
       </section>
     </>
   );
