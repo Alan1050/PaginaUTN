@@ -292,7 +292,7 @@ function OfertaEducativa() {
                                     title={division} // Tooltip con nombre completo
                                 >
                                     <span className='burbujaTexto'>
-                                        {divisionText}
+                                        DIVISIÓN DE {divisionText}
                                     </span>
                                     <span className='burbujaCantidad'>{cantidad}</span>
                                 </button>

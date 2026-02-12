@@ -64,8 +64,8 @@ function LogosCarreras() {
   return (
     <section className="LogosCarrerasSection">
       <h1>
-        <span className='Text1'>OFERTA</span>
-        <span className='Text2'>EDUCATIVA</span>
+        <span  style={{color: "#01433f", fontWeight: "700"}}>OFERTA</span>
+        <span  style={{color: "#18817d", fontWeight: "700"}}>EDUCATIVA</span>
       </h1>
       <hr />
       

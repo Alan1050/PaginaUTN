@@ -12,25 +12,15 @@ h1 {
 }
 
 .Text1 {
-    color: #2ecc71;
     font-weight: 800;
 }
 
 .Text2 {
-    background: linear-gradient(45deg, rgb(14, 124, 0), rgb(1, 5, 0));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: rgb(255, 255, 255);
+    color: #18817d !important;
     display: inline-block;
     font-weight: 800;
-    background-size: 200% auto;
-    transition: background-position 0.5s ease;
 }
 
-.Text2:hover {
-    background-position: right center;
-}
 
 hr {
     border: none;

@@ -1,5 +1,5 @@
 import './Vinculacion.css';
-import bannerBecas from '../assets/banner/bannerBecas.jpg'
+import bannerVinculacion from '../assets/banner/bannerVinculacion.jpg'
 import iconoCELEX from '../assets/logos/iconoCELEX.png'
 import iconoECECUT from '../assets/logos/iconoECECUT.png'
 import iconoEU from '../assets/logos/iconoEU.png'
@@ -10,7 +10,7 @@ function Vinculacion() {
   return (
     <>
         <div className='banner-container-Vinculacion'>
-            <img src={bannerBecas} alt="" className='bannerVinculacion' />
+            <img src={bannerVinculacion} alt="" className='bannerVinculacion' />
         </div>
 
         <section className='contentVinculacion'>

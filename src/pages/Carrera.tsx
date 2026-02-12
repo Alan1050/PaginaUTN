@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 
 import "./Carrera.css";
 
+import trabajandoJaguar from '../assets/banner/Trabajando.jpg'
+
 // Logos de las Carreras:
 
 import LogoIA from "../assets/logos/IA.png";
@@ -2789,7 +2791,6 @@ useEffect(() => {
                   </div>
                 ) : null}
 
-                {/* Campo Laboral con efecto acordeón */}
                 <div
                   className={`section-item ${activeSection === "campo-laboral" ? "active" : ""}`}
                   style={
@@ -3545,6 +3546,14 @@ useEffect(() => {
           ) : (
             <></>
           ))}
+            
+          
+          {carreraSeleccionada.label === "LPS" && (
+          <div>
+            <h1 style={{ color: carreraSeleccionada.color }}>Comienza una nueva forma de entender la mente</h1>
+            <img src={trabajandoJaguar} alt="" style={{width: "100%", objectFit: "cover", marginTop: "50px"}} />
+          </div>
+          )}
 
         {/* Botón para volver */}
         <div

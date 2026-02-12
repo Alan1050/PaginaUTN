@@ -6,8 +6,7 @@
 
 /* ========== BANNER PRINCIPAL ========== */
 .ofertaEducativaContainerPrincipal {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                      url('../assets/banner/Index.jpg');
+    background-image: url('../assets/banner/bannerOferta.jpg');
     width: 100%;
     height: 90vh;
     background-size: cover;
