@@ -1,0 +1,41 @@
+.FooterContent{
+        background-color: rgb(10, 81, 76);
+}
+
+.FooterContentImage{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.logoUTFooter{
+    width: 50%;
+    margin-left: 20px;
+}
+
+.imagesFooter{
+    display: grid;
+    grid-template-columns: 1.5fr .5fr;
+    background-color: white;
+    margin-left: 280px;
+    height: min-content;
+    padding-right: 20px;
+    padding-left: 5px;
+    margin-top: 30px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.logoCulturaPazFooter{
+    width: 90%;
+}
+
+.logoGobiernoUT{
+    width: 100%;
+    border-radius: 5px;
+    margin: auto;
+}
+
+.footer-pt2{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}

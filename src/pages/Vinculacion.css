@@ -1,0 +1,220 @@
+/* Añade un contenedor relativo para la imagen */
+.banner-container-Vinculacion {
+    position: relative;
+    width: 100%;
+    height: 82vh;
+}
+
+.bannerVinculacion {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+/* El degradado cubre toda la sección contentBecas (después de la imagen) */
+.contentVinculacion {
+    background: linear-gradient(to bottom, 
+        rgba(0, 6, 67, 0) 0%,    
+        rgba(0, 6, 67, 0.050) 25%,
+        rgba(0, 6, 67, 0.078) 50%,
+        rgba(0, 6, 67, 0.33) 75%,
+        rgba(0, 6, 67, 0.372) 100%       
+    );
+    width: 100%;
+    height: 70vh;
+    position: relative;
+    margin-top: -30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+    box-sizing: border-box;
+}
+
+/* Superposición sutil para dar profundidad al degradado */
+.contentVinculacion::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.05) 0%,
+        transparent 30%,
+        rgba(0, 0, 0, 0.1) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
+.contentVinculacion h1 {
+    color: rgb(0, 0, 0);
+    font-size: 3.5rem;
+    margin-bottom: 100px;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 2;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.logosContainerVinculacion {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    background-color: transparent;
+}
+
+.iconVinculacion {
+    width: 100%;
+    object-fit: contain;
+    transition: all 0.4s ease;
+    background-color: transparent;
+    position: relative;
+    z-index: 2;
+    box-shadow: (0 6px 12px rgba(0, 0, 0, 0.4));
+}
+
+.iconVinculacion:hover {
+    transform: scale(1.15) translateY(-10px);
+}
+
+/* Línea decorativa debajo del título */
+.contentVinculacion h1::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 2px;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 1200px) {
+    .contentVinculacion h1 {
+        font-size: 3rem;
+    }
+    
+    .iconVinculacion {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .logosContainerVinculacion {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 992px) {
+    .banner-container-Vinculacion {
+        height: 70vh;
+    }
+    
+    .contentVinculacion {
+        padding: 50px 20px;
+    }
+    
+    .contentVinculacion h1 {
+        font-size: 2.7rem;
+        margin-bottom: 50px;
+    }
+    
+    .iconVinculacion {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .logosContainerVinculacion {
+        gap: 35px;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner-container-Vinculacion {
+        height: 60vh;
+    }
+    
+    .contentVinculacion {
+        padding: 40px 15px;
+        margin-top: 0;
+    }
+    
+    .contentVinculacion h1 {
+        font-size: 2.3rem;
+        margin-bottom: 40px;
+        letter-spacing: 1px;
+    }
+    
+    .iconVinculacion {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .logosContainerVinculacion {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .banner-container-Vinculacion {
+        height: 50vh;
+    }
+    
+    .contentVinculacion {
+        padding: 35px 12px;
+    }
+    
+    .contentVinculacion h1 {
+        font-size: 2rem;
+        margin-bottom: 35px;
+    }
+    
+    .contentVinculacion h1::after {
+        width: 80px;
+        bottom: -12px;
+    }
+    
+    .iconVinculacion {
+        width: 130px;
+        height: 130px;
+    }
+    
+    .logosContainerVinculacion {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-container-Vinculacion {
+        height: 45vh;
+    }
+    
+    .contentVinculacion {
+        padding: 30px 10px;
+    }
+    
+    .contentVinculacion h1 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    
+    .iconVinculacion {
+        width: 110px;
+        height: 110px;
+    }
+    
+    .logosContainerVinculacion {
+        gap: 20px;
+    }
+}

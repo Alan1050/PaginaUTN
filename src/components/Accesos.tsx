@@ -13,8 +13,8 @@ function Accesos() {
   return (
     <section className="accesos-container">
       <div className='ContainerButton1'>
-        <a href=""><img src={logoVinculacion} alt="Vinculación" /></a>
-        <a href=""><img src={logoBecas} alt="Becas" /></a>
+        <a href="/Vinculacion"><img src={logoVinculacion} alt="Vinculación" /></a>
+        <a href="/Becas"><img src={logoBecas} alt="Becas" /></a>
         <a href=""><img src={logoRecorrido} alt="Recorrido" /></a>
         <a href=""><img src={logoInvestigacion} alt="Investigación" /></a>
       </div>

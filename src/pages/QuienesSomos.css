@@ -6,7 +6,7 @@
 
 /* Banner principal */
 .quienesSomosContainerPrincipal {
-    background-image: url('../assets/banner/Index.jpg');
+    background-image: url('../assets/banner/bannerQuienesSomos.jpg');
     width: 100%;
     height: 80vh;
     background-size: cover;
