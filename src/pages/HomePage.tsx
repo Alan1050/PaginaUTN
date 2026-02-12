@@ -8,7 +8,7 @@ import Accesos from "../components/Accesos.tsx";
 import "./HomePages.css";
 
 function HomePage() {
- const banners = [ImagenPrincipal, bannerAdminision];
+ const banners = [bannerAdminision, ImagenPrincipal];
   const [indiceActual, setIndiceActual] = useState(0);
 
   useEffect(() => {
