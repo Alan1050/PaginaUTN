@@ -1,220 +1,654 @@
-/* Añade un contenedor relativo para la imagen */
-.banner-container-Vinculacion {
+/* ========== BANNER PRINCIPAL ========== */
+.banner-container-vinculacion {
     position: relative;
     width: 100%;
-    height: 82vh;
+    height: 85vh;
+    overflow: hidden;
 }
 
-.bannerVinculacion {
+.banner-vinculacion {
     width: 100%;
-    object-fit: cover;
     height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.8);
+
 }
 
-/* El degradado cubre toda la sección contentBecas (después de la imagen) */
-.contentVinculacion {
-    background: linear-gradient(to bottom, 
-        rgba(0, 6, 67, 0) 0%,    
-        rgba(0, 6, 67, 0.050) 25%,
-        rgba(0, 6, 67, 0.078) 50%,
-        rgba(0, 6, 67, 0.33) 75%,
-        rgba(0, 6, 67, 0.372) 100%       
-    );
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 70vh;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 67, 53, 0.95) 0%,
+        rgba(0, 67, 53, 0.8) 50%,
+        rgba(0, 67, 53, 0.95) 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.banner-content {
+    text-align: center;
+    color: white;
+    max-width: 900px;
+    padding: 0 20px;
+    animation: fadeInUp 1s ease;
+}
+
+.banner-title {
+    font-size: 5rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+    font-family: 'Arial Black', sans-serif;
+    animation: slideInLeft 1s ease;
+}
+
+.banner-subtitle {
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+    opacity: 0.95;
+    animation: slideInRight 1s ease 0.2s both;
+}
+
+.banner-decoration {
+    width: 150px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, white, #c4a747, white, transparent);
+    margin: 0 auto;
+    animation: expandWidth 1s ease 0.4s both;
+    border-radius: 2px;
+}
+
+/* ========== CONTENIDO PRINCIPAL ========== */
+.content-vinculacion {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    width: 100%;
     position: relative;
-    margin-top: -30px;
+    padding: 80px 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 60px 20px;
-    box-sizing: border-box;
 }
 
-/* Superposición sutil para dar profundidad al degradado */
-.contentVinculacion::before {
+/* ========== HEADER DE SECCIÓN ========== */
+.section-header {
+    text-align: center;
+    margin-bottom: 80px;
+    max-width: 900px;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #1a2e35;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.section-description {
+    font-size: 1.2rem;
+    color: #ffffff;
+    line-height: 1.8;
+
+    font-weight: 400;
+}
+
+.title-decoration {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.title-decoration span {
+    width: 60px;
+    height: 4px;
+    background: #004335;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.title-decoration span:nth-child(2) {
+    width: 120px;
+    background: #c4a747;
+}
+
+/* ========== GRID DE PROGRAMAS ========== */
+.programas-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto 80px;
+    width: 100%;
+    padding: 0 20px;
+}
+
+/* ========== TARJETA DE PROGRAMA ========== */
+.programa-card {
+    text-decoration: none;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 15px 35px rgba(0, 67, 53, 0.08);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    height: 100%;
+    display: block;
+}
+
+.programa-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: var(--programa-gradient);
+    transform: translateY(-100%);
+    transition: transform 0.5s ease;
+    z-index: 2;
+}
+
+.programa-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 30px 60px rgba(0, 67, 53, 0.15);
+}
+
+.programa-card:hover::before {
+    transform: translateY(0);
+}
+
+.card-content {
+    padding: 35px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+}
+
+/* ========== CONTENEDOR DEL ÍCONO ========== */
+.icon-container {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.programa-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+    z-index: 3;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+}
+
+.programa-card:hover .programa-icon {
+    transform: scale(1.15) rotate(8deg);
+}
+
+.icon-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: var(--programa-gradient);
+    border-radius: 50%;
+    opacity: 0.15;
+    filter: blur(20px);
+    transition: all 0.6s ease;
+    z-index: 1;
+}
+
+.programa-card:hover .icon-glow {
+    opacity: 0.4;
+    width: 130%;
+    height: 130%;
+    filter: blur(30px);
+}
+
+.icon-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--programa-color);
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.5s ease;
+    z-index: 2;
+}
+
+.programa-card:hover .icon-ring {
+    opacity: 0.3;
+    width: 150%;
+    height: 150%;
+    border-width: 3px;
+}
+
+/* ========== TEXTO DE LA TARJETA ========== */
+.programa-nombre {
+    color: #1a2e35;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 15px 0 12px;
+    text-align: center;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+    position: relative;
+    z-index: 3;
+}
+
+.programa-card:hover .programa-nombre {
+    color: var(--programa-color);
+}
+
+.programa-descripcion {
+    color: #5e7a7e;
+    font-size: 0.95rem;
+    text-align: center;
+    line-height: 1.6;
+    margin: 0 0 20px;
+    flex-grow: 1;
+    position: relative;
+    z-index: 3;
+}
+
+/* ========== HOVER INFO ========== */
+.card-hover-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--programa-color);
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 12px 20px;
+    border-radius: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+    width: 100%;
+    border: 2px solid transparent;
+    position: relative;
+    z-index: 3;
+}
+
+.programa-card:hover .card-hover-info {
+    opacity: 1;
+    transform: translateY(0);
+    border-color: var(--programa-color);
+    background: white;
+}
+
+.arrow-icon {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    transition: transform 0.3s ease;
+}
+
+.programa-card:hover .arrow-icon {
+    transform: translateX(8px);
+}
+
+/* ========== INFO ADICIONAL ========== */
+.info-adicional {
+    max-width: 1000px;
+    margin: 40px auto 0;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.info-card {
+    background: linear-gradient(145deg, #004335, #1a5a4a);
+    padding: 50px 60px;
+    border-radius: 60px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 67, 53, 0.2);
+}
+
+.info-card::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, 
-        rgba(255, 255, 255, 0.05) 0%,
-        transparent 30%,
-        rgba(0, 0, 0, 0.1) 100%
-    );
+    background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
     pointer-events: none;
-    z-index: 1;
 }
 
-.contentVinculacion h1 {
-    color: rgb(0, 0, 0);
-    font-size: 3.5rem;
-    margin-bottom: 100px;
-    text-align: center;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+.info-card h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
     position: relative;
     z-index: 2;
-    font-weight: 700;
-    letter-spacing: 2px;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
-.logosContainerVinculacion {
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
-    justify-content: center;
-    gap: 50px;
-    width: 100%;
+.info-card p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    opacity: 0.95;
+    max-width: 800px;
     margin: 0 auto;
     position: relative;
     z-index: 2;
-    background-color: transparent;
 }
 
-.iconVinculacion {
-    width: 100%;
-    object-fit: contain;
-    transition: all 0.4s ease;
-    background-color: transparent;
-    position: relative;
-    z-index: 2;
-    box-shadow: (0 6px 12px rgba(0, 0, 0, 0.4));
+/* ========== ANIMACIONES ========== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.iconVinculacion:hover {
-    transform: scale(1.15) translateY(-10px);
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
-/* Línea decorativa debajo del título */
-.contentVinculacion h1::after {
-    content: '';
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 4px;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 2px;
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
-/* Media queries para responsividad */
+@keyframes expandWidth {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 150px;
+        opacity: 1;
+    }
+}
+
+/* ========== MEDIA QUERIES ========== */
+
+/* Pantallas grandes */
 @media (max-width: 1200px) {
-    .contentVinculacion h1 {
-        font-size: 3rem;
+    .programas-grid {
+        gap: 25px;
     }
     
-    .iconVinculacion {
-        width: 200px;
-        height: 200px;
+    .banner-title {
+        font-size: 4rem;
+        letter-spacing: 8px;
     }
     
-    .logosContainerVinculacion {
-        gap: 40px;
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .icon-container {
+        width: 120px;
+        height: 120px;
     }
 }
 
+/* Tablets landscape */
 @media (max-width: 992px) {
-    .banner-container-Vinculacion {
+    .banner-container-vinculacion {
         height: 70vh;
     }
     
-    .contentVinculacion {
-        padding: 50px 20px;
+    .banner-title {
+        font-size: 3.5rem;
+        letter-spacing: 6px;
     }
     
-    .contentVinculacion h1 {
-        font-size: 2.7rem;
-        margin-bottom: 50px;
+    .banner-subtitle {
+        font-size: 1.4rem;
     }
     
-    .iconVinculacion {
-        width: 180px;
-        height: 180px;
+    .programas-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
     
-    .logosContainerVinculacion {
-        gap: 35px;
+    .content-vinculacion {
+        padding: 60px 30px;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .section-description {
+        font-size: 1.1rem;
+    }
+    
+    .info-card {
+        padding: 40px 30px;
     }
 }
 
+/* Tablets portrait */
 @media (max-width: 768px) {
-    .banner-container-Vinculacion {
+    .banner-container-vinculacion {
         height: 60vh;
     }
     
-    .contentVinculacion {
-        padding: 40px 15px;
-        margin-top: 0;
+    .banner-title {
+        font-size: 2.8rem;
+        letter-spacing: 4px;
     }
     
-    .contentVinculacion h1 {
-        font-size: 2.3rem;
-        margin-bottom: 40px;
-        letter-spacing: 1px;
+    .banner-subtitle {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
     }
     
-    .iconVinculacion {
-        width: 150px;
-        height: 150px;
+    .content-vinculacion {
+        padding: 50px 20px;
     }
     
-    .logosContainerVinculacion {
-        gap: 30px;
-    }
-}
-
-@media (max-width: 576px) {
-    .banner-container-Vinculacion {
-        height: 50vh;
-    }
-    
-    .contentVinculacion {
-        padding: 35px 12px;
-    }
-    
-    .contentVinculacion h1 {
+    .section-title {
         font-size: 2rem;
-        margin-bottom: 35px;
     }
     
-    .contentVinculacion h1::after {
-        width: 80px;
-        bottom: -12px;
+    .programas-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
     
-    .iconVinculacion {
-        width: 130px;
-        height: 130px;
-    }
-    
-    .logosContainerVinculacion {
-        gap: 25px;
-    }
-}
-
-@media (max-width: 480px) {
-    .banner-container-Vinculacion {
-        height: 45vh;
-    }
-    
-    .contentVinculacion {
-        padding: 30px 10px;
-    }
-    
-    .contentVinculacion h1 {
-        font-size: 1.8rem;
-        margin-bottom: 30px;
-    }
-    
-    .iconVinculacion {
+    .icon-container {
         width: 110px;
         height: 110px;
     }
     
-    .logosContainerVinculacion {
-        gap: 20px;
+    .programa-nombre {
+        font-size: 1.2rem;
+    }
+    
+    .info-card h3 {
+        font-size: 1.6rem;
+    }
+    
+    .info-card p {
+        font-size: 1rem;
+    }
+}
+
+/* Móviles grandes */
+@media (max-width: 576px) {
+    .banner-container-vinculacion {
+        height: 50vh;
+    }
+    
+    .banner-title {
+        font-size: 2.2rem;
+        letter-spacing: 3px;
+    }
+    
+    .banner-subtitle {
+        font-size: 1rem;
+    }
+    
+    .banner-decoration {
+        width: 120px;
+    }
+    
+    .content-vinculacion {
+        padding: 40px 15px;
+    }
+    
+    .section-header {
+        margin-bottom: 50px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-description {
+        font-size: 1rem;
+    }
+    
+    .title-decoration span {
+        width: 40px;
+    }
+    
+    .title-decoration span:nth-child(2) {
+        width: 80px;
+    }
+    
+    .programas-grid {
+        grid-template-columns: 1fr;
+        max-width: 350px;
+    }
+    
+    .card-content {
+        padding: 25px;
+    }
+    
+    .icon-container {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .programa-card:hover {
+        transform: translateY(-10px);
+    }
+    
+    .info-card {
+        padding: 30px 20px;
+        border-radius: 40px;
+    }
+    
+    .info-card h3 {
+        font-size: 1.4rem;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 375px) {
+    .banner-title {
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+    }
+    
+    .banner-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .icon-container {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .programa-nombre {
+        font-size: 1.1rem;
+    }
+    
+    .programa-descripcion {
+        font-size: 0.85rem;
+    }
+    
+    .card-hover-info {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Estilos para el foco y accesibilidad */
+.programa-card:focus-visible {
+    outline: 3px solid var(--programa-color);
+    outline-offset: 3px;
+}
+
+.programa-card:focus-visible::before {
+    transform: translateY(0);
+}
+
+/* Reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+    .banner-vinculacion,
+    .programa-card,
+    .programa-icon,
+    .icon-glow,
+    .icon-ring,
+    .arrow-icon {
+        transition: none;
+        animation: none;
+    }
+    
+    .banner-container-vinculacion:hover .banner-vinculacion {
+        transform: none;
     }
 }

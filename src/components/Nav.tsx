@@ -183,8 +183,9 @@ function Nav() {
                                     </li>
                                     <li>
                                         <a 
-                                            href="/preregistro" 
-                                            onClick={(e) => handleLinkClick(e, '/preregistro')}
+                                            href="https://utn.appsiga.net/admision" 
+                                            target='_blank'
+                                            
                                         >
                                             Pre-registro
                                         </a>
@@ -488,7 +489,7 @@ function Nav() {
                         {isMobileAspirantesOpen && (
                             <ul className="mobile-dropdown-menu">
                                 <li><a href="/OfertaEducativa" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Oferta Educativa</a></li>
-                                <li><a href="/preregistro" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Pre-registro</a></li>
+                                <li><a href="https://utn.appsiga.net/admision" target='_blank' onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Pre-registro</a></li>
                                 <li><a href="/recorrido" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Recorrido Virtual</a></li>
                             </ul>
                         )}
