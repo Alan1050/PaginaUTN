@@ -108,7 +108,7 @@ function OfertaEducativa() {
             id: 14,
             label: "LPS",
             logo: LogoLPS,
-            division: 'DIVISIÓN DE TURISMO Y GASTRONOMÍA'
+            division: 'DIVISIÓN ECONÓMICO ADMINISTRATIVA'
         },
     ];
 

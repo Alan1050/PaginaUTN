@@ -42,7 +42,10 @@ import PlanIA_PDF from "../assets/planesEstudio/pdf/IA.pdf";
 
 // Baners:
 
+// IAL (Ingenieria en Alimentos)
 import bannerIAL from "../assets/banner/bannerIAL.jpg";
+import banner2IAL from '../assets/banner/IAL1.jpg';
+import banner3IAL from '../assets/banner/IAL2.jpg';
 
 // IC (Ingenieria Civil)
 import bannerIC from "../assets/banner/bannerIC.jpg";
@@ -221,7 +224,7 @@ function Carrera() {
       label: "IAL",
       color: "#771e1b",
       nombreCompleto: "Ingeniería en Alimentos",
-      banner: [bannerIAL],
+      banner: [bannerIAL, banner2IAL, banner3IAL],
       egreasdo:
         " El egresado de Ingeniería en Alimentos incluye la capacidad de diseñar, planear, evaluar y mejorar procesos de producción de alimentos. También debe ser capaz de garantizar la calidad e inocuidad de los productos. Algunas de las tareas que puede realizar un ingeniero alimentos son:",
       tareas: [
