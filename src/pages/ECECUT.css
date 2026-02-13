@@ -1,0 +1,1089 @@
+/* ========== BANNER ECECUT ========== */
+.banner-container-ececut {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    overflow: hidden;
+}
+
+.banner-ececut {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.8);
+    transition: transform 8s ease;
+}
+
+.banner-container-ececut:hover .banner-ececut {
+    transform: scale(1.1);
+}
+
+.banner-overlay-ececut {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 48, 73, 0.95) 0%,
+        rgba(33, 78, 108, 0.85) 50%,
+        rgba(0, 48, 73, 0.95) 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.banner-content-ececut {
+    text-align: center;
+    color: white;
+    max-width: 1100px;
+    padding: 0 20px;
+    animation: fadeInUp 1s ease;
+}
+
+.banner-title-ececut {
+    font-size: 6rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+    font-family: 'Arial Black', sans-serif;
+    animation: slideInLeft 1s ease;
+    color: #fff;
+}
+
+.banner-subtitle-ececut {
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+    opacity: 0.95;
+    animation: slideInRight 1s ease 0.2s both;
+    color: #FBC02D;
+    text-shadow: 0 0 20px rgba(251, 192, 45, 0.3);
+    line-height: 1.5;
+}
+
+.banner-decoration-ececut {
+    width: 200px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, white, #FBC02D, white, transparent);
+    margin: 0 auto;
+    animation: expandWidth 1s ease 0.4s both;
+    border-radius: 2px;
+}
+
+/* ========== CONTENIDO PRINCIPAL ========== */
+.content-ececut {
+    background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+    width: 100%;
+    position: relative;
+    padding: 80px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+}
+
+/* ========== HEADER DE SECCIÓN ========== */
+.section-header-ececut {
+    text-align: center;
+    margin-bottom: 50px;
+
+    width: 100%;
+}
+
+.section-title-ececut {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #003049;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    text-transform: uppercase;
+}
+
+.title-emoji {
+    font-size: 2.8rem;
+    background: linear-gradient(145deg, #003049, #1E4A6B);
+    padding: 15px;
+    border-radius: 50%;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 48, 73, 0.2);
+}
+
+.section-subtitle-ececut {
+    font-size: 1.2rem;
+    color: #4a5c60;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    font-weight: 400;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title-decoration-ececut {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.title-decoration-ececut span {
+    width: 60px;
+    height: 4px;
+    background: #003049;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.title-decoration-ececut span:nth-child(2) {
+    width: 120px;
+    background: #FBC02D;
+}
+
+/* ========== ACREDITACIÓN ========== */
+.section-acreditacion {
+    width: 100%;
+    max-width: 1400px;
+}
+
+.acreditacion-card {
+    background: white;
+    border-radius: 40px;
+    padding: 50px;
+    box-shadow: 0 20px 40px rgba(0, 48, 73, 0.08);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(251, 192, 45, 0.2);
+}
+
+.acreditacion-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #003049, #FBC02D, #003049);
+}
+
+.acreditacion-header {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.acreditacion-icono {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(145deg, #003049, #1E4A6B);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 4px solid #FBC02D;
+}
+
+.acreditacion-emoji {
+    font-size: 4rem;
+    filter: brightness(0) invert(1);
+}
+
+.acreditacion-titulo-wrapper {
+    flex: 1;
+}
+
+.acreditacion-titulo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #003049;
+    margin-bottom: 15px;
+}
+
+.acreditacion-logos {
+    display: flex;
+    gap: 20px;
+}
+
+.logo-conocer,
+.logo-sep {
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.logo-conocer {
+    background: linear-gradient(145deg, #003049, #1E4A6B);
+    color: white;
+    border: 2px solid #FBC02D;
+}
+
+.logo-sep {
+    background: linear-gradient(145deg, #8B1E3F, #A12B4C);
+    color: white;
+    border: 2px solid #FFD700;
+}
+
+.acreditacion-texto {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #2c3e50;
+    margin: 0;
+}
+
+/* ========== FACULTADES ========== */
+.section-facultades {
+    width: 100%;
+    max-width: 1400px;
+}
+
+.facultades-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.facultad-card {
+    background: white;
+    border-radius: 30px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0, 48, 73, 0.1);
+}
+
+.facultad-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: var(--facultad-color);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.facultad-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 30px 60px rgba(0, 48, 73, 0.15);
+}
+
+.facultad-card:hover::before {
+    transform: scaleX(1);
+}
+
+.facultad-icono {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(145deg, #f8f9fa, #ffffff);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    border: 3px solid var(--facultad-color);
+    transition: all 0.4s ease;
+}
+
+.facultad-card:hover .facultad-icono {
+    background: var(--facultad-color);
+    transform: scale(1.1) rotate(360deg);
+}
+
+.facultad-emoji {
+    font-size: 3rem;
+    transition: all 0.4s ease;
+}
+
+.facultad-card:hover .facultad-emoji {
+    filter: brightness(0) invert(1);
+    transform: scale(1.2);
+}
+
+.facultad-titulo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #003049;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.facultad-card:hover .facultad-titulo {
+    color: var(--facultad-color);
+}
+
+.facultad-descripcion {
+    font-size: 1rem;
+    color: #5e7a7e;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.facultad-barra {
+    width: 50px;
+    height: 3px;
+    background: var(--facultad-color);
+    margin: 20px auto 0;
+    border-radius: 3px;
+    transition: width 0.4s ease;
+}
+
+.facultad-card:hover .facultad-barra {
+    width: 80px;
+}
+
+/* ========== DESCRIPCIÓN ========== */
+.section-descripcion {
+    width: 100%;
+    max-width: 1400px;
+}
+
+.descripcion-contenedor {
+    background: white;
+    border-radius: 40px;
+    padding: 60px;
+    box-shadow: 0 20px 40px rgba(0, 48, 73, 0.08);
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 50px;
+    align-items: center;
+    border: 1px solid rgba(251, 192, 45, 0.2);
+}
+
+.descripcion-parrafo {
+    font-size: 1.2rem;
+    line-height: 1.9;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.texto-destacado {
+    color: #003049;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    border-bottom: 3px solid #FBC02D;
+    padding-bottom: 2px;
+}
+
+.descripcion-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.stat-item {
+    background: linear-gradient(145deg, #f8f9fa, #ffffff);
+    padding: 30px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 48, 73, 0.1);
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 48, 73, 0.15);
+    border-color: #FBC02D;
+}
+
+.stat-numero {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #003049;
+    display: block;
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: #5e7a7e;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ========== DIRIGIDO A ========== */
+.section-dirigido-ececut {
+    width: 100%;
+    max-width: 1400px;
+}
+
+.dirigido-grid-ececut {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.dirigido-card-ececut {
+    background: white;
+    border-radius: 25px;
+    padding: 30px 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    border: 1px solid transparent;
+}
+
+.dirigido-card-ececut:hover {
+    transform: translateX(10px);
+    border-color: #FBC02D;
+    box-shadow: 0 20px 40px rgba(0, 48, 73, 0.1);
+}
+
+.dirigido-numero-ececut {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(145deg, #003049, #1E4A6B);
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 2px solid #FBC02D;
+    transition: all 0.4s ease;
+}
+
+.dirigido-card-ececut:hover .dirigido-numero-ececut {
+    transform: scale(1.1);
+    background: #FBC02D;
+    border-color: #003049;
+    color: #003049;
+}
+
+.dirigido-texto-ececut {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #2c3e50;
+    line-height: 1.4;
+}
+
+/* ========== BENEFICIOS ========== */
+.section-beneficios {
+    width: 100%;
+    max-width: 1400px;
+}
+
+.beneficios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.beneficio-card {
+    background: white;
+    border-radius: 30px;
+    padding: 35px;
+    display: flex;
+    gap: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(0, 48, 73, 0.1);
+}
+
+.beneficio-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 48, 73, 0.15);
+    border-color: #FBC02D;
+}
+
+.beneficio-icono {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(145deg, #f8f9fa, #ffffff);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 2px solid var(--beneficio-color);
+    transition: all 0.4s ease;
+}
+
+.beneficio-card:hover .beneficio-icono {
+    background: var(--beneficio-color);
+    transform: scale(1.1) rotate(10deg);
+}
+
+.beneficio-emoji {
+    font-size: 2.5rem;
+    transition: all 0.4s ease;
+}
+
+.beneficio-card:hover .beneficio-emoji {
+    filter: brightness(0) invert(1);
+    transform: scale(1.2);
+}
+
+.beneficio-contenido {
+    flex: 1;
+}
+
+.beneficio-titulo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #003049;
+    margin-bottom: 12px;
+    transition: color 0.3s ease;
+}
+
+.beneficio-card:hover .beneficio-titulo {
+    color: var(--beneficio-color);
+}
+
+.beneficio-descripcion {
+    font-size: 0.95rem;
+    color: #5e7a7e;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ========== CERTIFICADOS ========== */
+.section-certificados {
+    width: 100%;
+    max-width: 1400px;
+}
+
+.certificados-card {
+    background: linear-gradient(145deg, #003049, #1E4A6B);
+    border-radius: 50px;
+    padding: 60px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    box-shadow: 0 30px 60px rgba(0, 48, 73, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.certificados-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(251, 192, 45, 0.1), transparent 70%);
+    pointer-events: none;
+}
+
+.certificados-icono {
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 4px solid #FBC02D;
+    backdrop-filter: blur(5px);
+}
+
+.certificados-emoji {
+    font-size: 5rem;
+}
+
+.certificados-contenido {
+    flex: 1;
+    color: white;
+}
+
+.certificados-titulo {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.certificados-texto {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    opacity: 0.95;
+    margin-bottom: 30px;
+}
+
+.certificados-sellos {
+    display: flex;
+    gap: 20px;
+}
+
+.sello {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border: 1px solid #FBC02D;
+    backdrop-filter: blur(5px);
+}
+
+/* ========== PROCESO ========== */
+.section-proceso {
+    width: 100%;
+    max-width: 1400px;
+}
+
+.proceso-steps-ececut {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.step-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(251, 192, 45, 0.1);
+}
+
+.step-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 48, 73, 0.15);
+    border-color: #FBC02D;
+}
+
+.step-numero {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(145deg, #003049, #1E4A6B);
+    color: white;
+    font-size: 2rem;
+    font-weight: 900;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    border: 3px solid #FBC02D;
+    transition: all 0.4s ease;
+}
+
+.step-item:hover .step-numero {
+    transform: scale(1.1);
+    background: #FBC02D;
+    border-color: #003049;
+    color: #003049;
+}
+
+.step-titulo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #003049;
+    margin-bottom: 12px;
+}
+
+.step-descripcion {
+    font-size: 0.95rem;
+    color: #5e7a7e;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.step-connector {
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #003049, #FBC02D, #003049);
+    margin: 0 15px;
+}
+
+/* ========== CTA FINAL ========== */
+.section-cta-ececut {
+    width: 100%;
+    max-width: 1400px;
+    margin-top: 40px;
+}
+
+.cta-content-ececut {
+    background: linear-gradient(145deg, #003049, #1E4A6B);
+    border-radius: 60px;
+    padding: 70px 80px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0, 48, 73, 0.3);
+}
+
+.cta-content-ececut::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 70% 30%, rgba(251, 192, 45, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.cta-titulo {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+    letter-spacing: 2px;
+}
+
+.cta-descripcion {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    opacity: 0.95;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.cta-button-ececut {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    background: #FBC02D;
+    color: #003049;
+    padding: 20px 60px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 2;
+    border: 2px solid transparent;
+}
+
+.cta-button-ececut:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(251, 192, 45, 0.3);
+    gap: 20px;
+    background: white;
+    border-color: #FBC02D;
+}
+
+.cta-arrow {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    transition: transform 0.4s ease;
+}
+
+.cta-button-ececut:hover .cta-arrow {
+    transform: translateX(8px);
+}
+
+/* ========== ANIMACIONES ========== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes expandWidth {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 200px;
+        opacity: 1;
+    }
+}
+
+/* ========== MEDIA QUERIES ========== */
+@media (max-width: 1200px) {
+    .banner-title-ececut {
+        font-size: 5rem;
+    }
+    
+    .banner-subtitle-ececut {
+        font-size: 1.4rem;
+    }
+    
+    .facultades-grid,
+    .beneficios-grid {
+        gap: 25px;
+    }
+    
+    .descripcion-contenedor {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 992px) {
+    .banner-container-ececut {
+        height: 70vh;
+    }
+    
+    .banner-title-ececut {
+        font-size: 4rem;
+        letter-spacing: 10px;
+    }
+    
+    .banner-subtitle-ececut {
+        font-size: 1.3rem;
+    }
+    
+    .content-ececut {
+        padding: 60px 30px;
+        gap: 70px;
+    }
+    
+    .section-title-ececut {
+        font-size: 2.4rem;
+    }
+    
+    .facultades-grid,
+    .beneficios-grid,
+    .dirigido-grid-ececut {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .acreditacion-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .proceso-steps-ececut {
+        flex-direction: column;
+    }
+    
+    .step-connector {
+        width: 3px;
+        height: 30px;
+        margin: 15px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner-container-ececut {
+        height: 60vh;
+    }
+    
+    .banner-title-ececut {
+        font-size: 3rem;
+        letter-spacing: 8px;
+    }
+    
+    .banner-subtitle-ececut {
+        font-size: 1.1rem;
+    }
+    
+    .content-ececut {
+        padding: 50px 20px;
+        gap: 60px;
+    }
+    
+    .section-title-ececut {
+        font-size: 2rem;
+        flex-direction: column;
+    }
+    
+    .facultades-grid,
+    .beneficios-grid,
+    .dirigido-grid-ececut {
+        grid-template-columns: 1fr;
+    }
+    
+    .certificados-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px;
+    }
+    
+    .certificados-sellos {
+        justify-content: center;
+    }
+    
+    .descripcion-contenedor {
+        padding: 40px;
+    }
+    
+    .cta-content-ececut {
+        padding: 50px 30px;
+    }
+    
+    .cta-titulo {
+        font-size: 2rem;
+    }
+    
+    .cta-descripcion {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .banner-container-ececut {
+        height: 50vh;
+    }
+    
+    .banner-title-ececut {
+        font-size: 2.5rem;
+        letter-spacing: 6px;
+    }
+    
+    .banner-subtitle-ececut {
+        font-size: 1rem;
+    }
+    
+    .banner-decoration-ececut {
+        width: 150px;
+    }
+    
+    .content-ececut {
+        padding: 40px 15px;
+        gap: 50px;
+    }
+    
+    .section-title-ececut {
+        font-size: 1.8rem;
+    }
+    
+    .title-emoji {
+        font-size: 2rem;
+        padding: 12px;
+    }
+    
+    .acreditacion-card {
+        padding: 30px;
+    }
+    
+    .acreditacion-logos {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .facultad-card {
+        padding: 30px 20px;
+    }
+    
+    .dirigido-card-ececut {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+    }
+    
+    .certificados-card {
+        padding: 30px;
+    }
+    
+    .certificados-titulo {
+        font-size: 1.8rem;
+    }
+    
+    .certificados-texto {
+        font-size: 1rem;
+    }
+    
+    .cta-titulo {
+        font-size: 1.6rem;
+    }
+    
+    .cta-descripcion {
+        font-size: 1rem;
+    }
+    
+    .cta-button-ececut {
+        padding: 15px 40px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .banner-title-ececut {
+        font-size: 2rem;
+        letter-spacing: 4px;
+    }
+    
+    .banner-subtitle-ececut {
+        font-size: 0.9rem;
+    }
+    
+    .section-title-ececut {
+        font-size: 1.5rem;
+    }
+}
+
+/* ========== ACCESIBILIDAD ========== */
+@media (prefers-reduced-motion: reduce) {
+    .banner-ececut,
+    .facultad-card,
+    .beneficio-card,
+    .dirigido-card-ececut,
+    .step-item,
+    .cta-button-ececut {
+        transition: none;
+        animation: none;
+    }
+    
+    .banner-container-ececut:hover .banner-ececut {
+        transform: none;
+    }
+}

@@ -25,7 +25,7 @@ h1 {
 hr {
     border: none;
     height: 3px;
-    background: linear-gradient(to right, #2ecc71, rgb(92, 250, 0));
+    background: linear-gradient(to right, rgb(10, 81, 76), rgb(74, 246, 0)) !important;
     margin: 20px auto 40px;
     width: 80%;
     max-width: 600px;

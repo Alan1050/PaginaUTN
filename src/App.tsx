@@ -46,13 +46,19 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import Nav from './components/Nav.tsx';
 import HomePage from './pages/HomePage.tsx'; 
-import CarreraPage from './pages/Carrera.tsx'; 
+import CarreraPage from './pages/Carreras.tsx'; 
 import QuienesSomos from './pages/QuinesSomos.tsx';
 import OfertaEducativa from './pages/OfertaEducativa.tsx';
 import NavContacto from './components/NavContacto.tsx';
 import Becas from './pages/Becas.tsx'
 import Vinculacion from './pages/Vinculacion.tsx';
 import Footer from './components/Pie.tsx';
+import Incubadora from './pages/Incubadora.tsx';
+import CEELEX from './pages/CEELEX.tsx';
+import ECECUT from './pages/ECECUT.tsx';
+import ExtensionUniversitaria from './pages/ExtensionUniversitaria.tsx';
+import MovilidadEstudiantil from './pages/MovilidadEstudiantil.tsx';
+
 
 function App() {
   const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -75,10 +81,16 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/Carrera/:nombre" element={<CarreraPage />} />
+        <Route path="/Carreras" element={<OfertaEducativa />} />        
         <Route path="/QuienesSomos" element={<QuienesSomos />} />
         <Route path="/OfertaEducativa" element={<OfertaEducativa />} />
         <Route path="/Becas" element={<Becas />} />
         <Route path="/Vinculacion" element={<Vinculacion />} />
+        <Route path="/Incubadora" element={<Incubadora />} />  
+        <Route path="/CEELEX" element={<CEELEX />} />    
+        <Route path="/ECECUT" element={<ECECUT />} /> 
+        <Route path="/ExtensionUniversitaria" element={<ExtensionUniversitaria />} />  
+        <Route path="/MovilidadEstudiantil" element={<MovilidadEstudiantil />} />  
         {/* Ruta para manejar 404 - Redirige a Home */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

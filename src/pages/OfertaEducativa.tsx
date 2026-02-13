@@ -147,7 +147,7 @@ function OfertaEducativa() {
         } else {
             // En móvil mostrar versiones acortadas
             if (sinPrefijo === 'INFORMACIÓN, INTELIGENCIA ARTIFICIAL Y COMUNICACIÓN') {
-                return 'TECNOLOGIAS DE LA INFORMACION';
+                return 'TECNOLOGIAS DE LA INFORMACIÓN';
             }
             if (sinPrefijo === 'ELECTROMECÁNICA INDUSTRIAL') {
                 return 'ELECTROMECÁNICA INDUSTRIAL';
@@ -258,8 +258,8 @@ function OfertaEducativa() {
             
 
                             <h1>
-                    <span className="Text1">Oferta</span>
-                    <span className="Text2">Educativa</span>
+                    <span className="Text1" style={{color: "#01433f",}}>Oferta</span>
+                    <span className="Text2" style={{color: "#18817d",}}>Educativa</span>
                 </h1>
             
             {/* Línea decorativa */}

@@ -257,6 +257,8 @@
     transition: right 0.4s ease;
     z-index: 1000;
     overflow-y: auto;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
 }
 
 .MobileMenu.active {

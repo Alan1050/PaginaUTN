@@ -71,6 +71,7 @@
 /* Botón de oferta educativa - CON FLECHA */
 .nav-contacto-btn-oferta{
     background-color: #005d27;
+    text-align: center;
     color: white;
     text-decoration: none;
     font-weight: 700;
@@ -92,7 +93,6 @@
     position: relative;
     z-index: 2;
     transition: transform 0.3s ease;
-    margin-right: 5px; /* Espacio para la flecha */
 }
 
 /* Flecha del botón */
@@ -117,12 +117,9 @@
     background-color: #0a4700;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     border-color: white;
-    padding-right: 30px; /* Más espacio para la flecha */
+    text-align: center;
 }
 
-.nav-contacto-btn-oferta:hover span {
-    transform: translateX(-5px);
-}
 
 .nav-contacto-btn-oferta:hover .nav-contacto-btn-flecha {
     opacity: 1;

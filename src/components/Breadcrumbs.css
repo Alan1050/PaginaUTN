@@ -1,0 +1,191 @@
+/* ========== BREADCRUMBS BASE ========== */
+.breadcrumbs {
+    width: 100%;
+    background: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 10;
+    padding: 12px 0;
+}
+
+.breadcrumbs-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.breadcrumbs-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.breadcrumbs-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.breadcrumbs-link {
+    color: #5e7a7e;
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    font-weight: 400;
+}
+
+.breadcrumbs-link:hover {
+    background: rgba(0, 0, 0, 0.03);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.breadcrumbs-current {
+    color: #1a2e35;
+    font-weight: 600;
+    padding: 6px 10px;
+}
+
+.breadcrumbs-separator {
+    color: #cbd5e0;
+    margin: 0 6px;
+    font-size: 0.9rem;
+}
+
+/* ========== ESQUEMAS DE COLOR POR SECCIÓN ========== */
+
+/* Incubadora - Verde */
+.breadcrumbs-incubadora .breadcrumbs-link:hover {
+    color: #004335;
+    text-decoration-color: #004335;
+}
+
+.breadcrumbs-incubadora .breadcrumbs-current {
+    color: #004335;
+    background: rgba(0, 67, 53, 0.04);
+    border-radius: 20px;
+}
+
+/* CEELEX - Azul marino */
+.breadcrumbs-ceelex .breadcrumbs-link:hover {
+    color: #0A192F;
+    text-decoration-color: #0A192F;
+}
+
+.breadcrumbs-ceelex .breadcrumbs-current {
+    color: #0A192F;
+    background: rgba(10, 25, 47, 0.04);
+    border-radius: 20px;
+}
+
+/* ECECUT - Azul petróleo */
+.breadcrumbs-ececut .breadcrumbs-link:hover {
+    color: #003049;
+    text-decoration-color: #003049;
+}
+
+.breadcrumbs-ececut .breadcrumbs-current {
+    color: #003049;
+    background: rgba(0, 48, 73, 0.04);
+    border-radius: 20px;
+}
+
+/* Extensión - Azul petróleo suave */
+.breadcrumbs-extension .breadcrumbs-link:hover {
+    color: #2A3D52;
+    text-decoration-color: #2A3D52;
+}
+
+.breadcrumbs-extension .breadcrumbs-current {
+    color: #2A3D52;
+    background: rgba(42, 61, 82, 0.04);
+    border-radius: 20px;
+}
+
+/* Movilidad - Azul turquesa */
+.breadcrumbs-movilidad .breadcrumbs-link:hover {
+    color: #0A3D62;
+    text-decoration-color: #0A3D62;
+}
+
+.breadcrumbs-movilidad .breadcrumbs-current {
+    color: #0A3D62;
+    background: rgba(10, 61, 98, 0.04);
+    border-radius: 20px;
+}
+
+/* Vinculación - Verde institucional */
+.breadcrumbs-vinculacion .breadcrumbs-link:hover {
+    color: #004335;
+    text-decoration-color: #004335;
+}
+
+.breadcrumbs-vinculacion .breadcrumbs-current {
+    color: #004335;
+    background: rgba(0, 67, 53, 0.04);
+    border-radius: 20px;
+}
+
+/* Becas - Verde institucional */
+.breadcrumbs-becas .breadcrumbs-link:hover {
+    color: #004335;
+    text-decoration-color: #004335;
+}
+
+.breadcrumbs-becas .breadcrumbs-current {
+    color: #004335;
+    background: rgba(0, 67, 53, 0.04);
+    border-radius: 20px;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 992px) {
+    .breadcrumbs-container {
+        padding: 0 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .breadcrumbs {
+        padding: 10px 0;
+    }
+    
+    .breadcrumbs-container {
+        padding: 0 20px;
+    }
+    
+    .breadcrumbs-item {
+        font-size: 0.85rem;
+    }
+    
+    .breadcrumbs-link,
+    .breadcrumbs-current {
+        padding: 4px 8px;
+    }
+}
+
+@media (max-width: 576px) {
+    .breadcrumbs-list {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 5px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    
+    .breadcrumbs-list::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .breadcrumbs-item {
+        white-space: nowrap;
+    }
+    
+    .breadcrumbs-container {
+        padding: 0 15px;
+    }
+}

@@ -1,3 +1,4 @@
+import Breadcrumbs from '../components/Breadcrumbs';
 import './QuienesSomos.css';
 import { useState } from 'react';
 
@@ -75,6 +76,10 @@ function QuienesSomos() {
         </div>
       </div>
       
+
+<Breadcrumbs />
+
+
       <div className='quienesSomosContent'>
         <div className='sections-container'>
           

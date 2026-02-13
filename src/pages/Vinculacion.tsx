@@ -7,6 +7,7 @@ import iconoECECUT from '../assets/logos/iconoECECUT.png';
 import iconoEU from '../assets/logos/iconoEU.png';
 import iconoIncubadora from '../assets/logos/iconoIncubadora.png';
 import iconoMovilidad from '../assets/logos/iconoMovilidad.png';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 function Vinculacion() {
   const programas = [
@@ -15,16 +16,16 @@ function Vinculacion() {
       nombre: 'Incubadora de Empresas',
       icono: iconoIncubadora,
       descripcion: 'Impulsa tu idea de negocio con asesoría y recursos',
-      link: '/vinculacion/incubadora',
+      link: '/Incubadora',
       color: '#FF6B6B',
       gradient: 'linear-gradient(145deg, #FF6B6B 0%, #FF8E8E 50%, #FFB5B5 100%)'
     },
     {
-      id: 'celex',
-      nombre: 'CELEX',
+      id: 'ceelex',
+      nombre: 'CEELEX',
       icono: iconoCELEX,
-      descripcion: 'Centro de Lenguas Extranjeras - Aprende idiomas',
-      link: '/vinculacion/celex',
+      descripcion: 'Centro de Enseñanza Especializado en Lenguas Extranjeras - Aprende idiomas',
+      link: '/CEELEX',
       color: '#4ECDC4',
       gradient: 'linear-gradient(145deg, #4ECDC4 0%, #6FD6CF 50%, #9FE5E0 100%)'
     },
@@ -33,16 +34,16 @@ function Vinculacion() {
       nombre: 'ECECUT',
       icono: iconoECECUT,
       descripcion: 'Educación Continua - Cursos y diplomados',
-      link: '/vinculacion/ececut',
+      link: '/ECECUT',
       color: '#FFD93D',
       gradient: 'linear-gradient(145deg, #FFD93D 0%, #FFE270 50%, #FFF0B5 100%)'
     },
     {
       id: 'eu',
-      nombre: 'Educación Dual',
+      nombre: 'Extensión Universitaria',
       icono: iconoEU,
       descripcion: 'Aprende en la empresa y estudia en la universidad',
-      link: '/vinculacion/educacion-dual',
+      link: '/ExtensionUniversitaria',
       color: '#6C5CE7',
       gradient: 'linear-gradient(145deg, #6C5CE7 0%, #8F7EFF 50%, #B5A8FF 100%)'
     },
@@ -51,7 +52,7 @@ function Vinculacion() {
       nombre: 'Movilidad Académica',
       icono: iconoMovilidad,
       descripcion: 'Intercambio nacional e internacional',
-      link: '/vinculacion/movilidad',
+      link: '/MovilidadEstudiantil',
       color: '#FF8C42',
       gradient: 'linear-gradient(145deg, #FF8C42 0%, #FFA86B 50%, #FFC594 100%)'
     }
@@ -67,8 +68,10 @@ function Vinculacion() {
         />
       </div>
 
+            <Breadcrumbs />
+
       <section className="content-vinculacion">
-        <div className="section-header">
+        <div className="section-header-Vinculacion">
           <h2 className="section-title">Programas de Vinculación</h2>
           <p className="section-description">
             Explora nuestros programas y descubre cómo la Universidad Tecnológica de Nayarit 
@@ -120,8 +123,8 @@ function Vinculacion() {
 
         <div className="info-adicional">
           <div className="info-card">
-            <h3>¿Por qué Vinculación?</h3>
-            <p>
+            <h3 className='Tit-Info-Adicional-Vinculacion'>¿Por qué Vinculación?</h3>
+            <p className='text-adicional-vinculacion'>
               La vinculación es el puente entre tu formación académica y el éxito profesional. 
               A través de nuestros programas, tendrás acceso a experiencias que transformarán 
               tu carrera.

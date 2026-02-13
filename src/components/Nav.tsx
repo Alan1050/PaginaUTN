@@ -436,6 +436,28 @@ function Nav() {
                                             </ul>
                                         )}
                                     </li>
+
+                                    {/* Plataformas con submenú */}
+                                    <li 
+                                        className={`has-submenu ${activeSubmenu === 'plataformas' ? 'active' : ''}`}
+                                        onMouseEnter={() => setActiveSubmenu('plataformas')}
+                                        onMouseLeave={() => activeSubmenu === 'plataformas' && setActiveSubmenu(null)}
+                                    >
+                                        <div className="submenu-trigger">
+                                            <span>Plataformas</span>
+                                            <span className="submenu-arrow">▶</span>
+                                        </div>
+                                        
+                                        {activeSubmenu === 'plataformas' && (
+                                            <ul className="submenu">
+                                                <li><a href="" onClick={(e) => handleLinkClick(e, '')}>APP SIGA</a></li>
+                                                <li><a href="https://docs.google.com/a/utnay.edu.mx/forms/d/e/1FAIpQLSeIB7jqBepEzxOyB4xyqfe-LPm4SV6dfFbowl3QauScASltBw/viewform" target='_blank' onClick={(e) => handleLinkClick(e, '')}>Servicios Informáticos</a></li>
+                                                <li><a href="https://docs.google.com/a/utnay.edu.mx/forms/d/e/1FAIpQLSd1N8qU8yr6Dgjdpjgs5t23znAZa0IhkW8zE3iQTkBkd7QrdA/viewform" target='_blank' onClick={(e) => handleLinkClick(e, '')}>Servicios generales</a></li>
+                                                <li><a href="" onClick={(e) => handleLinkClick(e, '')}>Transparencia</a></li>
+                                                <li><a href="" onClick={(e) => handleLinkClick(e, '')}>SidOut</a></li>
+                                            </ul>
+                                        )}
+                                    </li>
                                 </ul>
                             )}
                         </li>
@@ -698,6 +720,37 @@ function Nav() {
                                                 </a>
                                             </li>
                                             <li><a href="/" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Servicios al Sector Productivo</a></li>
+                                        </ul>
+                                    )}
+                                </li>
+                                                                
+                                <li 
+                                    className={`mobile-has-submenu ${activeMobileSubmenu === 'plataformas' ? 'active' : ''}`}
+                                >
+                                    <div 
+                                        className="mobile-submenu-trigger"
+                                        onClick={() => toggleMobileSubmenu('plataformas')}
+                                    >
+                                        <span>Plataformas</span>
+                                        <span className={`mobile-submenu-arrow ${activeMobileSubmenu === 'plataformas' ? 'rotated' : ''}`}>▶</span>
+                                    </div>
+                                    
+                                    {activeMobileSubmenu === 'plataformas' && (
+                                        <ul className="mobile-submenu">
+                                            <li>
+                                                <a 
+                                                    href="https://utn.appsiga.net" 
+                                                    target="_blank" 
+                                                    rel="noopener noreferrer"
+                                                    onClick={(e) => { e.stopPropagation(); closeMenu(); }}
+                                                >
+                                                    APPSIGA
+                                                </a>
+                                            </li>
+                                            <li><a href="https://docs.google.com/a/utnay.edu.mx/forms/d/e/1FAIpQLSeIB7jqBepEzxOyB4xyqfe-LPm4SV6dfFbowl3QauScASltBw/viewform" target='_blank' onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Serivicios Informaticos</a></li>
+                                            <li><a href="https://docs.google.com/a/utnay.edu.mx/forms/d/e/1FAIpQLSd1N8qU8yr6Dgjdpjgs5t23znAZa0IhkW8zE3iQTkBkd7QrdA/viewform" target='_blank' onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Servicios Generales</a></li>
+                                            <li><a href="" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Transparencia</a></li>
+                                            <li><a href="" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>SidOut</a></li>                                            
                                         </ul>
                                     )}
                                 </li>

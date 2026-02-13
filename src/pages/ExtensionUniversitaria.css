@@ -1,0 +1,1136 @@
+.banner-container-extension {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    overflow: hidden;
+}
+
+.banner-extension {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.8);
+    transition: transform 8s ease;
+}
+
+.banner-container-extension:hover .banner-extension {
+    transform: scale(1.1);
+}
+
+.banner-overlay-extension {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(42, 61, 82, 0.95) 0%,
+        rgba(58, 84, 108, 0.85) 50%,
+        rgba(42, 61, 82, 0.95) 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.banner-content-extension {
+    text-align: center;
+    color: white;
+    max-width: 1100px;
+    padding: 0 20px;
+    animation: fadeInUp 1s ease;
+}
+
+.banner-title-extension {
+    font-size: 6rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+    font-family: 'Arial Black', sans-serif;
+    animation: slideInLeft 1s ease;
+    color: #fff;
+}
+
+.banner-subtitle-extension {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 10px;
+    margin-bottom: 30px;
+    opacity: 0.95;
+    animation: slideInRight 1s ease 0.2s both;
+    color: #E9C46A;
+    text-shadow: 0 0 20px rgba(233, 196, 106, 0.3);
+    line-height: 1.4;
+}
+
+.banner-decoration-extension {
+    width: 200px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, white, #E9C46A, white, transparent);
+    margin: 0 auto;
+    animation: expandWidth 1s ease 0.4s both;
+    border-radius: 2px;
+}
+
+/* ========== CONTENIDO PRINCIPAL ========== */
+.content-extension {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    width: 100%;
+    position: relative;
+    padding: 80px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+}
+
+/* ========== HEADER DE SECCIÓN ========== */
+.section-header-extension {
+    text-align: center;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.section-title-extension {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #2A3D52;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    text-transform: uppercase;
+}
+
+.title-emoji-extension {
+    font-size: 2.8rem;
+    background: linear-gradient(145deg, #2A3D52, #3A546C);
+    padding: 15px;
+    border-radius: 50%;
+    color: white;
+    box-shadow: 0 10px 30px rgba(42, 61, 82, 0.2);
+}
+
+.section-subtitle-extension {
+    font-size: 1.3rem;
+    color: #5e7a7e;
+    line-height: 1.6;
+    margin-top: -10px;
+    font-weight: 500;
+}
+
+.title-decoration-extension {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.title-decoration-extension span {
+    width: 60px;
+    height: 4px;
+    background: #2A3D52;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.title-decoration-extension span:nth-child(2) {
+    width: 120px;
+    background: #E9C46A;
+}
+
+/* ========== INTRODUCCIÓN ========== */
+.section-intro-extension {
+    width: 100%;
+    max-width: 1400px;
+}
+
+.intro-card-extension {
+    background: white;
+    border-radius: 40px;
+    padding: 50px;
+    box-shadow: 0 20px 40px rgba(42, 61, 82, 0.08);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    border: 1px solid rgba(233, 196, 106, 0.2);
+}
+
+.intro-card-extension::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #2A3D52, #E9C46A, #2A3D52);
+}
+
+.intro-icono-extension {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(145deg, #2A3D52, #3A546C);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 4px solid #E9C46A;
+}
+
+.intro-emoji-extension {
+    font-size: 4rem;
+    filter: brightness(0) invert(1);
+}
+
+.intro-texto-extension {
+    flex: 1;
+}
+
+.intro-parrafo-extension {
+    font-size: 1.2rem;
+    line-height: 1.9;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.texto-destacado-extension {
+    color: #2A3D52;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    border-bottom: 3px solid #E9C46A;
+    padding-bottom: 2px;
+}
+
+/* ========== SECTORES ========== */
+.section-sectores-extension {
+    width: 100%;
+    max-width: 1400px;
+}
+
+.sectores-grid-extension {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.sector-card-extension {
+    background: white;
+    border-radius: 30px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(42, 61, 82, 0.1);
+}
+
+.sector-card-extension::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #2A3D52, #E9C46A);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.sector-card-extension:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(42, 61, 82, 0.15);
+}
+
+.sector-card-extension:hover::before {
+    transform: scaleX(1);
+}
+
+.sector-icono-extension {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(145deg, #f8f9fa, #ffffff);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    border: 3px solid #2A3D52;
+    transition: all 0.4s ease;
+}
+
+.sector-card-extension:hover .sector-icono-extension {
+    background: #2A3D52;
+    transform: scale(1.1) rotate(360deg);
+}
+
+.sector-emoji-extension {
+    font-size: 2.8rem;
+    transition: all 0.4s ease;
+}
+
+.sector-card-extension:hover .sector-emoji-extension {
+    filter: brightness(0) invert(1);
+}
+
+.sector-nombre-extension {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2A3D52;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.sector-card-extension:hover .sector-nombre-extension {
+    color: #2A3D52;
+}
+
+.sector-descripcion-extension {
+    font-size: 0.9rem;
+    color: #5e7a7e;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ========== CAPACITACIÓN ========== */
+.section-capacitacion {
+    width: 100%;
+    max-width: 1400px;
+}
+
+.capacitacion-intro-card {
+    background: linear-gradient(145deg, rgba(42, 61, 82, 0.02), rgba(233, 196, 106, 0.02));
+    border-radius: 30px;
+    padding: 40px;
+    margin-bottom: 50px;
+    border-left: 5px solid #E9C46A;
+}
+
+.capacitacion-intro-texto {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.subtitulo-extension {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2A3D52;
+    margin-bottom: 30px;
+}
+
+.subtitulo-icono {
+    font-size: 2rem;
+    background: rgba(233, 196, 106, 0.2);
+    padding: 10px;
+    border-radius: 15px;
+}
+
+/* Diplomados */
+.diplomados-section {
+    margin-bottom: 50px;
+}
+
+.diplomados-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.diplomado-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(42, 61, 82, 0.05);
+}
+
+.diplomado-item:hover {
+    transform: translateX(10px);
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    border-color: #E9C46A;
+    box-shadow: 0 10px 25px rgba(42, 61, 82, 0.1);
+}
+
+.diplomado-check {
+    width: 30px;
+    height: 30px;
+    background: #2A9D8F;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.diplomado-nombre {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+/* Áreas de capacitación */
+.capacitaciones-section {
+    margin-bottom: 50px;
+}
+
+.capacitaciones-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.capacitacion-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.02);
+    transition: all 0.3s ease;
+}
+
+.capacitacion-item:hover {
+    background: rgba(233, 196, 106, 0.1);
+    transform: translateY(-3px);
+}
+
+.capacitacion-bullet {
+    color: #E76F51;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.capacitacion-nombre {
+    font-size: 0.95rem;
+    color: #2c3e50;
+}
+
+/* Beneficios capacitación */
+.beneficios-capacitacion-card {
+    background: linear-gradient(145deg, #2A3D52, #3A546C);
+    border-radius: 40px;
+    padding: 50px;
+    color: white;
+    margin-top: 40px;
+}
+
+.beneficios-titulo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.beneficios-icono {
+    font-size: 2rem;
+}
+
+.beneficios-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.beneficio-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.beneficio-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+.beneficio-numero {
+    width: 40px;
+    height: 40px;
+    background: #E9C46A;
+    color: #2A3D52;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.beneficio-texto {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    color: white;
+}
+
+/* ========== SECTOR PRODUCTIVO ========== */
+.section-sector-productivo {
+    width: 100%;
+    max-width: 1400px;
+}
+
+/* CEDPAI */
+.cedpai-section {
+    background: white;
+    border-radius: 50px;
+    padding: 50px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    margin-bottom: 50px;
+    border: 1px solid rgba(42, 61, 82, 0.1);
+}
+
+.cedpai-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.cedpai-icono-grande {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(145deg, #E76F51, #F4A261);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 15px 30px rgba(231, 111, 81, 0.2);
+}
+
+.cedpai-emoji-grande {
+    font-size: 3.5rem;
+}
+
+.cedpai-titulo-wrapper {
+    flex: 1;
+}
+
+.cedpai-titulo {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #E76F51;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+}
+
+.cedpai-subtitulo {
+    font-size: 1.2rem;
+    color: #5e7a7e;
+    font-weight: 500;
+}
+
+.cedpai-servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.cedpai-servicio-card {
+    background: linear-gradient(145deg, #f8f9fa, #ffffff);
+    border-radius: 25px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(231, 111, 81, 0.1);
+}
+
+.cedpai-servicio-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(231, 111, 81, 0.15);
+    border-color: #E76F51;
+}
+
+.cedpai-servicio-icono {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(145deg, #E76F51, #F4A261);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.cedpai-servicio-emoji {
+    font-size: 2.5rem;
+    filter: brightness(0) invert(1);
+}
+
+.cedpai-servicio-nombre {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2A3D52;
+    margin-bottom: 10px;
+}
+
+.cedpai-servicio-descripcion {
+    font-size: 0.95rem;
+    color: #5e7a7e;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Alquiler de espacios */
+.alquiler-section {
+    background: white;
+    border-radius: 50px;
+    padding: 50px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(42, 61, 82, 0.1);
+}
+
+.alquiler-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.alquiler-icono-grande {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(145deg, #2A9D8F, #2A9D8F);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.alquiler-emoji-grande {
+    font-size: 3rem;
+    filter: brightness(0) invert(1);
+}
+
+.alquiler-titulo-principal {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #2A3D52;
+    margin: 0;
+}
+
+.espacios-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 25px;
+}
+
+.espacio-card {
+    background: white;
+    border-radius: 25px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(42, 61, 82, 0.1);
+}
+
+.espacio-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--espacio-color);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.espacio-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(42, 61, 82, 0.15);
+}
+
+.espacio-card:hover::before {
+    transform: scaleX(1);
+}
+
+.espacio-destacado {
+    border: 2px solid #E76F51;
+    background: linear-gradient(145deg, #fff9f5, #ffffff);
+}
+
+.espacio-icono {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(145deg, #f8f9fa, #ffffff);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    border: 2px solid var(--espacio-color);
+    transition: all 0.4s ease;
+}
+
+.espacio-card:hover .espacio-icono {
+    background: var(--espacio-color);
+    transform: scale(1.1) rotate(10deg);
+}
+
+.espacio-emoji {
+    font-size: 2rem;
+    transition: all 0.4s ease;
+}
+
+.espacio-card:hover .espacio-emoji {
+    filter: brightness(0) invert(1);
+}
+
+.espacio-nombre {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2A3D52;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.espacio-capacidad {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #5e7a7e;
+    font-size: 0.9rem;
+}
+
+.capacidad-icono {
+    font-size: 1.1rem;
+}
+
+.espacio-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #E76F51;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ========== CTA FINAL ========== */
+.section-cta-extension {
+    width: 100%;
+    max-width: 1400px;
+    margin-top: 40px;
+}
+
+.cta-content-extension {
+    background: linear-gradient(145deg, #2A3D52, #3A546C);
+    border-radius: 60px;
+    padding: 70px 80px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(42, 61, 82, 0.3);
+}
+
+.cta-content-extension::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 70% 30%, rgba(233, 196, 106, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.cta-titulo-extension {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+    letter-spacing: 2px;
+}
+
+.cta-descripcion-extension {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    opacity: 0.95;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.cta-button-extension {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    background: #E9C46A;
+    color: #2A3D52;
+    padding: 20px 60px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 2;
+    border: 2px solid transparent;
+}
+
+.cta-button-extension:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(233, 196, 106, 0.3);
+    gap: 20px;
+    background: white;
+    border-color: #E9C46A;
+}
+
+.cta-arrow-extension {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    transition: transform 0.4s ease;
+}
+
+.cta-button-extension:hover .cta-arrow-extension {
+    transform: translateX(8px);
+}
+
+/* ========== ANIMACIONES ========== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes expandWidth {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 200px;
+        opacity: 1;
+    }
+}
+
+/* ========== MEDIA QUERIES ========== */
+@media (max-width: 1200px) {
+    .banner-title-extension {
+        font-size: 5rem;
+    }
+    
+    .banner-subtitle-extension {
+        font-size: 2.5rem;
+    }
+    
+    .sectores-grid-extension {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .capacitaciones-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .cedpai-servicios-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .espacios-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .banner-container-extension {
+        height: 70vh;
+    }
+    
+    .banner-title-extension {
+        font-size: 4rem;
+        letter-spacing: 10px;
+    }
+    
+    .banner-subtitle-extension {
+        font-size: 2rem;
+        letter-spacing: 8px;
+    }
+    
+    .content-extension {
+        padding: 60px 30px;
+        gap: 70px;
+    }
+    
+    .section-title-extension {
+        font-size: 2.4rem;
+    }
+    
+    .intro-card-extension {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .sectores-grid-extension {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .diplomados-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .beneficios-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cedpai-header {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner-container-extension {
+        height: 60vh;
+    }
+    
+    .banner-title-extension {
+        font-size: 3rem;
+        letter-spacing: 8px;
+    }
+    
+    .banner-subtitle-extension {
+        font-size: 1.6rem;
+        letter-spacing: 6px;
+    }
+    
+    .content-extension {
+        padding: 50px 20px;
+        gap: 60px;
+    }
+    
+    .section-title-extension {
+        font-size: 2rem;
+        flex-direction: column;
+    }
+    
+    .sectores-grid-extension,
+    .capacitaciones-grid,
+    .cedpai-servicios-grid,
+    .espacios-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .capacitacion-intro-card {
+        padding: 30px;
+    }
+    
+    .subtitulo-extension {
+        font-size: 1.5rem;
+    }
+    
+    .beneficios-capacitacion-card {
+        padding: 30px;
+    }
+    
+    .cedpai-section,
+    .alquiler-section {
+        padding: 30px;
+    }
+    
+    .cedpai-titulo {
+        font-size: 2rem;
+    }
+    
+    .alquiler-titulo-principal {
+        font-size: 1.8rem;
+    }
+    
+    .cta-content-extension {
+        padding: 50px 30px;
+    }
+    
+    .cta-titulo-extension {
+        font-size: 2rem;
+    }
+    
+    .cta-descripcion-extension {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .banner-container-extension {
+        height: 50vh;
+    }
+    
+    .banner-title-extension {
+        font-size: 2.5rem;
+        letter-spacing: 6px;
+    }
+    
+    .banner-subtitle-extension {
+        font-size: 1.3rem;
+        letter-spacing: 4px;
+    }
+    
+    .banner-decoration-extension {
+        width: 150px;
+    }
+    
+    .content-extension {
+        padding: 40px 15px;
+        gap: 50px;
+    }
+    
+    .section-title-extension {
+        font-size: 1.8rem;
+    }
+    
+    .title-emoji-extension {
+        font-size: 2rem;
+        padding: 12px;
+    }
+    
+    .intro-card-extension {
+        padding: 30px;
+    }
+    
+    .intro-parrafo-extension {
+        font-size: 1rem;
+    }
+    
+    .capacitacion-intro-texto {
+        font-size: 1rem;
+    }
+    
+    .diplomado-item,
+    .capacitacion-item {
+        padding: 12px;
+    }
+    
+    .beneficio-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .cedpai-servicio-card {
+        padding: 25px;
+    }
+    
+    .cta-titulo-extension {
+        font-size: 1.6rem;
+    }
+    
+    .cta-descripcion-extension {
+        font-size: 1rem;
+    }
+    
+    .cta-button-extension {
+        padding: 15px 40px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .banner-title-extension {
+        font-size: 2rem;
+        letter-spacing: 4px;
+    }
+    
+    .banner-subtitle-extension {
+        font-size: 1.1rem;
+        letter-spacing: 3px;
+    }
+    
+    .section-title-extension {
+        font-size: 1.5rem;
+    }
+}
+
+/* ========== ACCESIBILIDAD ========== */
+@media (prefers-reduced-motion: reduce) {
+    .banner-extension,
+    .sector-card-extension,
+    .diplomado-item,
+    .capacitacion-item,
+    .beneficio-item,
+    .cedpai-servicio-card,
+    .espacio-card,
+    .cta-button-extension {
+        transition: none;
+        animation: none;
+    }
+    
+    .banner-container-extension:hover .banner-extension {
+        transform: none;
+    }
+}

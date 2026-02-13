@@ -8,7 +8,7 @@
 
 .banner-vinculacion {
     width: 100%;
-    height: 100%;
+    height: 90vh;
     object-fit: cover;
     object-position: center;
     filter: brightness(0.8);
@@ -82,7 +82,7 @@
 }
 
 /* ========== HEADER DE SECCIÓN ========== */
-.section-header {
+.section-header-Vinculacion {
     text-align: center;
     margin-bottom: 80px;
     max-width: 900px;
@@ -103,7 +103,6 @@
     font-size: 1.2rem;
     color: #ffffff;
     line-height: 1.8;
-
     font-weight: 400;
 }
 
@@ -541,11 +540,11 @@
     }
     
     .content-vinculacion {
-        padding: 40px 15px;
+        padding: 0px 15px;
     }
     
-    .section-header {
-        margin-bottom: 50px;
+    .section-header-Vinculacion {
+        margin-bottom: 20px;
     }
     
     .section-title {
@@ -590,6 +589,23 @@
     .info-card h3 {
         font-size: 1.4rem;
     }
+    
+    .banner-vinculacion{
+        height: 30vh;
+    }
+
+        .info-adicional {
+        width: 95%;
+        margin: 0px auto 20px;
+    }
+
+    .Tit-Info-Adicional-Vinculacion{
+        font-size: 5px;
+    }
+
+    .text-adicional-vinculacion{
+        text-align:left;
+    }
 }
 
 /* Móviles pequeños */
@@ -624,6 +640,11 @@
         padding: 10px 15px;
         font-size: 0.9rem;
     }
+
+    .banner-vinculacion{
+        height: 30vh;
+    }
+
 }
 
 /* Estilos para el foco y accesibilidad */
