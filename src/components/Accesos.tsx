@@ -2,7 +2,7 @@ import './Accesos.css';
 import logoVinculacion from '../assets/logos/LOGO VINCULACION.png';
 import logoBecas from '../assets/logos/LOGO BECAS.png';
 import logoRecorrido from '../assets/logos/LOGO RECORRIDO.png';
-import logoInvestigacion from '../assets/logos/LOGO INVESTIGACION.png';
+import logoInvestigacion from '../assets/logos/IconoInvestigacion.png';
 import logoTransparencia from '../assets/logos/LOGO TRANSPARENCIA.png';
 import logoComite from '../assets/logos/LOGO COMITE DE ETICA.png';
 import logoBuzon from '../assets/logos/LOGO BUZON SUGERENCIAS.png';
@@ -19,7 +19,7 @@ function Accesos() {
         <a href=""><img src={logoInvestigacion} alt="Investigación" /></a>
       </div>
       <div className='ContainerButton2'>
-        <a href=""><img src={logoTransparencia} alt="Transparencia" /></a>
+        <a href="https://transparencia.utnay.edu.mx/" target='_blank'><img src={logoTransparencia} alt="Transparencia" /></a>
         <a href=""><img src={logoComite} alt="Comité de Ética" /></a>
         <a href=""><img src={logoBuzon} alt="Buzón de Sugerencias" /></a>
         <a href=""><img src={logoCultura} alt="Cultura de Paz" /></a>

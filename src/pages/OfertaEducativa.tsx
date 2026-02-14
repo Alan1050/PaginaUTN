@@ -257,7 +257,7 @@ function OfertaEducativa() {
 
             
 
-                            <h1>
+            <h1>
                     <span className="Text1" style={{color: "#01433f",}}>Oferta</span>
                     <span className="Text2" style={{color: "#18817d",}}>Educativa</span>
                 </h1>

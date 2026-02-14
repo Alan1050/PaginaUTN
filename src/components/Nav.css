@@ -505,6 +505,7 @@
     color: #333;
     text-decoration: none;
     transition: background-color 0.3s;
+    font-weight: 700;
 }
 
 .submenu-trigger:hover {

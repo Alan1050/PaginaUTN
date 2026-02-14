@@ -109,7 +109,7 @@ import banner2IMT from '../assets/banner/IMT1.jpg';
 import banner3IMT from '../assets/banner/IMT2.jpg';
 
 // LPS (Licenciatura en Psicologia)
-import bannerLPS from "../assets/banner/bannerLPS.jpg";
+import bannerLPS from "../assets/banner/bannerLPS2.jpg";
 
 
 
@@ -208,7 +208,7 @@ function Carrera() {
         "Analista de Costos de Proyectos.",
         "Líder de Ingeniería de Manufactura.",
       ],
-      tsu: "Tecnico Superior Universitario en Microelectrónica",
+      tsu: "Técnico Superior Universitario en Microelectrónica",
       extension: "4003",
       facebook: "https://www.facebook.com/idgsutnay",
       label2:
@@ -247,7 +247,7 @@ function Carrera() {
         "Emprendimiento: Creación de empresas de alimentos, productos artesanales o industriales, marcas propias y proyectos innovadores.",
         "Docencia y capacitación: Educación media y superior, capacitación técnica en empresas.",
       ],
-      tsu: "Tecnico Superior Universitario en Tecnología de Alimentos",
+      tsu: "Técnico Superior Universitario en Tecnología de Alimentos",
       extension: "1704",
       facebook: "https://www.facebook.com/IAutnay",
       label2: "ITB UT Nayarit",
@@ -356,7 +356,7 @@ function Carrera() {
         "Empresas concesionarias de equipos automáticos y máquinas autómatas y de venta de partes.",
         "Empresa propia de diseño, desarrollo y mantenimiento en sistemas industriales mecatrónicos en automatización y control.",
       ],
-      tsu: "Tecnico Superior Universitario en Instalaciones Electricas Eficientes",
+      tsu: "Técnico Superior Universitario en Instalaciones Electricas Eficientes",
       extension: "2104 y 2106",
       facebook: "https://www.facebook.com/profile.php?id=100057164151875",
       label2: "MI-MT Universidad Tecnológica de Nayarit",
@@ -393,7 +393,7 @@ function Carrera() {
         "Anfitriones turísticos.",
         "Representantes de agencias de viajes, agentes de viajes y tour operadores.",
       ],
-      tsu: "Tecnico Superior Universitario en Turismo",
+      tsu: "Técnico Superior Universitario en Turismo",
       extension: "1901",
       facebook: "https://www.facebook.com/utnayturismo",
       label2: "Turismo UTNay",
@@ -432,7 +432,7 @@ function Carrera() {
         "Especialista en Evaluación Socioeconómica y Ambiental.",
         "Emprendedor.",
       ],
-      tsu: "Tecnico Superior Universitario en Emprendimiento, Formulación y Evaluación de Proyectos",
+      tsu: "Técnico Superior Universitario en Emprendimiento, Formulación y Evaluación de Proyectos",
       extension: "1801",
       facebook: "https://www.facebook.com/aep.igp.ldeis.utnay",
       label2: "Administración UTNayarit",
@@ -454,7 +454,7 @@ function Carrera() {
       tareas: [],
       planEstudioPDF: undefined,
       campoLaboral: ["Información en actualización"],
-      tsu: "Tecnico Superior Universitario en Psicología",
+      tsu: "Técnico Superior Universitario en Psicología",
       extension: "1801",
       facebook: "#",
       label2: "NO DISPONIBLE",
@@ -463,12 +463,12 @@ function Carrera() {
     {
       id: 9,
       src: LogoITIID,
-      alt: "Logotipo Carrera Ingenieria en Tecnologias de la Información e Innovación Digital",
+      alt: "Logotipo Carrera Ingenieria en Tecnologías de la Información e Innovación Digital",
       label: "ITIID",
       color: "#23777a",
       banner: [bannerITIID, banner2ITIID, banner3ITIID],
       nombreCompleto:
-        "Ingenieria en Tecnologias de la Información e Innovación Digital",
+        "Ingenieria en Tecnologías de la Información e Innovación Digital",
       egreasdo:
         "El egresado en la Ingeniería en Tecnologías de la Información e Innovación Digital es capaz de desarrollar soluciones de integración de tecnologías de la información mediante metodologías y herramientas de seguridad informática, internet de las cosas, sistemas inteligentes y administración de proyectos; con base en las normas y estándares aplicables para atender las áreas de oportunidad, resolver las necesidades y optimizar los procesos y recursos de diversos sectores.",
       tareas: [],
@@ -507,7 +507,7 @@ function Carrera() {
       extension: "4003",
       facebook: "https://www.facebook.com/idgsutnay",
       label2:
-        "Ingeniería en Tecnologias de la Información e Innovación Digital UT Nayarit",
+        "Ingeniería en Tecnologías de la Información e Innovación Digital UT Nayarit",
       competencias: [
         "Desarrollar soluciones tecnológicas a través de lenguajes de programación estructurada, programación orientada a objetos y de consulta, herramientas de desarrollo asistido de software, usabilidad y pruebas, fundamentos de redes de área local, sistemas operativos, medidas de seguridad informática para contribuir a la eficiencia y productividad en diferentes contextos con un enfoque de impulso al desarrollo social, ambiental y de economía socialmente responsable.",
         "Desarrollar soluciones tecnológicas multiplataforma de software web y móvil utilizando programación orientada a objetos, frameworks, bases de datos, estándares de calidad y diseño para resolver problemas del sector productivo, con un enfoque de inclusión, compromiso con la responsabilidad social, equidad social y de género, excelencia, vanguardia, innovación social e interculturalidad.",
@@ -2972,7 +2972,8 @@ useEffect(() => {
                 </div>
 
                 {/* Plan De Estudios */}
-                <div className="Seccion" style={{ marginBottom: "3rem" }}>
+                  {carreraSeleccionada.label !== "IMS" && (
+                                    <div className="Seccion" style={{ marginBottom: "3rem" }}>
                   <div
                     style={{
                       display: "flex",
@@ -3515,6 +3516,13 @@ useEffect(() => {
                     </div>
                   </div>
                 </div>
+                  )}
+                  {carreraSeleccionada.label === "IMS" && (
+                    <div>
+                      <h1 style={{color: '${carreraSeleccionada.color}'}}>Estamos generando tu nueva carrera ideal</h1>
+                      <img src={trabajandoJaguar} style={{width: "100%"}} alt="" />
+                    </div>
+                  )}
               </div>
               <p
                 className="buttonFace"

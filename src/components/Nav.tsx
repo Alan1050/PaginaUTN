@@ -192,8 +192,8 @@ function Nav() {
                                     </li>
                                     <li>
                                         <a 
-                                            href="/recorrido" 
-                                            onClick={(e) => handleLinkClick(e, '/recorrido')}
+                                            href="/recorrido.index.htm" 
+                                            onClick={(e) => handleLinkClick(e, '/recorrido.index.htm')}
                                         >
                                             Recorrido Virtual
                                         </a>

@@ -7,7 +7,6 @@ import iconoECECUT from '../assets/logos/iconoECECUT.png';
 import iconoEU from '../assets/logos/iconoEU.png';
 import iconoIncubadora from '../assets/logos/iconoIncubadora.png';
 import iconoMovilidad from '../assets/logos/iconoMovilidad.png';
-import Breadcrumbs from '../components/Breadcrumbs';
 
 function Vinculacion() {
   const programas = [
@@ -67,8 +66,6 @@ function Vinculacion() {
           className="banner-vinculacion" 
         />
       </div>
-
-            <Breadcrumbs />
 
       <section className="content-vinculacion">
         <div className="section-header-Vinculacion">
