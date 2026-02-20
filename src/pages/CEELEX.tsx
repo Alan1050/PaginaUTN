@@ -328,7 +328,7 @@ function CEELEX() {
                     rel="noopener noreferrer"
                     className="contacto-facebook"
                   >
-                    Ceelex-UTNayarit
+                    Ceelex UT Nayarit 
                   </a>
                 </div>
               </div>

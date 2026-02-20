@@ -5,6 +5,7 @@ import LogoUTyP from '../assets/logos/LOGOUTYP.png';
 import Calendario from '../assets/logos/LOGO CALENDARIO.png';
 import AppSiga from '../assets/logos/LOGO APPSIGA.png';
 import CalendarioEscolar from '../assets/extras/CALENDARIO ESCOLAR 2026.pdf';
+import convocatoria from '../assets/extras/Convocatoria Ingreso 2026-2027.pdf'
 
 function Nav() {
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -179,7 +180,8 @@ function Nav() {
                                             onClick={(e) => handleLinkClick(e, '/OfertaEducativa')}
                                         >
                                             Oferta Educativa
-                                        </a>
+                                        </a> 
+                                        <li><a href={convocatoria} target='_blank' onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Convocatoria Ingreso</a></li>
                                     </li>
                                     <li>
                                         <a 
@@ -192,8 +194,8 @@ function Nav() {
                                     </li>
                                     <li>
                                         <a 
-                                            href="/recorrido.index.htm" 
-                                            onClick={(e) => handleLinkClick(e, '/recorrido.index.htm')}
+                                            href="https://utnay.edu.mx/recorrido/" target='_blank'
+                                            onClick={(e) => handleLinkClick(e, 'https://utnay.edu.mx/recorrido/')}
                                         >
                                             Recorrido Virtual
                                         </a>
@@ -304,7 +306,7 @@ function Nav() {
                                                 </li>
                                                 <li>
                                                     <a 
-                                                        href="" 
+                                                        href="/ComiteEtica" 
                                                         onClick={(e) => handleLinkClick(e, '')}
                                                     >
                                                         Comite de Etica
@@ -365,7 +367,7 @@ function Nav() {
                                                 </li>
                                                 <li>
                                                     <a 
-                                                        href="" 
+                                                        href="/ComiteEtica" 
                                                         onClick={(e) => handleLinkClick(e, '')}
                                                     >
                                                         Comité de Ética
@@ -406,11 +408,12 @@ function Nav() {
                                         
                                         {activeSubmenu === 'egresados' && (
                                             <ul className="submenu">
-                                                <li><a href="" onClick={(e) => handleLinkClick(e, '')}>Bolsa de Trabajo</a></li>
-                                                <li><a href="" onClick={(e) => handleLinkClick(e, '')}>Educación Continua</a></li>
-                                                <li><a href="" onClick={(e) => handleLinkClick(e, '')}>Incubadora de Negocios</a></li>
-                                                <li><a href="" onClick={(e) => handleLinkClick(e, '')}>ECECUT</a></li>
-                                                <li><a href="" onClick={(e) => handleLinkClick(e, '')}>CEELEX</a></li>
+                                                <li><a href="/Egresados" onClick={(e) => handleLinkClick(e, '')}>Egresados</a></li>
+                                                <li><a href="/BolsaTrabajo" onClick={(e) => handleLinkClick(e, '')}>Bolsa de Trabajo</a></li>
+                                                <li><a href="/ECECUT" onClick={(e) => handleLinkClick(e, '')}>Educación Continua</a></li>
+                                                <li><a href="/Incubadora" onClick={(e) => handleLinkClick(e, '')}>Incubadora de Negocios</a></li>
+                                                <li><a href="/ECECUT" onClick={(e) => handleLinkClick(e, '')}>ECECUT</a></li>
+                                                <li><a href="/CEELEX" onClick={(e) => handleLinkClick(e, '')}>CEELEX</a></li>
                                             </ul>
                                         )}
                                     </li>
@@ -428,11 +431,12 @@ function Nav() {
                                         
                                         {activeSubmenu === 'empresarios' && (
                                             <ul className="submenu">
-                                                <li><a href="" onClick={(e) => handleLinkClick(e, '')}>Incubadora de Negocios</a></li>
-                                                <li><a href="" onClick={(e) => handleLinkClick(e, '')}>CEELEX</a></li>
-                                                <li><a href="" onClick={(e) => handleLinkClick(e, '')}>ECECUT</a></li>
-                                                <li><a href="" onClick={(e) => handleLinkClick(e, '')}>Educación Continua</a></li>
+                                                <li><a href="/Vinculacion" onClick={(e) => handleLinkClick(e, '')}>Incubadora de Negocios</a></li>
+                                                <li><a href="/CEELEX" onClick={(e) => handleLinkClick(e, '')}>CEELEX</a></li>
+                                                <li><a href="/ECECUT" onClick={(e) => handleLinkClick(e, '')}>ECECUT</a></li>
+                                                <li><a href="/ECECUT" onClick={(e) => handleLinkClick(e, '')}>Educación Continua</a></li>
                                                 <li><a href="" onClick={(e) => handleLinkClick(e, '')}>Servicios al Sector Productivo</a></li>
+                                                <li><a href="/Convenios" onClick={(e) => handleLinkClick(e, '')}>Creación de Convenios de Colaboración </a></li>
                                             </ul>
                                         )}
                                     </li>
@@ -450,10 +454,10 @@ function Nav() {
                                         
                                         {activeSubmenu === 'plataformas' && (
                                             <ul className="submenu">
-                                                <li><a href="" onClick={(e) => handleLinkClick(e, '')}>APP SIGA</a></li>
+                                                <li><a href="https://utn.appsiga.net/" target='_blank' onClick={(e) => handleLinkClick(e, '')}>APP SIGA</a></li>
                                                 <li><a href="https://docs.google.com/a/utnay.edu.mx/forms/d/e/1FAIpQLSeIB7jqBepEzxOyB4xyqfe-LPm4SV6dfFbowl3QauScASltBw/viewform" target='_blank' onClick={(e) => handleLinkClick(e, '')}>Servicios Informáticos</a></li>
                                                 <li><a href="https://docs.google.com/a/utnay.edu.mx/forms/d/e/1FAIpQLSd1N8qU8yr6Dgjdpjgs5t23znAZa0IhkW8zE3iQTkBkd7QrdA/viewform" target='_blank' onClick={(e) => handleLinkClick(e, '')}>Servicios generales</a></li>
-                                                <li><a href="" onClick={(e) => handleLinkClick(e, '')}>Transparencia</a></li>
+                                                <li><a href="https://transparencia.utnay.edu.mx/" onClick={(e) => handleLinkClick(e, '')}>Transparencia</a></li>
                                                 <li><a href="" onClick={(e) => handleLinkClick(e, '')}>SidOut</a></li>
                                             </ul>
                                         )}
@@ -511,8 +515,9 @@ function Nav() {
                         {isMobileAspirantesOpen && (
                             <ul className="mobile-dropdown-menu">
                                 <li><a href="/OfertaEducativa" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Oferta Educativa</a></li>
+                                <li><a href={convocatoria} target='_blank' onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Convocatoria Ingreso</a></li>
                                 <li><a href="https://utn.appsiga.net/admision" target='_blank' onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Pre-registro</a></li>
-                                <li><a href="/recorrido" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Recorrido Virtual</a></li>
+                                <li><a href="https://utnay.edu.mx/recorrido/" target='_blank' onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Recorrido Virtual</a></li>
                             </ul>
                         )}
                     </li>
@@ -595,7 +600,7 @@ function Nav() {
                                                     APPSIGA
                                                 </a>
                                             </li>
-                                            <li><a href="/" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Comité de Ética</a></li>
+                                            <li><a href="/ComiteEtica" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Comité de Ética</a></li>
                                             <li><a href="/Vinculacion" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Vinculación</a></li>
                                             <li>
                                                 <a 
@@ -635,7 +640,7 @@ function Nav() {
                                                     APPSIGA
                                                 </a>
                                             </li>
-                                            <li><a href="/" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Comité de Ética</a></li>
+                                            <li><a href="/ComiteEtica" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Comité de Ética</a></li>
                                             <li><a href="/Vinculacion" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Vinculación</a></li>
                                             <li>
                                                 <a 
@@ -665,19 +670,20 @@ function Nav() {
                                     
                                     {activeMobileSubmenu === 'egresado' && (
                                         <ul className="mobile-submenu">
+                                            <li><a href="/Egresados" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Egresados</a></li>
                                             <li>
                                                 <a 
-                                                    href="/" 
+                                                    href="/BolsaTrabajo" 
                                                     onClick={(e) => { e.stopPropagation(); closeMenu(); }}
                                                 >
                                                     Bolsa de Trabajo
                                                 </a>
                                             </li>
-                                            <li><a href="/" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Educación Continua</a></li>
-                                            <li><a href="/" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Incubadora de Negocios</a></li>
+                                            <li><a href="/ECECUT" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Educación Continua</a></li>
+                                            <li><a href="/Incubadora" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Incubadora de Negocios</a></li>
                                             <li>
                                                 <a 
-                                                    href="/"
+                                                    href="/ECECUT"
                                                     onClick={(e) => { e.stopPropagation(); closeMenu(); }}
                                                 >
                                                     ECECUT
@@ -703,23 +709,24 @@ function Nav() {
                                         <ul className="mobile-submenu">
                                             <li>
                                                 <a 
-                                                    href="/" 
+                                                    href="/Incubadora" 
                                                     onClick={(e) => { e.stopPropagation(); closeMenu(); }}
                                                 >
                                                     Incubadora de Negocios
                                                 </a>
                                             </li>
-                                            <li><a href="/" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>CEELEX</a></li>
-                                            <li><a href="/" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>ECECUT</a></li>
+                                            <li><a href="/CEELEX" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>CEELEX</a></li>
+                                            <li><a href="/ECECUT" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>ECECUT</a></li>
                                             <li>
                                                 <a 
-                                                    href="/"
+                                                    href="/ECECUT"
                                                     onClick={(e) => { e.stopPropagation(); closeMenu(); }}
                                                 >
                                                     Educación Continua
                                                 </a>
                                             </li>
                                             <li><a href="/" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Servicios al Sector Productivo</a></li>
+                                            <li><a href="/Convenios" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Creación de Convenios de Colaboración </a></li>
                                         </ul>
                                     )}
                                 </li>
@@ -749,7 +756,7 @@ function Nav() {
                                             </li>
                                             <li><a href="https://docs.google.com/a/utnay.edu.mx/forms/d/e/1FAIpQLSeIB7jqBepEzxOyB4xyqfe-LPm4SV6dfFbowl3QauScASltBw/viewform" target='_blank' onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Serivicios Informaticos</a></li>
                                             <li><a href="https://docs.google.com/a/utnay.edu.mx/forms/d/e/1FAIpQLSd1N8qU8yr6Dgjdpjgs5t23znAZa0IhkW8zE3iQTkBkd7QrdA/viewform" target='_blank' onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Servicios Generales</a></li>
-                                            <li><a href="" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Transparencia</a></li>
+                                            <li><a href="https://transparencia.utnay.edu.mx/" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Transparencia</a></li>
                                             <li><a href="" onClick={(e) => { e.stopPropagation(); closeMenu(); }}>SidOut</a></li>                                            
                                         </ul>
                                     )}

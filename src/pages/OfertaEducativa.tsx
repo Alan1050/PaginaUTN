@@ -17,6 +17,8 @@ import LogoLINM from "../assets/logos/LINM.png";
 import LogoLSP from "../assets/logos/LSP.png";
 import LogoLPS from "../assets/logos/LPS.png";
 
+import Plan from '../assets/extras/imagePlan.jpg';
+
 interface Carrera {
     id: number;
     label: string;
@@ -258,8 +260,8 @@ function OfertaEducativa() {
             
 
             <h1>
-                    <span className="Text1" style={{color: "#01433f",}}>Oferta</span>
-                    <span className="Text2" style={{color: "#18817d",}}>Educativa</span>
+                    <span className="Text1" style={{color: "#01433f",}}>DIVISIONES DE</span>
+                    <span className="Text2" style={{color: "#18817d",}}>CARRERAS</span>
                 </h1>
             
             {/* Línea decorativa */}
@@ -333,6 +335,7 @@ function OfertaEducativa() {
                     )}
                 </div>
             </div>
+            <img src={Plan} style={{width: "85%", margin: "20px 7.5%", borderRadius: "20px", border: "1px solid green"}} alt="Modelo Educativo" />
         </>
     );
 }

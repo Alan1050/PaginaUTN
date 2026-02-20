@@ -15,12 +15,12 @@ function Accesos() {
       <div className='ContainerButton1'>
         <a href="/Vinculacion"><img src={logoVinculacion} alt="Vinculación" /></a>
         <a href="/Becas"><img src={logoBecas} alt="Becas" /></a>
-        <a href=""><img src={logoRecorrido} alt="Recorrido" /></a>
+        <a href="https://utnay.edu.mx/recorrido/" target='_blank'><img src={logoRecorrido} alt="Recorrido" /></a>
         <a href=""><img src={logoInvestigacion} alt="Investigación" /></a>
       </div>
       <div className='ContainerButton2'>
         <a href="https://transparencia.utnay.edu.mx/" target='_blank'><img src={logoTransparencia} alt="Transparencia" /></a>
-        <a href=""><img src={logoComite} alt="Comité de Ética" /></a>
+        <a href="/ComiteEtica"><img src={logoComite} alt="Comité de Ética" /></a>
         <a href=""><img src={logoBuzon} alt="Buzón de Sugerencias" /></a>
         <a href=""><img src={logoCultura} alt="Cultura de Paz" /></a>
       </div>

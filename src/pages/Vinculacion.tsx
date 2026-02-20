@@ -6,7 +6,7 @@ import iconoCELEX from '../assets/logos/iconoCELEX.png';
 import iconoECECUT from '../assets/logos/iconoECECUT.png';
 import iconoEU from '../assets/logos/iconoEU.png';
 import iconoIncubadora from '../assets/logos/iconoIncubadora.png';
-import iconoMovilidad from '../assets/logos/iconoMovilidad.png';
+import iconoMovilidad from '../assets/logos/iconoMovilidadEstadias.png';
 
 function Vinculacion() {
   const programas = [
@@ -48,7 +48,7 @@ function Vinculacion() {
     },
     {
       id: 'movilidad',
-      nombre: 'Movilidad Académica',
+      nombre: 'Movilidad Estudiantil y Estadías',
       icono: iconoMovilidad,
       descripcion: 'Intercambio nacional e internacional',
       link: '/MovilidadEstudiantil',

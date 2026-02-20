@@ -1,0 +1,1116 @@
+/* ========== BANNER BOLSA DE TRABAJO ========== */
+.banner-container-bolsa {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    overflow: hidden;
+    background: linear-gradient(135deg, #003049, #1E4A6B);
+}
+
+.banner-bolsa {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.8);
+    transition: transform 8s ease;
+}
+
+.banner-container-bolsa:hover .banner-bolsa {
+    transform: scale(1.1);
+}
+
+.banner-overlay-bolsa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 48, 73, 0.95) 0%,
+        rgba(33, 78, 108, 0.85) 50%,
+        rgba(0, 48, 73, 0.95) 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.banner-content-bolsa {
+    text-align: center;
+    color: white;
+    max-width: 1100px;
+    padding: 0 20px;
+    animation: fadeInUp 1s ease;
+}
+
+.banner-title-bolsa {
+    font-size: 6rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+    font-family: 'Arial Black', sans-serif;
+    animation: slideInLeft 1s ease;
+    color: #fff;
+}
+
+.banner-subtitle-bolsa {
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+    opacity: 0.95;
+    animation: slideInRight 1s ease 0.2s both;
+    color: #FBC02D;
+    text-shadow: 0 0 20px rgba(251, 192, 45, 0.3);
+    line-height: 1.5;
+}
+
+.banner-decoration-bolsa {
+    width: 200px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, white, #FBC02D, white, transparent);
+    margin: 0 auto;
+    animation: expandWidth 1s ease 0.4s both;
+    border-radius: 2px;
+}
+
+/* ========== CONTENIDO PRINCIPAL ========== */
+.content-bolsa {
+    background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+    width: 100%;
+    position: relative;
+    padding: 80px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+}
+
+/* ========== HEADER DE SECCIÓN ========== */
+.section-header-bolsa {
+    text-align: center;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.section-title-bolsa {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #003049;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    text-transform: uppercase;
+}
+
+.title-emoji-bolsa {
+    font-size: 2.8rem;
+    background: linear-gradient(145deg, #003049, #1E4A6B);
+    padding: 15px;
+    border-radius: 50%;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 48, 73, 0.2);
+}
+
+.section-subtitle-bolsa {
+    font-size: 1.2rem;
+    color: #4a5c60;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    font-weight: 400;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title-decoration-bolsa {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.title-decoration-bolsa span {
+    width: 60px;
+    height: 4px;
+    background: #003049;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.title-decoration-bolsa span:nth-child(2) {
+    width: 120px;
+    background: #FBC02D;
+}
+
+/* ========== INTRODUCCIÓN ========== */
+.section-introduccion-bolsa {
+    width: 100%;
+    max-width: 1400px;
+}
+
+.introduccion-card-bolsa {
+    background: white;
+    border-radius: 40px;
+    padding: 50px;
+    box-shadow: 0 20px 40px rgba(0, 48, 73, 0.08);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(251, 192, 45, 0.2);
+}
+
+.introduccion-card-bolsa::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #003049, #FBC02D, #003049);
+}
+
+.introduccion-header-bolsa {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.introduccion-icono-bolsa {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(145deg, #003049, #1E4A6B);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 4px solid #FBC02D;
+}
+
+.introduccion-emoji-bolsa {
+    font-size: 4rem;
+    filter: brightness(0) invert(1);
+}
+
+.introduccion-titulo-wrapper-bolsa {
+    flex: 1;
+}
+
+.introduccion-titulo-bolsa {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #003049;
+    margin-bottom: 15px;
+}
+
+.introduccion-logos-bolsa {
+    display: flex;
+    gap: 20px;
+}
+
+.logo-ut-bolsa,
+.logo-empleo-bolsa {
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.logo-ut-bolsa {
+    background: linear-gradient(145deg, #003049, #1E4A6B);
+    color: white;
+    border: 2px solid #FBC02D;
+}
+
+.logo-empleo-bolsa {
+    background: linear-gradient(145deg, #2E7D32, #1B5E20);
+    color: white;
+    border: 2px solid #FBC02D;
+}
+
+.introduccion-texto-bolsa {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #2c3e50;
+    margin: 0;
+}
+
+/* ========== ESTADÍSTICAS ========== */
+.section-estadisticas-bolsa {
+    width: 100%;
+    max-width: 1400px;
+}
+
+.estadisticas-grid-bolsa {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.estadistica-card-bolsa {
+    background: white;
+    border-radius: 30px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(251, 192, 45, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.estadistica-card-bolsa:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 48, 73, 0.15);
+    border-color: #FBC02D;
+}
+
+.estadistica-emoji-bolsa {
+    font-size: 3rem;
+    background: #003049;
+    padding: 20px;
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #FBC02D;
+    margin-bottom: 10px;
+}
+
+.estadistica-numero-bolsa {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #003049;
+    line-height: 1;
+}
+
+.estadistica-label-bolsa {
+    font-size: 1.1rem;
+    color: #5e7a7e;
+    font-weight: 500;
+}
+
+/* ========== BENEFICIOS CARD ========== */
+.beneficio-card-bolsa {
+    background: white;
+    border-radius: 30px;
+    padding: 35px;
+    display: flex;
+    gap: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(0, 48, 73, 0.1);
+}
+
+.beneficio-card-bolsa:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 48, 73, 0.15);
+    border-color: #FBC02D;
+}
+
+.beneficio-icono-bolsa {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(145deg, #f8f9fa, #ffffff);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 2px solid var(--beneficio-color);
+    transition: all 0.4s ease;
+}
+
+.beneficio-card-bolsa:hover .beneficio-icono-bolsa {
+    background: var(--beneficio-color);
+    transform: scale(1.1) rotate(10deg);
+}
+
+.beneficio-emoji-bolsa {
+    font-size: 2.5rem;
+    transition: all 0.4s ease;
+}
+
+.beneficio-card-bolsa:hover .beneficio-emoji-bolsa {
+    filter: brightness(0) invert(1);
+    transform: scale(1.2);
+}
+
+.beneficio-contenido-bolsa {
+    flex: 1;
+}
+
+.beneficio-titulo-bolsa {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #003049;
+    margin-bottom: 12px;
+    transition: color 0.3s ease;
+}
+
+.beneficio-card-bolsa:hover .beneficio-titulo-bolsa {
+    color: var(--beneficio-color);
+}
+
+.beneficio-descripcion-bolsa {
+    font-size: 0.95rem;
+    color: #5e7a7e;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ========== SECCIÓN EMPRESARIOS ========== */
+.section-empresarios-bolsa,
+.section-egresados-bolsa {
+    width: 100%;
+    max-width: 1400px;
+}
+
+.empresarios-contenido-bolsa,
+.egresados-contenido-bolsa {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.empresarios-beneficios-bolsa,
+.egresados-beneficios-bolsa {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ========== CTA CARDS ========== */
+.cta-card-bolsa {
+    background: linear-gradient(145deg, #003049, #1E4A6B);
+    border-radius: 40px;
+    padding: 50px 40px;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 48, 73, 0.2);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta-card-bolsa::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(251, 192, 45, 0.1), transparent 70%);
+    pointer-events: none;
+}
+
+.cta-empresarios {
+    background: linear-gradient(145deg, #1E4A6B, #003049);
+}
+
+.cta-egresados {
+    background: linear-gradient(145deg, #2E7D32, #1B5E20);
+}
+
+.cta-icono-bolsa {
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    border: 3px solid #FBC02D;
+    backdrop-filter: blur(5px);
+}
+
+.cta-emoji-bolsa {
+    font-size: 3.5rem;
+}
+
+.cta-titulo-bolsa {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #FBC02D;
+}
+
+.cta-descripcion-bolsa {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.95;
+    margin-bottom: 30px;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button-bolsa {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #FBC02D;
+    color: #003049;
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.4s ease;
+    border: 2px solid transparent;
+}
+
+.cta-button-empresarios:hover {
+    background: white;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(251, 192, 45, 0.3);
+    gap: 15px;
+}
+
+.cta-button-egresados {
+    background: #25D366;
+    color: white;
+}
+
+.cta-button-egresados:hover {
+    background: white;
+    color: #25D366;
+    border-color: #25D366;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+}
+
+.cta-arrow-bolsa {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    transition: transform 0.4s ease;
+}
+
+.cta-button-bolsa:hover .cta-arrow-bolsa {
+    transform: translateX(5px);
+}
+
+/* ========== MENSAJE INSTITUCIONAL ========== */
+.section-mensaje-bolsa {
+    width: 100%;
+    max-width: 1400px;
+}
+
+.mensaje-card-bolsa {
+    background: white;
+    border-radius: 40px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 48, 73, 0.08);
+    border: 1px solid rgba(251, 192, 45, 0.2);
+}
+
+.mensaje-contenido-bolsa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.mensaje-icono-bolsa {
+    font-size: 4rem;
+}
+
+.mensaje-texto-bolsa {
+    font-size: 1.4rem;
+    color: #003049;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0;
+}
+
+.mensaje-texto-bolsa strong {
+    color: #FBC02D;
+}
+
+/* ========== CONTACTO ========== */
+.section-contacto-bolsa {
+    width: 100%;
+    max-width: 1400px;
+}
+
+.contacto-card-bolsa {
+    background: white;
+    border-radius: 50px;
+    padding: 60px;
+    box-shadow: 0 30px 60px rgba(0, 48, 73, 0.1);
+    text-align: center;
+    border: 1px solid rgba(251, 192, 45, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.contacto-card-bolsa::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #003049, #FBC02D, #003049);
+}
+
+.contacto-icono-bolsa {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(145deg, #003049, #1E4A6B);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    border: 4px solid #FBC02D;
+}
+
+.contacto-emoji-bolsa {
+    font-size: 4rem;
+    filter: brightness(0) invert(1);
+}
+
+.contacto-titulo-bolsa {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #003049;
+    margin-bottom: 25px;
+}
+
+.contacto-mensaje-bolsa {
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.contacto-texto-bolsa {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    line-height: 1.8;
+    background: linear-gradient(145deg, #f8f9fa, #ffffff);
+    padding: 25px;
+    border-radius: 30px;
+    border-left: 5px solid #FBC02D;
+}
+
+.contacto-items-bolsa {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 500px;
+    margin: 0 auto 30px;
+}
+
+.contacto-item-bolsa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background: linear-gradient(145deg, #f8f9fa, #ffffff);
+    padding: 20px 30px;
+    border-radius: 50px;
+    border: 1px solid rgba(0, 48, 73, 0.1);
+    transition: all 0.3s ease;
+}
+
+.contacto-item-bolsa:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 48, 73, 0.1);
+    border-color: #FBC02D;
+}
+
+.contacto-item-icono {
+    font-size: 1.8rem;
+}
+
+.contacto-item-contenido {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contacto-item-etiqueta {
+    font-weight: 600;
+    color: #003049;
+}
+
+.contacto-email-bolsa {
+    color: #003049;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 8px 20px;
+    background: #FBC02D;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.contacto-email-bolsa:hover {
+    background: #003049;
+    color: white;
+}
+
+.contacto-whatsapp-bolsa {
+    color: #25D366;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 8px 20px;
+    background: rgba(37, 211, 102, 0.1);
+    border-radius: 30px;
+    border: 1px solid #25D366;
+    transition: all 0.3s ease;
+}
+
+.contacto-whatsapp-bolsa:hover {
+    background: #25D366;
+    color: white;
+}
+
+.contacto-horario-bolsa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px dashed rgba(251, 192, 45, 0.3);
+    color: #5e7a7e;
+}
+
+.horario-icono {
+    font-size: 1.3rem;
+}
+
+.horario-texto {
+    font-size: 1rem;
+}
+
+/* ========== CTA FINAL PRINCIPAL ========== */
+.section-cta-bolsa {
+    width: 100%;
+    max-width: 1400px;
+}
+
+.cta-content-bolsa {
+    background: linear-gradient(145deg, #003049, #1E4A6B);
+    border-radius: 60px;
+    padding: 70px 80px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0, 48, 73, 0.3);
+}
+
+.cta-content-bolsa::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 70% 30%, rgba(251, 192, 45, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.cta-titulo-principal-bolsa {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+    letter-spacing: 2px;
+}
+
+.cta-descripcion-principal-bolsa {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    opacity: 0.95;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.cta-botones-bolsa {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+.cta-button-principal-bolsa {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 50px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: all 0.4s ease;
+    min-width: 250px;
+}
+
+.cta-button-empresarios-principal {
+    background: #FBC02D;
+    color: #003049;
+    border: 2px solid transparent;
+}
+
+.cta-button-empresarios-principal:hover {
+    background: white;
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(251, 192, 45, 0.3);
+}
+
+.cta-button-egresados-principal {
+    background: #25D366;
+    color: white;
+    border: 2px solid transparent;
+}
+
+.cta-button-egresados-principal:hover {
+    background: white;
+    color: #25D366;
+    border-color: #25D366;
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(37, 211, 102, 0.3);
+}
+
+/* ========== ANIMACIONES ========== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes expandWidth {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 200px;
+        opacity: 1;
+    }
+}
+
+/* ========== MEDIA QUERIES ========== */
+@media (max-width: 1200px) {
+    .banner-title-bolsa {
+        font-size: 5rem;
+    }
+    
+    .banner-subtitle-bolsa {
+        font-size: 1.4rem;
+    }
+    
+    .empresarios-contenido-bolsa,
+    .egresados-contenido-bolsa {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .estadisticas-grid-bolsa {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .banner-container-bolsa {
+        height: 70vh;
+    }
+    
+    .banner-title-bolsa {
+        font-size: 4rem;
+        letter-spacing: 10px;
+    }
+    
+    .banner-subtitle-bolsa {
+        font-size: 1.3rem;
+    }
+    
+    .content-bolsa {
+        padding: 60px 30px;
+        gap: 70px;
+    }
+    
+    .section-title-bolsa {
+        font-size: 2.4rem;
+    }
+    
+    .estadisticas-grid-bolsa {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .introduccion-header-bolsa {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .introduccion-logos-bolsa {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner-container-bolsa {
+        height: 60vh;
+    }
+    
+    .banner-title-bolsa {
+        font-size: 3rem;
+        letter-spacing: 8px;
+    }
+    
+    .banner-subtitle-bolsa {
+        font-size: 1.1rem;
+    }
+    
+    .content-bolsa {
+        padding: 50px 20px;
+        gap: 60px;
+    }
+    
+    .section-title-bolsa {
+        font-size: 2rem;
+        flex-direction: column;
+    }
+    
+    .estadisticas-grid-bolsa {
+        grid-template-columns: 1fr;
+    }
+    
+    .estadistica-card-bolsa {
+        padding: 30px;
+    }
+    
+    .beneficio-card-bolsa {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .cta-content-bolsa {
+        padding: 50px 30px;
+    }
+    
+    .cta-titulo-principal-bolsa {
+        font-size: 2rem;
+    }
+    
+    .cta-descripcion-principal-bolsa {
+        font-size: 1.1rem;
+    }
+    
+    .cta-button-principal-bolsa {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .mensaje-contenido-bolsa {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .mensaje-texto-bolsa {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .banner-container-bolsa {
+        height: 50vh;
+    }
+    
+    .banner-title-bolsa {
+        font-size: 2.5rem;
+        letter-spacing: 6px;
+    }
+    
+    .banner-subtitle-bolsa {
+        font-size: 1rem;
+    }
+    
+    .banner-decoration-bolsa {
+        width: 150px;
+    }
+    
+    .content-bolsa {
+        padding: 40px 15px;
+        gap: 50px;
+    }
+    
+    .section-title-bolsa {
+        font-size: 1.8rem;
+    }
+    
+    .title-emoji-bolsa {
+        font-size: 2rem;
+        padding: 12px;
+    }
+    
+    .introduccion-card-bolsa {
+        padding: 30px;
+    }
+    
+    .introduccion-logos-bolsa {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .introduccion-icono-bolsa {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .introduccion-emoji-bolsa {
+        font-size: 3rem;
+    }
+    
+    .cta-card-bolsa {
+        padding: 40px 20px;
+    }
+    
+    .cta-titulo-bolsa {
+        font-size: 1.5rem;
+    }
+    
+    .contacto-card-bolsa {
+        padding: 40px 20px;
+    }
+    
+    .contacto-icono-bolsa {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .contacto-emoji-bolsa {
+        font-size: 3rem;
+    }
+    
+    .contacto-item-bolsa {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .cta-titulo-principal-bolsa {
+        font-size: 1.6rem;
+    }
+    
+    .cta-descripcion-principal-bolsa {
+        font-size: 1rem;
+    }
+    
+    .cta-button-principal-bolsa {
+        padding: 15px 30px;
+        font-size: 1rem;
+        min-width: 200px;
+    }
+    
+    .cta-botones-bolsa {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 375px) {
+    .banner-title-bolsa {
+        font-size: 2rem;
+        letter-spacing: 4px;
+    }
+    
+    .banner-subtitle-bolsa {
+        font-size: 0.9rem;
+    }
+    
+    .section-title-bolsa {
+        font-size: 1.5rem;
+    }
+    
+    .estadistica-emoji-bolsa {
+        width: 70px;
+        height: 70px;
+        font-size: 2.5rem;
+    }
+    
+    .estadistica-numero-bolsa {
+        font-size: 2rem;
+    }
+}
+
+/* ========== ACCESIBILIDAD ========== */
+@media (prefers-reduced-motion: reduce) {
+    .banner-bolsa,
+    .beneficio-card-bolsa,
+    .estadistica-card-bolsa,
+    .contacto-item-bolsa,
+    .cta-button-bolsa,
+    .cta-button-principal-bolsa {
+        transition: none;
+        animation: none;
+    }
+    
+    .banner-container-bolsa:hover .banner-bolsa {
+        transform: none;
+    }
+}

@@ -219,7 +219,7 @@ function ECECUT() {
         </div>
 
         {/* Certificados con validez oficial */}
-        <div className="section-certificados">
+        <div className="section-certificados" id='Educacion'>
           <div className="certificados-card">
             <div className="certificados-icono">
               <span className="certificados-emoji">🏆</span>
@@ -278,6 +278,56 @@ function ECECUT() {
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="section-contacto">
+
+            <div className="contacto-card">
+              <div className="contacto-icono">
+                <span className="contacto-emoji">📞</span>
+              </div>
+              <h3 className="contacto-titulo">Contacto</h3>
+              
+              <div className="contacto-item">
+                <span className="contacto-item-icono">📧</span>
+                <div className="contacto-item-contenido">
+                  <span className="contacto-item-etiqueta">Correo:</span>
+                  <a href="mailto:ececutut@utnay.edu.mx" className="contacto-email">
+                    ececutut@utnay.edu.mx
+                  </a>
+                </div>
+              </div>
+
+              <div className="contacto-item">
+                <span className="contacto-item-icono">📱</span>
+                <div className="contacto-item-contenido">
+                  <span className="contacto-item-etiqueta">WhatsApp:</span>
+                  <a href="https://wa.me/523111396384" className="contacto-telefono">
+                    (311) 246 1361
+                  </a>
+                  <span className="contacto-item-etiqueta">Número Fijo:</span>
+                  <a href="" className="contacto-telefono">
+                    311 211 9800 Ext. 1300 y 1301
+                  </a>
+                </div>
+              </div>
+
+              <div className="contacto-item">
+                <span className="contacto-item-icono">📘</span>
+                <div className="contacto-item-contenido">
+                  <span className="contacto-item-etiqueta">Facebook:</span>
+                  <a 
+                    href="https://www.facebook.com/ecec.ut.ut" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="contacto-facebook"
+                  >
+                    Ececut UT 
+                  </a>
+                </div>
+              </div>
+            </div>
+
         </div>
 
         {/* CTA Final */}

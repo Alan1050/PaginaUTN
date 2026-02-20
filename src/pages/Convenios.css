@@ -1,0 +1,1139 @@
+/* ========== BANNER CONVENIOS ========== */
+.banner-container-convenios {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    overflow: hidden;
+    background: linear-gradient(135deg, #003049, #1E4A6B); /* Fallback mientras no hay imagen */
+}
+
+.banner-convenios {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.8);
+    transition: transform 8s ease;
+}
+
+.banner-container-convenios:hover .banner-convenios {
+    transform: scale(1.1);
+}
+
+.banner-overlay-convenios {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 48, 73, 0.95) 0%,
+        rgba(33, 78, 108, 0.85) 50%,
+        rgba(0, 48, 73, 0.95) 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.banner-content-convenios {
+    text-align: center;
+    color: white;
+    max-width: 1100px;
+    padding: 0 20px;
+    animation: fadeInUp 1s ease;
+}
+
+.banner-title-convenios {
+    font-size: 6rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+    font-family: 'Arial Black', sans-serif;
+    animation: slideInLeft 1s ease;
+    color: #fff;
+}
+
+.banner-subtitle-convenios {
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+    opacity: 0.95;
+    animation: slideInRight 1s ease 0.2s both;
+    color: #FBC02D;
+    text-shadow: 0 0 20px rgba(251, 192, 45, 0.3);
+    line-height: 1.5;
+}
+
+.banner-decoration-convenios {
+    width: 200px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, white, #FBC02D, white, transparent);
+    margin: 0 auto;
+    animation: expandWidth 1s ease 0.4s both;
+    border-radius: 2px;
+}
+
+/* ========== CONTENIDO PRINCIPAL ========== */
+.content-convenios {
+    background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+    width: 100%;
+    position: relative;
+    padding: 80px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+}
+
+/* ========== HEADER DE SECCIÓN ========== */
+.section-header-convenios {
+    text-align: center;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.section-title-convenios {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #003049;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    text-transform: uppercase;
+}
+
+.title-emoji {
+    font-size: 2.8rem;
+    background: linear-gradient(145deg, #003049, #1E4A6B);
+    padding: 15px;
+    border-radius: 50%;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 48, 73, 0.2);
+}
+
+.section-subtitle-convenios {
+    font-size: 1.2rem;
+    color: #4a5c60;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    font-weight: 400;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title-decoration-convenios {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.title-decoration-convenios span {
+    width: 60px;
+    height: 4px;
+    background: #003049;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.title-decoration-convenios span:nth-child(2) {
+    width: 120px;
+    background: #FBC02D;
+}
+
+/* ========== INTRODUCCIÓN ========== */
+.section-introduccion {
+    width: 100%;
+    max-width: 1400px;
+}
+
+.introduccion-card {
+    background: white;
+    border-radius: 40px;
+    padding: 50px;
+    box-shadow: 0 20px 40px rgba(0, 48, 73, 0.08);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(251, 192, 45, 0.2);
+}
+
+.introduccion-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #003049, #FBC02D, #003049);
+}
+
+.introduccion-header {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.introduccion-icono {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(145deg, #003049, #1E4A6B);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 4px solid #FBC02D;
+}
+
+.introduccion-emoji {
+    font-size: 4rem;
+    filter: brightness(0) invert(1);
+}
+
+.introduccion-titulo-wrapper {
+    flex: 1;
+}
+
+.introduccion-titulo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #003049;
+    margin-bottom: 15px;
+}
+
+.introduccion-logos {
+    display: flex;
+    gap: 20px;
+}
+
+.logo-ut,
+.logo-vinculacion {
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.logo-ut {
+    background: linear-gradient(145deg, #003049, #1E4A6B);
+    color: white;
+    border: 2px solid #FBC02D;
+}
+
+.logo-vinculacion {
+    background: linear-gradient(145deg, #8B1E3F, #A12B4C);
+    color: white;
+    border: 2px solid #FFD700;
+}
+
+.introduccion-texto {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #2c3e50;
+    margin: 0;
+}
+
+/* ========== BENEFICIOS CONVENIOS ========== */
+.section-beneficios-convenios {
+    width: 100%;
+    max-width: 1400px;
+}
+
+.beneficios-grid-convenios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.beneficio-card-convenios {
+    background: white;
+    border-radius: 30px;
+    padding: 35px;
+    display: flex;
+    gap: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(0, 48, 73, 0.1);
+}
+
+.beneficio-card-convenios:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 48, 73, 0.15);
+    border-color: #FBC02D;
+}
+
+.beneficio-icono-convenios {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(145deg, #f8f9fa, #ffffff);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 2px solid var(--beneficio-color);
+    transition: all 0.4s ease;
+}
+
+.beneficio-card-convenios:hover .beneficio-icono-convenios {
+    background: var(--beneficio-color);
+    transform: scale(1.1) rotate(10deg);
+}
+
+.beneficio-emoji-convenios {
+    font-size: 2.5rem;
+    transition: all 0.4s ease;
+}
+
+.beneficio-card-convenios:hover .beneficio-emoji-convenios {
+    filter: brightness(0) invert(1);
+    transform: scale(1.2);
+}
+
+.beneficio-contenido-convenios {
+    flex: 1;
+}
+
+.beneficio-titulo-convenios {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #003049;
+    margin-bottom: 12px;
+    transition: color 0.3s ease;
+}
+
+.beneficio-card-convenios:hover .beneficio-titulo-convenios {
+    color: var(--beneficio-color);
+}
+
+.beneficio-descripcion-convenios {
+    font-size: 0.95rem;
+    color: #5e7a7e;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ========== DESCRIPCIÓN ========== */
+.section-descripcion-convenios {
+    width: 100%;
+    max-width: 1400px;
+}
+
+.descripcion-contenedor-convenios {
+    background: white;
+    border-radius: 40px;
+    padding: 60px;
+    box-shadow: 0 20px 40px rgba(0, 48, 73, 0.08);
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 50px;
+    align-items: center;
+    border: 1px solid rgba(251, 192, 45, 0.2);
+}
+
+.descripcion-parrafo-convenios {
+    font-size: 1.2rem;
+    line-height: 1.9;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.texto-destacado {
+    color: #003049;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    border-bottom: 3px solid #FBC02D;
+    padding-bottom: 2px;
+}
+
+.descripcion-ambitos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ambito-item {
+    background: linear-gradient(145deg, #f8f9fa, #ffffff);
+    padding: 25px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 48, 73, 0.1);
+}
+
+.ambito-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 20px 40px rgba(0, 48, 73, 0.15);
+    border-color: #FBC02D;
+}
+
+.ambito-emoji {
+    font-size: 2.5rem;
+    background: #003049;
+    padding: 15px;
+    border-radius: 50%;
+    color: white;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 2px solid #FBC02D;
+}
+
+.ambito-contenido {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.ambito-titulo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #003049;
+    margin-bottom: 5px;
+}
+
+.ambito-descripcion {
+    font-size: 0.9rem;
+    color: #5e7a7e;
+}
+
+/* ========== REQUISITOS PERSONA MORAL ========== */
+.section-requisitos-moral,
+.section-requisitos-fisica {
+    width: 100%;
+    max-width: 1400px;
+}
+
+.requisitos-card-moral,
+.requisitos-card-fisica {
+    background: linear-gradient(145deg, #003049, #1E4A6B);
+    border-radius: 50px;
+    padding: 60px;
+    display: flex;
+    gap: 60px;
+    box-shadow: 0 30px 60px rgba(0, 48, 73, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.requisitos-card-moral::before,
+.requisitos-card-fisica::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(251, 192, 45, 0.1), transparent 70%);
+    pointer-events: none;
+}
+
+.requisitos-icono-moral,
+.requisitos-icono-fisica {
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 4px solid #FBC02D;
+    backdrop-filter: blur(5px);
+}
+
+.requisitos-emoji-moral,
+.requisitos-emoji-fisica {
+    font-size: 5rem;
+}
+
+.requisitos-lista-moral,
+.requisitos-lista-fisica {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    color: white;
+}
+
+.lista-titulo,
+.lista-item-fisica {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 20px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(251, 192, 45, 0.3);
+    transition: all 0.3s ease;
+}
+
+.lista-titulo:hover,
+.lista-item-fisica:hover {
+    background: rgba(251, 192, 45, 0.2);
+    transform: translateX(5px);
+    border-color: #FBC02D;
+}
+
+.lista-numero,
+.lista-numero-fisica {
+    width: 30px;
+    height: 30px;
+    background: #FBC02D;
+    color: #003049;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.lista-texto,
+.lista-texto-fisica {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* ========== REQUISITOS PERSONA FÍSICA ========== */
+.requisitos-card-fisica {
+    background: linear-gradient(145deg, #1E4A6B, #003049);
+}
+
+.requisitos-lista-fisica {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* ========== PROCESO CONVENIOS ========== */
+.section-proceso-convenios {
+    width: 100%;
+    max-width: 1400px;
+}
+
+.proceso-steps-convenios {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.step-item-convenios {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(251, 192, 45, 0.1);
+    min-width: 200px;
+}
+
+.step-item-convenios:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 48, 73, 0.15);
+    border-color: #FBC02D;
+}
+
+.step-numero-convenios {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(145deg, #003049, #1E4A6B);
+    color: white;
+    font-size: 2rem;
+    font-weight: 900;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    border: 3px solid #FBC02D;
+    transition: all 0.4s ease;
+}
+
+.step-item-convenios:hover .step-numero-convenios {
+    transform: scale(1.1);
+    background: #FBC02D;
+    border-color: #003049;
+    color: #003049;
+}
+
+.step-titulo-convenios {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #003049;
+    margin-bottom: 12px;
+}
+
+.step-descripcion-convenios {
+    font-size: 0.95rem;
+    color: #5e7a7e;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.step-connector-convenios {
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #003049, #FBC02D, #003049);
+    margin: 0 15px;
+}
+
+/* ========== CONTACTO ========== */
+.section-contacto-convenios {
+    width: 100%;
+    max-width: 1400px;
+}
+
+.contacto-card-convenios {
+    background: white;
+    border-radius: 50px;
+    padding: 60px;
+    box-shadow: 0 30px 60px rgba(0, 48, 73, 0.1);
+    text-align: center;
+    border: 1px solid rgba(251, 192, 45, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.contacto-card-convenios::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #003049, #FBC02D, #003049);
+}
+
+.contacto-icono-convenios {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(145deg, #003049, #1E4A6B);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    border: 4px solid #FBC02D;
+}
+
+.contacto-emoji-convenios {
+    font-size: 4rem;
+    filter: brightness(0) invert(1);
+}
+
+.contacto-titulo-convenios {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #003049;
+    margin-bottom: 25px;
+}
+
+.contacto-mensaje {
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.contacto-texto {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    line-height: 1.8;
+    background: linear-gradient(145deg, #f8f9fa, #ffffff);
+    padding: 25px;
+    border-radius: 30px;
+    border-left: 5px solid #FBC02D;
+}
+
+.contacto-item-convenios {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    background: linear-gradient(145deg, #f8f9fa, #ffffff);
+    padding: 20px 30px;
+    border-radius: 50px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid rgba(0, 48, 73, 0.1);
+    transition: all 0.3s ease;
+}
+
+.contacto-item-convenios:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 48, 73, 0.1);
+    border-color: #FBC02D;
+}
+
+.contacto-item-icono {
+    font-size: 1.8rem;
+}
+
+.contacto-item-contenido {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contacto-item-etiqueta {
+    font-weight: 600;
+    color: #003049;
+}
+
+.contacto-email {
+    color: #003049;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 8px 20px;
+    background: #FBC02D;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.contacto-email:hover {
+    background: #003049;
+    color: white;
+    transform: scale(1.05);
+}
+
+.contacto-adicional {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 2px dashed rgba(251, 192, 45, 0.3);
+}
+
+.contacto-adicional-texto {
+    font-size: 1rem;
+    color: #5e7a7e;
+    font-style: italic;
+}
+
+/* ========== CTA FINAL ========== */
+.section-cta-convenios {
+    width: 100%;
+    max-width: 1400px;
+    margin-top: 40px;
+}
+
+.cta-content-convenios {
+    background: linear-gradient(145deg, #003049, #1E4A6B);
+    border-radius: 60px;
+    padding: 70px 80px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0, 48, 73, 0.3);
+}
+
+.cta-content-convenios::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 70% 30%, rgba(251, 192, 45, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.cta-titulo-convenios {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+    letter-spacing: 2px;
+}
+
+.cta-descripcion-convenios {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    opacity: 0.95;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.cta-button-convenios {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    background: #FBC02D;
+    color: #003049;
+    padding: 20px 60px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 2;
+    border: 2px solid transparent;
+}
+
+.cta-button-convenios:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(251, 192, 45, 0.3);
+    gap: 20px;
+    background: white;
+    border-color: #FBC02D;
+}
+
+.cta-arrow {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    transition: transform 0.4s ease;
+}
+
+.cta-button-convenios:hover .cta-arrow {
+    transform: translateX(8px);
+}
+
+/* ========== ANIMACIONES ========== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes expandWidth {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 200px;
+        opacity: 1;
+    }
+}
+
+/* ========== MEDIA QUERIES ========== */
+@media (max-width: 1200px) {
+    .banner-title-convenios {
+        font-size: 5rem;
+    }
+    
+    .banner-subtitle-convenios {
+        font-size: 1.4rem;
+    }
+    
+    .beneficios-grid-convenios {
+        gap: 25px;
+    }
+    
+    .descripcion-contenedor-convenios {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .requisitos-lista-moral,
+    .requisitos-lista-fisica {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 992px) {
+    .banner-container-convenios {
+        height: 70vh;
+    }
+    
+    .banner-title-convenios {
+        font-size: 4rem;
+        letter-spacing: 10px;
+    }
+    
+    .banner-subtitle-convenios {
+        font-size: 1.3rem;
+    }
+    
+    .content-convenios {
+        padding: 60px 30px;
+        gap: 70px;
+    }
+    
+    .section-title-convenios {
+        font-size: 2.4rem;
+    }
+    
+    .beneficios-grid-convenios {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .introduccion-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .proceso-steps-convenios {
+        flex-direction: column;
+    }
+    
+    .step-connector-convenios {
+        width: 3px;
+        height: 30px;
+        margin: 15px 0;
+    }
+    
+    .requisitos-card-moral,
+    .requisitos-card-fisica {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 40px;
+    }
+    
+    .requisitos-lista-moral,
+    .requisitos-lista-fisica {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner-container-convenios {
+        height: 60vh;
+    }
+    
+    .banner-title-convenios {
+        font-size: 3rem;
+        letter-spacing: 8px;
+    }
+    
+    .banner-subtitle-convenios {
+        font-size: 1.1rem;
+    }
+    
+    .content-convenios {
+        padding: 50px 20px;
+        gap: 60px;
+    }
+    
+    .section-title-convenios {
+        font-size: 2rem;
+        flex-direction: column;
+    }
+    
+    .beneficios-grid-convenios {
+        grid-template-columns: 1fr;
+    }
+    
+    .descripcion-contenedor-convenios {
+        padding: 40px;
+    }
+    
+    .ambito-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .cta-content-convenios {
+        padding: 50px 30px;
+    }
+    
+    .cta-titulo-convenios {
+        font-size: 2rem;
+    }
+    
+    .cta-descripcion-convenios {
+        font-size: 1.1rem;
+    }
+    
+    .contacto-item-convenios {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 576px) {
+    .banner-container-convenios {
+        height: 50vh;
+    }
+    
+    .banner-title-convenios {
+        font-size: 2.5rem;
+        letter-spacing: 6px;
+    }
+    
+    .banner-subtitle-convenios {
+        font-size: 1rem;
+    }
+    
+    .banner-decoration-convenios {
+        width: 150px;
+    }
+    
+    .content-convenios {
+        padding: 40px 15px;
+        gap: 50px;
+    }
+    
+    .section-title-convenios {
+        font-size: 1.8rem;
+    }
+    
+    .title-emoji {
+        font-size: 2rem;
+        padding: 12px;
+    }
+    
+    .introduccion-card {
+        padding: 30px;
+    }
+    
+    .introduccion-logos {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .beneficio-card-convenios {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 30px;
+    }
+    
+    .requisitos-card-moral,
+    .requisitos-card-fisica {
+        padding: 30px;
+    }
+    
+    .requisitos-icono-moral,
+    .requisitos-icono-fisica {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .requisitos-emoji-moral,
+    .requisitos-emoji-fisica {
+        font-size: 3rem;
+    }
+    
+    .contacto-card-convenios {
+        padding: 40px 20px;
+    }
+    
+    .contacto-icono-convenios {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .contacto-emoji-convenios {
+        font-size: 3rem;
+    }
+    
+    .cta-titulo-convenios {
+        font-size: 1.6rem;
+    }
+    
+    .cta-descripcion-convenios {
+        font-size: 1rem;
+    }
+    
+    .cta-button-convenios {
+        padding: 15px 40px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .banner-title-convenios {
+        font-size: 2rem;
+        letter-spacing: 4px;
+    }
+    
+    .banner-subtitle-convenios {
+        font-size: 0.9rem;
+    }
+    
+    .section-title-convenios {
+        font-size: 1.5rem;
+    }
+    
+    .lista-titulo,
+    .lista-item-fisica {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ========== ACCESIBILIDAD ========== */
+@media (prefers-reduced-motion: reduce) {
+    .banner-convenios,
+    .beneficio-card-convenios,
+    .step-item-convenios,
+    .ambito-item,
+    .lista-titulo,
+    .lista-item-fisica,
+    .contacto-item-convenios,
+    .cta-button-convenios {
+        transition: none;
+        animation: none;
+    }
+    
+    .banner-container-convenios:hover .banner-convenios {
+        transform: none;
+    }
+}

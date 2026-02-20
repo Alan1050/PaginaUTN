@@ -35,7 +35,7 @@ function HomePage() {
               <img 
                 src=${ImagenNuevaCarrera}
                 alt="Nueva Carrera" 
-                style="max-width: 100%; border-radius: 10px; margin: 15px 0;"
+                style="max-width: 80%; border-radius: 10px; margin: 15px 0;"
               />
             </div>
           `,

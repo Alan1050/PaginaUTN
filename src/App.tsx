@@ -58,7 +58,10 @@ import CEELEX from './pages/CEELEX.tsx';
 import ECECUT from './pages/ECECUT.tsx';
 import ExtensionUniversitaria from './pages/ExtensionUniversitaria.tsx';
 import MovilidadEstudiantil from './pages/MovilidadEstudiantil.tsx';
-
+import Convenios from './pages/Convenios.tsx';
+import BolsaTrabajo from './pages/BolsaTrabajo.tsx';
+import ComiteEtica from './pages/ComiteEtica.tsx';
+import Egresados from './pages/Egresados.tsx';
 
 function App() {
   const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -91,6 +94,10 @@ function App() {
         <Route path="/ECECUT" element={<ECECUT />} /> 
         <Route path="/ExtensionUniversitaria" element={<ExtensionUniversitaria />} />  
         <Route path="/MovilidadEstudiantil" element={<MovilidadEstudiantil />} />  
+        <Route path="/Convenios" element={<Convenios />} />  
+        <Route path="/BolsaTrabajo" element={<BolsaTrabajo />} />  
+        <Route path="/ComiteEtica" element={<ComiteEtica />} />  
+        <Route path="/Egresados" element={<Egresados />} />  
         {/* Ruta para manejar 404 - Redirige a Home */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
