@@ -1,0 +1,566 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ========== BANNER PRINCIPAL ========== */
+.biblioteca-banner-container {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    overflow: hidden;
+}
+
+.biblioteca-banner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.biblioteca-banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.8);
+}
+
+.biblioteca-banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(1,67,63,0.8) 0%, rgba(1,67,63,0.4) 100%);
+    color: white;
+    text-align: center;
+    z-index: 2;
+}
+
+.biblioteca-banner-title {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    animation: fadeInUp 1s ease;
+}
+
+.title-main {
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-family: 'Arial Black', sans-serif;
+}
+
+.title-sub {
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    border-top: 2px solid rgba(255,255,255,0.3);
+    padding-top: 20px;
+}
+
+.title-decoration {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.title-decoration span {
+    width: 50px;
+    height: 3px;
+    background: #c4a747;
+    border-radius: 3px;
+}
+
+.title-decoration span:nth-child(2) {
+    width: 100px;
+    background: white;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== CONTENIDO PRINCIPAL ========== */
+.biblioteca-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+/* ========== INTRODUCCIÓN ========== */
+.biblioteca-intro {
+    margin-bottom: 60px;
+}
+
+.intro-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    border: 1px solid rgba(1,67,63,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.intro-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #01433f, #c4a747);
+}
+
+.intro-text {
+    color: #4a5c60;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin: 0;
+    text-align: center;
+    font-weight: 300;
+}
+
+/* ========== OBJETIVO ========== */
+.biblioteca-objetivo {
+    margin-bottom: 80px;
+}
+
+.objetivo-titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-size: 2.2rem;
+    color: #01433f;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.objetivo-icon {
+    font-size: 2.5rem;
+}
+
+.objetivo-card {
+    background: white;
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    border: 1px solid rgba(1,67,63,0.1);
+}
+
+.objetivo-texto {
+    color: #4a5c60;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+.objetivo-texto.secundario {
+    margin-bottom: 0;
+    padding-top: 25px;
+    border-top: 1px solid rgba(1,67,63,0.1);
+    font-style: italic;
+}
+
+/* ========== SERVICIOS ========== */
+.biblioteca-servicios {
+    margin-bottom: 80px;
+}
+
+.servicios-titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-size: 2.2rem;
+    color: #01433f;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.servicios-icon {
+    font-size: 2.5rem;
+}
+
+.servicios-subtitulo {
+    text-align: center;
+    color: #4a5c60;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.servicio-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(1,67,63,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.servicio-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #01433f, #c4a747);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.servicio-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(1,67,63,0.15);
+}
+
+.servicio-card:hover::before {
+    opacity: 1;
+}
+
+.servicio-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.servicio-card:hover .servicio-icon {
+    transform: scale(1.1);
+}
+
+.servicio-nombre {
+    color: #1a2e35;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* ========== CONTACTO Y HORARIO ========== */
+.biblioteca-contacto {
+    margin-bottom: 60px;
+}
+
+.contacto-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.horario-card,
+.contacto-card,
+.enlace-card {
+    background: white;
+    border-radius: 20px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    border: 1px solid rgba(1,67,63,0.1);
+    transition: all 0.3s ease;
+}
+
+.horario-card:hover,
+.contacto-card:hover,
+.enlace-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 45px rgba(1,67,63,0.15);
+}
+
+.horario-icon,
+.contacto-icon,
+.enlace-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.horario-titulo,
+.contacto-titulo,
+.enlace-titulo {
+    color: #01433f;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.horario-texto {
+    color: #4a5c60;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.horario-destacado {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #01433f;
+    margin-top: 10px;
+}
+
+.contacto-email {
+    display: inline-block;
+    color: #18817d;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background: rgba(1,67,63,0.05);
+    transition: all 0.3s ease;
+}
+
+.contacto-email:hover {
+    background: #01433f;
+    color: white;
+    transform: scale(1.05);
+}
+
+.enlace-boton {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #01433f 0%, #18817d 100%);
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 15px 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(1,67,63,0.3);
+}
+
+.enlace-boton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(1,67,63,0.4);
+    background: linear-gradient(135deg, #18817d 0%, #01433f 100%);
+}
+
+.enlace-flecha {
+    font-size: 1.3rem;
+    transition: transform 0.3s ease;
+}
+
+.enlace-boton:hover .enlace-flecha {
+    transform: translateX(5px);
+}
+
+.enlace-descripcion {
+    color: #6c757d;
+    font-size: 0.95rem;
+    margin-top: 10px;
+}
+
+/* ========== ESPACIO PARA FUTURAS IMÁGENES ========== */
+.biblioteca-espacio {
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 30px;
+    border: 2px dashed rgba(1,67,63,0.2);
+}
+
+.espacio-texto {
+    color: #6c757d;
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+/* ========== RESPONSIVE ========== */
+
+/* Tablet (901px - 1200px) */
+@media (max-width: 1200px) {
+    .title-main {
+        font-size: 3.5rem;
+    }
+    
+    .title-sub {
+        font-size: 2.5rem;
+    }
+    
+    .servicios-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Tablet pequeña (769px - 900px) */
+@media (max-width: 900px) {
+    .biblioteca-banner-container {
+        height: 70vh;
+    }
+    
+    .title-main {
+        font-size: 3rem;
+    }
+    
+    .title-sub {
+        font-size: 2rem;
+        letter-spacing: 8px;
+    }
+    
+    .servicios-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .contacto-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Móvil (601px - 768px) */
+@media (max-width: 768px) {
+    .biblioteca-banner-container {
+        height: 50vh;
+    }
+    
+    .title-main {
+        font-size: 2.5rem;
+        letter-spacing: 4px;
+    }
+    
+    .title-sub {
+        font-size: 1.5rem;
+        letter-spacing: 6px;
+    }
+    
+    .biblioteca-content {
+        padding: 40px 15px;
+    }
+    
+    .intro-text {
+        font-size: 1.1rem;
+    }
+    
+    .objetivo-titulo {
+        font-size: 1.8rem;
+    }
+    
+    .objetivo-texto {
+        font-size: 1rem;
+    }
+    
+    .servicios-titulo {
+        font-size: 1.8rem;
+    }
+    
+    .servicios-grid {
+        gap: 15px;
+    }
+    
+    .servicio-card {
+        padding: 25px 15px;
+    }
+    
+    .servicio-icon {
+        font-size: 2.5rem;
+    }
+    
+    .servicio-nombre {
+        font-size: 1rem;
+    }
+    
+    .contacto-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Móvil pequeño (481px - 600px) */
+@media (max-width: 600px) {
+    .title-main {
+        font-size: 2rem;
+    }
+    
+    .title-sub {
+        font-size: 1.3rem;
+    }
+    
+    .servicios-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .intro-card {
+        padding: 30px 20px;
+    }
+    
+    .objetivo-card {
+        padding: 30px 20px;
+    }
+}
+
+/* Móvil muy pequeño (hasta 480px) */
+@media (max-width: 480px) {
+    .biblioteca-banner-container {
+        height: 40vh;
+    }
+    
+    .title-main {
+        font-size: 1.6rem;
+    }
+    
+    .title-sub {
+        font-size: 1.1rem;
+        letter-spacing: 4px;
+    }
+    
+    .title-decoration span {
+        width: 30px;
+    }
+    
+    .title-decoration span:nth-child(2) {
+        width: 60px;
+    }
+    
+    .objetivo-titulo {
+        font-size: 1.5rem;
+    }
+    
+    .objetivo-icon {
+        font-size: 2rem;
+    }
+    
+    .servicios-titulo {
+        font-size: 1.5rem;
+    }
+    
+    .horario-destacado {
+        font-size: 1.2rem;
+    }
+    
+    .contacto-email {
+        font-size: 1rem;
+    }
+    
+    .enlace-boton {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+}

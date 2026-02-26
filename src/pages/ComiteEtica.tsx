@@ -1,7 +1,7 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
 import './ComiteEtica.css';
-import bannerComiteEtica from '../assets/banner/bannerComiteEtica.jpg'; // Descomentar cuando tengas la imagen
+import bannerComiteEtica from '../assets/banner/bannerComite.jpg'; // Descomentar cuando tengas la imagen
 
 function ComiteEtica() {
   const funcionesComite = [
@@ -116,16 +116,6 @@ function ComiteEtica() {
           alt="Banner Comité de Ética" 
           className="banner-comite" 
         /> 
-        <div className="banner-overlay-comite">
-          <div className="banner-content-comite">
-            <h1 className="banner-title-comite">COMITÉ DE ÉTICA</h1>
-            <p className="banner-subtitle-comite">
-              Fomentando la cultura de integridad<br />
-              en la Administración Pública
-            </p>
-            <div className="banner-decoration-comite"></div>
-          </div>
-        </div>
       </div>
 
       <section className="content-comite">

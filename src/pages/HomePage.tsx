@@ -1,14 +1,47 @@
 import { useEffect, useState } from "react";
 import LogosCarreras from "../components/LogosCarreras.tsx";
 import ImagenPrincipal from "../assets/banner/Index.jpg";
-import bannerAdminision from '../assets/banner/bannerAdmision.jpg'
+import bannerAdmision from '../assets/banner/bannerAdmision.jpg';
+import bannerBecas from '../assets/banner/bannerBecas.jpg';
+import bannerBiblioteca from '../assets/banner/bannerBiblioteca.jpg';
 import ImagenNuevaCarrera from "../assets/banner/NuevaCarrera.jpg";
 import Swal from "sweetalert2";
 import Accesos from "../components/Accesos.tsx";
 import "./HomePages.css";
 
 function HomePage() {
- const banners = [bannerAdminision, ImagenPrincipal];
+  // Ahora tenemos 4 banners
+  const banners = [
+    { 
+      src: bannerAdmision, 
+      titulo: "ADMISIÓN 2026", 
+      descripcion: "Inicia tu futuro profesional con nosotros",
+      botonTexto: "Conocer Oferta Educativa",
+      botonLink: "/OfertaEducativa"
+    },
+        { 
+      src: bannerBiblioteca, 
+      titulo: "CENTRO DE INFORMACIÓN", 
+      descripcion: "Biblioteca y recursos digitales",
+      botonTexto: "Conocer Biblioteca",
+      botonLink: "/CentroInformacion"
+    },
+    { 
+      src: ImagenPrincipal, 
+      titulo: "UNIVERSIDAD TECNOLÓGICA DE NAYARIT", 
+      descripcion: "Excelencia educativa al servicio de la sociedad",
+      botonTexto: "Conocer Más",
+      botonLink: "/QuienesSomos"
+    },
+    { 
+      src: bannerBecas, 
+      titulo: "BECAS DISPONIBLES", 
+      descripcion: "Apoyos académicos, deportivos y familiares",
+      botonTexto: "Conocer Becas",
+      botonLink: "/Becas"
+    }
+  ];
+  
   const [indiceActual, setIndiceActual] = useState(0);
 
   useEffect(() => {
@@ -18,6 +51,19 @@ function HomePage() {
 
     return () => clearInterval(interval);
   }, [banners.length]);
+
+  // Función para navegación manual
+  const irAlSlide = (index: number) => {
+    setIndiceActual(index);
+  };
+
+  const slideAnterior = () => {
+    setIndiceActual((prev) => (prev === 0 ? banners.length - 1 : prev - 1));
+  };
+
+  const slideSiguiente = () => {
+    setIndiceActual((prev) => (prev + 1) % banners.length);
+  };
 
   useEffect(() => {
     const mostrarAlertaBienvenida = () => {
@@ -39,8 +85,8 @@ function HomePage() {
               />
             </div>
           `,
-          width: window.innerWidth <= 768 ? "90%" : 600, // Responsive
-          padding: window.innerWidth <= 768 ? "1em" : "2em", // Responsive
+          width: window.innerWidth <= 768 ? "90%" : 600,
+          padding: window.innerWidth <= 768 ? "1em" : "2em",
           background: "#fff",
           showConfirmButton: true,
           showCancelButton: true,
@@ -69,26 +115,47 @@ function HomePage() {
   return (
     <>
       <div className="imagen-contenedor" style={{backgroundColor: "rgb(10,81,76)"}}>
- {banners.map((banner, index) => (
-        <img
-          key={index}
-          src={banner}
-          alt={`Banner ${index + 1} - Universidad Tecnológica de Nayarit`}
-          loading="lazy"
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            opacity: index === indiceActual ? 1 : 0,
-            transition: 'opacity 1.5s ease-in-out',
-            visibility: index === indiceActual ? 'visible' : 'hidden',
-            
-          }}
-        />
-      ))}
+        {banners.map((banner, index) => (
+          <div
+            key={index}
+            className={`slide-container ${index === indiceActual ? 'active' : ''}`}
+          >
+            <img
+              src={banner.src}
+              alt={`Banner ${index + 1} - Universidad Tecnológica de Nayarit`}
+              loading="lazy"
+              className="slide-imagen"
+            />
+            <div className="slide-overlay">
+              <div className="slide-contenido">
+                <a href={banner.botonLink} className="slide-boton">
+                  {banner.botonTexto}
+                  <span className="boton-flecha">→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+
+        {/* Botones de navegación del carrusel */}
+        <button className="carrusel-btn prev-btn" onClick={slideAnterior}>
+          <span>&#10094;</span>
+        </button>
+        <button className="carrusel-btn next-btn" onClick={slideSiguiente}>
+          <span>&#10095;</span>
+        </button>
+
+        {/* Indicadores */}
+        <div className="carrusel-indicators">
+          {banners.map((_, index) => (
+            <button
+              key={index}
+              className={`carrusel-indicator ${index === indiceActual ? 'active' : ''}`}
+              onClick={() => irAlSlide(index)}
+              aria-label={`Ir al slide ${index + 1}`}
+            />
+          ))}
+        </div>
 
         {/* Barra lateral de redes sociales */}
         <div className="redes-sociales-sidebar">

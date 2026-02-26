@@ -1,0 +1,86 @@
+/* components/BackButton.css */
+.back-button {
+  position: fixed;
+  border-radius: 50%;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  padding: 0;
+  outline: none;
+  width: var(--button-size, 50px);
+  height: var(--button-size, 50px);
+}
+
+.back-button.bottom-left {
+  bottom: 20px;
+  left: 20px;
+}
+
+.back-button.bottom-right {
+  bottom: 20px;
+  right: 20px;
+}
+
+.back-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.back-button:active {
+  transform: scale(0.95);
+}
+
+.back-icon {
+  width: var(--icon-size, 24px);
+  height: var(--icon-size, 24px);
+}
+
+/* Ajustes responsive */
+@media (min-width: 768px) {
+  .back-button.bottom-left {
+    bottom: 30px;
+    left: 30px;
+  }
+  
+  .back-button.bottom-right {
+    bottom: 30px;
+    right: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .back-button.bottom-left {
+    bottom: 40px;
+    left: 40px;
+  }
+  
+  .back-button.bottom-right {
+    bottom: 40px;
+    right: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .back-button.bottom-left {
+    bottom: 15px;
+    left: 15px;
+  }
+  
+  .back-button.bottom-right {
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+/* Soporte para modo oscuro */
+@media (prefers-color-scheme: dark) {
+  .back-button {
+    background-color: var(--dark-color, #18817d);
+  }
+}

@@ -1,270 +1,599 @@
 /* HomePages.css */
+
+/* ========== CONTENEDOR PRINCIPAL DEL CARRUSEL ========== */
 .imagen-contenedor {
-  position: relative;
-  width: 100%;
-  height: 90vh;
-  overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
 }
 
+/* ========== SLIDES DEL CARRUSEL ========== */
+.slide-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    visibility: hidden;
+}
+
+.slide-container.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+}
+
+.slide-imagen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* ========== OVERLAY Y CONTENIDO DE LOS SLIDES ========== */
+.slide-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 10%;
+}
+
+.slide-contenido {
+    max-width: 600px;
+    color: white;
+    animation: fadeInUp 1s ease;
+    margin-top: 450px;
+}
+
+.slide-titulo {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    line-height: 1.2;
+}
+
+.slide-descripcion {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    font-weight: 300;
+}
+
+/* ========== BOTÓN DE ACCIÓN EN SLIDES ========== */
+.slide-boton {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #18817d; /*Aqui*/
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px 35px;
+    border-radius: 40px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.slide-boton:hover {
+    background: white;
+    color: #01433f;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    border-color: #01433f;
+}
+
+.boton-flecha {
+    font-size: 1.4rem;
+    transition: transform 0.3s ease;
+}
+
+.slide-boton:hover .boton-flecha {
+    transform: translateX(5px);
+}
+
+/* ========== BOTONES DE NAVEGACIÓN DEL CARRUSEL ========== */
+.carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 20;
+    backdrop-filter: blur(5px);
+}
+
+.carrusel-btn:hover {
+    background: white;
+    color: #01433f;
+    border-color: white;
+    transform: translateY(-50%) scale(1.15);
+    box-shadow: 0 0 30px rgba(255,255,255,0.3);
+}
+
+.prev-btn {
+    left: 30px;
+}
+
+.next-btn {
+    right: 30px;
+}
+
+/* ========== INDICADORES DEL CARRUSEL ========== */
+.carrusel-indicators {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    z-index: 20;
+}
+
+.carrusel-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.carrusel-indicator:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.3);
+}
+
+.carrusel-indicator.active {
+    background: white;
+    transform: scale(1.3);
+    box-shadow: 0 0 15px white;
+}
+
+/* ========== ANIMACIONES ========== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== ESTILOS EXISTENTES (MANTENIDOS) ========== */
 .ImagenPrincipal {
-  width: 100%;
-  height: 95vh;
-  object-fit: cover;
-  object-position: center;
+    width: 100%;
+    height: 95vh;
+    object-fit: cover;
+    object-position: center;
 }
 
 .gradiente-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, #0A514C, transparent);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #0A514C, transparent);
 }
 
 .texto-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50px;
-  transform: translateY(-50%);
-  color: white;
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-shadow: 2px 2px 4px rgba(0, 255, 34, 0.5);
-  max-width: 40%;
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 255, 34, 0.5);
+    max-width: 40%;
 }
 
 .Acces h1 {
-  color: white;
-  text-align: center;
-  padding: 10px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: rgb(0, 67, 52);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(0, 67, 52);
+    margin: 0;
 }
 
-/* Media Queries para móvil */
-@media (max-width: 768px) {
-  .imagen-contenedor {
-    height: 300px; /* Altura fija para móvil */
-  }
-  
-  .ImagenPrincipal {
-    height: 100%; /* Ocupa el 100% del contenedor */
-    object-fit: cover; /* Mantiene proporción cubriendo */
-    object-position: center 30%; /* Ajusta la posición del recorte */
-  }
-  
-  .gradiente-overlay {
-    height: 100%; /* Misma altura que el contenedor */
-    background: linear-gradient(to right, rgba(21, 171, 84, 0.6), rgba(21, 171, 84, 0));
-  }
-  
-  .texto-overlay {
-    left: 20px;
-    right: 20px;
-    max-width: 100%;
-    font-size: 1.5rem; /* Tamaño de fuente más pequeño */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Sombra más definida */
+/* ========== REDES SOCIALES LATERAL ========== */
+.redes-sociales-sidebar {
+    position: absolute;
+    right: 0;
     top: 50%;
     transform: translateY(-50%);
-    padding: 0 10px;
-  }
-  
-  .texto-overlay h1 {
-    margin: 0;
-    font-size: inherit;
-    line-height: 1.3;
-  }
-}
-
-/* Para pantallas muy pequeñas */
-@media (max-width: 480px) {
-  .imagen-contenedor {
-    height: 250px; /* Un poco más pequeña para móviles muy pequeños */
-  }
-  
-  .texto-overlay {
-    font-size: 1.2rem;
-    left: 15px;
-    right: 15px;
-  }
-  
-  .gradiente-overlay {
-    background: linear-gradient(to right, rgba(21, 171, 84, 0.5), rgba(21, 171, 84, 0));
-  }
-}
-
-/* Para tablets */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .imagen-contenedor {
-    height: 400px;
-  }
-  
-  .texto-overlay {
-    font-size: 2rem;
-    max-width: 50%;
-  }
-}
-
-/* Redes Sociales Lateral */
-
-.redes-sociales-sidebar {
-  position: absolute;  
-  right: 0 !important;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 100;
-  display: none;
+    z-index: 100;
+    display: none;
 }
 
 .redes-sociales-contenedor {
-  background: #ffffff4f;
-  border-bottom-left-radius: 15px;
-  border-top-left-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 2px solid white;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.3);
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid white;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
 }
 
 .redes-sociales-contenedor:hover {
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-  transform: scale(1.02);
-  background-color: white;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    transform: scale(1.02);
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 .red-social-link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: white;
-  transition: all 0.3s ease;
-  border-radius: 10px;
-  width: 100%;
-  position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    width: 100%;
+    position: relative;
 }
 
 .red-social-link:hover {
-  background-color: rgba(255, 255, 255, 0.377);
-  transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
 }
 
 .red-social-icono {
-  width: 45px;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background-color: rgb(1, 102, 18);
-  transition: all 0.3s ease;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #01433f;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .red-social-icono svg {
-  width: 24px;
-  height: 24px;
-  fill: white;
+    width: 24px;
+    height: 24px;
+    fill: white;
 }
 
 .red-social-link:hover .red-social-icono {
-  background-color: white;
-  transform: scale(1.1);
-  border-color: white;
+    background-color: white;
+    transform: scale(1.1);
+    border-color: white;
 }
 
 .red-social-link:hover .red-social-icono svg {
-  fill: #10504b;
+    fill: #01433f;
 }
 
 /* Colores específicos para hover de cada red social */
 .red-social-link:nth-child(1):hover .red-social-icono {
-  background-color: #1877F2; /* Facebook blue */
+    background-color: #1877F2;
 }
 
 .red-social-link:nth-child(2):hover .red-social-icono {
-  background-color: #E1306C; /* Instagram pink */
+    background-color: #E1306C;
 }
 
 .red-social-link:nth-child(3):hover .red-social-icono {
-  background-color: #000000; /* TikTok black */
+    background-color: #000000;
 }
 
 .red-social-link:hover .red-social-icono svg {
-  fill: white !important;
+    fill: white !important;
 }
 
-.red-social-link:hover .red-social-texto {
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
+/* ========== MEDIA QUERIES - RESPONSIVE ========== */
 
-/* Mostrar solo en desktop */
-@media (min-width: 1024px) {
-  .redes-sociales-sidebar {
-    display: block;
-  }
-}
-
-/* Ajuste para pantallas grandes */
+/* Pantallas grandes */
 @media (min-width: 1440px) {
-  .redes-sociales-sidebar {
-    right: 50px;
-  }
-  
-  .redes-sociales-contenedor {
-    padding: 25px 15px;
-    gap: 25px;
-  }
-  
-  .red-social-icono {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .red-social-icono svg {
-    width: 26px;
-    height: 26px;
-  }
-  
-  .red-social-texto {
-    font-size: 14px;
-  }
+    .redes-sociales-sidebar {
+        right: 50px;
+    }
+    
+    .redes-sociales-contenedor {
+        padding: 25px 15px;
+        gap: 25px;
+    }
+    
+    .red-social-icono {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .red-social-icono svg {
+        width: 26px;
+        height: 26px;
+    }
 }
 
-/* Ajuste para tablet horizontal */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .redes-sociales-sidebar {
-    right: 20px;
-  }
-  
-  .redes-sociales-contenedor {
-    padding: 15px 10px;
-    gap: 18px;
-  }
-  
-  .red-social-icono {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .red-social-icono svg {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .red-social-texto {
-    font-size: 12px;
-  }
+/* Desktop y tablets grandes */
+@media (min-width: 1024px) {
+    .redes-sociales-sidebar {
+        display: block;
+    }
 }
 
-/* Ocultar completamente en móvil */
+/* Tablets horizontales y laptops pequeñas */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .imagen-contenedor {
+        height: 70vh;
+    }
+    
+    .slide-titulo {
+        font-size: 2.8rem;
+    }
+    
+    .slide-descripcion {
+        font-size: 1.2rem;
+    }
+    
+    .texto-overlay {
+        font-size: 2rem;
+        max-width: 50%;
+    }
+    
+    .redes-sociales-sidebar {
+        right: 20px;
+    }
+    
+    .redes-sociales-contenedor {
+        padding: 15px 10px;
+        gap: 18px;
+    }
+    
+    .red-social-icono {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .red-social-icono svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Tablets verticales */
+@media (max-width: 768px) {
+    .imagen-contenedor {
+        height: 60vh;
+    }
+    
+    .slide-titulo {
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+    }
+    
+    .slide-descripcion {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+    }
+    
+    .slide-boton {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+    
+    .slide-overlay {
+        padding: 0 5%;
+    }
+    
+    .carrusel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 22px;
+    }
+    
+    .prev-btn {
+        left: 15px;
+    }
+    
+    .next-btn {
+        right: 15px;
+    }
+    
+    .carrusel-indicator {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .carrusel-indicators {
+        bottom: 25px;
+        gap: 12px;
+    }
+    
+    .ImagenPrincipal {
+        height: 100%;
+        object-position: center 30%;
+    }
+    
+    .gradiente-overlay {
+        height: 100%;
+        background: linear-gradient(to right, rgba(0, 67, 52, 0.7), rgba(0, 67, 52, 0.1));
+    }
+    
+    .texto-overlay {
+        left: 20px;
+        right: 20px;
+        max-width: 100%;
+        font-size: 1.8rem;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 0 10px;
+    }
+    
+    .texto-overlay h1 {
+        margin: 0;
+        font-size: inherit;
+        line-height: 1.3;
+    }
+}
+
+/* Móviles grandes */
+@media (max-width: 600px) {
+    .imagen-contenedor {
+        height: 50vh;
+    }
+    
+    .slide-titulo {
+        font-size: 1.8rem;
+    }
+    
+    .slide-descripcion {
+        font-size: 1rem;
+    }
+    
+    .slide-boton {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .boton-flecha {
+        font-size: 1.2rem;
+    }
+    
+    .carrusel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    .imagen-contenedor {
+        height: 45vh;
+    }
+    
+    .slide-titulo {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+    
+    .slide-descripcion {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+    
+    .slide-boton {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+    
+    .texto-overlay {
+        font-size: 1.3rem;
+        left: 15px;
+        right: 15px;
+    }
+    
+    .gradiente-overlay {
+        background: linear-gradient(to right, rgba(0, 67, 52, 0.8), rgba(0, 67, 52, 0.2));
+    }
+    
+    .carrusel-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+    
+    .carrusel-indicator {
+        width: 8px;
+        height: 8px;
+    }
+    
+    .carrusel-indicators {
+        gap: 8px;
+        bottom: 15px;
+    }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 360px) {
+    .imagen-contenedor {
+        height: 40vh;
+    }
+    
+    .slide-titulo {
+        font-size: 1.3rem;
+    }
+    
+    .slide-descripcion {
+        font-size: 0.8rem;
+    }
+    
+    .texto-overlay {
+        font-size: 1.1rem;
+    }
+}
+
+/* Ocultar redes sociales en móvil */
 @media (max-width: 767px) {
-  .redes-sociales-sidebar {
-    display: none !important;
-  }
+    .redes-sociales-sidebar {
+        display: none !important;
+    }
+}
+
+/* Ajustes adicionales para la sección de accesos */
+.Acces {
+    width: 100%;
+    background-color: #f5f5f5;
+}
+
+.Acces h1 {
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(0, 67, 52);
+    margin: 0;
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+    .Acces h1 {
+        font-size: 1.5rem;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .Acces h1 {
+        font-size: 1.2rem;
+        padding: 12px;
+    }
 }

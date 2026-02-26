@@ -17,7 +17,9 @@ import LogoLINM from "../assets/logos/LINM.png";
 import LogoLSP from "../assets/logos/LSP.png";
 import LogoLPS from "../assets/logos/LPS.png";
 
-import Plan from '../assets/extras/imagePlan.jpg';
+// Imágenes para el carrusel
+import bannerOferta from "../assets/banner/bannerOferta.jpg";
+import imagePlan from "../assets/extras/imagePlan.jpg";
 
 interface Carrera {
     id: number;
@@ -114,9 +116,25 @@ function OfertaEducativa() {
         },
     ];
 
+    // Estado para el carrusel
+    const [currentSlide, setCurrentSlide] = useState<number>(0);
+    const slides = [
+        { src: bannerOferta, duration: 5000 }, // 5 segundos
+        { src: imagePlan, duration: 60000 }    // 1 minuto = 60000 ms
+    ];
+
     const scrollRef = useRef<HTMLDivElement>(null);
     const [canScrollRight, setCanScrollRight] = useState(true);
     const [isDesktop, setIsDesktop] = useState(false);
+
+    // Efecto para el carrusel con duraciones diferentes
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+        }, slides[currentSlide].duration);
+
+        return () => clearTimeout(timer);
+    }, [currentSlide, slides]);
 
     // Obtener todas las divisiones únicas
     const divisiones = Array.from(new Set(carreras.map(carrera => carrera.division)));
@@ -135,7 +153,6 @@ function OfertaEducativa() {
 
     // Función para remover el prefijo "DIVISIÓN DE " o "DIVISIÓN "
     const removeDivisionPrefix = (division: string): string => {
-        // Usar regex para remover "DIVISIÓN DE " o "DIVISIÓN " al inicio
         return division.replace(/^DIVISIÓN\s+(DE\s+)?/, '');
     };
 
@@ -144,10 +161,8 @@ function OfertaEducativa() {
         const sinPrefijo = removeDivisionPrefix(division);
         
         if (isDesktop) {
-            // En desktop mostrar el texto completo
             return sinPrefijo;
         } else {
-            // En móvil mostrar versiones acortadas
             if (sinPrefijo === 'INFORMACIÓN, INTELIGENCIA ARTIFICIAL Y COMUNICACIÓN') {
                 return 'TECNOLOGIAS DE LA INFORMACIÓN';
             }
@@ -168,6 +183,21 @@ function OfertaEducativa() {
             }
             return sinPrefijo;
         }
+    };
+
+    // Funciones para navegación manual del carrusel
+    const goToSlide = (index: number): void => {
+        setCurrentSlide(index);
+    };
+
+    const prevSlide = (): void => {
+        setCurrentSlide((prevSlide) =>
+            prevSlide === 0 ? slides.length - 1 : prevSlide - 1
+        );
+    };
+
+    const nextSlide = (): void => {
+        setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
     };
 
     // Verificar scroll disponible
@@ -192,77 +222,110 @@ function OfertaEducativa() {
 
     return (
         <>
-                  <div className="ofertaEducativaContainerPrincipal">
+            <div className="ofertaEducativaContainerPrincipal">
+                {/* Carrusel de imágenes */}
+                <div className="carrusel-container">
+                    {slides.map((slide, index) => (
+                        <div
+                            key={index}
+                            className={`carrusel-slide ${index === currentSlide ? 'active' : ''}`}
+                            style={{
+                                backgroundImage: `url(${slide.src})`,
+                            }}
+                        >
+                            {/* Overlay opcional para mejorar legibilidad del texto */}
+                            <div className="carrusel-overlay"></div>
+                        </div>
+                    ))}
 
-        {/* Barra lateral de redes sociales (sobre la imagen, solo desktop) */}
-        <div className="redes-sociales-sidebar">
-          <div className="redes-sociales-contenedor">
-            {/* Facebook */}
-            <a
-              href="https://www.facebook.com/UTNAY"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="red-social-link"
-              aria-label="Facebook UTNayarit"
-            >
-              <div className="red-social-icono">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C18.44 21.31 22 17.17 22 12.06C22 6.53 17.5 2.04 12 2.04Z" />
-                </svg>
-              </div>
-            </a>
+                    {/* Botones de navegación */}
+                    <button className="carrusel-btn prev-btn" onClick={prevSlide}>
+                        <span>&#10094;</span>
+                    </button>
+                    <button className="carrusel-btn next-btn" onClick={nextSlide}>
+                        <span>&#10095;</span>
+                    </button>
 
-            {/* Instagram */}
-            <a
-              href="https://www.instagram.com/ut.nayarit/?hl=es"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="red-social-link"
-              aria-label="Instagram UTNayarit"
-            >
-              <div className="red-social-icono">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" />
-                </svg>
-              </div>
-            </a>
+                    {/* Indicadores */}
+                    <div className="carrusel-indicators">
+                        {slides.map((_, index) => (
+                            <button
+                                key={index}
+                                className={`carrusel-indicator ${index === currentSlide ? 'active' : ''}`}
+                                onClick={() => goToSlide(index)}
+                                aria-label={`Ir a slide ${index + 1}`}
+                            />
+                        ))}
+                    </div>
+                </div>
 
-            {/* TikTok */}
-            <a
-              href="https://www.tiktok.com/@utnayarit"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="red-social-link"
-              aria-label="TikTok UTNayarit"
-            >
-              <div className="red-social-icono">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6c0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64c0 3.33 2.76 5.7 5.69 5.7c3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z" />
-                </svg>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
+                {/* Barra lateral de redes sociales (sobre la imagen, solo desktop) */}
+                <div className="redes-sociales-sidebar">
+                    <div className="redes-sociales-contenedor">
+                        {/* Facebook */}
+                        <a
+                            href="https://www.facebook.com/UTNAY"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="red-social-link"
+                            aria-label="Facebook UTNayarit"
+                        >
+                            <div className="red-social-icono">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                >
+                                    <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C18.44 21.31 22 17.17 22 12.06C22 6.53 17.5 2.04 12 2.04Z" />
+                                </svg>
+                            </div>
+                        </a>
 
-            
+                        {/* Instagram */}
+                        <a
+                            href="https://www.instagram.com/ut.nayarit/?hl=es"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="red-social-link"
+                            aria-label="Instagram UTNayarit"
+                        >
+                            <div className="red-social-icono">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                >
+                                    <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" />
+                                </svg>
+                            </div>
+                        </a>
+
+                        {/* TikTok */}
+                        <a
+                            href="https://www.tiktok.com/@utnayarit"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="red-social-link"
+                            aria-label="TikTok UTNayarit"
+                        >
+                            <div className="red-social-icono">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                >
+                                    <path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6c0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64c0 3.33 2.76 5.7 5.69 5.7c3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z" />
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
             <h1>
-                    <span className="Text1" style={{color: "#01433f",}}>DIVISIONES DE</span>
-                    <span className="Text2" style={{color: "#18817d",}}>CARRERAS</span>
-                </h1>
+                <span className="Text1" style={{color: "#01433f",}}>DIVISIONES DE</span>
+                <span className="Text2" style={{color: "#18817d",}}>CARRERAS</span>
+            </h1>
             
             {/* Línea decorativa */}
             <hr />
@@ -270,7 +333,6 @@ function OfertaEducativa() {
             <div className='ofertaEducativaContent'>
                 {/* Sección de Filtros */}
                 <div className='filtrosContainer'>
-                    
                     <div className='filtrosBurbujas' ref={scrollRef} onScroll={checkScroll}>
                         {/* Burbuja para "Todas" */}
                         <button 
@@ -291,7 +353,7 @@ function OfertaEducativa() {
                                     key={index}
                                     className={`filtroBurbuja ${filtroActivo === division ? 'activo' : ''}`}
                                     onClick={() => manejarFiltro(division)}
-                                    title={division} // Tooltip con nombre completo
+                                    title={division}
                                 >
                                     <span className='burbujaTexto'>
                                         DIVISIÓN DE {divisionText}
@@ -304,12 +366,9 @@ function OfertaEducativa() {
                     
                     {/* Indicadores de scroll para móvil */}
                     <div className='scrollIndicators'>
-                       
                         {!isDesktop && canScrollRight && <span className='scrollHint'>Desliza →</span>}
                     </div>
-                    
                 </div>
-
 
                 {/* Sección de Carreras */}
                 <div className='carrerasContainer'>
@@ -335,7 +394,6 @@ function OfertaEducativa() {
                     )}
                 </div>
             </div>
-            <img src={Plan} style={{width: "85%", margin: "20px 7.5%", borderRadius: "20px", border: "1px solid green"}} alt="Modelo Educativo" />
         </>
     );
 }

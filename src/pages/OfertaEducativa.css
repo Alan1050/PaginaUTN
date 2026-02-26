@@ -4,20 +4,141 @@
     box-sizing: border-box;
 }
 
-/* ========== BANNER PRINCIPAL ========== */
+/* ========== BANNER PRINCIPAL CON CARRUSEL ========== */
 .ofertaEducativaContainerPrincipal {
-    background-image: url('../assets/banner/bannerOferta.jpg');
     width: 100%;
     height: 90vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ========== CARRUSEL ========== */
+.carrusel-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carrusel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    z-index: 1;
+}
+
+.carrusel-slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.carrusel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(1,67,63,0.4) 0%, rgba(1,67,63,0.2) 100%);
+    z-index: 1;
+}
+
+/* Botones del carrusel */
+.carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    font-size: 28px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 20;
+    backdrop-filter: blur(5px);
 }
 
+.carrusel-btn:hover {
+    background: white;
+    color: #01433f;
+    border-color: white;
+    transform: translateY(-50%) scale(1.15);
+    box-shadow: 0 0 30px rgba(255,255,255,0.3);
+}
+
+.prev-btn {
+    left: 30px;
+    z-index: 20;
+}
+
+.next-btn {
+    right: 30px;
+    z-index: 20;
+}
+
+/* Indicadores */
+.carrusel-indicators {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    z-index: 20;
+}
+
+.carrusel-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.carrusel-indicator:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.3);
+}
+
+.carrusel-indicator.active {
+    background: white;
+    transform: scale(1.3);
+    box-shadow: 0 0 15px white;
+}
+
+/* Timer indicator */
+.carrusel-timer {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    z-index: 20;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    letter-spacing: 1px;
+}
+
+/* ========== TÍTULOS Y TEXTO ========== */
 .ofertaEducativaContainerPrincipal h1 {
     color: white;
     text-align: center;
@@ -30,9 +151,13 @@
     align-items: center;
     gap: 10px;
     flex-wrap: wrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
 }
 
-/* ========== ESTILOS PARA TÍTULOS Y TEXTO ========== */
 .Text1 {
     color: #2ecc71;
     font-weight: 800;
@@ -42,6 +167,7 @@
     background-clip: text;
     display: inline-block;
     font-weight: 800;
+    color: #18817d;
 }
 
 .Text2:hover {
@@ -79,8 +205,6 @@ hr {
 }
 
 /* ========== SECCIÓN DE FILTROS ========== */
-
-
 .filtrosTitulo {
     text-align: center;
     margin-bottom: 30px;
@@ -98,7 +222,7 @@ hr {
     font-size: 1.1rem;
 }
 
-/* ========== BURBUJAS DE FILTRO (DESKTOP) ========== */
+/* ========== BURBUJAS DE FILTRO ========== */
 .filtrosBurbujas {
     display: flex;
     flex-wrap: wrap;
@@ -148,9 +272,6 @@ hr {
     font-weight: 500;
     text-align: center;
     flex-grow: 1;
-    overflow: visible;
-    text-overflow: clip;
-    max-width: none;
 }
 
 .burbujaCantidad {
@@ -159,8 +280,6 @@ hr {
     padding: 4px 12px;
     font-size: 0.85rem;
     font-weight: 600;
-    min-width: auto;
-    width: auto;
     text-align: center;
     flex-shrink: 0;
 }
@@ -186,7 +305,6 @@ hr {
     justify-items: center;
 }
 
-/* Efecto de hover */
 .carreraCard a {
     text-decoration: none;
     transition: transform 0.3s ease;
@@ -236,7 +354,11 @@ hr {
     }
 }
 
-/* Animación escalonada para las tarjetas */
+.carrerasGrid .carreraCard {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
 .carrerasGrid .carreraCard:nth-child(1) { animation-delay: 0.1s; }
 .carrerasGrid .carreraCard:nth-child(2) { animation-delay: 0.2s; }
 .carrerasGrid .carreraCard:nth-child(3) { animation-delay: 0.3s; }
@@ -319,7 +441,105 @@ hr {
     color: #10504b;
 }
 
+/* ========== REDES SOCIALES LATERAL ========== */
+.redes-sociales-sidebar {
+    position: absolute;  
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: none;
+}
+
+.redes-sociales-contenedor {
+    background: #ffffff4f;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid white;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.redes-sociales-contenedor:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    transform: scale(1.02);
+    background-color: white;
+}
+
+.red-social-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    width: 100%;
+    position: relative;
+}
+
+.red-social-link:hover {
+    background-color: rgba(255, 255, 255, 0.377);
+    transform: translateY(-5px);
+}
+
+.red-social-icono {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgb(1, 102, 18);
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.red-social-icono svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
+
+.red-social-link:hover .red-social-icono {
+    background-color: white;
+    transform: scale(1.1);
+    border-color: white;
+}
+
+.red-social-link:hover .red-social-icono svg {
+    fill: #10504b;
+}
+
+/* Colores específicos para hover de cada red social */
+.red-social-link:nth-child(1):hover .red-social-icono {
+    background-color: #1877F2;
+}
+
+.red-social-link:nth-child(2):hover .red-social-icono {
+    background-color: #E1306C;
+}
+
+.red-social-link:nth-child(3):hover .red-social-icono {
+    background-color: #000000;
+}
+
+.red-social-link:hover .red-social-icono svg {
+    fill: white !important;
+}
+
 /* ========== RESPONSIVE ========== */
+
+/* Mostrar redes sociales solo en desktop */
+@media (min-width: 1024px) {
+    .redes-sociales-sidebar {
+        display: block;
+    }
+}
 
 /* Tablet (901px - 1200px) */
 @media (max-width: 1200px) {
@@ -335,7 +555,20 @@ hr {
 
 /* Tablet pequeña (769px - 900px) */
 @media (max-width: 900px) {
-    /* Burbujas con scroll horizontal */
+    .carrusel-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 24px;
+    }
+    
+    .prev-btn {
+        left: 15px;
+    }
+    
+    .next-btn {
+        right: 15px;
+    }
+    
     .filtrosBurbujas {
         display: flex;
         flex-wrap: nowrap;
@@ -349,7 +582,6 @@ hr {
         scrollbar-color: #10504b #f1f1f1;
     }
     
-    /* Estilo de scrollbar para navegadores WebKit */
     .filtrosBurbujas::-webkit-scrollbar {
         height: 6px;
     }
@@ -391,6 +623,29 @@ hr {
         font-size: 2.5rem;
     }
     
+    .carrusel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    
+    .carrusel-timer {
+        top: 10px;
+        right: 10px;
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .carrusel-indicators {
+        bottom: 20px;
+        gap: 10px;
+    }
+    
+    .carrusel-indicator {
+        width: 10px;
+        height: 10px;
+    }
+    
     .ofertaEducativaContent {
         padding: 30px 15px;
     }
@@ -411,7 +666,6 @@ hr {
     .filtroBurbuja {
         padding: 10px 18px;
         font-size: 0.9rem;
-        min-width: fit-content;
     }
     
     .burbujaTexto {
@@ -440,26 +694,19 @@ hr {
 
 /* Móvil pequeño (481px - 600px) */
 @media (max-width: 600px) {
-    .filtrosBurbujas {
-        padding: 10px 5px;
-        gap: 8px;
-        display: grid;
-        grid-template-rows: 1fr 1fr;
-        grid-template-columns: repeat(4, 1fr);
+    .ofertaEducativaContainerPrincipal h1 {
+        font-size: 2rem;
     }
     
-    .filtroBurbuja {
-        padding: 8px 15px;
-        font-size: 0.85rem;
+    .carrusel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
     }
     
-    .burbujaTexto {
+    .carrusel-timer {
         font-size: 0.8rem;
-    }
-    
-    .burbujaCantidad {
-        padding: 2px 6px;
-        font-size: 0.75rem;
+        padding: 5px 10px;
     }
     
     .carrerasGrid {
@@ -470,18 +717,35 @@ hr {
     .carreraLogo {
         max-width: 130px;
     }
-
-    
 }
 
 /* Móvil muy pequeño (361px - 480px) */
 @media (max-width: 480px) {
-    .ofertaEducativaContainerPrincipal h1 {
-        font-size: 1.8rem;
+    .ofertaEducativaContainerPrincipal {
+        height: 40vh;
     }
-
-    .ofertaEducativaContainerPrincipal{
-            height: 40vh;
+    
+    .ofertaEducativaContainerPrincipal h1 {
+        font-size: 1.6rem;
+    }
+    
+    .carrusel-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+    
+    .prev-btn {
+        left: 10px;
+    }
+    
+    .next-btn {
+        right: 10px;
+    }
+    
+    .carrusel-indicator {
+        width: 8px;
+        height: 8px;
     }
     
     .filtrosBurbujas {
@@ -504,12 +768,11 @@ hr {
     }
     
     .carrerasGrid {
-        grid-template-columns: repeat(2, 1fr);
         gap: 12px;
     }
     
     .carreraLogo {
-        max-width: 110px;
+        max-width: 100px;
     }
     
     .filtroActivoInfo {
@@ -528,30 +791,15 @@ hr {
 /* Móvil extra pequeño (hasta 360px) */
 @media (max-width: 360px) {
     .ofertaEducativaContainerPrincipal h1 {
-        font-size: 1.6rem;
-    }
-    
-    .filtrosBurbujas {
-        gap: 6px;
-        padding: 6px 5px;
-    }
-    
-    .filtroBurbuja {
-        padding: 7px 10px;
-        font-size: 0.75rem;
-    }
-    
-    .burbujaTexto {
-        font-size: 0.7rem;
+        font-size: 1.4rem;
     }
     
     .carrerasGrid {
-        grid-template-columns: repeat(2, 1fr);
         gap: 10px;
     }
     
     .carreraLogo {
-        max-width: 90px;
+        max-width: 80px;
     }
     
     .ofertaEducativaContent {
@@ -559,7 +807,7 @@ hr {
     }
 }
 
-/* Indicador visual de que hay más contenido para scrollear */
+/* Indicador visual de scroll para móvil */
 @media (max-width: 900px) {
     .filtrosContainer {
         position: relative;
@@ -577,171 +825,4 @@ hr {
         pointer-events: none;
         z-index: 1;
     }
-}
-
-
-
-
-
-/* Redes Sociales Lateral */
-
-.redes-sociales-sidebar {
-  position: absolute;  
-  right: 0 !important;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 100;
-  display: none;
-}
-
-.redes-sociales-contenedor {
-  background: #ffffff4f;
-  border-bottom-left-radius: 15px;
-  border-top-left-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 2px solid white;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(5px);
-}
-
-.redes-sociales-contenedor:hover {
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-  transform: scale(1.02);
-  background-color: white;
-}
-
-.red-social-link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: white;
-  transition: all 0.3s ease;
-  border-radius: 10px;
-  width: 100%;
-  position: relative;
-}
-
-.red-social-link:hover {
-  background-color: rgba(255, 255, 255, 0.377);
-  transform: translateY(-5px);
-}
-
-.red-social-icono {
-  width: 45px;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background-color: rgb(1, 102, 18);
-  transition: all 0.3s ease;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-}
-
-.red-social-icono svg {
-  width: 24px;
-  height: 24px;
-  fill: white;
-}
-
-.red-social-link:hover .red-social-icono {
-  background-color: white;
-  transform: scale(1.1);
-  border-color: white;
-}
-
-.red-social-link:hover .red-social-icono svg {
-  fill: #10504b;
-}
-
-/* Colores específicos para hover de cada red social */
-.red-social-link:nth-child(1):hover .red-social-icono {
-  background-color: #1877F2; /* Facebook blue */
-}
-
-.red-social-link:nth-child(2):hover .red-social-icono {
-  background-color: #E1306C; /* Instagram pink */
-}
-
-.red-social-link:nth-child(3):hover .red-social-icono {
-  background-color: #000000; /* TikTok black */
-}
-
-.red-social-link:hover .red-social-icono svg {
-  fill: white !important;
-}
-
-.red-social-link:hover .red-social-texto {
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-/* Mostrar solo en desktop */
-@media (min-width: 1024px) {
-  .redes-sociales-sidebar {
-    display: block;
-  }
-}
-
-/* Ajuste para pantallas grandes */
-@media (min-width: 1440px) {
-  .redes-sociales-sidebar {
-    right: 50px;
-  }
-  
-  .redes-sociales-contenedor {
-    padding: 25px 15px;
-    gap: 25px;
-  }
-  
-  .red-social-icono {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .red-social-icono svg {
-    width: 26px;
-    height: 26px;
-  }
-  
-  .red-social-texto {
-    font-size: 14px;
-  }
-}
-
-/* Ajuste para tablet horizontal */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .redes-sociales-sidebar {
-    right: 20px;
-  }
-  
-  .redes-sociales-contenedor {
-    padding: 15px 10px;
-    gap: 18px;
-  }
-  
-  .red-social-icono {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .red-social-icono svg {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .red-social-texto {
-    font-size: 12px;
-  }
-}
-
-/* Ocultar completamente en móvil */
-@media (max-width: 767px) {
-  .redes-sociales-sidebar {
-    display: none !important;
-  }
 }

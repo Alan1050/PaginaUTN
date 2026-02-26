@@ -21,7 +21,7 @@ function Accesos() {
       <div className='ContainerButton2'>
         <a href="https://transparencia.utnay.edu.mx/" target='_blank'><img src={logoTransparencia} alt="Transparencia" /></a>
         <a href="/ComiteEtica"><img src={logoComite} alt="Comité de Ética" /></a>
-        <a href=""><img src={logoBuzon} alt="Buzón de Sugerencias" /></a>
+        <a href="https://forms.gle/ebbMNe2izfpJQMKd7" target='_blank'><img src={logoBuzon} alt="Buzón de Sugerencias" /></a>
         <a href=""><img src={logoCultura} alt="Cultura de Paz" /></a>
       </div>
     </section>

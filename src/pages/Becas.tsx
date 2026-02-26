@@ -7,6 +7,10 @@ import iconoBecaFamilia from "../assets/logos/iconoBecaFamilia.png";
 import iconoBecaCompañeros from "../assets/logos/iconoBecaCompañeros.png";
 import iconoBecaDeportiva from "../assets/logos/iconoBecaDeportiva.png";
 import iconoBecaAcademica from "../assets/logos/iconoBecaAcademica.png";
+import Academica from "../assets/extras/CONV. BECA ACADÉMICA MAYO-AGOSTO 2026.pdf";
+import Compañeros from "../assets/extras/CONV. BECA COMPAÑEROS MAYO-AGOSTO 2026.pdf";
+import Deportivas from "../assets/extras/CONV. BECA DEPORTIVA CULTURAL  MAYO-AGOSTO 2026.pdf";
+import Familia from "../assets/extras/CONV. BECA FAMILIA  MAYO-AGOSTO 2026.pdf"
 
 // Interfaces para TypeScript
 interface Descuento {
@@ -432,6 +436,7 @@ function Becas() {
                           </div>
                         ))}
                       </div>
+                        <div><a href={Academica} target="_blank" style={{backgroundColor: "white", width: "20%", fontSize: 20, textAlign: "center", color: "black", fontWeight: "500", borderRadius: 20, padding: 20}}>Ver Convocatorias </a></div>
                     </div>
                   )}
 
@@ -453,6 +458,7 @@ function Becas() {
                         <span className="destacado-icon">🎯</span>
                         <p>Exención del <strong>100%</strong> en el pago de colegiatura cuatrimestral</p>
                       </div>
+                      <div style={{marginTop: 20}}><a href={Familia} target="_blank" style={{backgroundColor: "white", width: "20%", fontSize: 20, textAlign: "center", color: "black", fontWeight: "500", borderRadius: 20, padding: 20}}>Ver Convocatorias </a></div>
                     </div>
                   )}
 
@@ -478,6 +484,7 @@ function Becas() {
                           </div>
                         </div>
                       </div>
+                      <div style={{marginTop: 20}}><a href={Compañeros} target="_blank" style={{backgroundColor: "white", width: "20%", fontSize: 20, textAlign: "center", color: "black", fontWeight: "500", borderRadius: 20, padding: 20}}>Ver Convocatorias </a></div>
                     </div>
                   )}
 
@@ -500,6 +507,7 @@ function Becas() {
                           </div>
                         ))}
                       </div>
+                      <div style={{marginTop: 20}}><a href={Deportivas} target="_blank" style={{backgroundColor: "white", width: "20%", fontSize: 20, textAlign: "center", color: "black", fontWeight: "500", borderRadius: 20, padding: 20}}>Ver Convocatorias </a></div>
                       <p className="merito-extra">* Aplica también para méritos culturales</p>
                     </div>
                   )}

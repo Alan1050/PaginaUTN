@@ -1,7 +1,7 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
 import './Egresados.css';
-// import bannerEgresados from '../assets/banner/egresados.jpg'; // Descomentar cuando tengas la imagen
+import bannerEgresados from '../assets/banner/bannerEgresados.jpg'; // Descomentar cuando tengas la imagen
 
 function Egresados() {
   const programasEgresados = [
@@ -72,21 +72,11 @@ function Egresados() {
   return (
     <>
       <div className="banner-container-egresados">
-        {/* <img 
+        <img 
           src={bannerEgresados} 
           alt="Banner Egresados" 
           className="banner-egresados" 
-        /> */}
-        <div className="banner-overlay-egresados">
-          <div className="banner-content-egresados">
-            <h1 className="banner-title-egresados">EGRESADOS</h1>
-            <p className="banner-subtitle-egresados">
-          Acompañando tu crecimiento profesional<br />
-              más allá del aula
-            </p>
-            <div className="banner-decoration-egresados"></div>
-          </div>
-        </div>
+        /> 
       </div>
 
       <section className="content-egresados">
