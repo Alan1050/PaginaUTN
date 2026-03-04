@@ -268,12 +268,6 @@
 
 /* ========== MEDIA QUERIES MEJORADAS ========== */
 
-@meda (width: 2560px) {
-    .redes-sociales-sidebar {
-        display: none !important;
-    }
-}
-
 /* Pantallas Ultra-wide (4K) */
 @media (min-width: 2000px) {
     .imagen-contenedor {
@@ -316,7 +310,7 @@
 @media (min-width: 1440px) and (max-width: 1999px) {
 
         .imagen-contenedor {
-        height: 60vh;
+        height: 80vh;
     }
 
     .slide-contenido {
