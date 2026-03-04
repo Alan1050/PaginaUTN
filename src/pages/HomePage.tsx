@@ -125,6 +125,7 @@ function HomePage() {
               alt={`Banner ${index + 1} - Universidad Tecnológica de Nayarit`}
               loading="lazy"
               className="slide-imagen"
+              style={{objectFit: "cover"}}
             />
             <div className="slide-overlay">
               <div className="slide-contenido">
