@@ -23,8 +23,8 @@ function HomePage() {
       src: bannerBiblioteca, 
       titulo: "CENTRO DE INFORMACIÓN", 
       descripcion: "Biblioteca y recursos digitales",
-      botonTexto: "Conocer Biblioteca",
-      botonLink: "/CentroInformacion"
+      botonTexto: "Conocer Biblioteca Digital",
+      botonLink: "https://www.digitaliapublishing.com/novedades"
     },
     { 
       src: ImagenPrincipal, 
@@ -128,7 +128,7 @@ function HomePage() {
             />
             <div className="slide-overlay">
               <div className="slide-contenido">
-                <a href={banner.botonLink} className="slide-boton">
+                <a href={banner.botonLink} className="slide-boton" target="_blank">
                   {banner.botonTexto}
                   <span className="boton-flecha">→</span>
                 </a>
