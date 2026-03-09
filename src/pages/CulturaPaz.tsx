@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./CulturaPaz.css";
-//import bannerCulturaPaz from "../assets/banner/bannerCulturaPaz.jpg";
+import bannerCulturaPaz from "../assets/banner/banerCulturaPaz.jpg";
 
 // Interfaces para TypeScript
 interface AccionInfo {
@@ -108,11 +108,11 @@ function CulturaPaz() {
       <div className="banner-container">
         <div className="carousel-container">
           <div className="carousel-slide active">
-            {/*<img
+            <img
               src={bannerCulturaPaz}
               alt="Cultura de Paz"
               className="bannerCulturaPaz"
-            />*/}
+            />
           </div>
         </div>
       </div>

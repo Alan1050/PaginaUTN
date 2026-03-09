@@ -10,7 +10,6 @@ import Accesos from "../components/Accesos.tsx";
 import "./HomePages.css";
 
 function HomePage() {
-  // Ahora tenemos 4 banners
   const banners = [
     { 
       src: bannerAdmision, 

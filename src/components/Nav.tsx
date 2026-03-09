@@ -394,6 +394,23 @@ function Nav() {
                                             </ul>
                                         )}
                                     </li>
+
+                                    <li 
+                                        className={`has-submenu ${activeSubmenu === 'biblioteca' ? 'active' : ''}`}
+                                        onMouseEnter={() => setActiveSubmenu('biblioteca')}
+                                        onMouseLeave={() => activeSubmenu === 'biblioteca' && setActiveSubmenu(null)}
+                                    >
+                                        <div className="submenu-trigger">
+                                            <span>Biblioteca</span>
+                                            <span className="submenu-arrow">▶</span>
+                                        </div>
+                                        
+                                        {activeSubmenu === 'biblioteca' && (
+                                            <ul className="submenu">
+                                                <li><a href="https://www.digitaliapublishing.com/novedades" target='_blank' onClick={(e) => handleLinkClick(e, '')}>Biblioteca Digital</a></li>
+                                                <li><a href="/CentroInformacion" onClick={(e) => handleLinkClick(e, '')}>Biblioteca Fisica</a></li>                                            </ul>
+                                        )}
+                                    </li>
                                     
                                     {/* Egresados con submenú */}
                                     <li 
@@ -653,6 +670,32 @@ function Nav() {
                                                 </a>
                                             </li>
                                             
+                                        </ul>
+                                    )}
+                                </li>
+
+                                <li 
+                                    className={`mobile-has-submenu ${activeMobileSubmenu === 'biblioteca' ? 'active' : ''}`}
+                                >
+                                    <div 
+                                        className="mobile-submenu-trigger"
+                                        onClick={() => toggleMobileSubmenu('biblioteca')}
+                                    >
+                                        <span>Biblioteca</span>
+                                        <span className={`mobile-submenu-arrow ${activeMobileSubmenu === 'biblioteca' ? 'rotated' : ''}`}>▶</span>
+                                    </div>
+                                    
+                                    {activeMobileSubmenu === 'biblioteca' && (
+                                        <ul className="mobile-submenu">
+                                            <li><a href="https://www.digitaliapublishing.com/novedades" target='_blank' onClick={(e) => { e.stopPropagation(); closeMenu(); }}>Biblioteca Digital</a></li>
+                                            <li>
+                                                <a 
+                                                    href="/CentroInformacion" 
+                                                    onClick={(e) => { e.stopPropagation(); closeMenu(); }}
+                                                >
+                                                    Biblioteca Fisica
+                                                </a>
+                                            </li>
                                         </ul>
                                     )}
                                 </li>

@@ -1,5 +1,6 @@
 import "./CentroInformacion.css";
 import bannerBiblioteca from "../assets/banner/bannerBiblioteca.jpg";
+//import bannerBiblioteca2 from "../assets/banner/bannerBiblioteca2.jpg";
 
 function CentroInformacion() {
   return (
