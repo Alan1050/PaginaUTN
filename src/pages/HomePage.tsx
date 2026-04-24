@@ -8,6 +8,7 @@ import ImagenNuevaCarrera from "../assets/banner/NuevaCarrera.jpg";
 import Swal from "sweetalert2";
 import Accesos from "../components/Accesos.tsx";
 import "./HomePages.css";
+import AvisoPrivacidad from "../components/AvisoPrivacidad.tsx";
 
 function HomePage() {
   const banners = [
@@ -225,6 +226,10 @@ function HomePage() {
       <div className="Acces">
         <h1>ACCESOS RÁPIDOS</h1>
         <Accesos />
+      </div>
+
+      <div>
+        <AvisoPrivacidad />
       </div>
     </>
   );

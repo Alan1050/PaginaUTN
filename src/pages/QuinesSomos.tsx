@@ -10,8 +10,7 @@ function QuienesSomos() {
 
   return (
     <>
-            <div className="quienesSomosContainerPrincipal">
-
+      <div className="quienesSomosContainerPrincipal">
         {/* Barra lateral de redes sociales (sobre la imagen, solo desktop) */}
         <div className="redes-sociales-sidebar">
           <div className="redes-sociales-contenedor">
@@ -75,105 +74,154 @@ function QuienesSomos() {
         </div>
       </div>
 
-      <div className='quienesSomosContent'>
-        <div className='sections-container'>
-          
+      <div className="quienesSomosContent">
+        <div className="sections-container">
           {/* MISIÓN */}
-          <div className={`section-item ${activeSection === 'mision' ? 'active' : ''}`}>
-            <div 
-              className='section-header'
-              onClick={() => toggleSection('mision')}
+          <div
+            className={`section-item ${activeSection === "mision" ? "active" : ""}`}
+          >
+            <div
+              className="section-header"
+              onClick={() => toggleSection("mision")}
               role="button"
               tabIndex={0}
-              onKeyDown={(e) => e.key === 'Enter' && toggleSection('mision')}
+              onKeyDown={(e) => e.key === "Enter" && toggleSection("mision")}
             >
-                
               <h2>MISIÓN</h2>
-              <span className='toggle-icon'>
-                {activeSection === 'mision' ? '−' : '+'}
+              <span className="toggle-icon">
+                {activeSection === "mision" ? "−" : "+"}
               </span>
             </div>
-            
-            {activeSection === 'mision' && (
-              <div className='section-content'>
-                <p>En la Universidad Tecnológica de Nayarit impulsamos la formación de profesionistas innovadores y de alto nivel, mediante una educación integral, tecnológica, humanista e intercultural, con compromiso hacia el desarrollo sostenible, la prosperidad de Nayarit, de México y del mundo.</p>
+
+            {activeSection === "mision" && (
+              <div className="section-content">
+                <p>
+                  En la Universidad Tecnológica de Nayarit impulsamos la
+                  formación de profesionistas innovadores y de alto nivel,
+                  mediante una educación integral, tecnológica, humanista e
+                  intercultural, con compromiso hacia el desarrollo sostenible,
+                  la prosperidad de Nayarit, de México y del mundo.
+                </p>
               </div>
             )}
           </div>
 
           {/* VISIÓN */}
-          <div className={`section-item ${activeSection === 'vision' ? 'active' : ''}`}>
-            <div 
-              className='section-header'
-              onClick={() => toggleSection('vision')}
+          <div
+            className={`section-item ${activeSection === "vision" ? "active" : ""}`}
+          >
+            <div
+              className="section-header"
+              onClick={() => toggleSection("vision")}
               role="button"
               tabIndex={0}
-              onKeyDown={(e) => e.key === 'Enter' && toggleSection('vision')}
+              onKeyDown={(e) => e.key === "Enter" && toggleSection("vision")}
             >
               <h2>VISIÓN</h2>
-              <span className='toggle-icon'>
-                {activeSection === 'vision' ? '−' : '+'}
+              <span className="toggle-icon">
+                {activeSection === "vision" ? "−" : "+"}
               </span>
             </div>
-            
-            {activeSection === 'vision' && (
-              <div className='section-content'>
-                <p>Nos consolidaremos como una universidad tecnológica líder, reconocida nacional e internacionalmente por su excelencia académica, cultura digital e innovación, y por impulsar el desarrollo humano, profesional y sostenible de su comunidad.</p>
+
+            {activeSection === "vision" && (
+              <div className="section-content">
+                <p>
+                  Nos consolidaremos como una universidad tecnológica líder,
+                  reconocida nacional e internacionalmente por su excelencia
+                  académica, cultura digital e innovación, y por impulsar el
+                  desarrollo humano, profesional y sostenible de su comunidad.
+                </p>
               </div>
             )}
           </div>
 
           {/* POLÍTICA DE CALIDAD */}
-          <div className={`section-item ${activeSection === 'politica' ? 'active' : ''}`}>
-            <div 
-              className='section-header'
-              onClick={() => toggleSection('politica')}
+          <div
+            className={`section-item ${activeSection === "politica" ? "active" : ""}`}
+          >
+            <div
+              className="section-header"
+              onClick={() => toggleSection("politica")}
               role="button"
               tabIndex={0}
-              onKeyDown={(e) => e.key === 'Enter' && toggleSection('politica')}
+              onKeyDown={(e) => e.key === "Enter" && toggleSection("politica")}
             >
               <h2>POLÍTICA DE CALIDAD</h2>
-              <span className='toggle-icon'>
-                {activeSection === 'politica' ? '−' : '+'}
+              <span className="toggle-icon">
+                {activeSection === "politica" ? "−" : "+"}
               </span>
             </div>
-            
-            {activeSection === 'politica' && (
-              <div className='section-content'>
-                <p>En la Universidad Tecnológica de Nayarit estamos comprometidos en mejorar e innovar nuestro Sistema Integral de Calidad bajo la norma ISO 21001:2018, orientado a brindar servicios educativos de calidad, mediante un modelo pertinente de formación integral, incorporando funciones sustantivas de investigación, extensión universitaria, vinculación con el sector productivo y social que impacte el desarrollo tecnológico en el entorno y el respeto a la propiedad intelectual.</p>
+
+            {activeSection === "politica" && (
+              <div className="section-content">
+                <p>
+                  En la Universidad Tecnológica de Nayarit estamos comprometidos
+                  en mejorar e innovar nuestro Sistema Integral de Calidad bajo
+                  la norma ISO 21001:2018, orientado a brindar servicios
+                  educativos de calidad, mediante un modelo pertinente de
+                  formación integral, incorporando funciones sustantivas de
+                  investigación, extensión universitaria, vinculación con el
+                  sector productivo y social que impacte el desarrollo
+                  tecnológico en el entorno y el respeto a la propiedad
+                  intelectual.
+                </p>
               </div>
             )}
           </div>
 
           {/* VALORES */}
-          <div className={`section-item ${activeSection === 'valores' ? 'active' : ''}`}>
-            <div 
-              className='section-header'
-              onClick={() => toggleSection('valores')}
+          <div
+            className={`section-item ${activeSection === "valores" ? "active" : ""}`}
+          >
+            <div
+              className="section-header"
+              onClick={() => toggleSection("valores")}
               role="button"
               tabIndex={0}
-              onKeyDown={(e) => e.key === 'Enter' && toggleSection('valores')}
+              onKeyDown={(e) => e.key === "Enter" && toggleSection("valores")}
             >
               <h2>VALORES</h2>
-              <span className='toggle-icon'>
-                {activeSection === 'valores' ? '−' : '+'}
+              <span className="toggle-icon">
+                {activeSection === "valores" ? "−" : "+"}
               </span>
             </div>
-            
-            {activeSection === 'valores' && (
-              <div className='section-content'>
-                <ul className='valores-list'>
-                  <li><strong>Compromiso:</strong> Sentido de pertenencia a la organización para generar una identidad universitaria.</li>
-                  <li><strong>Solidaridad:</strong> Colaboración mutua que existe entre la comunidad universitaria para el logro de objetivos comunes.</li>
-                  <li><strong>Respeto:</strong> Reconocimiento al valor, dignidad y derecho entre alumnos, profesores, administrativos y su entorno físico y social.</li>
-                  <li><strong>Responsabilidad:</strong> Cumplimiento de derechos y obligaciones de cada integrante de la comunidad universitaria.</li>
-                  <li><strong>Honestidad:</strong> Ser auténtico en sus acciones, congruentes de lo que dicen con lo que hacen y sienten, dentro y fuera de la institución.</li>
-                  <li><strong>Lealtad:</strong> Congruencia con las políticas institucionales para el buen actuar de los miembros de la comunidad universitaria.</li>
+
+            {activeSection === "valores" && (
+              <div className="section-content">
+                <ul className="valores-list">
+                  <li>
+                    <strong>Compromiso:</strong> Sentido de pertenencia a la
+                    organización para generar una identidad universitaria.
+                  </li>
+                  <li>
+                    <strong>Solidaridad:</strong> Colaboración mutua que existe
+                    entre la comunidad universitaria para el logro de objetivos
+                    comunes.
+                  </li>
+                  <li>
+                    <strong>Respeto:</strong> Reconocimiento al valor, dignidad
+                    y derecho entre alumnos, profesores, administrativos y su
+                    entorno físico y social.
+                  </li>
+                  <li>
+                    <strong>Responsabilidad:</strong> Cumplimiento de derechos y
+                    obligaciones de cada integrante de la comunidad
+                    universitaria.
+                  </li>
+                  <li>
+                    <strong>Honestidad:</strong> Ser auténtico en sus acciones,
+                    congruentes de lo que dicen con lo que hacen y sienten,
+                    dentro y fuera de la institución.
+                  </li>
+                  <li>
+                    <strong>Lealtad:</strong> Congruencia con las políticas
+                    institucionales para el buen actuar de los miembros de la
+                    comunidad universitaria.
+                  </li>
                 </ul>
               </div>
             )}
           </div>
-
         </div>
       </div>
     </>

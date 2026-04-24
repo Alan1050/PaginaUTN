@@ -235,7 +235,7 @@
 /* Tarjetas */
 .logosContainerCultura {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 30px;
     max-width: 1400px;
     margin: 0 auto 60px;
@@ -605,4 +605,42 @@
 
 .cultura-info-detallada {
     animation: slideIn 0.5s ease;
+}
+
+
+/* Contenedor del PDF simple */
+.pdf-simple-container {
+  margin: 40px 0;
+  position: relative;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.pdf-iframe-simple {
+  width: 60%;
+  height: 100%;
+  border: none;
+}
+
+/* Para móviles */
+@media (max-width: 768px) {
+  .pdf-simple-container {
+    height: 400px; /* Altura más pequeña en móviles */
+  }
+}
+
+/* Para tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .pdf-simple-container {
+    height: 500px;
+  }
+}
+
+/* Opcional: Ocultar completamente cualquier control flotante */
+.pdf-iframe-simple::-webkit-scrollbar {
+  display: none;
 }

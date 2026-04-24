@@ -1,0 +1,262 @@
+.aviso-container {
+  background: white;
+  width: 100%;
+  padding: 40px 20px;
+  position: relative;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.aviso-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.aviso-titulo {
+  font-size: 2rem;
+  color: #004338;
+  margin-bottom: 25px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+}
+
+.aviso-titulo::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #004338, #008C76);
+  border-radius: 2px;
+}
+
+.aviso-botones {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.aviso-btn-ver, .aviso-btn-descargar {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #004338 0%, #008C76 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.aviso-btn-ver {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+}
+
+.aviso-btn-descargar {
+  background: linear-gradient(135deg, #004338 0%, #008C76 100%);
+}
+
+.aviso-btn-ver:hover, .aviso-btn-descargar:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.aviso-btn-ver span, .aviso-btn-descargar span {
+  font-size: 1.2rem;
+}
+
+.aviso-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+}
+
+.aviso-modal-content {
+  background: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 1000px;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease;
+}
+
+.aviso-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: linear-gradient(135deg, #004338 0%, #008C76 100%);
+  color: white;
+  border-radius: 12px 12px 0 0;
+}
+
+.aviso-modal-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.aviso-modal-close {
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.aviso-modal-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.aviso-modal-body {
+  flex: 1;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.aviso-pdf-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.aviso-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 15px 20px;
+  border-top: 1px solid #e0e0e0;
+  background: #f9f9f9;
+  border-radius: 0 0 12px 12px;
+}
+
+.aviso-download-btn,
+.aviso-open-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.aviso-download-btn {
+  background: linear-gradient(135deg, #004338 0%, #008C76 100%);
+  color: white;
+}
+
+.aviso-open-btn {
+  background: #f0f0f0;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.aviso-download-btn:hover,
+.aviso-open-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .aviso-container {
+    padding: 30px 15px;
+  }
+
+  .aviso-titulo {
+    font-size: 1.5rem;
+  }
+
+  .aviso-btn-ver, .aviso-btn-descargar {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+
+  .aviso-modal-content {
+    width: 95%;
+    height: 80%;
+  }
+
+  .aviso-modal-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .aviso-download-btn,
+  .aviso-open-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .aviso-botones {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .aviso-btn-ver, .aviso-btn-descargar {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .aviso-modal-footer {
+    flex-direction: column;
+  }
+
+  .aviso-download-btn,
+  .aviso-open-btn {
+    justify-content: center;
+  }
+}
