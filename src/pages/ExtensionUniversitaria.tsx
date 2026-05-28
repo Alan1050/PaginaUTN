@@ -129,7 +129,7 @@ function ExtensionUniversitaria() {
         </div>
 
         {/* SERVICIOS DE CAPACITACIÓN */}
-        <div className="section-capacitacion">
+        <div className="section-capacitacion" id="continua">
           <div className="section-header-extension">
             <h2 className="section-title-extension">
               <span className="title-emoji-extension">🎓</span>

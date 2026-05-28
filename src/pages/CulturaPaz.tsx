@@ -81,6 +81,11 @@ function CulturaPaz() {
     }),
     [],
   );
+  const [activeSection, setActiveSection] = useState<string>("perfil"); 
+
+    const toggleSection = (section: string) => {
+      setActiveSection(activeSection === section ? "" : section);
+    };
 
   // Manejar el resize con useCallback
   const handleResize = useCallback(() => {
@@ -262,6 +267,291 @@ function CulturaPaz() {
               justa y equitativa.
             </p>
           </div>
+        </div>
+
+        <div
+          className={`section-item ${activeSection === "principios-fundamentales" ? "active" : ""}`}
+          style={
+            { width: "85%", margin: "0px auto 50px" } as React.CSSProperties
+          }
+        >
+          <div
+            className="section-header"
+            onClick={() => toggleSection("principios-fundamentales")}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) =>
+              e.key === "Enter" && toggleSection("principios-fundamentales")
+            }
+            style={{
+              backgroundColor: "#10504b",
+            }}
+          >
+            <h2
+              style={{
+                color: "#ffffff",
+                fontSize: "1.5rem",
+                margin: 0,
+                display: "flex",
+                alignItems: "center",
+                gap: "0.5rem",
+              }}
+            >
+              Principios Fundamentales
+            </h2>
+            <span className="toggle-icon">
+              {activeSection === "principios-fundamentales" ? "−" : "+"}
+            </span>
+          </div>
+
+          {activeSection === "principios-fundamentales" && (
+            <div className="section-content" style={{ padding: "24px" }}>
+              <div>
+                <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
+                  <li
+                    style={{
+                      padding: "0.25rem 0",
+                      borderBottom: "20px solid transparent",
+                      textAlign: "left",
+                    }}
+                  >
+                    Respeto irrestricto de los derechos humanos
+                  </li>
+                  <li
+                    style={{
+                      padding: "0.25rem 0",
+                      borderBottom: "20px solid transparent",
+                      textAlign: "left",
+                    }}
+                  >
+                    Rechazo de la violencia y aseguramiento de la no
+                    discriminación
+                  </li>
+                  <li
+                    style={{
+                      padding: "0.25rem 0",
+                      borderBottom: "20px solid transparent",
+                      textAlign: "left",
+                    }}
+                  >
+                    Respeto irrestricto de los derechos humanos
+                  </li>
+                  <li
+                    style={{
+                      padding: "0.25rem 0",
+                      borderBottom: "20px solid transparent",
+                      textAlign: "left",
+                    }}
+                  >
+                    Reconocimiento de todas las diversidades a través de sus
+                    expresiones interculturales, sexogenéricas, étnicas y
+                    lingüísticas
+                  </li>
+                  <li
+                    style={{
+                      padding: "0.25rem 0",
+                      borderBottom: "20px solid transparent",
+                      textAlign: "left",
+                    }}
+                  >
+                    Promoción de la ética del cuidado entre las personas
+                  </li>
+                  <li
+                    style={{
+                      padding: "0.25rem 0",
+                      borderBottom: "20px solid transparent",
+                      textAlign: "left",
+                    }}
+                  >
+                    Valoración de la resiliencia y la inclusión
+                  </li>
+                  <li
+                    style={{
+                      padding: "0.25rem 0",
+                      borderBottom: "20px solid transparent",
+                      textAlign: "left",
+                    }}
+                  >
+                    Disposición a la solución pacífica de conflictos
+                  </li>
+                  <li
+                    style={{
+                      padding: "0.25rem 0",
+                      borderBottom: "20px solid transparent",
+                      textAlign: "left",
+                    }}
+                  >
+                    Compromiso con la igualdad de oportunidades para todas las
+                    personas
+                  </li>
+                  <li
+                    style={{
+                      padding: "0.25rem 0",
+                      borderBottom: "20px solid transparent",
+                      textAlign: "left",
+                    }}
+                  >
+                    Cuidado de los animales y el medio ambiente
+                  </li>
+                  <li
+                    style={{
+                      padding: "0.25rem 0",
+                      borderBottom: "20px solid transparent",
+                      textAlign: "left",
+                    }}
+                  >
+                    Ejercicio de los valores universitarios
+                  </li>
+                  <li
+                    style={{
+                      padding: "0.25rem 0",
+                      borderBottom: "20px solid transparent",
+                      textAlign: "left",
+                    }}
+                  >
+                    Construcción y transformación colaborativa
+                  </li>
+                  <li
+                    style={{
+                      padding: "0.25rem 0",
+                      borderBottom: "20px solid transparent",
+                      textAlign: "left",
+                    }}
+                  >
+                    Diálogo y comunicación
+                  </li>
+                  <li
+                    style={{
+                      padding: "0.25rem 0",
+                      borderBottom: "20px solid transparent",
+                      textAlign: "left",
+                    }}
+                  >
+                    Justicia social
+                  </li>
+                  <li
+                    style={{
+                      padding: "0.25rem 0",
+                      borderBottom: "20px solid transparent",
+                      textAlign: "left",
+                    }}
+                  >
+                    Solidaridad
+                  </li>
+                </ul>
+              </div>
+            </div>
+          )}
+        </div>
+
+        <div
+          className={`section-item ${activeSection === "acciones" ? "active" : ""}`}
+          style={
+            { width: "85%", margin: "0px auto 50px" } as React.CSSProperties
+          }
+        >
+          <div
+            className="section-header"
+            onClick={() => toggleSection("acciones")}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => e.key === "Enter" && toggleSection("acciones")}
+            style={{
+              backgroundColor: "#10504b",
+            }}
+          >
+            <h2
+              style={{
+                color: "#ffffff",
+                fontSize: "1.5rem",
+                margin: 0,
+                display: "flex",
+                alignItems: "center",
+                gap: "0.5rem",
+              }}
+            >
+              ACCIONES QUE DE MANERA ENUNCIATIVA Y NO LIMITATIVA SE IMPULSAN
+              PARA UNA CULTURA DE PAZ
+            </h2>
+            <span className="toggle-icon">
+              {activeSection === "acciones" ? "−" : "+"}
+            </span>
+          </div>
+
+          {activeSection === "acciones" && (
+            <div className="section-content" style={{ padding: "24px" }}>
+              <div>
+                <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
+                  <li
+                    style={{
+                      padding: "0.25rem 0",
+                      borderBottom: "20px solid transparent",
+                      textAlign: "left",
+                    }}
+                  >
+                    Pronunciamiento público sobre "Cero Tolerancia"
+                  </li>
+                  <li
+                    style={{
+                      padding: "0.25rem 0",
+                      borderBottom: "20px solid transparent",
+                      textAlign: "left",
+                    }}
+                  >
+                    Protocolo de atención y seguimiento a casos de violencia de
+                    género en la universidad tecnológica de Nayarit
+                  </li>
+                  <li
+                    style={{
+                      padding: "0.25rem 0",
+                      borderBottom: "20px solid transparent",
+                      textAlign: "left",
+                    }}
+                  >
+                    Ventanilla de género
+                  </li>
+                  <li
+                    style={{
+                      padding: "0.25rem 0",
+                      borderBottom: "20px solid transparent",
+                      textAlign: "left",
+                    }}
+                  >
+                    Fortalecimiento de redes institucionales para la prevención
+                    y atención de adicciones y prevención del suicidio
+                  </li>
+                  <li
+                    style={{
+                      padding: "0.25rem 0",
+                      borderBottom: "20px solid transparent",
+                      textAlign: "left",
+                    }}
+                  >
+                    Agenda de proyectos de investigación
+                  </li>
+                  <li
+                    style={{
+                      padding: "0.25rem 0",
+                      borderBottom: "20px solid transparent",
+                      textAlign: "left",
+                    }}
+                  >
+                    Cultura del cuidado animal
+                  </li>
+                  <li
+                    style={{
+                      padding: "0.25rem 0",
+                      borderBottom: "20px solid transparent",
+                      textAlign: "left",
+                    }}
+                  >
+                    Arte, deporte, educación ambiental y acciones con impacto
+                    social
+                  </li>
+                </ul>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Tarjetas de acciones */}

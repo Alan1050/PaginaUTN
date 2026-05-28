@@ -19,7 +19,8 @@ import Convenios from './pages/Convenios.tsx';
 import BolsaTrabajo from './pages/BolsaTrabajo.tsx';
 import ComiteEtica from './pages/ComiteEtica.tsx';
 import Egresados from './pages/Egresados.tsx';
-// Importamos el componente del botón
+import InformesFinancieros from './pages/InformesFinancieros.tsx';
+// Componente del botón
 import BackButton from './components/BackButton';
 import CulturaPaz from './pages/CulturaPaz.tsx';
 import CentroInformacion from './pages/CentroInformacion.tsx';
@@ -72,6 +73,7 @@ function App() {
         <Route path="/BolsaTrabajo" element={<BolsaTrabajo />} />  
         <Route path="/ComiteEtica" element={<ComiteEtica />} />  
         <Route path="/Egresados" element={<Egresados />} />  
+        <Route path="/Informes/Financieros" element={<InformesFinancieros />} />  
         <Route path="/CulturaPaz" element={<CulturaPaz />} /> 
         <Route path="/CentroInformacion" element={<CentroInformacion />} />  
         {/* Ruta para manejar 404 - Redirige a Home */}
