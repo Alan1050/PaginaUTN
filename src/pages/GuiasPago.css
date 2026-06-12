@@ -294,11 +294,11 @@
     border-radius: 40px;
     background: rgba(255, 255, 255, 0.9);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    opacity: 0;
-    transform: translateY(20px);
+    opacity: 1;
+    transform: translateY(0);
     transition: all 0.4s ease;
     width: 100%;
-    border: 2px solid transparent;
+    border: 2px solid var(--programa-color);
     position: relative;
     z-index: 3;
 }

@@ -1,0 +1,485 @@
+[
+  {
+    "id": "oferta-educativa",
+    "title": "Oferta educativa y carreras",
+    "priority": 5,
+    "keywords": [
+      "Oferta Educativa",
+      "carreras",
+      "cuantas carreras",
+      "cuales carreras",
+      "ingenierias",
+      "licenciaturas"
+    ],
+    "answer": "La Universidad Tecnologica de Nayarit ofrece 13 carreras en total.\n\nIngenierias:\n1. Ingenieria en Microelectronica y Semiconductores\n2. Ingenieria en Alimentos\n3. Ingenieria en Tecnologias de la Informacion e Innovacion Digital\n4. Ingenieria Civil\n5. Ingenieria en Mantenimiento Industrial\n6. Ingenieria en Mecatronica\n7. Ingenieria en Logistica Internacional\n\nLicenciaturas:\n8. Licenciatura en Psicologia (Proxima a Salir)\n9. Licenciatura en Negocios y Mercadotecnia\n10. Licenciatura en Seguridad Publica\n11. Licenciatura en Gestion y Desarrollo Turistico\n12. Licenciatura en Administracion\n13. Licenciatura en Gastronomia\nEn cual estas interesado?",
+    "options": [
+      {
+        "label": "T.S.U. en Inteligencia Artificial",
+        "message": "Inteligencia Artificial"
+      },
+      {
+        "label": "Ingenieria en Tecnologias de la Informacion e Innovacion Digital",
+        "message": "Ingenieria en Tecnologias de la Informacion e Innovacion Digital"
+      },
+      {
+        "label": "Ingenieria en Microelectronica y Semiconductores",
+        "message": "Ingenieria en Microelectronica y Semiconductores"
+      },
+      {
+        "label": "Ingenieria en Alimentos",
+        "message": "Ingenieria en Alimentos"
+      },
+      {
+        "label": "Ingenieria Civil",
+        "message": "Ingenieria Civil"
+      },
+      {
+        "label": "Ingenieria en Logistica Internacional",
+        "message": "Ingenieria en Logistica Internacional"
+      },
+      {
+        "label": "Ingenieria en Mantenimiento Industrial",
+        "message": "Ingenieria en Mantenimiento Industrial"
+      },
+      {
+        "label": "Ingenieria en Mecatronica",
+        "message": "Ingenieria en Mecatronica"
+      },
+      {
+        "label": "Licenciatura en Seguridad Publica",
+        "message": "Licenciatura en Seguridad Publica"
+      },
+      {
+        "label": "Licenciatura en Negocios y Mercadotecnia",
+        "message": "Licenciatura en Negocios y Mercadotecnia"
+      },
+      {
+        "label": "Licenciatura en Administración",
+        "message": "Licenciatura en Administración"
+      },
+      {
+        "label": "Licenciatura en Gestión y Desarrollo Turístico",
+        "message": "Licenciatura en Gestión y Desarrollo Turístico"
+      },
+      {
+        "label": "Licenciatura en Gastronomía",
+        "message": "Licenciatura en Gastronomía"
+      },
+      {
+        "label": "Licenciatura en Psicología",
+        "message": "Licenciatura en Psicología"
+      }
+    ]
+  },
+  {
+    "id": "carrera-inteligencia-artificial",
+    "title": "Carrera Inteligencia Artificial",
+    "priority": 20,
+    "keywords": [
+      "quiero inteligencia artificial",
+      "me interesa inteligencia artificial",
+      "ia carrera",
+      "Inteligencia Artificial",
+      "Carrera de Inteligencia Artificial",
+      "IA"
+    ],
+    "answer": "Excelente decision. Inteligencia Artificial es una carrera con gran proyeccion para el futuro. Solo contamos con el T.S.U en Inteligencia Artificial, la ingenieria es en Tecnologias de la Información e Innovación Digital. Puedes conocer mas sobre esta opcion en el siguiente enlace.",
+    "links": [
+      {
+        "label": "Conocer T.S.U. en Inteligencia Artificial",
+        "url": "/Carrera/IA"
+      }
+    ]
+  },
+  {
+    "id": "carrera-tecnologias-informacion-innovacion-digital",
+    "title": "Carrera Tecnologias de la Informacion e Innovacion Digital",
+    "priority": 20,
+    "keywords": [
+      "quiero tecnologias de la informacion",
+      "me interesa tecnologias de la informacion",
+      "Tecnologias carrera",
+      "Tecnologias de la Informacion e Innovacion Digital",
+      "Carrera de Tecnologias de la Informacion e Innovacion Digital",
+      "ITIID",
+      "Desarrollo de Software",
+      "Redes y Comunicaciones",
+      "Software",
+      "Programación"
+    ],
+    "answer": "La carrera que mueve el mundo, dentro de esta carrera aprenderas a como crear sistemas, aplicaciones web, moviles y un mundo nuevo y en constante movimiento. Puedes conocer mas sobre esta opcion en el siguiente enlace.",
+    "links": [
+      {
+        "label": "Conocer Ing. en Tecnologias de la Informacion e Innovacion Digital",
+        "url": "/Carrera/ITIID"
+      }
+    ]
+  },
+  {
+    "id": "carrera-microelectronica-semiconductores",
+    "title": "Carrera Microelectronica y Semiconductores",
+    "priority": 20,
+    "keywords": [
+      "quiero Microelectronica y Semiconductores",
+      "me interesa Microelectronica y Semiconductores",
+      "Microelectronica carrera",
+      "Semiconductores carrera",
+      "Microelectronica y Semiconductores",
+      "Carrera de Microelectronica y Semiconductores",
+      "IMS",
+      "Placas de Circuito Impreso",
+      "Diseño de Circuitos",
+      "Fabricación de Semiconductores",
+      "Microchips"
+    ],
+    "answer": "Puedes conocer mas sobre esta opcion en el siguiente enlace.",
+    "links": [
+      {
+        "label": "Conocer Ing. en Microelectronica y Semiconductores",
+        "url": "/Carrera/IMS"
+      }
+    ]
+  },
+  {
+    "id": "carrera-alimentos",
+    "title": "Carrera Alimentos",
+    "priority": 20,
+    "keywords": [
+      "quiero alimentos",
+      "me interesa alimentos",
+      "Alimentos",
+      "Alimentos carrera",
+      "Carrera de Alimentos",
+      "IAL",
+      "Produccion de Alimentos"
+    ],
+    "answer": "Puedes conocer mas sobre esta opcion en el siguiente enlace.",
+    "links": [
+      {
+        "label": "Conocer Ing. en Alimentos",
+        "url": "/Carrera/IAL"
+      }
+    ]
+  },
+  {
+    "id": "carrera-civil",
+    "title": "Carrera Civil",
+    "priority": 20,
+    "keywords": [
+      "quiero civil",
+      "me interesa civil",
+      "Civil",
+      "Civil carrera",
+      "Carrera de Civil",
+      "IC",
+      "Diseño de Estructuras",
+      "Construcción",
+      "Gestión de Proyectos de Construcción"
+    ],
+    "answer": "Puedes conocer mas sobre esta opcion en el siguiente enlace.",
+    "links": [
+      {
+        "label": "Conocer Ing. en Civil",
+        "url": "/Carrera/IC"
+      }
+    ]
+  },
+  {
+    "id": "carrera-logistica-internacional",
+    "title": "Carrera Logística Internacional",
+    "priority": 20,
+    "keywords": [
+      "quiero logistica internacional",
+      "me interesa logistica internacional",
+      "Logística Internacional",
+      "Logística carrera",
+      "Carrera de Logística Internacional",
+      "ILI",
+      "Gestión de la Cadena de Suministro",
+      "Logística de Transporte",
+      "Logística de Almacenes",
+      "Logística de Comercio Internacional"
+    ],
+    "answer": "Puedes conocer mas sobre esta opcion en el siguiente enlace.",
+    "links": [
+      {
+        "label": "Conocer Ing. en Logística Internacional",
+        "url": "/Carrera/ILI"
+      }
+    ]
+  },
+  {
+    "id": "carrera-mantenimiento-industrial",
+    "title": "Carrera Mantenimiento Industrial",
+    "priority": 20,
+    "keywords": [
+      "quiero mantenimiento industrial",
+      "me interesa mantenimiento industrial",
+      "Mantenimiento Industrial",
+      "Mantenimiento Industrial carrera",
+      "Carrera de Mantenimiento Industrial",
+      "IMI",
+      "Mantenimiento de Maquinaria",
+      "Mantenimiento de Equipos",
+      "Mantenimiento de Infraestructura Industrial",
+      "Mantenimiento de Sistemas de Control"
+    ],
+    "answer": "Puedes conocer mas sobre esta opcion en el siguiente enlace.",
+    "links": [
+      {
+        "label": "Conocer Ing. en Mantenimiento Industrial",
+        "url": "/Carrera/IMI"
+      }
+    ]
+  },
+  {
+    "id": "carrera-mecatronica",
+    "title": "Carrera Mecatrónica",
+    "priority": 20,
+    "keywords": [
+      "quiero mecatronica",
+      "me interesa mecatronica",
+      "Mecatrónica",
+      "Mecatrónica carrera",
+      "Carrera de Mecatrónica",
+      "IMT",
+      "Robótica",
+      "Automatización",
+      "Sistemas de Control",
+      "Diseño de Sistemas Mecatrónicos"
+    ],
+    "answer": "Puedes conocer mas sobre esta opcion en el siguiente enlace.",
+    "links": [
+      {
+        "label": "Conocer Ing. en Mecatrónica",
+        "url": "/Carrera/IMT"
+      }
+    ]
+  },
+  {
+    "id": "carrera-seguridad-publica",
+    "title": "Carrera Seguridad Pública",
+    "priority": 20,
+    "keywords": [
+      "quiero seguridad pública",
+      "me interesa seguridad pública",
+      "Seguridad Pública",
+      "Seguridad Pública carrera",
+      "Carrera de Seguridad Pública",
+      "LSP",
+      "Seguridad Ciudadana",
+      "Seguridad Nacional",
+      "Seguridad Privada",
+      "Seguridad Pública y Políticas Públicas"
+    ],
+    "answer": "Puedes conocer mas sobre esta opcion en el siguiente enlace.",
+    "links": [
+      {
+        "label": "Conocer Lic. en Seguridad Pública",
+        "url": "/Carrera/LSP"
+      }
+    ]
+  },
+  {
+    "id": "carrera-mercadotecnia",
+    "title": "Carrera Negocios y Mercadotecnia",
+    "priority": 20,
+    "keywords": [
+      "quiero Mercadotecnia",
+      "me interesa Mercadotecnia",
+      "Mercadotecnia",
+      "Mercadotecnia carrera",
+      "Negocios y Mercadotecnia",
+      "Carrera de Mercadotecnia",
+      "LINM",
+      "Marketing Digital",
+      "Estrategias de Marketing",
+      "Investigación de Mercados",
+      "Comportamiento del Consumidor",
+      "Redes Sociales y Marketing"
+    ],
+    "answer": "Puedes conocer mas sobre esta opcion en el siguiente enlace.",
+    "links": [
+      {
+        "label": "Conocer Lic. en Negocios y Mercadotecnia",
+        "url": "/Carrera/LINM"
+      }
+    ]
+  },
+  {
+    "id": "carrera-administracion",
+    "title": "Carrera Administración",
+    "priority": 20,
+    "keywords": [
+      "quiero Administración",
+      "me interesa Administración",
+      "Administración",
+      "Administración carrera",
+      "Carrera de Administración",
+      "LAD",
+      "Gestión Empresarial",
+      "Planeación Estratégica",
+      "Recursos Humanos",
+      "Finanzas Corporativas",
+      "Control de Gestión",
+      "Estrategias de Negocio"
+    ],
+    "answer": "Puedes conocer mas sobre esta opcion en el siguiente enlace.",
+    "links": [
+      {
+        "label": "Conocer Lic. en Administración",
+        "url": "/Carrera/LAD"
+      }
+    ]
+  },
+  {
+    "id": "carrera-turismo",
+    "title": "Carrera Gestión y Desarrollo Turístico",
+    "priority": 20,
+    "keywords": [
+      "quiero Turismo",
+      "me interesa Turismo",
+      "Turismo",
+      "Turismo carrera",
+      "Gestión y Desarrollo Turístico",
+      "Carrera de Turismo",
+      "LGDT",
+      "Gestión de Destinos Turísticos",
+      "Desarrollo de Productos Turísticos",
+      "Marketing Turístico",
+      "Sostenibilidad en el Turismo"
+    ],
+    "answer": "Puedes conocer mas sobre esta opcion en el siguiente enlace.",
+    "links": [
+      {
+        "label": "Conocer Lic. en Gestión y Desarrollo Turístico",
+        "url": "/Carrera/LGDT"
+      }
+    ]
+  },
+  {
+    "id": "carrera-gastronomia",
+    "title": "Carrera Gastronomía",
+    "priority": 20,
+    "keywords": [
+      "quiero Gastronomía",
+      "me interesa Gastronomía",
+      "Gastronomía",
+      "Gastronomía carrera",
+      "Carrera de Gastronomía",
+      "LGT",
+      "Cocina y Gastronomía",
+      "Nutrición y Dietética",
+      "Servicio de Alimentos y Bebidas",
+      "Gestión de Restaurante",
+      "Cultura Gastronómica"
+    ],
+    "answer": "Puedes conocer mas sobre esta opcion en el siguiente enlace.",
+    "links": [
+      {
+        "label": "Conocer Lic. en Gastronomía",
+        "url": "/Carrera/LGT"
+      }
+    ]
+  },
+  {
+    "id": "carrera-psicologia",
+    "title": "Carrera Psicología",
+    "priority": 20,
+    "keywords": [
+      "quiero Psicología",
+      "me interesa Psicología",
+      "Psicología",
+      "Psicología carrera",
+      "Carrera de Psicología",
+      "LPS",
+      "Desarrollo Humano",
+      "Terapia Conductual",
+      "Investigación Psicológica",
+      "Psicología Clínica"
+    ],
+    "answer": "Estamos creciendo como institución y próximamente contaremos con la Licenciatura en Psicología. Publicaremos en redes sociales cuando esta carrera esté disponible."
+  },
+  {
+    "id": "saludo",
+    "title": "Saludo",
+    "priority": 5,
+    "keywords": [
+      "hola",
+      "buenos días",
+      "buenas tardes",
+      "buenas noches",
+      "saludos"
+    ],
+    "answer": "¡Hola! Bienvenido a la Universidad Tecnológica de Nayarit. Soy BALAM IA, ¿En qué puedo ayudarte hoy? Puedes preguntarme sobre nuestra oferta educativa, procesos de admisión, servicios estudiantiles y más."
+  },
+  {
+    "id": "becas",
+    "title": "Becas",
+    "priority": 5,
+    "keywords": [
+      "Becas",
+      "Que Becas tienen",
+      "Becas Disponibles",
+      "Apoyos Economicos",
+      "Ayudas Economicas",
+      "Becas para estudiantes",
+      "Becas para alumnos",
+      "Becas para estudiantes de la UTN",
+      "Becas para alumnos de la UTN"
+    ],
+    "answer": "Contamos con 4 tipos de becas para apoyar a nuestros estudiantes:\n\n1. Beca de Excelencia Académica: Para estudiantes con un promedio destacado.\n2. Beca de Deporte: Para estudiantes que destacan en actividades deportivas.\n3. Beca Compañeros: Para estudiantes seleccionado por cada grupo.\n4. Beca Familia: Para estudiantes con algún hermano que también sea estudiante de la Universidad Tecnológica de Nayarit.\n\nPuedes conocer los requisitos y el proceso de solicitud en el siguiente enlace.",
+    "links": [
+      {
+        "label": "Conocer Becas",
+        "url": "/Becas"
+      }
+    ]
+  },
+  {
+    "id": "pagos",
+    "title": "Guias de Pago",
+    "priority": 5,
+    "keywords": ["Pagos", "Como pagar?", "Guias de Pago", "Donde pagar?"],
+    "answer": "Puedes conocer los métodos de pago y procedimientos en el siguiente enlace.",
+    "links": [
+      {
+        "label": "Conocer Guias de Pago",
+        "url": "/GuiasPago"
+      }
+    ]
+  },
+  {
+    "id": "tiempo-pagos",
+    "title": "Tiempo de Pago",
+    "priority": 5,
+    "keywords": [
+      "Cada cuanto se paga?",
+      "Costo de la carrera?",
+      "Costo de la inscripción?",
+      "Costo de la reinscripción?",
+      "Costo de la colegiatura?",
+      "Costos"
+    ],
+    "answer": "Los pagos se realizan cada 4 meses y el costo varía según la carrera de tu interes, rondando entre los $1,600 a $2,000 pesos por cuatrimestre. Si te interesa conocer los costos específicos de cada carrera, puedes llamar a Servicios Escolares."
+  },
+  {
+    "id": "admision",
+    "title": "Proceso de Admisión",
+    "priority": 5,
+    "keywords": [
+      "Admision",
+      "Como entrar",
+      "Proceso de Admisión",
+      "Requisitos de Admisión",
+      "Proceso de Inscripción",
+      "Requisitos de Inscripción",
+      "Proceso de Registro",
+      "Requisitos de Registro",
+      "Como entro",
+      "Como me inscribo",
+      "Como me registro"
+    ],
+    "answer": "El prceso de registro para este nuevo ciclo escolar se encuentra cerrado. Publicaremos en redes sociales cuando se abra el proceso de registro para el próximo ciclo escolar."
+  }
+]

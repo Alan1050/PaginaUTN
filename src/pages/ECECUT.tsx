@@ -1,7 +1,7 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
 import './ECECUT.css';
-import bannerECECUT from '../assets/banner/ECECUT1.jpg';
+import bannerECECUT from '../assets/banner/bannerEcecut.jpg';
 
 function ECECUT() {
   const facultades = [
@@ -63,16 +63,6 @@ function ECECUT() {
           alt="Banner ECECUT" 
           className="banner-ececut" 
         />
-        <div className="banner-overlay-ececut">
-          <div className="banner-content-ececut">
-            <h1 className="banner-title-ececut">ECECUT</h1>
-            <p className="banner-subtitle-ececut">
-              Entidad de Certificación y Evaluación de Competencias<br />
-              de la Universidad Tecnológica de Nayarit
-            </p>
-            <div className="banner-decoration-ececut"></div>
-          </div>
-        </div>
       </div>
 
       <section className="content-ececut">

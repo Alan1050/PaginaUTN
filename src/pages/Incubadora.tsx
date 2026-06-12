@@ -1,7 +1,7 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
 import './Incubadora.css';
-import bannerIncubadora from '../assets/banner/INCUBADORA1.png';
+import bannerIncubadora from '../assets/banner/bannerIncubadora.jpg';
 
 function Incubadora() {
   const sectores = [
@@ -36,13 +36,6 @@ function Incubadora() {
           alt="Banner Incubadora de Negocios" 
           className="banner-incubadora" 
         />
-        <div className="banner-overlay-incubadora">
-          <div className="banner-content-incubadora">
-            <h1 className="banner-title-incubadora">INCUBADORA</h1>
-            <p className="banner-subtitle-incubadora">DE NEGOCIOS</p>
-            <div className="banner-decoration-incubadora"></div>
-          </div>
-        </div>
       </div>
 
       <section className="content-incubadora">

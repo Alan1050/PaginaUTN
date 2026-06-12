@@ -1,7 +1,7 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
 import './CEELEX.css';
-import bannerCEELEX from '../assets/banner/CEELEX1.jpg';
+import bannerCEELEX from '../assets/banner/bannerCELEEX.jpg';
 
 function CEELEX() {
   const idiomas = [
@@ -64,13 +64,6 @@ function CEELEX() {
           alt="Banner CEELEX" 
           className="banner-ceelex" 
         />
-        <div className="banner-overlay-ceelex">
-          <div className="banner-content-ceelex">
-            <h1 className="banner-title-ceelex">CEELEX</h1>
-            <p className="banner-subtitle-ceelex">Centro de Enseñanza Especializado en Lenguas Extranjeras</p>
-            <div className="banner-decoration-ceelex"></div>
-          </div>
-        </div>
       </div>
 
       <section className="content-ceelex">

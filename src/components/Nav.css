@@ -16,7 +16,7 @@
 .Nav {
     background-color: white;
     display: grid;
-    grid-template-columns: .25fr 1.75fr;
+    grid-template-columns: minmax(220px, 0.45fr) minmax(0, 1.55fr);
     width: 100%;
     padding: 10px 20px;
     align-items: center;
@@ -42,18 +42,19 @@
 
 .Navegacion {
     display: grid;
-    grid-template-columns: 1.75fr .25fr;
+    grid-template-columns: minmax(620px, 1fr) 110px;
     gap: 20px;
     align-items: center;
     justify-self: end;
     width: 100%;
-    max-width: 800px;
+    max-width: 980px;
 }
 
 .Navegacion > ul {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 100px 170px 135px 180px;
     gap: 15px;
+    justify-content: end;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -93,12 +94,18 @@
     align-items: center;
     justify-content: center;
     gap: 5px;
+    width: 100%;
+    min-height: 40px;
     padding: 8px 12px;
+    border: 0px;
     border-radius: var(--border-radius);
     transition: var(--transition);
+    background-color: transparent;
     font-weight: 700;
     font-size: 16px;
+    font-family: inherit;
     color: var(--text-color);
+    cursor: pointer;
 }
 
 .dropdown-trigger:hover {
@@ -122,8 +129,9 @@
     left: 50%;
     transform: translateX(-50%);
     background-color: white;
-    min-width: 200px;
+    width: 220px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    border: 0px;
     border-radius: var(--border-radius);
     padding: 10px 0;
     margin-top: 5px;
@@ -489,7 +497,7 @@
 
 /* Estilos para submenús en escritorio */
 .dropdown-menu.comunidad-menu {
-    min-width: 220px;
+    width: 240px;
 }
 
 .has-submenu {
@@ -500,16 +508,24 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    min-height: 42px;
     padding: 10px 15px;
+    border: 0;
     cursor: pointer;
     color: #333;
+    background: transparent;
     text-decoration: none;
     transition: background-color 0.3s;
     font-weight: 700;
+    font-family: inherit;
+    font-size: 14px;
+    text-align: left;
 }
 
 .submenu-trigger:hover {
     background-color: #f5f5f5;
+    border: 0px;
 }
 
 .submenu-arrow {
@@ -528,7 +544,7 @@
     right: 100%;
     top: 0;
     background-color: white;
-    min-width: 200px;
+    width: 240px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     border-radius: 4px;
     border: 1px solid #ddd;

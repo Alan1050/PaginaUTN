@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import LogosCarreras from "../components/LogosCarreras.tsx";
 import ImagenPrincipal from "../assets/banner/Index.jpg";
-import bannerAdmision from '../assets/banner/bannerAdmision.jpg';
+import bannerGuias from '../assets/banner/bannerGuiasPago.jpg';
 import bannerBecas from '../assets/banner/bannerBecas.jpg';
 import bannerBiblioteca from '../assets/banner/bannerBiblioteca.jpg';
 import ImagenNuevaCarrera from "../assets/banner/NuevaCarrera.jpg";
@@ -12,57 +12,70 @@ import AvisoPrivacidad from "../components/AvisoPrivacidad.tsx";
 
 function HomePage() {
   const banners = [
-    { 
-      src: bannerAdmision, 
-      titulo: "ADMISIÓN 2026", 
-      descripcion: "Inicia tu futuro profesional con nosotros",
-      botonTexto: "Conocer Oferta Educativa",
-      botonLink: "/OfertaEducativa"
-    },
-        { 
-      src: bannerBiblioteca, 
-      titulo: "CENTRO DE INFORMACIÓN", 
-      descripcion: "Biblioteca y recursos digitales",
-      botonTexto: "Conocer Biblioteca Digital",
-      botonLink: "https://www.digitaliapublishing.com/novedades"
-    },
-    { 
-      src: ImagenPrincipal, 
-      titulo: "UNIVERSIDAD TECNOLÓGICA DE NAYARIT", 
+    {
+      src: ImagenPrincipal,
+      titulo: "UNIVERSIDAD TECNOLÓGICA DE NAYARIT",
       descripcion: "Excelencia educativa al servicio de la sociedad",
       botonTexto: "Conocer Más",
-      botonLink: "/QuienesSomos"
+      botonLink: "/QuienesSomos",
     },
-    { 
-      src: bannerBecas, 
-      titulo: "BECAS DISPONIBLES", 
+    {
+      src: bannerGuias,
+      titulo: "GUIAS DE PAGO",
+      descripcion: "Inicia tu futuro profesional con nosotros",
+      botonTexto: "Conocer Guias de Pago",
+      botonLink: "/GuiasPago",
+    },
+    {
+      src: bannerBiblioteca,
+      titulo: "CENTRO DE INFORMACIÓN",
+      descripcion: "Biblioteca y recursos digitales",
+      botonTexto: "Conocer Biblioteca Digital",
+      botonLink: "https://www.digitaliapublishing.com/novedades",
+    },
+    {
+      src: bannerBecas,
+      titulo: "BECAS DISPONIBLES",
       descripcion: "Apoyos académicos, deportivos y familiares",
       botonTexto: "Conocer Becas",
-      botonLink: "/Becas"
-    }
+      botonLink: "/Becas",
+    },
   ];
   
   const [indiceActual, setIndiceActual] = useState(0);
+  const [carruselPausado, setCarruselPausado] = useState(false);
+  const [reinicioCarrusel, setReinicioCarrusel] = useState(0);
 
   useEffect(() => {
+    if (carruselPausado) {
+      return;
+    }
+
     const interval = setInterval(() => {
       setIndiceActual((prev) => (prev + 1) % banners.length);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [banners.length]);
+  }, [banners.length, carruselPausado, reinicioCarrusel]);
+
+  const reiniciarTemporizadorCarrusel = () => {
+    setReinicioCarrusel((actual) => actual + 1);
+  };
 
   // Función para navegación manual
   const irAlSlide = (index: number) => {
     setIndiceActual(index);
+    reiniciarTemporizadorCarrusel();
   };
 
   const slideAnterior = () => {
     setIndiceActual((prev) => (prev === 0 ? banners.length - 1 : prev - 1));
+    reiniciarTemporizadorCarrusel();
   };
 
   const slideSiguiente = () => {
     setIndiceActual((prev) => (prev + 1) % banners.length);
+    reiniciarTemporizadorCarrusel();
   };
 
   useEffect(() => {
@@ -146,6 +159,15 @@ function HomePage() {
           <span>&#10095;</span>
         </button>
 
+        <button
+          type="button"
+          className="carrusel-pause-btn"
+          onClick={() => setCarruselPausado((actual) => !actual)}
+          aria-label={carruselPausado ? "Reanudar carrusel" : "Pausar carrusel"}
+        >
+          {carruselPausado ? "▶" : "Ⅱ"}
+        </button>
+
         {/* Indicadores */}
         <div className="carrusel-indicators">
           {banners.map((_, index) => (
@@ -227,6 +249,10 @@ function HomePage() {
         <h1>ACCESOS RÁPIDOS</h1>
         <Accesos />
       </div>
+
+     {/* <div>
+        <TablonAnuncios />
+      </div> */}
 
       <div>
         <AvisoPrivacidad />

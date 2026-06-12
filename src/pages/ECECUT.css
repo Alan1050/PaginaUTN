@@ -11,12 +11,6 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-    filter: brightness(0.8);
-    transition: transform 8s ease;
-}
-
-.banner-container-ececut:hover .banner-ececut {
-    transform: scale(1.1);
 }
 
 .banner-overlay-ececut {
@@ -1083,7 +1077,4 @@
         animation: none;
     }
     
-    .banner-container-ececut:hover .banner-ececut {
-        transform: none;
-    }
 }

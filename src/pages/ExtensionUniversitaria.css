@@ -10,12 +10,6 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-    filter: brightness(0.8);
-    transition: transform 8s ease;
-}
-
-.banner-container-extension:hover .banner-extension {
-    transform: scale(1.1);
 }
 
 .banner-overlay-extension {
@@ -1129,8 +1123,5 @@
         transition: none;
         animation: none;
     }
-    
-    .banner-container-extension:hover .banner-extension {
-        transform: none;
-    }
+
 }

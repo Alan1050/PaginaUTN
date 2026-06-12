@@ -1,7 +1,7 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
 import './ExtensionUniversitaria.css';
-import bannerExtension from '../assets/banner/EXTENSIÓN_UNI 1.jpg';
+import bannerExtension from '../assets/banner/bannerExtension.jpg';
 
 function ExtensionUniversitaria() {
   const diplomados = [
@@ -74,13 +74,6 @@ function ExtensionUniversitaria() {
           alt="Banner Extensión Universitaria" 
           className="banner-extension" 
         />
-        <div className="banner-overlay-extension">
-          <div className="banner-content-extension">
-            <h1 className="banner-title-extension">EXTENSIÓN</h1>
-            <p className="banner-subtitle-extension">UNIVERSITARIA</p>
-            <div className="banner-decoration-extension"></div>
-          </div>
-        </div>
       </div>
 
       <section className="content-extension">

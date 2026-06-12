@@ -1,6 +1,6 @@
 // import { Link } from 'react-router-dom';
 import './MovilidadEstudiantil.css';
-import bannerMovilidad from '../assets/banner/MOVILIDAD2.jpg';
+import bannerMovilidad from '../assets/banner/bannerMovilidad.jpg';
 
 function MovilidadEstudiantil() {
   const paisesAcademicos = [
@@ -59,13 +59,6 @@ function MovilidadEstudiantil() {
           alt="Banner Movilidad Estudiantil" 
           className="banner-movilidad" 
         />
-        <div className="banner-overlay-movilidad">
-          <div className="banner-content-movilidad">
-            <h1 className="banner-title-movilidad">MOVILIDAD</h1>
-            <p className="banner-subtitle-movilidad">ESTUDIANTIL</p>
-            <div className="banner-decoration-movilidad"></div>
-          </div>
-        </div>
       </div>
 
       <section className="content-movilidad">

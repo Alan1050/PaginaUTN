@@ -15,10 +15,7 @@ function Nav() {
     const [isMobileComunidadOpen, setIsMobileComunidadOpen] = useState<boolean>(false);
     const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
     const [activeMobileSubmenu, setActiveMobileSubmenu] = useState<string | null>(null);
-    
-    // Usamos timeouts para evitar cierres inmediatos
-
-    const closeTimeoutRef = useRef<number | null>(null);
+    const navRef = useRef<HTMLDivElement | null>(null);
 
     const toggleMenu = (): void => {
         setIsMenuOpen(!isMenuOpen);
@@ -36,39 +33,24 @@ function Nav() {
         setActiveMobileSubmenu(null);
     };
 
-
-    const handleAspirantesHover = (open: boolean): void => {
-        if (closeTimeoutRef.current) {
-            clearTimeout(closeTimeoutRef.current);
-        }
-        setIsAspirantesOpen(open);
-        if (!open) setActiveSubmenu(null);
-    };
-
-    const handleComunidadHover = (open: boolean): void => {
-        if (closeTimeoutRef.current) {
-            clearTimeout(closeTimeoutRef.current);
-        }
-        setIsComunidadOpen(open);
-        if (!open) setActiveSubmenu(null);
-    };
-
     const toggleAspirantes = (e: React.MouseEvent): void => {
-        e.stopPropagation(); // Prevenir propagación
-        if (closeTimeoutRef.current) {
-            clearTimeout(closeTimeoutRef.current);
-        }
-        setIsAspirantesOpen(!isAspirantesOpen);
-        if (isAspirantesOpen) setActiveSubmenu(null);
+        e.stopPropagation();
+        setIsAspirantesOpen((currentValue) => !currentValue);
+        setIsComunidadOpen(false);
+        setActiveSubmenu(null);
     };
 
     const toggleComunidad = (e: React.MouseEvent): void => {
-        e.stopPropagation(); // Prevenir propagación
-        if (closeTimeoutRef.current) {
-            clearTimeout(closeTimeoutRef.current);
-        }
-        setIsComunidadOpen(!isComunidadOpen);
-        if (isComunidadOpen) setActiveSubmenu(null);
+        e.stopPropagation();
+        setIsComunidadOpen((currentValue) => !currentValue);
+        setIsAspirantesOpen(false);
+        setActiveSubmenu(null);
+    };
+
+    const toggleSubmenu = (menuName: string): void => {
+        setActiveSubmenu((currentValue) =>
+            currentValue === menuName ? null : menuName
+        );
     };
 
     const toggleMobileAspirantes = (): void => {
@@ -108,15 +90,6 @@ function Nav() {
         }
     };
 
-    // Limpiar timeout al desmontar
-    useEffect(() => {
-        return () => {
-            if (closeTimeoutRef.current) {
-                clearTimeout(closeTimeoutRef.current);
-            }
-        };
-    }, []);
-
     // Controlar scroll y tecla ESC
     useEffect(() => {
         const handleEscKey = (event: KeyboardEvent): void => {
@@ -131,22 +104,39 @@ function Nav() {
             }
         };
 
-        if (isMenuOpen || isAspirantesOpen || isComunidadOpen || isMobileAspirantesOpen || isMobileComunidadOpen) {
+        if (isMenuOpen || isMobileAspirantesOpen || isMobileComunidadOpen) {
             document.body.style.overflow = 'hidden';
-            window.addEventListener('keydown', handleEscKey);
         } else {
             document.body.style.overflow = 'auto';
         }
+
+        window.addEventListener('keydown', handleEscKey);
 
         return () => {
             document.body.style.overflow = 'auto';
             window.removeEventListener('keydown', handleEscKey);
         };
-    }, [isMenuOpen, isAspirantesOpen, isComunidadOpen, isMobileAspirantesOpen, isMobileComunidadOpen]);
+    }, [isMenuOpen, isMobileAspirantesOpen, isMobileComunidadOpen]);
+
+    useEffect(() => {
+        const handleDocumentClick = (event: MouseEvent): void => {
+            if (!navRef.current?.contains(event.target as Node)) {
+                setIsAspirantesOpen(false);
+                setIsComunidadOpen(false);
+                setActiveSubmenu(null);
+            }
+        };
+
+        document.addEventListener('mousedown', handleDocumentClick);
+
+        return () => {
+            document.removeEventListener('mousedown', handleDocumentClick);
+        };
+    }, []);
 
     return (
       <>
-        <div className="Nav">
+        <div className="Nav" ref={navRef}>
           <div className="Logos">
             <img src={LogoUTN} alt="Logo UTN" className="LogoUTN" />
             <img src={LogoUTyP} alt="Logo UTyP" className="LogoUTyP" />
@@ -172,17 +162,21 @@ function Nav() {
               {/* Menú desplegable Aspirantes */}
               <li
                 className={`dropdown-parent ${isAspirantesOpen ? "active" : ""}`}
-                onMouseEnter={() => handleAspirantesHover(true)}
-                onMouseLeave={() => handleAspirantesHover(false)}
               >
-                <span className="dropdown-trigger" onClick={toggleAspirantes}>
+                <button
+                  type="button"
+                  className="dropdown-trigger"
+                  onClick={toggleAspirantes}
+                  aria-expanded={isAspirantesOpen}
+                  aria-haspopup="true"
+                >
                   Aspirantes
                   <span
                     className={`dropdown-arrow ${isAspirantesOpen ? "rotated" : ""}`}
                   >
                     ▼
                   </span>
-                </span>
+                </button>
 
                 {isAspirantesOpen && (
                   <ul className="dropdown-menu">
@@ -232,33 +226,37 @@ function Nav() {
               {/* Menú desplegable Comunidad UTNay con submenús */}
               <li
                 className={`dropdown-parent ${isComunidadOpen ? "active" : ""}`}
-                onMouseEnter={() => handleComunidadHover(true)}
-                onMouseLeave={() => handleComunidadHover(false)}
               >
-                <span className="dropdown-trigger" onClick={toggleComunidad}>
+                <button
+                  type="button"
+                  className="dropdown-trigger"
+                  onClick={toggleComunidad}
+                  aria-expanded={isComunidadOpen}
+                  aria-haspopup="true"
+                >
                   Comunidad UTNay
                   <span
                     className={`dropdown-arrow ${isComunidadOpen ? "rotated" : ""}`}
                   >
                     ▼
                   </span>
-                </span>
+                </button>
 
                 {isComunidadOpen && (
                   <ul className="dropdown-menu comunidad-menu">
                     {/* Estudiantes con submenú */}
                     <li
                       className={`has-submenu ${activeSubmenu === "estudiantes" ? "active" : ""}`}
-                      onMouseEnter={() => setActiveSubmenu("estudiantes")}
-                      onMouseLeave={() =>
-                        activeSubmenu === "estudiantes" &&
-                        setActiveSubmenu(null)
-                      }
                     >
-                      <div className="submenu-trigger">
+                      <button
+                        type="button"
+                        className="submenu-trigger"
+                        onClick={() => toggleSubmenu("estudiantes")}
+                        aria-expanded={activeSubmenu === "estudiantes"}
+                      >
                         <span>Estudiantes</span>
                         <span className="submenu-arrow">▶</span>
-                      </div>
+                      </button>
 
                       {activeSubmenu === "estudiantes" && (
                         <ul className="submenu">
@@ -301,6 +299,14 @@ function Nav() {
                           </li>
                           <li>
                             <a
+                              href="/GuiasPago"
+                              onClick={(e) => handleLinkClick(e, "/GuiasPago")}
+                            >
+                              Guias de Pago
+                            </a>
+                          </li>
+                          <li>
+                            <a
                               href="/Vinculacion"
                               onClick={(e) =>
                                 handleLinkClick(e, "/Vinculacion")
@@ -316,15 +322,16 @@ function Nav() {
                     {/* Docentes con submenú */}
                     <li
                       className={`has-submenu ${activeSubmenu === "docentes" ? "active" : ""}`}
-                      onMouseEnter={() => setActiveSubmenu("docentes")}
-                      onMouseLeave={() =>
-                        activeSubmenu === "docentes" && setActiveSubmenu(null)
-                      }
                     >
-                      <div className="submenu-trigger">
+                      <button
+                        type="button"
+                        className="submenu-trigger"
+                        onClick={() => toggleSubmenu("docentes")}
+                        aria-expanded={activeSubmenu === "docentes"}
+                      >
                         <span>Docentes</span>
                         <span className="submenu-arrow">▶</span>
-                      </div>
+                      </button>
 
                       {activeSubmenu === "docentes" && (
                         <ul className="submenu">
@@ -382,16 +389,16 @@ function Nav() {
                     {/* Administrativos con submenú */}
                     <li
                       className={`has-submenu ${activeSubmenu === "administrativos" ? "active" : ""}`}
-                      onMouseEnter={() => setActiveSubmenu("administrativos")}
-                      onMouseLeave={() =>
-                        activeSubmenu === "administrativos" &&
-                        setActiveSubmenu(null)
-                      }
                     >
-                      <div className="submenu-trigger">
+                      <button
+                        type="button"
+                        className="submenu-trigger"
+                        onClick={() => toggleSubmenu("administrativos")}
+                        aria-expanded={activeSubmenu === "administrativos"}
+                      >
                         <span>Administrativos</span>
                         <span className="submenu-arrow">▶</span>
-                      </div>
+                      </button>
 
                       {activeSubmenu === "administrativos" && (
                         <ul className="submenu">
@@ -443,15 +450,16 @@ function Nav() {
 
                     <li
                       className={`has-submenu ${activeSubmenu === "biblioteca" ? "active" : ""}`}
-                      onMouseEnter={() => setActiveSubmenu("biblioteca")}
-                      onMouseLeave={() =>
-                        activeSubmenu === "biblioteca" && setActiveSubmenu(null)
-                      }
                     >
-                      <div className="submenu-trigger">
+                      <button
+                        type="button"
+                        className="submenu-trigger"
+                        onClick={() => toggleSubmenu("biblioteca")}
+                        aria-expanded={activeSubmenu === "biblioteca"}
+                      >
                         <span>Biblioteca</span>
                         <span className="submenu-arrow">▶</span>
-                      </div>
+                      </button>
 
                       {activeSubmenu === "biblioteca" && (
                         <ul className="submenu">
@@ -479,15 +487,16 @@ function Nav() {
                     {/* Egresados con submenú */}
                     <li
                       className={`has-submenu ${activeSubmenu === "egresados" ? "active" : ""}`}
-                      onMouseEnter={() => setActiveSubmenu("egresados")}
-                      onMouseLeave={() =>
-                        activeSubmenu === "egresados" && setActiveSubmenu(null)
-                      }
                     >
-                      <div className="submenu-trigger">
+                      <button
+                        type="button"
+                        className="submenu-trigger"
+                        onClick={() => toggleSubmenu("egresados")}
+                        aria-expanded={activeSubmenu === "egresados"}
+                      >
                         <span>Egresados</span>
                         <span className="submenu-arrow">▶</span>
-                      </div>
+                      </button>
 
                       {activeSubmenu === "egresados" && (
                         <ul className="submenu">
@@ -546,16 +555,16 @@ function Nav() {
                     {/* Empresarios con submenú */}
                     <li
                       className={`has-submenu ${activeSubmenu === "empresarios" ? "active" : ""}`}
-                      onMouseEnter={() => setActiveSubmenu("empresarios")}
-                      onMouseLeave={() =>
-                        activeSubmenu === "empresarios" &&
-                        setActiveSubmenu(null)
-                      }
                     >
-                      <div className="submenu-trigger">
+                      <button
+                        type="button"
+                        className="submenu-trigger"
+                        onClick={() => toggleSubmenu("empresarios")}
+                        aria-expanded={activeSubmenu === "empresarios"}
+                      >
                         <span>Empresarios</span>
                         <span className="submenu-arrow">▶</span>
-                      </div>
+                      </button>
 
                       {activeSubmenu === "empresarios" && (
                         <ul className="submenu">
@@ -611,16 +620,16 @@ function Nav() {
                     {/* Plataformas con submenú */}
                     <li
                       className={`has-submenu ${activeSubmenu === "plataformas" ? "active" : ""}`}
-                      onMouseEnter={() => setActiveSubmenu("plataformas")}
-                      onMouseLeave={() =>
-                        activeSubmenu === "plataformas" &&
-                        setActiveSubmenu(null)
-                      }
                     >
-                      <div className="submenu-trigger">
+                      <button
+                        type="button"
+                        className="submenu-trigger"
+                        onClick={() => toggleSubmenu("plataformas")}
+                        aria-expanded={activeSubmenu === "plataformas"}
+                      >
                         <span>Plataformas</span>
                         <span className="submenu-arrow">▶</span>
-                      </div>
+                      </button>
 
                       {activeSubmenu === "plataformas" && (
                         <ul className="submenu">

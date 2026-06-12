@@ -1,0 +1,293 @@
+.tablon-anuncios {
+  width: min(1180px, calc(100% - 40px));
+  margin: 48px auto;
+  color: #1f2937;
+}
+
+.tablon-header {
+  margin-bottom: 22px;
+}
+
+.tablon-header p {
+  margin: 0 0 8px;
+  color: #10504b;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.tablon-header h2 {
+  margin: 0;
+  color: #102a28;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.tablon-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.tablon-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  width: 100%;
+  min-height: 360px;
+  overflow: hidden;
+  border: 1px solid #d8e6e3;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.12);
+  animation: tablonFade 0.35s ease;
+}
+
+.tablon-image-wrap {
+  min-height: 360px;
+  background: #10504b;
+}
+
+.tablon-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+}
+
+.tablon-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 34px;
+  background: #ffffff;
+}
+
+.tablon-count {
+  width: fit-content;
+  margin-bottom: 16px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(16, 80, 75, 0.09);
+  color: #10504b;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.tablon-content h3 {
+  margin: 0 0 14px;
+  color: #102a28;
+  font-size: clamp(1.45rem, 3vw, 2.25rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+.tablon-content p {
+  margin: 0 0 26px;
+  color: #4b5f5c;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.tablon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: fit-content;
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 6px;
+  background: #10504b;
+  color: #ffffff;
+  font-size: 0.98rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: background-color 0.25s ease, transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.tablon-link:hover {
+  background: #18817d;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(16, 80, 75, 0.22);
+}
+
+.tablon-link span {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.tablon-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  min-width: 46px;
+  height: 46px;
+  border: 1px solid rgba(16, 80, 75, 0.18);
+  border-radius: 50%;
+  background: #ffffff;
+  color: #10504b;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+  transition: background-color 0.25s ease, color 0.25s ease,
+    transform 0.25s ease;
+  z-index: 2;
+}
+
+.tablon-nav:hover {
+  background: #10504b;
+  color: #ffffff;
+  transform: scale(1.08);
+}
+
+.tablon-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+
+.tablon-pause-btn {
+  min-height: 38px;
+  padding: 0 16px;
+  border: 1px solid rgba(16, 80, 75, 0.24);
+  border-radius: 999px;
+  background: #ffffff;
+  color: #10504b;
+  font-size: 0.9rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.tablon-pause-btn:hover {
+  background: #10504b;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.tablon-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.tablon-indicator {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: 2px solid #10504b;
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  transition: width 0.25s ease, background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.tablon-indicator:hover {
+  transform: scale(1.15);
+}
+
+.tablon-indicator.active {
+  width: 34px;
+  background: #10504b;
+}
+
+@keyframes tablonFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .tablon-anuncios {
+    width: min(680px, calc(100% - 32px));
+    margin: 36px auto;
+  }
+
+  .tablon-carousel {
+    gap: 10px;
+  }
+
+  .tablon-card {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .tablon-image-wrap,
+  .tablon-image {
+    min-height: 240px;
+  }
+
+  .tablon-content {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 560px) {
+  .tablon-carousel {
+    display: grid;
+    grid-template-columns: 44px 1fr 44px;
+    align-items: stretch;
+  }
+
+  .tablon-card {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .tablon-nav {
+    grid-row: 1;
+    align-self: center;
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    font-size: 1.7rem;
+  }
+
+  .tablon-nav-prev {
+    grid-column: 1;
+    justify-self: start;
+    margin-left: 10px;
+  }
+
+  .tablon-nav-next {
+    grid-column: 3;
+    justify-self: end;
+    margin-right: 10px;
+  }
+
+  .tablon-image-wrap,
+  .tablon-image {
+    min-height: 210px;
+  }
+
+  .tablon-content {
+    padding: 22px;
+  }
+
+  .tablon-content p {
+    font-size: 0.98rem;
+  }
+
+  .tablon-link {
+    width: 100%;
+  }
+}

@@ -1,5 +1,5 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { useState, useEffect, useLayoutEffect } from 'react';
 import './App.css';
 import Nav from './components/Nav.tsx';
 import HomePage from './pages/HomePage.tsx'; 
@@ -20,10 +20,31 @@ import BolsaTrabajo from './pages/BolsaTrabajo.tsx';
 import ComiteEtica from './pages/ComiteEtica.tsx';
 import Egresados from './pages/Egresados.tsx';
 import InformesFinancieros from './pages/InformesFinancieros.tsx';
-// Componente del botón
-import BackButton from './components/BackButton';
+import GuiasPago from './pages/GuiasPago.tsx';
+//import Agent from './components/Agent';
 import CulturaPaz from './pages/CulturaPaz.tsx';
 import CentroInformacion from './pages/CentroInformacion.tsx';
+import BackButton from './components/BackButton.tsx';
+
+function ScrollToTop() {
+  const { pathname, search, hash } = useLocation();
+
+  useLayoutEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+
+    const resetScroll = () => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    };
+
+    requestAnimationFrame(resetScroll);
+  }, [pathname, search, hash]);
+
+  return null;
+}
 
 function App() {
   const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -43,39 +64,54 @@ function App() {
   const excludedRoutes = ['/'];
 
   return (
-    <Router basename="/"> {/* Se cambia segun la ubicacion de la carpeta */}
-      {!isMobile && <NavContacto />} 
+    <Router basename="/">
+      {" "}
+      {/* Se cambia segun la ubicacion de la carpeta */}
+      <ScrollToTop />
+      {!isMobile && <NavContacto />}
       <Nav />
-      
-      {/* Botón flotante - se muestra en todas las rutas excepto las excluidas */}
-      <BackButton 
+      <BackButton
         position="bottom-right"
         color="#18817d"
         hoverColor="#18817d"
         size={isMobile ? "small" : "medium"} // Se adapta al tamaño de pantalla
         excludePaths={excludedRoutes}
       />
-      
+      {/* Agente flotante de consulta 
+      <Agent
+        position="bottom-right"
+        size={isMobile ? "small" : "medium"} // Se adapta al tamaño de pantalla
+        excludePaths={excludedRoutes}
+      />
+      */}
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/Carrera/:nombre" element={<CarreraPage />} />
-        <Route path="/Carreras" element={<OfertaEducativa />} />        
+        <Route path="/Carreras" element={<OfertaEducativa />} />
         <Route path="/QuienesSomos" element={<QuienesSomos />} />
         <Route path="/OfertaEducativa" element={<OfertaEducativa />} />
         <Route path="/Becas" element={<Becas />} />
         <Route path="/Vinculacion" element={<Vinculacion />} />
-        <Route path="/Incubadora" element={<Incubadora />} />  
-        <Route path="/CEELEX" element={<CEELEX />} />    
-        <Route path="/ECECUT" element={<ECECUT />} /> 
-        <Route path="/ExtensionUniversitaria" element={<ExtensionUniversitaria />} />  
-        <Route path="/MovilidadEstudiantil" element={<MovilidadEstudiantil />} />  
-        <Route path="/Convenios" element={<Convenios />} />  
-        <Route path="/BolsaTrabajo" element={<BolsaTrabajo />} />  
-        <Route path="/ComiteEtica" element={<ComiteEtica />} />  
-        <Route path="/Egresados" element={<Egresados />} />  
-        <Route path="/Informes/Financieros" element={<InformesFinancieros />} />  
-        <Route path="/CulturaPaz" element={<CulturaPaz />} /> 
-        <Route path="/CentroInformacion" element={<CentroInformacion />} />  
+        <Route path="/Incubadora" element={<Incubadora />} />
+        <Route path="/CEELEX" element={<CEELEX />} />
+        <Route path="/ECECUT" element={<ECECUT />} />
+        <Route path="/InformesFinancieros" element={<InformesFinancieros />} />
+        <Route
+          path="/ExtensionUniversitaria"
+          element={<ExtensionUniversitaria />}
+        />
+        <Route
+          path="/MovilidadEstudiantil"
+          element={<MovilidadEstudiantil />}
+        />
+        <Route path="/Convenios" element={<Convenios />} />
+        <Route path="/BolsaTrabajo" element={<BolsaTrabajo />} />
+        <Route path="/ComiteEtica" element={<ComiteEtica />} />
+        <Route path="/Egresados" element={<Egresados />} />
+        <Route path="/Informes/Financieros" element={<InformesFinancieros />} />
+        <Route path="/CulturaPaz" element={<CulturaPaz />} />
+        <Route path="/CentroInformacion" element={<CentroInformacion />} />
+        <Route path="/GuiasPago" element={<GuiasPago />} />
         {/* Ruta para manejar 404 - Redirige a Home */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
