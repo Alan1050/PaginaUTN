@@ -6,11 +6,11 @@ import iconoECECUT from "../assets/logos/iconoECECUT.png";
 import iconoEU from "../assets/logos/iconoEU.png";
 import iconoIncubadora from "../assets/logos/iconoIncubadora.png";
 import iconoMovilidad from "../assets/logos/iconoMovilidadEstadias.png";
-import GuiaBancaSantander from "../assets/extras/GUÍA BANCA SANTANDER.pdf";
-import GuiaBancaBanamex from "../assets/extras/GUÍA BANCA BANAMEX.pdf";
-import GuiaPracticajaSantander from "../assets/extras/GUÍA PRACTICAJA SANTANDER.pdf";
-import GuiaTransferenciaBancariaBanamex from "../assets/extras/GUÍA TRANSFERENCIAS BANCARIAS BANAMEX.pdf";
-import GuiaTransferenciaBancariaSantander from "../assets/extras/GUÍA TRANSFERENCIAS BANCARIAS SANTANDER.pdf";
+import GuiaBancaSantander from "../assets/extras/GUIA-BANCA-SANTANDER.pdf";
+import GuiaBancaBanamex from "../assets/extras/GUIA-BANCA-BANAMEX.pdf";
+import GuiaPracticajaSantander from "../assets/extras/GUIA-PRACTICAJA-SANTANDER.pdf";
+import GuiaTransferenciaBancariaBanamex from "../assets/extras/GUIA-TRANSFERENCIAS-BANCARIAS-BANAMEX.pdf";
+import GuiaTransferenciaBancariaSantander from "../assets/extras/GUIA-TRANSFERENCIAS-BANCARIAS-SANTANDER.pdf";
 
 
 function GuiasPago() {
