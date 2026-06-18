@@ -4,7 +4,7 @@ import ImagenPrincipal from "../assets/banner/Index.jpg";
 import bannerGuias from '../assets/banner/bannerGuiasPago.jpg';
 import bannerBecas from '../assets/banner/bannerBecas.jpg';
 import bannerBiblioteca from '../assets/banner/bannerBiblioteca.jpg';
-import ImagenNuevaCarrera from "../assets/banner/NuevaCarrera.jpg";
+import ImagenNuevaCarrera from "../assets/banner/ExamenIngreso.jpeg";
 import Swal from "sweetalert2";
 import Accesos from "../components/Accesos.tsx";
 import "./HomePages.css";
@@ -88,12 +88,12 @@ function HomePage() {
 
         Swal.fire({
           title:
-            "¡Explora la carrera del futuro en la Universidad Tecnológica de Nayarit!",
+            "¿Preparado para el examen de ingreso?, Conoce donde tienes que aplicar el examen:",
           html: `
             <div style="text-align: center;">
               <img 
                 src=${ImagenNuevaCarrera}
-                alt="Nueva Carrera" 
+                alt="Examen de Ingreso" 
                 style="max-width: 80%; border-radius: 10px; margin: 15px 0;"
               />
             </div>
@@ -103,7 +103,7 @@ function HomePage() {
           background: "#fff",
           showConfirmButton: true,
           showCancelButton: true,
-          confirmButtonText: "Ver Carrera",
+          confirmButtonText: "Ver Donde Aplicar Examen",
           cancelButtonText: "Mas Tarde",
           confirmButtonColor: "#3085d6",
           cancelButtonColor: "#aaa",
@@ -112,7 +112,7 @@ function HomePage() {
           timerProgressBar: false,
           focusConfirm: false,
           preConfirm: () => {
-            window.location.href = "/Carrera/IMS";
+            window.location.href = "/ExamenIngreso";
           },
         });
       }
@@ -142,7 +142,7 @@ function HomePage() {
             />
             <div className="slide-overlay">
               <div className="slide-contenido">
-                <a href={banner.botonLink} className="slide-boton" target="_blank">
+                <a href={banner.botonLink} className="slide-boton">
                   {banner.botonTexto}
                   <span className="boton-flecha">→</span>
                 </a>

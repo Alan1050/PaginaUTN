@@ -187,6 +187,12 @@ function Nav() {
                       >
                         Oferta Educativa
                       </a>
+                      <a
+                        href="/ExamenIngreso"
+                        onClick={(e) => handleLinkClick(e, "/OfertaEducativa")}
+                      >
+                        Encuentra tu Aula
+                      </a>
                       <li>
                         <a
                           href={convocatoria}
@@ -785,6 +791,17 @@ function Nav() {
                       }}
                     >
                       Oferta Educativa
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/ExamenIngreso"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        closeMenu();
+                      }}
+                    >
+                      Encuentra tu Aula
                     </a>
                   </li>
                   <li>

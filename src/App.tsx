@@ -21,10 +21,11 @@ import ComiteEtica from './pages/ComiteEtica.tsx';
 import Egresados from './pages/Egresados.tsx';
 import InformesFinancieros from './pages/InformesFinancieros.tsx';
 import GuiasPago from './pages/GuiasPago.tsx';
-//import Agent from './components/Agent';
+// import Agent from './components/Agent';
 import CulturaPaz from './pages/CulturaPaz.tsx';
 import CentroInformacion from './pages/CentroInformacion.tsx';
 import BackButton from './components/BackButton.tsx';
+import ExamenIngreso from './pages/ExamenIngreso.tsx';
 
 function ScrollToTop() {
   const { pathname, search, hash } = useLocation();
@@ -82,8 +83,7 @@ function App() {
         position="bottom-right"
         size={isMobile ? "small" : "medium"} // Se adapta al tamaño de pantalla
         excludePaths={excludedRoutes}
-      />
-      */}
+      /> */}
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/Carrera/:nombre" element={<CarreraPage />} />
@@ -96,6 +96,7 @@ function App() {
         <Route path="/CEELEX" element={<CEELEX />} />
         <Route path="/ECECUT" element={<ECECUT />} />
         <Route path="/InformesFinancieros" element={<InformesFinancieros />} />
+        <Route path="/ExamenIngreso" element={<ExamenIngreso />} />
         <Route
           path="/ExtensionUniversitaria"
           element={<ExtensionUniversitaria />}
