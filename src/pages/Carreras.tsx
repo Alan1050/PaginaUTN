@@ -39,6 +39,7 @@ import PlanLINM_PDF from "../assets/planesEstudio/pdf/LINM.pdf";
 import PlanLSP_PDF from "../assets/planesEstudio/pdf/LSP.pdf";
 import PlanLGT_PDF from "../assets/planesEstudio/pdf/LGT.pdf";
 import PlanIA_PDF from "../assets/planesEstudio/pdf/IA.pdf";
+import PlanIMT from "../assets/planesEstudio/pdf/IMT.pdf"
 
 // Baners:
 
@@ -350,7 +351,7 @@ function Carrera() {
       egreasdo:
         "El egresado en Ingeniería en Mecatrónica podrá desarrollar proyectos de automatización y control, a través del diseño, administración y aplicación de nuevas tecnologías. Así como operar y dar mantenimiento a sistemas de procesos de producción con equipo automatizado y/o robotizado para satisfacer las necesidades del sector productivo.",
       tareas: [],
-      planEstudioPDF: undefined,
+      planEstudioPDF: PlanIMT,
       campoLaboral: [
         "Empresas públicas y privadas dedicadas a procesos productivos industriales.",
         "Empresas concesionarias de equipos automáticos y máquinas autómatas y de venta de partes.",

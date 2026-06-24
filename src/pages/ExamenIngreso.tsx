@@ -4,7 +4,6 @@ import CMD from "../assets/extras/CMD.pdf"
 import DocenciaI from "../assets/extras/DOCENCIA I.pdf"
 import DocenciaII from "../assets/extras/DOCENCIA II.pdf"
 import DocenciaIII from "../assets/extras/DOCENCIA III.pdf";
-import { Link } from "react-router-dom";
 
 function ExamenIngreso() {
       const programas = [
@@ -71,19 +70,21 @@ function ExamenIngreso() {
           </div>
         </div>
 
-        <div className="programas-grid">
+        <div className="programas-grid-Examen">
           {programas.map((programa) => (
-            <Link
-              key={programa.id}
-              to={programa.link}
-              className="programa-card"
-              style={
-                {
-                  "--programa-color": programa.color,
-                  "--programa-gradient": programa.gradient,
-                } as React.CSSProperties
-              }
-            >
+<a
+  key={programa.id}
+  href={programa.link}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="programa-card"
+  style={
+    {
+      "--programa-color": programa.color,
+      "--programa-gradient": programa.gradient,
+    } as React.CSSProperties
+  }
+>
               <div className="card-content">
   
 
@@ -102,7 +103,7 @@ function ExamenIngreso() {
                   </svg>
                 </div>
               </div>
-            </Link>
+            </a>
           ))}
         </div>
       </section>

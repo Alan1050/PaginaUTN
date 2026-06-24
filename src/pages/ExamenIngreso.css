@@ -127,7 +127,7 @@
 }
 
 /* ========== GRID DE PROGRAMAS ========== */
-.programas-grid {
+.programas-grid-examen {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
