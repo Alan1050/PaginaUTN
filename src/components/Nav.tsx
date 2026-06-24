@@ -1,830 +1,217 @@
-import { useState, useEffect, useRef } from 'react';
-import './Nav.css';
-import LogoUTN from '../assets/logos/LOGOUTN.png';
-import LogoUTyP from '../assets/logos/LOGOUTYP.png';
-import Calendario from '../assets/logos/LOGO CALENDARIO.png';
-import AppSiga from '../assets/logos/LOGO APPSIGA.png';
-import CalendarioEscolar from '../assets/extras/CALENDARIO ESCOLAR 2026.pdf';
-import convocatoria from '../assets/extras/Convocatoria Ingreso 2026-2027.pdf'
+import { useState, useEffect, useRef } from "react";
+import "./Nav.css";
+import LogoUTN from "../assets/logos/LOGOUTN.png";
+import LogoUTyP from "../assets/logos/LOGOUTYP.png";
+import Calendario from "../assets/logos/LOGO CALENDARIO.png";
+import AppSiga from "../assets/logos/LOGO APPSIGA.png";
+import CalendarioEscolar from "../assets/extras/CALENDARIO ESCOLAR 2026.pdf";
+import convocatoria from "../assets/extras/Convocatoria Ingreso 2026-2027.pdf";
 
 function Nav() {
-    const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-    const [isAspirantesOpen, setIsAspirantesOpen] = useState<boolean>(false);
-    const [isComunidadOpen, setIsComunidadOpen] = useState<boolean>(false);
-    const [isMobileAspirantesOpen, setIsMobileAspirantesOpen] = useState<boolean>(false);
-    const [isMobileComunidadOpen, setIsMobileComunidadOpen] = useState<boolean>(false);
-    const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
-    const [activeMobileSubmenu, setActiveMobileSubmenu] = useState<string | null>(null);
-    const navRef = useRef<HTMLDivElement | null>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [isAspirantesOpen, setIsAspirantesOpen] = useState<boolean>(false);
+  const [isComunidadOpen, setIsComunidadOpen] = useState<boolean>(false);
+  const [isMobileAspirantesOpen, setIsMobileAspirantesOpen] =
+    useState<boolean>(false);
+  const [isMobileComunidadOpen, setIsMobileComunidadOpen] =
+    useState<boolean>(false);
+  const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+  const [activeMobileSubmenu, setActiveMobileSubmenu] = useState<string | null>(
+    null,
+  );
+  const navRef = useRef<HTMLDivElement | null>(null);
 
-    const toggleMenu = (): void => {
-        setIsMenuOpen(!isMenuOpen);
-        if (isMenuOpen) {
-            setIsMobileAspirantesOpen(false);
-            setIsMobileComunidadOpen(false);
-            setActiveMobileSubmenu(null);
-        }
-    };
+  const toggleMenu = (): void => {
+    setIsMenuOpen(!isMenuOpen);
+    if (isMenuOpen) {
+      setIsMobileAspirantesOpen(false);
+      setIsMobileComunidadOpen(false);
+      setActiveMobileSubmenu(null);
+    }
+  };
 
-    const closeMenu = (): void => {
-        setIsMenuOpen(false);
+  const closeMenu = (): void => {
+    setIsMenuOpen(false);
+    setIsMobileAspirantesOpen(false);
+    setIsMobileComunidadOpen(false);
+    setActiveMobileSubmenu(null);
+  };
+
+  const toggleAspirantes = (e: React.MouseEvent): void => {
+    e.stopPropagation();
+    setIsAspirantesOpen((currentValue) => !currentValue);
+    setIsComunidadOpen(false);
+    setActiveSubmenu(null);
+  };
+
+  const toggleComunidad = (e: React.MouseEvent): void => {
+    e.stopPropagation();
+    setIsComunidadOpen((currentValue) => !currentValue);
+    setIsAspirantesOpen(false);
+    setActiveSubmenu(null);
+  };
+
+  const toggleSubmenu = (menuName: string): void => {
+    setActiveSubmenu((currentValue) =>
+      currentValue === menuName ? null : menuName,
+    );
+  };
+
+  const toggleMobileAspirantes = (): void => {
+    setIsMobileAspirantesOpen(!isMobileAspirantesOpen);
+    if (isMobileAspirantesOpen) setActiveMobileSubmenu(null);
+  };
+
+  const toggleMobileComunidad = (): void => {
+    setIsMobileComunidadOpen(!isMobileComunidadOpen);
+    if (isMobileComunidadOpen) setActiveMobileSubmenu(null);
+  };
+
+  const toggleMobileSubmenu = (menuName: string): void => {
+    setActiveMobileSubmenu(activeMobileSubmenu === menuName ? null : menuName);
+  };
+
+  // Modificar la función handleSubmenuLinkClick para ser más específica
+  const handleLinkClick = (e: React.MouseEvent, href: string): void => {
+    e.stopPropagation(); // Importante: detener la propagación
+
+    // Cerrar todos los menús inmediatamente
+    setIsAspirantesOpen(false);
+    setIsComunidadOpen(false);
+    setActiveSubmenu(null);
+
+    if (isMenuOpen) {
+      closeMenu();
+    }
+
+    // Si es un enlace interno, navegar manualmente
+    if (href.startsWith("/") || href.startsWith("http")) {
+      // Para enlaces internos
+      if (href.startsWith("/")) {
+        window.location.href = href;
+      }
+      // Para enlaces externos, el <a> tag se encargará
+    }
+  };
+
+  // Controlar scroll y tecla ESC
+  useEffect(() => {
+    const handleEscKey = (event: KeyboardEvent): void => {
+      if (event.key === "Escape") {
+        if (isMenuOpen) closeMenu();
+        setIsAspirantesOpen(false);
+        setIsComunidadOpen(false);
         setIsMobileAspirantesOpen(false);
         setIsMobileComunidadOpen(false);
+        setActiveSubmenu(null);
         setActiveMobileSubmenu(null);
+      }
     };
 
-    const toggleAspirantes = (e: React.MouseEvent): void => {
-        e.stopPropagation();
-        setIsAspirantesOpen((currentValue) => !currentValue);
-        setIsComunidadOpen(false);
-        setActiveSubmenu(null);
-    };
+    if (isMenuOpen || isMobileAspirantesOpen || isMobileComunidadOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
 
-    const toggleComunidad = (e: React.MouseEvent): void => {
-        e.stopPropagation();
-        setIsComunidadOpen((currentValue) => !currentValue);
-        setIsAspirantesOpen(false);
-        setActiveSubmenu(null);
-    };
+    window.addEventListener("keydown", handleEscKey);
 
-    const toggleSubmenu = (menuName: string): void => {
-        setActiveSubmenu((currentValue) =>
-            currentValue === menuName ? null : menuName
-        );
+    return () => {
+      document.body.style.overflow = "auto";
+      window.removeEventListener("keydown", handleEscKey);
     };
+  }, [isMenuOpen, isMobileAspirantesOpen, isMobileComunidadOpen]);
 
-    const toggleMobileAspirantes = (): void => {
-        setIsMobileAspirantesOpen(!isMobileAspirantesOpen);
-        if (isMobileAspirantesOpen) setActiveMobileSubmenu(null);
-    };
-
-    const toggleMobileComunidad = (): void => {
-        setIsMobileComunidadOpen(!isMobileComunidadOpen);
-        if (isMobileComunidadOpen) setActiveMobileSubmenu(null);
-    };
-
-    const toggleMobileSubmenu = (menuName: string): void => {
-        setActiveMobileSubmenu(activeMobileSubmenu === menuName ? null : menuName);
-    };
-
-    // Modificar la función handleSubmenuLinkClick para ser más específica
-    const handleLinkClick = (e: React.MouseEvent, href: string): void => {
-        e.stopPropagation(); // Importante: detener la propagación
-        
-        // Cerrar todos los menús inmediatamente
+  useEffect(() => {
+    const handleDocumentClick = (event: MouseEvent): void => {
+      if (!navRef.current?.contains(event.target as Node)) {
         setIsAspirantesOpen(false);
         setIsComunidadOpen(false);
         setActiveSubmenu(null);
-        
-        if (isMenuOpen) {
-            closeMenu();
-        }
-        
-        // Si es un enlace interno, navegar manualmente
-        if (href.startsWith('/') || href.startsWith('http')) {
-            // Para enlaces internos
-            if (href.startsWith('/')) {
-                window.location.href = href;
-            }
-            // Para enlaces externos, el <a> tag se encargará
-        }
+      }
     };
 
-    // Controlar scroll y tecla ESC
-    useEffect(() => {
-        const handleEscKey = (event: KeyboardEvent): void => {
-            if (event.key === 'Escape') {
-                if (isMenuOpen) closeMenu();
-                setIsAspirantesOpen(false);
-                setIsComunidadOpen(false);
-                setIsMobileAspirantesOpen(false);
-                setIsMobileComunidadOpen(false);
-                setActiveSubmenu(null);
-                setActiveMobileSubmenu(null);
-            }
-        };
+    document.addEventListener("mousedown", handleDocumentClick);
 
-        if (isMenuOpen || isMobileAspirantesOpen || isMobileComunidadOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'auto';
-        }
+    return () => {
+      document.removeEventListener("mousedown", handleDocumentClick);
+    };
+  }, []);
 
-        window.addEventListener('keydown', handleEscKey);
-
-        return () => {
-            document.body.style.overflow = 'auto';
-            window.removeEventListener('keydown', handleEscKey);
-        };
-    }, [isMenuOpen, isMobileAspirantesOpen, isMobileComunidadOpen]);
-
-    useEffect(() => {
-        const handleDocumentClick = (event: MouseEvent): void => {
-            if (!navRef.current?.contains(event.target as Node)) {
-                setIsAspirantesOpen(false);
-                setIsComunidadOpen(false);
-                setActiveSubmenu(null);
-            }
-        };
-
-        document.addEventListener('mousedown', handleDocumentClick);
-
-        return () => {
-            document.removeEventListener('mousedown', handleDocumentClick);
-        };
-    }, []);
-
-    return (
-      <>
-        <div className="Nav" ref={navRef}>
-          <div className="Logos">
-            <img src={LogoUTN} alt="Logo UTN" className="LogoUTN" />
-            <img src={LogoUTyP} alt="Logo UTyP" className="LogoUTyP" />
-          </div>
-
-          {/* Navegación normal (escritorio) */}
-          <div className="Navegacion">
-            <ul>
-              <li>
-                <a href={"/"} onClick={(e) => handleLinkClick(e, "/")}>
-                  Inicio
-                </a>
-              </li>
-              <li>
-                <a
-                  href={"/QuienesSomos"}
-                  onClick={(e) => handleLinkClick(e, "/QuienesSomos")}
-                >
-                  ¿Quienes Somos?
-                </a>
-              </li>
-
-              {/* Menú desplegable Aspirantes */}
-              <li
-                className={`dropdown-parent ${isAspirantesOpen ? "active" : ""}`}
-              >
-                <button
-                  type="button"
-                  className="dropdown-trigger"
-                  onClick={toggleAspirantes}
-                  aria-expanded={isAspirantesOpen}
-                  aria-haspopup="true"
-                >
-                  Aspirantes
-                  <span
-                    className={`dropdown-arrow ${isAspirantesOpen ? "rotated" : ""}`}
-                  >
-                    ▼
-                  </span>
-                </button>
-
-                {isAspirantesOpen && (
-                  <ul className="dropdown-menu">
-                    <li>
-                      <a
-                        href="/OfertaEducativa"
-                        onClick={(e) => handleLinkClick(e, "/OfertaEducativa")}
-                      >
-                        Oferta Educativa
-                      </a>
-                      <a
-                        href="/ExamenIngreso"
-                        onClick={(e) => handleLinkClick(e, "/OfertaEducativa")}
-                      >
-                        Encuentra tu Aula
-                      </a>
-                      <li>
-                        <a
-                          href={convocatoria}
-                          target="_blank"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            closeMenu();
-                          }}
-                        >
-                          Convocatoria Ingreso
-                        </a>
-                      </li>
-                    </li>
-                    <li>
-                      <a
-                        href="https://utn.appsiga.net/admision"
-                        target="_blank"
-                      >
-                        Pre-registro
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://utnay.edu.mx/recorrido/"
-                        target="_blank"
-                        onClick={(e) =>
-                          handleLinkClick(e, "https://utnay.edu.mx/recorrido/")
-                        }
-                      >
-                        Recorrido Virtual
-                      </a>
-                    </li>
-                  </ul>
-                )}
-              </li>
-
-              {/* Menú desplegable Comunidad UTNay con submenús */}
-              <li
-                className={`dropdown-parent ${isComunidadOpen ? "active" : ""}`}
-              >
-                <button
-                  type="button"
-                  className="dropdown-trigger"
-                  onClick={toggleComunidad}
-                  aria-expanded={isComunidadOpen}
-                  aria-haspopup="true"
-                >
-                  Comunidad UTNay
-                  <span
-                    className={`dropdown-arrow ${isComunidadOpen ? "rotated" : ""}`}
-                  >
-                    ▼
-                  </span>
-                </button>
-
-                {isComunidadOpen && (
-                  <ul className="dropdown-menu comunidad-menu">
-                    {/* Estudiantes con submenú */}
-                    <li
-                      className={`has-submenu ${activeSubmenu === "estudiantes" ? "active" : ""}`}
-                    >
-                      <button
-                        type="button"
-                        className="submenu-trigger"
-                        onClick={() => toggleSubmenu("estudiantes")}
-                        aria-expanded={activeSubmenu === "estudiantes"}
-                      >
-                        <span>Estudiantes</span>
-                        <span className="submenu-arrow">▶</span>
-                      </button>
-
-                      {activeSubmenu === "estudiantes" && (
-                        <ul className="submenu">
-                          <li>
-                            <a
-                              href="https://utn.appsiga.net"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              onClick={(e) =>
-                                handleLinkClick(e, "https://utn.appsiga.net")
-                              }
-                            >
-                              APPSIGA
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="/Becas"
-                              onClick={(e) => handleLinkClick(e, "/Becas")}
-                            >
-                              Becas
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href={CalendarioEscolar}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              onClick={(e) =>
-                                handleLinkClick(e, CalendarioEscolar)
-                              }
-                            >
-                              Calendario Escolar
-                            </a>
-                          </li>
-                          <li>
-                            <a href="" onClick={(e) => handleLinkClick(e, "")}>
-                              Buzón de Sugerencias
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="/GuiasPago"
-                              onClick={(e) => handleLinkClick(e, "/GuiasPago")}
-                            >
-                              Guias de Pago
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="/Vinculacion"
-                              onClick={(e) =>
-                                handleLinkClick(e, "/Vinculacion")
-                              }
-                            >
-                              Vinculación
-                            </a>
-                          </li>
-                        </ul>
-                      )}
-                    </li>
-
-                    {/* Docentes con submenú */}
-                    <li
-                      className={`has-submenu ${activeSubmenu === "docentes" ? "active" : ""}`}
-                    >
-                      <button
-                        type="button"
-                        className="submenu-trigger"
-                        onClick={() => toggleSubmenu("docentes")}
-                        aria-expanded={activeSubmenu === "docentes"}
-                      >
-                        <span>Docentes</span>
-                        <span className="submenu-arrow">▶</span>
-                      </button>
-
-                      {activeSubmenu === "docentes" && (
-                        <ul className="submenu">
-                          <li>
-                            <a
-                              href="https://utn.appsiga.net"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              onClick={(e) =>
-                                handleLinkClick(e, "https://utn.appsiga.net")
-                              }
-                            >
-                              APPSIGA
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="/ComiteEtica"
-                              onClick={(e) => handleLinkClick(e, "")}
-                            >
-                              Comite de Etica
-                            </a>
-                          </li>
-                          <li>
-                            <a href="" onClick={(e) => handleLinkClick(e, "")}>
-                              Investigación y Desarrollo
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="/Vinculacion"
-                              onClick={(e) =>
-                                handleLinkClick(e, "/Vinculacion")
-                              }
-                            >
-                              Vinculación
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href={CalendarioEscolar}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              onClick={(e) =>
-                                handleLinkClick(e, CalendarioEscolar)
-                              }
-                            >
-                              Calendario Escolar
-                            </a>
-                          </li>
-                        </ul>
-                      )}
-                    </li>
-
-                    {/* Administrativos con submenú */}
-                    <li
-                      className={`has-submenu ${activeSubmenu === "administrativos" ? "active" : ""}`}
-                    >
-                      <button
-                        type="button"
-                        className="submenu-trigger"
-                        onClick={() => toggleSubmenu("administrativos")}
-                        aria-expanded={activeSubmenu === "administrativos"}
-                      >
-                        <span>Administrativos</span>
-                        <span className="submenu-arrow">▶</span>
-                      </button>
-
-                      {activeSubmenu === "administrativos" && (
-                        <ul className="submenu">
-                          <li>
-                            <a
-                              href="https://utn.appsiga.net"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              onClick={(e) =>
-                                handleLinkClick(e, "https://utn.appsiga.net")
-                              }
-                            >
-                              APPSIGA
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="/ComiteEtica"
-                              onClick={(e) => handleLinkClick(e, "")}
-                            >
-                              Comité de Ética
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="/Vinculacion"
-                              onClick={(e) =>
-                                handleLinkClick(e, "/Vinculacion")
-                              }
-                            >
-                              Vinculación
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href={CalendarioEscolar}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              onClick={(e) =>
-                                handleLinkClick(e, CalendarioEscolar)
-                              }
-                            >
-                              Calendario Escolar
-                            </a>
-                          </li>
-                        </ul>
-                      )}
-                    </li>
-
-                    <li
-                      className={`has-submenu ${activeSubmenu === "biblioteca" ? "active" : ""}`}
-                    >
-                      <button
-                        type="button"
-                        className="submenu-trigger"
-                        onClick={() => toggleSubmenu("biblioteca")}
-                        aria-expanded={activeSubmenu === "biblioteca"}
-                      >
-                        <span>Biblioteca</span>
-                        <span className="submenu-arrow">▶</span>
-                      </button>
-
-                      {activeSubmenu === "biblioteca" && (
-                        <ul className="submenu">
-                          <li>
-                            <a
-                              href="https://www.digitaliapublishing.com/novedades"
-                              target="_blank"
-                              onClick={(e) => handleLinkClick(e, "")}
-                            >
-                              Biblioteca Digital
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="/CentroInformacion"
-                              onClick={(e) => handleLinkClick(e, "")}
-                            >
-                              Biblioteca Fisica
-                            </a>
-                          </li>{" "}
-                        </ul>
-                      )}
-                    </li>
-
-                    {/* Egresados con submenú */}
-                    <li
-                      className={`has-submenu ${activeSubmenu === "egresados" ? "active" : ""}`}
-                    >
-                      <button
-                        type="button"
-                        className="submenu-trigger"
-                        onClick={() => toggleSubmenu("egresados")}
-                        aria-expanded={activeSubmenu === "egresados"}
-                      >
-                        <span>Egresados</span>
-                        <span className="submenu-arrow">▶</span>
-                      </button>
-
-                      {activeSubmenu === "egresados" && (
-                        <ul className="submenu">
-                          <li>
-                            <a
-                              href="/Egresados"
-                              onClick={(e) => handleLinkClick(e, "")}
-                            >
-                              Egresados
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="/BolsaTrabajo"
-                              onClick={(e) => handleLinkClick(e, "")}
-                            >
-                              Bolsa de Trabajo
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="/ExtensionUniversitaria#continua"
-                              onClick={(e) => handleLinkClick(e, "")}
-                            >
-                              Educación Continua
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="/Incubadora"
-                              onClick={(e) => handleLinkClick(e, "")}
-                            >
-                              Incubadora de Negocios
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="/ECECUT"
-                              onClick={(e) => handleLinkClick(e, "")}
-                            >
-                              ECECUT
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="/CEELEX"
-                              onClick={(e) => handleLinkClick(e, "")}
-                            >
-                              CEELEX
-                            </a>
-                          </li>
-                        </ul>
-                      )}
-                    </li>
-
-                    {/* Empresarios con submenú */}
-                    <li
-                      className={`has-submenu ${activeSubmenu === "empresarios" ? "active" : ""}`}
-                    >
-                      <button
-                        type="button"
-                        className="submenu-trigger"
-                        onClick={() => toggleSubmenu("empresarios")}
-                        aria-expanded={activeSubmenu === "empresarios"}
-                      >
-                        <span>Empresarios</span>
-                        <span className="submenu-arrow">▶</span>
-                      </button>
-
-                      {activeSubmenu === "empresarios" && (
-                        <ul className="submenu">
-                          <li>
-                            <a
-                              href="/Vinculacion"
-                              onClick={(e) => handleLinkClick(e, "")}
-                            >
-                              Incubadora de Negocios
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="/CEELEX"
-                              onClick={(e) => handleLinkClick(e, "")}
-                            >
-                              CEELEX
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="/ECECUT"
-                              onClick={(e) => handleLinkClick(e, "")}
-                            >
-                              ECECUT
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="/ExtensionUniversitaria#continua"
-                              onClick={(e) => handleLinkClick(e, "")}
-                            >
-                              Educación Continua
-                            </a>
-                          </li>
-                          <li>
-                            <a href="" onClick={(e) => handleLinkClick(e, "")}>
-                              Servicios al Sector Productivo
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="/Convenios"
-                              onClick={(e) => handleLinkClick(e, "")}
-                            >
-                              Creación de Convenios de Colaboración{" "}
-                            </a>
-                          </li>
-                        </ul>
-                      )}
-                    </li>
-
-                    {/* Plataformas con submenú */}
-                    <li
-                      className={`has-submenu ${activeSubmenu === "plataformas" ? "active" : ""}`}
-                    >
-                      <button
-                        type="button"
-                        className="submenu-trigger"
-                        onClick={() => toggleSubmenu("plataformas")}
-                        aria-expanded={activeSubmenu === "plataformas"}
-                      >
-                        <span>Plataformas</span>
-                        <span className="submenu-arrow">▶</span>
-                      </button>
-
-                      {activeSubmenu === "plataformas" && (
-                        <ul className="submenu">
-                          <li>
-                            <a
-                              href="https://utn.appsiga.net/"
-                              target="_blank"
-                              onClick={(e) => handleLinkClick(e, "")}
-                            >
-                              APP SIGA
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="https://docs.google.com/a/utnay.edu.mx/forms/d/e/1FAIpQLSeIB7jqBepEzxOyB4xyqfe-LPm4SV6dfFbowl3QauScASltBw/viewform"
-                              target="_blank"
-                              onClick={(e) => handleLinkClick(e, "")}
-                            >
-                              Servicios Informáticos
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="https://docs.google.com/a/utnay.edu.mx/forms/d/e/1FAIpQLSd1N8qU8yr6Dgjdpjgs5t23znAZa0IhkW8zE3iQTkBkd7QrdA/viewform"
-                              target="_blank"
-                              onClick={(e) => handleLinkClick(e, "")}
-                            >
-                              Servicios generales
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="https://transparencia.utnay.edu.mx/"
-                              onClick={(e) => handleLinkClick(e, "")}
-                            >
-                              Transparencia
-                            </a>
-                          </li>
-                          <li>
-                            <a href="" onClick={(e) => handleLinkClick(e, "")}>
-                              SidOut
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="https://www.utnay.edu.mx/informes/informes.html"
-                              onClick={(e) => handleLinkClick(e, "")}
-                            >
-                              Informes Financieros
-                            </a>
-                          </li>
-                        </ul>
-                      )}
-                    </li>
-                  </ul>
-                )}
-              </li>
-            </ul>
-            <div className="IconosNav">
-              <a
-                href={CalendarioEscolar}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src={Calendario}
-                  alt="Icono Calendario"
-                  className="IconoCalendario"
-                />
-              </a>
-              <a
-                href="https://utn.appsiga.net"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src={AppSiga}
-                  alt="Icono AppSiga"
-                  className="IconoAppSiga"
-                />
-              </a>
-            </div>
-          </div>
-
-          {/* Botón hamburguesa (móvil) */}
-          <button
-            className={`HamburgerMenu ${isMenuOpen ? "active" : ""}`}
-            onClick={toggleMenu}
-            aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
-            aria-expanded={isMenuOpen}
-            aria-controls="mobile-menu"
-          >
-            <span className="HamburgerLine"></span>
-            <span className="HamburgerLine"></span>
-            <span className="HamburgerLine"></span>
-          </button>
+  return (
+    <>
+      <div className="Nav" ref={navRef}>
+        <div className="Logos">
+          <img src={LogoUTN} alt="Logo UTN" className="LogoUTN" />
+          <img src={LogoUTyP} alt="Logo UTyP" className="LogoUTyP" />
         </div>
 
-        {/* Menú móvil */}
-        <div
-          id="mobile-menu"
-          className={`MobileMenu ${isMenuOpen ? "active" : ""}`}
-          aria-hidden={!isMenuOpen}
-        >
+        {/* Navegación normal (escritorio) */}
+        <div className="Navegacion">
           <ul>
             <li>
-              <a
-                href={"/"}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  closeMenu();
-                }}
-              >
+              <a href={"/"} onClick={(e) => handleLinkClick(e, "/")}>
                 Inicio
               </a>
             </li>
             <li>
               <a
                 href={"/QuienesSomos"}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  closeMenu();
-                }}
+                onClick={(e) => handleLinkClick(e, "/QuienesSomos")}
               >
                 ¿Quienes Somos?
               </a>
             </li>
 
-            {/* Menú desplegable Aspirantes en móvil */}
+            {/* Menú desplegable Aspirantes */}
             <li
-              className={`mobile-dropdown-parent ${isMobileAspirantesOpen ? "active" : ""}`}
+              className={`dropdown-parent ${isAspirantesOpen ? "active" : ""}`}
             >
-              <div
-                className="mobile-dropdown-trigger"
-                onClick={toggleMobileAspirantes}
+              <button
+                type="button"
+                className="dropdown-trigger"
+                onClick={toggleAspirantes}
+                aria-expanded={isAspirantesOpen}
+                aria-haspopup="true"
               >
-                <span>Aspirantes</span>
+                Aspirantes
                 <span
-                  className={`mobile-dropdown-arrow ${isMobileAspirantesOpen ? "rotated" : ""}`}
+                  className={`dropdown-arrow ${isAspirantesOpen ? "rotated" : ""}`}
                 >
                   ▼
                 </span>
-              </div>
+              </button>
 
-              {isMobileAspirantesOpen && (
-                <ul className="mobile-dropdown-menu">
+              {isAspirantesOpen && (
+                <ul className="dropdown-menu">
                   <li>
                     <a
                       href="/OfertaEducativa"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        closeMenu();
-                      }}
+                      onClick={(e) => handleLinkClick(e, "/OfertaEducativa")}
                     >
                       Oferta Educativa
                     </a>
-                  </li>
-                  <li>
                     <a
-                      href="/ExamenIngreso"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        closeMenu();
-                      }}
+                      href="/Resultados"
+                      onClick={(e) => handleLinkClick(e, "/OfertaEducativa")}
                     >
-                      Encuentra tu Aula
+                      Resultados Admisión
                     </a>
+                    <li>
+                      <a
+                        href={convocatoria}
+                        target="_blank"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          closeMenu();
+                        }}
+                      >
+                        Convocatoria Ingreso
+                      </a>
+                    </li>
                   </li>
                   <li>
-                    <a
-                      href={convocatoria}
-                      target="_blank"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        closeMenu();
-                      }}
-                    >
-                      Convocatoria Ingreso
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://utn.appsiga.net/admision"
-                      target="_blank"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        closeMenu();
-                      }}
-                    >
+                    <a href="https://utn.appsiga.net/admision" target="_blank">
                       Pre-registro
                     </a>
                   </li>
@@ -832,10 +219,9 @@ function Nav() {
                     <a
                       href="https://utnay.edu.mx/recorrido/"
                       target="_blank"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        closeMenu();
-                      }}
+                      onClick={(e) =>
+                        handleLinkClick(e, "https://utnay.edu.mx/recorrido/")
+                      }
                     >
                       Recorrido Virtual
                     </a>
@@ -844,50 +230,51 @@ function Nav() {
               )}
             </li>
 
-            {/* Menú desplegable Comunidad UTNay en móvil con submenús */}
+            {/* Menú desplegable Comunidad UTNay con submenús */}
             <li
-              className={`mobile-dropdown-parent ${isMobileComunidadOpen ? "active" : ""}`}
+              className={`dropdown-parent ${isComunidadOpen ? "active" : ""}`}
             >
-              <div
-                className="mobile-dropdown-trigger"
-                onClick={toggleMobileComunidad}
+              <button
+                type="button"
+                className="dropdown-trigger"
+                onClick={toggleComunidad}
+                aria-expanded={isComunidadOpen}
+                aria-haspopup="true"
               >
-                <span>Comunidad UTNay</span>
+                Comunidad UTNay
                 <span
-                  className={`mobile-dropdown-arrow ${isMobileComunidadOpen ? "rotated" : ""}`}
+                  className={`dropdown-arrow ${isComunidadOpen ? "rotated" : ""}`}
                 >
                   ▼
                 </span>
-              </div>
+              </button>
 
-              {isMobileComunidadOpen && (
-                <ul className="mobile-dropdown-menu comunidad-mobile-menu">
+              {isComunidadOpen && (
+                <ul className="dropdown-menu comunidad-menu">
+                  {/* Estudiantes con submenú */}
                   <li
-                    className={`mobile-has-submenu ${activeMobileSubmenu === "estudiantes" ? "active" : ""}`}
+                    className={`has-submenu ${activeSubmenu === "estudiantes" ? "active" : ""}`}
                   >
-                    <div
-                      className="mobile-submenu-trigger"
-                      onClick={() => toggleMobileSubmenu("estudiantes")}
+                    <button
+                      type="button"
+                      className="submenu-trigger"
+                      onClick={() => toggleSubmenu("estudiantes")}
+                      aria-expanded={activeSubmenu === "estudiantes"}
                     >
                       <span>Estudiantes</span>
-                      <span
-                        className={`mobile-submenu-arrow ${activeMobileSubmenu === "estudiantes" ? "rotated" : ""}`}
-                      >
-                        ▶
-                      </span>
-                    </div>
+                      <span className="submenu-arrow">▶</span>
+                    </button>
 
-                    {activeMobileSubmenu === "estudiantes" && (
-                      <ul className="mobile-submenu">
+                    {activeSubmenu === "estudiantes" && (
+                      <ul className="submenu">
                         <li>
                           <a
                             href="https://utn.appsiga.net"
                             target="_blank"
                             rel="noopener noreferrer"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              closeMenu();
-                            }}
+                            onClick={(e) =>
+                              handleLinkClick(e, "https://utn.appsiga.net")
+                            }
                           >
                             APPSIGA
                           </a>
@@ -895,10 +282,7 @@ function Nav() {
                         <li>
                           <a
                             href="/Becas"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              closeMenu();
-                            }}
+                            onClick={(e) => handleLinkClick(e, "/Becas")}
                           >
                             Becas
                           </a>
@@ -908,32 +292,30 @@ function Nav() {
                             href={CalendarioEscolar}
                             target="_blank"
                             rel="noopener noreferrer"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              closeMenu();
-                            }}
+                            onClick={(e) =>
+                              handleLinkClick(e, CalendarioEscolar)
+                            }
                           >
                             Calendario Escolar
                           </a>
                         </li>
                         <li>
-                          <a
-                            href=""
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              closeMenu();
-                            }}
-                          >
+                          <a href="" onClick={(e) => handleLinkClick(e, "")}>
                             Buzón de Sugerencias
                           </a>
                         </li>
                         <li>
                           <a
+                            href="/GuiasPago"
+                            onClick={(e) => handleLinkClick(e, "/GuiasPago")}
+                          >
+                            Guias de Pago
+                          </a>
+                        </li>
+                        <li>
+                          <a
                             href="/Vinculacion"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              closeMenu();
-                            }}
+                            onClick={(e) => handleLinkClick(e, "/Vinculacion")}
                           >
                             Vinculación
                           </a>
@@ -942,32 +324,30 @@ function Nav() {
                     )}
                   </li>
 
+                  {/* Docentes con submenú */}
                   <li
-                    className={`mobile-has-submenu ${activeMobileSubmenu === "docentes" ? "active" : ""}`}
+                    className={`has-submenu ${activeSubmenu === "docentes" ? "active" : ""}`}
                   >
-                    <div
-                      className="mobile-submenu-trigger"
-                      onClick={() => toggleMobileSubmenu("docentes")}
+                    <button
+                      type="button"
+                      className="submenu-trigger"
+                      onClick={() => toggleSubmenu("docentes")}
+                      aria-expanded={activeSubmenu === "docentes"}
                     >
                       <span>Docentes</span>
-                      <span
-                        className={`mobile-submenu-arrow ${activeMobileSubmenu === "docentes" ? "rotated" : ""}`}
-                      >
-                        ▶
-                      </span>
-                    </div>
+                      <span className="submenu-arrow">▶</span>
+                    </button>
 
-                    {activeMobileSubmenu === "docentes" && (
-                      <ul className="mobile-submenu">
+                    {activeSubmenu === "docentes" && (
+                      <ul className="submenu">
                         <li>
                           <a
                             href="https://utn.appsiga.net"
                             target="_blank"
                             rel="noopener noreferrer"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              closeMenu();
-                            }}
+                            onClick={(e) =>
+                              handleLinkClick(e, "https://utn.appsiga.net")
+                            }
                           >
                             APPSIGA
                           </a>
@@ -975,21 +355,20 @@ function Nav() {
                         <li>
                           <a
                             href="/ComiteEtica"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              closeMenu();
-                            }}
+                            onClick={(e) => handleLinkClick(e, "")}
                           >
-                            Comité de Ética
+                            Comite de Etica
+                          </a>
+                        </li>
+                        <li>
+                          <a href="" onClick={(e) => handleLinkClick(e, "")}>
+                            Investigación y Desarrollo
                           </a>
                         </li>
                         <li>
                           <a
                             href="/Vinculacion"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              closeMenu();
-                            }}
+                            onClick={(e) => handleLinkClick(e, "/Vinculacion")}
                           >
                             Vinculación
                           </a>
@@ -999,10 +378,9 @@ function Nav() {
                             href={CalendarioEscolar}
                             target="_blank"
                             rel="noopener noreferrer"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              closeMenu();
-                            }}
+                            onClick={(e) =>
+                              handleLinkClick(e, CalendarioEscolar)
+                            }
                           >
                             Calendario Escolar
                           </a>
@@ -1011,32 +389,30 @@ function Nav() {
                     )}
                   </li>
 
+                  {/* Administrativos con submenú */}
                   <li
-                    className={`mobile-has-submenu ${activeMobileSubmenu === "administrativo" ? "active" : ""}`}
+                    className={`has-submenu ${activeSubmenu === "administrativos" ? "active" : ""}`}
                   >
-                    <div
-                      className="mobile-submenu-trigger"
-                      onClick={() => toggleMobileSubmenu("administrativo")}
+                    <button
+                      type="button"
+                      className="submenu-trigger"
+                      onClick={() => toggleSubmenu("administrativos")}
+                      aria-expanded={activeSubmenu === "administrativos"}
                     >
                       <span>Administrativos</span>
-                      <span
-                        className={`mobile-submenu-arrow ${activeMobileSubmenu === "administrativo" ? "rotated" : ""}`}
-                      >
-                        ▶
-                      </span>
-                    </div>
+                      <span className="submenu-arrow">▶</span>
+                    </button>
 
-                    {activeMobileSubmenu === "administrativo" && (
-                      <ul className="mobile-submenu">
+                    {activeSubmenu === "administrativos" && (
+                      <ul className="submenu">
                         <li>
                           <a
                             href="https://utn.appsiga.net"
                             target="_blank"
                             rel="noopener noreferrer"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              closeMenu();
-                            }}
+                            onClick={(e) =>
+                              handleLinkClick(e, "https://utn.appsiga.net")
+                            }
                           >
                             APPSIGA
                           </a>
@@ -1044,10 +420,7 @@ function Nav() {
                         <li>
                           <a
                             href="/ComiteEtica"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              closeMenu();
-                            }}
+                            onClick={(e) => handleLinkClick(e, "")}
                           >
                             Comité de Ética
                           </a>
@@ -1055,10 +428,7 @@ function Nav() {
                         <li>
                           <a
                             href="/Vinculacion"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              closeMenu();
-                            }}
+                            onClick={(e) => handleLinkClick(e, "/Vinculacion")}
                           >
                             Vinculación
                           </a>
@@ -1068,10 +438,9 @@ function Nav() {
                             href={CalendarioEscolar}
                             target="_blank"
                             rel="noopener noreferrer"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              closeMenu();
-                            }}
+                            onClick={(e) =>
+                              handleLinkClick(e, CalendarioEscolar)
+                            }
                           >
                             Calendario Escolar
                           </a>
@@ -1081,30 +450,25 @@ function Nav() {
                   </li>
 
                   <li
-                    className={`mobile-has-submenu ${activeMobileSubmenu === "biblioteca" ? "active" : ""}`}
+                    className={`has-submenu ${activeSubmenu === "biblioteca" ? "active" : ""}`}
                   >
-                    <div
-                      className="mobile-submenu-trigger"
-                      onClick={() => toggleMobileSubmenu("biblioteca")}
+                    <button
+                      type="button"
+                      className="submenu-trigger"
+                      onClick={() => toggleSubmenu("biblioteca")}
+                      aria-expanded={activeSubmenu === "biblioteca"}
                     >
                       <span>Biblioteca</span>
-                      <span
-                        className={`mobile-submenu-arrow ${activeMobileSubmenu === "biblioteca" ? "rotated" : ""}`}
-                      >
-                        ▶
-                      </span>
-                    </div>
+                      <span className="submenu-arrow">▶</span>
+                    </button>
 
-                    {activeMobileSubmenu === "biblioteca" && (
-                      <ul className="mobile-submenu">
+                    {activeSubmenu === "biblioteca" && (
+                      <ul className="submenu">
                         <li>
                           <a
                             href="https://www.digitaliapublishing.com/novedades"
                             target="_blank"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              closeMenu();
-                            }}
+                            onClick={(e) => handleLinkClick(e, "")}
                           >
                             Biblioteca Digital
                           </a>
@@ -1112,42 +476,35 @@ function Nav() {
                         <li>
                           <a
                             href="/CentroInformacion"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              closeMenu();
-                            }}
+                            onClick={(e) => handleLinkClick(e, "")}
                           >
                             Biblioteca Fisica
                           </a>
-                        </li>
+                        </li>{" "}
                       </ul>
                     )}
                   </li>
 
+                  {/* Egresados con submenú */}
                   <li
-                    className={`mobile-has-submenu ${activeMobileSubmenu === "egresado" ? "active" : ""}`}
+                    className={`has-submenu ${activeSubmenu === "egresados" ? "active" : ""}`}
                   >
-                    <div
-                      className="mobile-submenu-trigger"
-                      onClick={() => toggleMobileSubmenu("egresado")}
+                    <button
+                      type="button"
+                      className="submenu-trigger"
+                      onClick={() => toggleSubmenu("egresados")}
+                      aria-expanded={activeSubmenu === "egresados"}
                     >
                       <span>Egresados</span>
-                      <span
-                        className={`mobile-submenu-arrow ${activeMobileSubmenu === "egresado" ? "rotated" : ""}`}
-                      >
-                        ▶
-                      </span>
-                    </div>
+                      <span className="submenu-arrow">▶</span>
+                    </button>
 
-                    {activeMobileSubmenu === "egresado" && (
-                      <ul className="mobile-submenu">
+                    {activeSubmenu === "egresados" && (
+                      <ul className="submenu">
                         <li>
                           <a
                             href="/Egresados"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              closeMenu();
-                            }}
+                            onClick={(e) => handleLinkClick(e, "")}
                           >
                             Egresados
                           </a>
@@ -1155,10 +512,7 @@ function Nav() {
                         <li>
                           <a
                             href="/BolsaTrabajo"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              closeMenu();
-                            }}
+                            onClick={(e) => handleLinkClick(e, "")}
                           >
                             Bolsa de Trabajo
                           </a>
@@ -1166,10 +520,7 @@ function Nav() {
                         <li>
                           <a
                             href="/ExtensionUniversitaria#continua"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              closeMenu();
-                            }}
+                            onClick={(e) => handleLinkClick(e, "")}
                           >
                             Educación Continua
                           </a>
@@ -1177,10 +528,7 @@ function Nav() {
                         <li>
                           <a
                             href="/Incubadora"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              closeMenu();
-                            }}
+                            onClick={(e) => handleLinkClick(e, "")}
                           >
                             Incubadora de Negocios
                           </a>
@@ -1188,21 +536,15 @@ function Nav() {
                         <li>
                           <a
                             href="/ECECUT"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              closeMenu();
-                            }}
+                            onClick={(e) => handleLinkClick(e, "")}
                           >
                             ECECUT
                           </a>
                         </li>
                         <li>
                           <a
-                            href="/"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              closeMenu();
-                            }}
+                            href="/CEELEX"
+                            onClick={(e) => handleLinkClick(e, "")}
                           >
                             CEELEX
                           </a>
@@ -1211,30 +553,26 @@ function Nav() {
                     )}
                   </li>
 
+                  {/* Empresarios con submenú */}
                   <li
-                    className={`mobile-has-submenu ${activeMobileSubmenu === "empresarios" ? "active" : ""}`}
+                    className={`has-submenu ${activeSubmenu === "empresarios" ? "active" : ""}`}
                   >
-                    <div
-                      className="mobile-submenu-trigger"
-                      onClick={() => toggleMobileSubmenu("empresarios")}
+                    <button
+                      type="button"
+                      className="submenu-trigger"
+                      onClick={() => toggleSubmenu("empresarios")}
+                      aria-expanded={activeSubmenu === "empresarios"}
                     >
                       <span>Empresarios</span>
-                      <span
-                        className={`mobile-submenu-arrow ${activeMobileSubmenu === "empresarios" ? "rotated" : ""}`}
-                      >
-                        ▶
-                      </span>
-                    </div>
+                      <span className="submenu-arrow">▶</span>
+                    </button>
 
-                    {activeMobileSubmenu === "empresarios" && (
-                      <ul className="mobile-submenu">
+                    {activeSubmenu === "empresarios" && (
+                      <ul className="submenu">
                         <li>
                           <a
-                            href="/Incubadora"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              closeMenu();
-                            }}
+                            href="/Vinculacion"
+                            onClick={(e) => handleLinkClick(e, "")}
                           >
                             Incubadora de Negocios
                           </a>
@@ -1242,10 +580,7 @@ function Nav() {
                         <li>
                           <a
                             href="/CEELEX"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              closeMenu();
-                            }}
+                            onClick={(e) => handleLinkClick(e, "")}
                           >
                             CEELEX
                           </a>
@@ -1253,10 +588,7 @@ function Nav() {
                         <li>
                           <a
                             href="/ECECUT"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              closeMenu();
-                            }}
+                            onClick={(e) => handleLinkClick(e, "")}
                           >
                             ECECUT
                           </a>
@@ -1264,32 +596,20 @@ function Nav() {
                         <li>
                           <a
                             href="/ExtensionUniversitaria#continua"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              closeMenu();
-                            }}
+                            onClick={(e) => handleLinkClick(e, "")}
                           >
                             Educación Continua
                           </a>
                         </li>
                         <li>
-                          <a
-                            href="/"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              closeMenu();
-                            }}
-                          >
+                          <a href="" onClick={(e) => handleLinkClick(e, "")}>
                             Servicios al Sector Productivo
                           </a>
                         </li>
                         <li>
                           <a
                             href="/Convenios"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              closeMenu();
-                            }}
+                            onClick={(e) => handleLinkClick(e, "")}
                           >
                             Creación de Convenios de Colaboración{" "}
                           </a>
@@ -1298,79 +618,59 @@ function Nav() {
                     )}
                   </li>
 
+                  {/* Plataformas con submenú */}
                   <li
-                    className={`mobile-has-submenu ${activeMobileSubmenu === "plataformas" ? "active" : ""}`}
+                    className={`has-submenu ${activeSubmenu === "plataformas" ? "active" : ""}`}
                   >
-                    <div
-                      className="mobile-submenu-trigger"
-                      onClick={() => toggleMobileSubmenu("plataformas")}
+                    <button
+                      type="button"
+                      className="submenu-trigger"
+                      onClick={() => toggleSubmenu("plataformas")}
+                      aria-expanded={activeSubmenu === "plataformas"}
                     >
                       <span>Plataformas</span>
-                      <span
-                        className={`mobile-submenu-arrow ${activeMobileSubmenu === "plataformas" ? "rotated" : ""}`}
-                      >
-                        ▶
-                      </span>
-                    </div>
+                      <span className="submenu-arrow">▶</span>
+                    </button>
 
-                    {activeMobileSubmenu === "plataformas" && (
-                      <ul className="mobile-submenu">
+                    {activeSubmenu === "plataformas" && (
+                      <ul className="submenu">
                         <li>
                           <a
-                            href="https://utn.appsiga.net"
+                            href="https://utn.appsiga.net/"
                             target="_blank"
-                            rel="noopener noreferrer"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              closeMenu();
-                            }}
+                            onClick={(e) => handleLinkClick(e, "")}
                           >
-                            APPSIGA
+                            APP SIGA
                           </a>
                         </li>
                         <li>
                           <a
                             href="https://docs.google.com/a/utnay.edu.mx/forms/d/e/1FAIpQLSeIB7jqBepEzxOyB4xyqfe-LPm4SV6dfFbowl3QauScASltBw/viewform"
                             target="_blank"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              closeMenu();
-                            }}
+                            onClick={(e) => handleLinkClick(e, "")}
                           >
-                            Serivicios Informaticos
+                            Servicios Informáticos
                           </a>
                         </li>
                         <li>
                           <a
                             href="https://docs.google.com/a/utnay.edu.mx/forms/d/e/1FAIpQLSd1N8qU8yr6Dgjdpjgs5t23znAZa0IhkW8zE3iQTkBkd7QrdA/viewform"
                             target="_blank"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              closeMenu();
-                            }}
+                            onClick={(e) => handleLinkClick(e, "")}
                           >
-                            Servicios Generales
+                            Servicios generales
                           </a>
                         </li>
                         <li>
                           <a
                             href="https://transparencia.utnay.edu.mx/"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              closeMenu();
-                            }}
+                            onClick={(e) => handleLinkClick(e, "")}
                           >
                             Transparencia
                           </a>
                         </li>
                         <li>
-                          <a
-                            href=""
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              closeMenu();
-                            }}
-                          >
+                          <a href="" onClick={(e) => handleLinkClick(e, "")}>
                             SidOut
                           </a>
                         </li>
@@ -1389,7 +689,7 @@ function Nav() {
               )}
             </li>
           </ul>
-          <div className="MobileIcons">
+          <div className="IconosNav">
             <a
               href={CalendarioEscolar}
               target="_blank"
@@ -1398,10 +698,7 @@ function Nav() {
               <img
                 src={Calendario}
                 alt="Icono Calendario"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  closeMenu();
-                }}
+                className="IconoCalendario"
               />
             </a>
             <a
@@ -1409,28 +706,718 @@ function Nav() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img
-                src={AppSiga}
-                alt="Icono AppSiga"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  closeMenu();
-                }}
-              />
+              <img src={AppSiga} alt="Icono AppSiga" className="IconoAppSiga" />
             </a>
           </div>
         </div>
 
-        {/* Overlay para cerrar menú */}
-        {isMenuOpen && (
-          <div
-            className={`Overlay ${isMenuOpen ? "active" : ""}`}
-            onClick={closeMenu}
-            aria-hidden="true"
-          />
-        )}
-      </>
-    );
+        {/* Botón hamburguesa (móvil) */}
+        <button
+          className={`HamburgerMenu ${isMenuOpen ? "active" : ""}`}
+          onClick={toggleMenu}
+          aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-menu"
+        >
+          <span className="HamburgerLine"></span>
+          <span className="HamburgerLine"></span>
+          <span className="HamburgerLine"></span>
+        </button>
+      </div>
+
+      {/* Menú móvil */}
+      <div
+        id="mobile-menu"
+        className={`MobileMenu ${isMenuOpen ? "active" : ""}`}
+        aria-hidden={!isMenuOpen}
+      >
+        <ul>
+          <li>
+            <a
+              href={"/"}
+              onClick={(e) => {
+                e.stopPropagation();
+                closeMenu();
+              }}
+            >
+              Inicio
+            </a>
+          </li>
+          <li>
+            <a
+              href={"/QuienesSomos"}
+              onClick={(e) => {
+                e.stopPropagation();
+                closeMenu();
+              }}
+            >
+              ¿Quienes Somos?
+            </a>
+          </li>
+
+          {/* Menú desplegable Aspirantes en móvil */}
+          <li
+            className={`mobile-dropdown-parent ${isMobileAspirantesOpen ? "active" : ""}`}
+          >
+            <div
+              className="mobile-dropdown-trigger"
+              onClick={toggleMobileAspirantes}
+            >
+              <span>Aspirantes</span>
+              <span
+                className={`mobile-dropdown-arrow ${isMobileAspirantesOpen ? "rotated" : ""}`}
+              >
+                ▼
+              </span>
+            </div>
+
+            {isMobileAspirantesOpen && (
+              <ul className="mobile-dropdown-menu">
+                <li>
+                  <a
+                    href="/OfertaEducativa"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      closeMenu();
+                    }}
+                  >
+                    Oferta Educativa
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/Resultados"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      closeMenu();
+                    }}
+                  >
+                    Resultados Admisión
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={convocatoria}
+                    target="_blank"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      closeMenu();
+                    }}
+                  >
+                    Convocatoria Ingreso
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://utn.appsiga.net/admision"
+                    target="_blank"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      closeMenu();
+                    }}
+                  >
+                    Pre-registro
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://utnay.edu.mx/recorrido/"
+                    target="_blank"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      closeMenu();
+                    }}
+                  >
+                    Recorrido Virtual
+                  </a>
+                </li>
+              </ul>
+            )}
+          </li>
+
+          {/* Menú desplegable Comunidad UTNay en móvil con submenús */}
+          <li
+            className={`mobile-dropdown-parent ${isMobileComunidadOpen ? "active" : ""}`}
+          >
+            <div
+              className="mobile-dropdown-trigger"
+              onClick={toggleMobileComunidad}
+            >
+              <span>Comunidad UTNay</span>
+              <span
+                className={`mobile-dropdown-arrow ${isMobileComunidadOpen ? "rotated" : ""}`}
+              >
+                ▼
+              </span>
+            </div>
+
+            {isMobileComunidadOpen && (
+              <ul className="mobile-dropdown-menu comunidad-mobile-menu">
+                <li
+                  className={`mobile-has-submenu ${activeMobileSubmenu === "estudiantes" ? "active" : ""}`}
+                >
+                  <div
+                    className="mobile-submenu-trigger"
+                    onClick={() => toggleMobileSubmenu("estudiantes")}
+                  >
+                    <span>Estudiantes</span>
+                    <span
+                      className={`mobile-submenu-arrow ${activeMobileSubmenu === "estudiantes" ? "rotated" : ""}`}
+                    >
+                      ▶
+                    </span>
+                  </div>
+
+                  {activeMobileSubmenu === "estudiantes" && (
+                    <ul className="mobile-submenu">
+                      <li>
+                        <a
+                          href="https://utn.appsiga.net"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            closeMenu();
+                          }}
+                        >
+                          APPSIGA
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/Becas"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            closeMenu();
+                          }}
+                        >
+                          Becas
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href={CalendarioEscolar}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            closeMenu();
+                          }}
+                        >
+                          Calendario Escolar
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href=""
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            closeMenu();
+                          }}
+                        >
+                          Buzón de Sugerencias
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/Vinculacion"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            closeMenu();
+                          }}
+                        >
+                          Vinculación
+                        </a>
+                      </li>
+                    </ul>
+                  )}
+                </li>
+
+                <li
+                  className={`mobile-has-submenu ${activeMobileSubmenu === "docentes" ? "active" : ""}`}
+                >
+                  <div
+                    className="mobile-submenu-trigger"
+                    onClick={() => toggleMobileSubmenu("docentes")}
+                  >
+                    <span>Docentes</span>
+                    <span
+                      className={`mobile-submenu-arrow ${activeMobileSubmenu === "docentes" ? "rotated" : ""}`}
+                    >
+                      ▶
+                    </span>
+                  </div>
+
+                  {activeMobileSubmenu === "docentes" && (
+                    <ul className="mobile-submenu">
+                      <li>
+                        <a
+                          href="https://utn.appsiga.net"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            closeMenu();
+                          }}
+                        >
+                          APPSIGA
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/ComiteEtica"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            closeMenu();
+                          }}
+                        >
+                          Comité de Ética
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/Vinculacion"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            closeMenu();
+                          }}
+                        >
+                          Vinculación
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href={CalendarioEscolar}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            closeMenu();
+                          }}
+                        >
+                          Calendario Escolar
+                        </a>
+                      </li>
+                    </ul>
+                  )}
+                </li>
+
+                <li
+                  className={`mobile-has-submenu ${activeMobileSubmenu === "administrativo" ? "active" : ""}`}
+                >
+                  <div
+                    className="mobile-submenu-trigger"
+                    onClick={() => toggleMobileSubmenu("administrativo")}
+                  >
+                    <span>Administrativos</span>
+                    <span
+                      className={`mobile-submenu-arrow ${activeMobileSubmenu === "administrativo" ? "rotated" : ""}`}
+                    >
+                      ▶
+                    </span>
+                  </div>
+
+                  {activeMobileSubmenu === "administrativo" && (
+                    <ul className="mobile-submenu">
+                      <li>
+                        <a
+                          href="https://utn.appsiga.net"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            closeMenu();
+                          }}
+                        >
+                          APPSIGA
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/ComiteEtica"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            closeMenu();
+                          }}
+                        >
+                          Comité de Ética
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/Vinculacion"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            closeMenu();
+                          }}
+                        >
+                          Vinculación
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href={CalendarioEscolar}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            closeMenu();
+                          }}
+                        >
+                          Calendario Escolar
+                        </a>
+                      </li>
+                    </ul>
+                  )}
+                </li>
+
+                <li
+                  className={`mobile-has-submenu ${activeMobileSubmenu === "biblioteca" ? "active" : ""}`}
+                >
+                  <div
+                    className="mobile-submenu-trigger"
+                    onClick={() => toggleMobileSubmenu("biblioteca")}
+                  >
+                    <span>Biblioteca</span>
+                    <span
+                      className={`mobile-submenu-arrow ${activeMobileSubmenu === "biblioteca" ? "rotated" : ""}`}
+                    >
+                      ▶
+                    </span>
+                  </div>
+
+                  {activeMobileSubmenu === "biblioteca" && (
+                    <ul className="mobile-submenu">
+                      <li>
+                        <a
+                          href="https://www.digitaliapublishing.com/novedades"
+                          target="_blank"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            closeMenu();
+                          }}
+                        >
+                          Biblioteca Digital
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/CentroInformacion"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            closeMenu();
+                          }}
+                        >
+                          Biblioteca Fisica
+                        </a>
+                      </li>
+                    </ul>
+                  )}
+                </li>
+
+                <li
+                  className={`mobile-has-submenu ${activeMobileSubmenu === "egresado" ? "active" : ""}`}
+                >
+                  <div
+                    className="mobile-submenu-trigger"
+                    onClick={() => toggleMobileSubmenu("egresado")}
+                  >
+                    <span>Egresados</span>
+                    <span
+                      className={`mobile-submenu-arrow ${activeMobileSubmenu === "egresado" ? "rotated" : ""}`}
+                    >
+                      ▶
+                    </span>
+                  </div>
+
+                  {activeMobileSubmenu === "egresado" && (
+                    <ul className="mobile-submenu">
+                      <li>
+                        <a
+                          href="/Egresados"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            closeMenu();
+                          }}
+                        >
+                          Egresados
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/BolsaTrabajo"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            closeMenu();
+                          }}
+                        >
+                          Bolsa de Trabajo
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/ExtensionUniversitaria#continua"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            closeMenu();
+                          }}
+                        >
+                          Educación Continua
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/Incubadora"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            closeMenu();
+                          }}
+                        >
+                          Incubadora de Negocios
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/ECECUT"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            closeMenu();
+                          }}
+                        >
+                          ECECUT
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            closeMenu();
+                          }}
+                        >
+                          CEELEX
+                        </a>
+                      </li>
+                    </ul>
+                  )}
+                </li>
+
+                <li
+                  className={`mobile-has-submenu ${activeMobileSubmenu === "empresarios" ? "active" : ""}`}
+                >
+                  <div
+                    className="mobile-submenu-trigger"
+                    onClick={() => toggleMobileSubmenu("empresarios")}
+                  >
+                    <span>Empresarios</span>
+                    <span
+                      className={`mobile-submenu-arrow ${activeMobileSubmenu === "empresarios" ? "rotated" : ""}`}
+                    >
+                      ▶
+                    </span>
+                  </div>
+
+                  {activeMobileSubmenu === "empresarios" && (
+                    <ul className="mobile-submenu">
+                      <li>
+                        <a
+                          href="/Incubadora"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            closeMenu();
+                          }}
+                        >
+                          Incubadora de Negocios
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/CEELEX"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            closeMenu();
+                          }}
+                        >
+                          CEELEX
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/ECECUT"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            closeMenu();
+                          }}
+                        >
+                          ECECUT
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/ExtensionUniversitaria#continua"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            closeMenu();
+                          }}
+                        >
+                          Educación Continua
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            closeMenu();
+                          }}
+                        >
+                          Servicios al Sector Productivo
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/Convenios"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            closeMenu();
+                          }}
+                        >
+                          Creación de Convenios de Colaboración{" "}
+                        </a>
+                      </li>
+                    </ul>
+                  )}
+                </li>
+
+                <li
+                  className={`mobile-has-submenu ${activeMobileSubmenu === "plataformas" ? "active" : ""}`}
+                >
+                  <div
+                    className="mobile-submenu-trigger"
+                    onClick={() => toggleMobileSubmenu("plataformas")}
+                  >
+                    <span>Plataformas</span>
+                    <span
+                      className={`mobile-submenu-arrow ${activeMobileSubmenu === "plataformas" ? "rotated" : ""}`}
+                    >
+                      ▶
+                    </span>
+                  </div>
+
+                  {activeMobileSubmenu === "plataformas" && (
+                    <ul className="mobile-submenu">
+                      <li>
+                        <a
+                          href="https://utn.appsiga.net"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            closeMenu();
+                          }}
+                        >
+                          APPSIGA
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="https://docs.google.com/a/utnay.edu.mx/forms/d/e/1FAIpQLSeIB7jqBepEzxOyB4xyqfe-LPm4SV6dfFbowl3QauScASltBw/viewform"
+                          target="_blank"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            closeMenu();
+                          }}
+                        >
+                          Serivicios Informaticos
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="https://docs.google.com/a/utnay.edu.mx/forms/d/e/1FAIpQLSd1N8qU8yr6Dgjdpjgs5t23znAZa0IhkW8zE3iQTkBkd7QrdA/viewform"
+                          target="_blank"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            closeMenu();
+                          }}
+                        >
+                          Servicios Generales
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="https://transparencia.utnay.edu.mx/"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            closeMenu();
+                          }}
+                        >
+                          Transparencia
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href=""
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            closeMenu();
+                          }}
+                        >
+                          SidOut
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="https://www.utnay.edu.mx/informes/informes.html"
+                          onClick={(e) => handleLinkClick(e, "")}
+                        >
+                          Informes Financieros
+                        </a>
+                      </li>
+                    </ul>
+                  )}
+                </li>
+              </ul>
+            )}
+          </li>
+        </ul>
+        <div className="MobileIcons">
+          <a href={CalendarioEscolar} target="_blank" rel="noopener noreferrer">
+            <img
+              src={Calendario}
+              alt="Icono Calendario"
+              onClick={(e) => {
+                e.stopPropagation();
+                closeMenu();
+              }}
+            />
+          </a>
+          <a
+            href="https://utn.appsiga.net"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={AppSiga}
+              alt="Icono AppSiga"
+              onClick={(e) => {
+                e.stopPropagation();
+                closeMenu();
+              }}
+            />
+          </a>
+        </div>
+      </div>
+
+      {/* Overlay para cerrar menú */}
+      {isMenuOpen && (
+        <div
+          className={`Overlay ${isMenuOpen ? "active" : ""}`}
+          onClick={closeMenu}
+          aria-hidden="true"
+        />
+      )}
+    </>
+  );
 }
 
 export default Nav;

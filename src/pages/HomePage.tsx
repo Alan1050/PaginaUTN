@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import LogosCarreras from "../components/LogosCarreras.tsx";
 import ImagenPrincipal from "../assets/banner/Index.jpg";
-import bannerGuias from '../assets/banner/bannerGuiasPago.jpg';
-import bannerBecas from '../assets/banner/bannerBecas.jpg';
-import bannerBiblioteca from '../assets/banner/bannerBiblioteca.jpg';
-import ImagenNuevaCarrera from "../assets/banner/ExamenIngreso.jpeg";
+import bannerGuias from "../assets/banner/bannerGuiasPago.jpg";
+import bannerBecas from "../assets/banner/bannerBecas.jpg";
+import bannerBiblioteca from "../assets/banner/bannerBiblioteca.jpg";
+import ImagenNuevaCarrera from "../assets/banner/alertResultados.jpg";
 import Swal from "sweetalert2";
 import Accesos from "../components/Accesos.tsx";
 import "./HomePages.css";
@@ -41,7 +41,7 @@ function HomePage() {
       botonLink: "/Becas",
     },
   ];
-  
+
   const [indiceActual, setIndiceActual] = useState(0);
   const [carruselPausado, setCarruselPausado] = useState(false);
   const [reinicioCarrusel, setReinicioCarrusel] = useState(0);
@@ -88,7 +88,7 @@ function HomePage() {
 
         Swal.fire({
           title:
-            "¿Preparado para el examen de ingreso?, Conoce donde tienes que aplicar el examen:",
+            "Conoce los resultados del examen de admisión",
           html: `
             <div style="text-align: center;">
               <img 
@@ -103,7 +103,7 @@ function HomePage() {
           background: "#fff",
           showConfirmButton: true,
           showCancelButton: true,
-          confirmButtonText: "Ver Donde Aplicar Examen",
+          confirmButtonText: "Ver Resultados",
           cancelButtonText: "Mas Tarde",
           confirmButtonColor: "#3085d6",
           cancelButtonColor: "#aaa",
@@ -112,7 +112,7 @@ function HomePage() {
           timerProgressBar: false,
           focusConfirm: false,
           preConfirm: () => {
-            window.location.href = "/ExamenIngreso";
+            window.location.href = "/Resultados";
           },
         });
       }
@@ -127,18 +127,21 @@ function HomePage() {
 
   return (
     <>
-      <div className="imagen-contenedor" style={{backgroundColor: "rgb(10,81,76)"}}>
+      <div
+        className="imagen-contenedor"
+        style={{ backgroundColor: "rgb(10,81,76)" }}
+      >
         {banners.map((banner, index) => (
           <div
             key={index}
-            className={`slide-container ${index === indiceActual ? 'active' : ''}`}
+            className={`slide-container ${index === indiceActual ? "active" : ""}`}
           >
             <img
               src={banner.src}
               alt={`Banner ${index + 1} - Universidad Tecnológica de Nayarit`}
               loading="lazy"
               className="slide-imagen"
-              style={{objectFit: "cover"}}
+              style={{ objectFit: "cover" }}
             />
             <div className="slide-overlay">
               <div className="slide-contenido">
@@ -173,7 +176,7 @@ function HomePage() {
           {banners.map((_, index) => (
             <button
               key={index}
-              className={`carrusel-indicator ${index === indiceActual ? 'active' : ''}`}
+              className={`carrusel-indicator ${index === indiceActual ? "active" : ""}`}
               onClick={() => irAlSlide(index)}
               aria-label={`Ir al slide ${index + 1}`}
             />
@@ -250,7 +253,7 @@ function HomePage() {
         <Accesos />
       </div>
 
-     {/* <div>
+      {/* <div>
         <TablonAnuncios />
       </div> */}
 
