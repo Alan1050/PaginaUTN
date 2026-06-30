@@ -84,12 +84,12 @@ function App() {
         size={isMobile ? "small" : "medium"} // Se adapta al tamaño de pantalla
         excludePaths={excludedRoutes}
       />
-      {/* Agente flotante de consulta 
+      {/* Agente flotante de consulta  
       <Agent
         position="bottom-right"
         size={isMobile ? "small" : "medium"} // Se adapta al tamaño de pantalla
         excludePaths={excludedRoutes}
-      /> */}
+      />*/}
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/Carrera/:nombre" element={<CarreraPage />} />

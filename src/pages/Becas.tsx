@@ -7,10 +7,10 @@ import iconoBecaFamilia from "../assets/logos/iconoBecaFamilia.png";
 import iconoBecaCompañeros from "../assets/logos/iconoBecaCompañeros.png";
 import iconoBecaDeportiva from "../assets/logos/iconoBecaDeportiva.png";
 import iconoBecaAcademica from "../assets/logos/iconoBecaAcademica.png";
-import Academica from "../assets/extras/ASIGNACIÓN BECA ACADEMICA MAYO-AGOSTO 2026.pdf";
-import Compañeros from "../assets/extras/ASIGNACIÓN BECA COMPAÑEROS MAYO-AGOSTO 2026.pdf";
-import Deportivas from "../assets/extras/ASIGNACIÓN BECA DEPORTIVA-CULTURAL 2026.pdf";
-import Familia from "../assets/extras/ASIGNACIÓN BECA FAMILIA MAYO-AGOSTO 2026.pdf"
+import Academica from "../assets/extras/Convocatoria Beca Académica.pdf";
+import Compañeros from "../assets/extras/Convocatoria Beca Compañeros.pdf";
+import Deportivas from "../assets/extras/Convocatoria Beca Derpotiva-Cultural.pdf";
+import Familia from "../assets/extras/Convocatoria Beca Familia.pdf"
 
 interface Descuento {
   rango: string;
