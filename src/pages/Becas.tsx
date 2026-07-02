@@ -303,7 +303,7 @@ function Becas() {
                               </div>
                             ))}
                           </div>
-                          <div className="divEnlace1"><a href={Academica} target="_blank" className="EnlaceResultado" rel="noopener noreferrer">Ver Resultados</a></div>
+                          <div className="divEnlace1"><a href={Academica} target="_blank" className="EnlaceResultado" rel="noopener noreferrer">Ver Convocatoria</a></div>
                         </div>
                       )}
 
@@ -325,7 +325,7 @@ function Becas() {
                             <span className="destacado-icon">🎯</span>
                             <p>Exención del <strong>100%</strong> en el pago de colegiatura cuatrimestral</p>
                           </div>
-                          <div style={{marginTop: 20}}><a href={Familia} target="_blank" className="EnlaceResultado" style={{backgroundColor: "white", width: "20%", fontSize: 20, textAlign: "center", color: "black", fontWeight: "500", borderRadius: 20, padding: 20, display: "inline-block", textDecoration: "none"}} rel="noopener noreferrer">Ver Resultados</a></div>
+                          <div style={{marginTop: 20}}><a href={Familia} target="_blank" className="EnlaceResultado" style={{backgroundColor: "white", width: "20%", fontSize: 20, textAlign: "center", color: "black", fontWeight: "500", borderRadius: 20, padding: 20, display: "inline-block", textDecoration: "none"}} rel="noopener noreferrer">Ver Convocatoria</a></div>
                         </div>
                       )}
 
@@ -351,7 +351,7 @@ function Becas() {
                               </div>
                             </div>
                           </div>
-                          <div style={{marginTop: 20}}><a href={Compañeros} target="_blank" className="EnlaceResultado" style={{backgroundColor: "white", width: "20%", fontSize: 20, textAlign: "center", color: "black", fontWeight: "500", borderRadius: 20, padding: 20, display: "inline-block", textDecoration: "none"}} rel="noopener noreferrer">Ver Resultados</a></div>
+                          <div style={{marginTop: 20}}><a href={Compañeros} target="_blank" className="EnlaceResultado" style={{backgroundColor: "white", width: "20%", fontSize: 20, textAlign: "center", color: "black", fontWeight: "500", borderRadius: 20, padding: 20, display: "inline-block", textDecoration: "none"}} rel="noopener noreferrer">Ver Convocatoria</a></div>
                         </div>
                       )}
 
@@ -374,7 +374,7 @@ function Becas() {
                               </div>
                             ))}
                           </div>
-                          <div style={{marginTop: 20}}><a href={Deportivas} target="_blank" className="EnlaceResultado" style={{backgroundColor: "white", width: "20%", fontSize: 20, textAlign: "center", color: "black", fontWeight: "500", borderRadius: 20, padding: 20, display: "inline-block", textDecoration: "none"}} rel="noopener noreferrer">Ver Resultados</a></div>
+                          <div style={{marginTop: 20}}><a href={Deportivas} target="_blank" className="EnlaceResultado" style={{backgroundColor: "white", width: "20%", fontSize: 20, textAlign: "center", color: "black", fontWeight: "500", borderRadius: 20, padding: 20, display: "inline-block", textDecoration: "none"}} rel="noopener noreferrer">Ver Convocatoria</a></div>
                           <p className="merito-extra">* Aplica también para méritos culturales</p>
                         </div>
                       )}
@@ -438,7 +438,7 @@ function Becas() {
                           </div>
                         ))}
                       </div>
-                      <div className="divEnlace1"><a href={Academica} target="_blank" className="EnlaceResultado" rel="noopener noreferrer">Ver Resultados</a></div>
+                      <div className="divEnlace1"><a href={Academica} target="_blank" className="EnlaceResultado" rel="noopener noreferrer">Ver Convocatoria</a></div>
                     </div>
                   )}
 
@@ -460,7 +460,7 @@ function Becas() {
                         <span className="destacado-icon">🎯</span>
                         <p>Exención del <strong>100%</strong> en el pago de colegiatura cuatrimestral</p>
                       </div>
-                      <div style={{marginTop: 20}}><a href={Familia} target="_blank" className="EnlaceResultado" style={{backgroundColor: "white", width: "20%", fontSize: 20, textAlign: "center", color: "black", fontWeight: "500", borderRadius: 20, padding: 20, display: "inline-block", textDecoration: "none"}} rel="noopener noreferrer">Ver Resultados</a></div>
+                      <div style={{marginTop: 20}}><a href={Familia} target="_blank" className="EnlaceResultado" style={{backgroundColor: "white", width: "20%", fontSize: 20, textAlign: "center", color: "black", fontWeight: "500", borderRadius: 20, padding: 20, display: "inline-block", textDecoration: "none"}} rel="noopener noreferrer">Ver Convocatoria</a></div>
                     </div>
                   )}
 
@@ -486,7 +486,7 @@ function Becas() {
                           </div>
                         </div>
                       </div>
-                      <div style={{marginTop: 20}}><a href={Compañeros} target="_blank" className="EnlaceResultado" style={{backgroundColor: "white", width: "20%", fontSize: 20, textAlign: "center", color: "black", fontWeight: "500", borderRadius: 20, padding: 20, display: "inline-block", textDecoration: "none"}} rel="noopener noreferrer">Ver Resultados</a></div>
+                      <div style={{marginTop: 20}}><a href={Compañeros} target="_blank" className="EnlaceResultado" style={{backgroundColor: "white", width: "20%", fontSize: 20, textAlign: "center", color: "black", fontWeight: "500", borderRadius: 20, padding: 20, display: "inline-block", textDecoration: "none"}} rel="noopener noreferrer">Ver Convocatoria</a></div>
                     </div>
                   )}
 
@@ -509,7 +509,7 @@ function Becas() {
                           </div>
                         ))}
                       </div>
-                      <div style={{marginTop: 20}}><a href={Deportivas} target="_blank" className="EnlaceResultado" style={{backgroundColor: "white", width: "20%", fontSize: 20, textAlign: "center", color: "black", fontWeight: "500", borderRadius: 20, padding: 20, display: "inline-block", textDecoration: "none"}} rel="noopener noreferrer">Ver Resultados</a></div>
+                      <div style={{marginTop: 20}}><a href={Deportivas} target="_blank" className="EnlaceResultado" style={{backgroundColor: "white", width: "20%", fontSize: 20, textAlign: "center", color: "black", fontWeight: "500", borderRadius: 20, padding: 20, display: "inline-block", textDecoration: "none"}} rel="noopener noreferrer">Ver Convocatoria</a></div>
                       <p className="merito-extra">* Aplica también para méritos culturales</p>
                     </div>
                   )}

@@ -676,6 +676,14 @@ function Nav() {
                         </li>
                         <li>
                           <a
+                            href="https://www.utnay.edu.mx/planeacion/mir.html"
+                            onClick={(e) => handleLinkClick(e, "")}
+                          >
+                            Reporte Avance Trimestral MIR
+                          </a>
+                        </li>
+                        <li>
+                          <a
                             href="https://www.utnay.edu.mx/informes/informes.html"
                             onClick={(e) => handleLinkClick(e, "")}
                           >
@@ -1363,6 +1371,14 @@ function Nav() {
                           }}
                         >
                           SidOut
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="https://www.utnay.edu.mx/planeacion/mir.html"
+                          onClick={(e) => handleLinkClick(e, "")}
+                        >
+                          Reporte Avance Trimestral MIR
                         </a>
                       </li>
                       <li>
