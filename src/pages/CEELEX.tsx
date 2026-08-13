@@ -1,69 +1,115 @@
-import React from 'react';
+import React from "react";
 // import { Link } from 'react-router-dom';
-import './CEELEX.css';
-import bannerCEELEX from '../assets/banner/bannerCELEEX.jpg';
+import "./CEELEX.css";
+import bannerCEELEX from "../assets/banner/bannerCELEEX.jpg";
 
 function CEELEX() {
   const idiomas = [
-    { 
-      nombre: 'Inglés', 
-      emoji: '🇬🇧', 
-      nivel: 'Básico a Avanzado', 
-      certificaciones: ['TOEFL ITP', 'Cambridge', 'MCER'],
-      color: '#1E88E5'
+    {
+      nombre: "Inglés",
+      emoji: "🇬🇧",
+      nivel: "Básico a Avanzado",
+      certificaciones: ["TOEFL ITP", "Cambridge", "MCER"],
+      color: "#1E88E5",
     },
-    { 
-      nombre: 'Francés', 
-      emoji: '🇫🇷', 
-      nivel: 'Básico a Avanzado', 
-      certificaciones: ['DELF', 'DALF', 'MCER'],
-      color: '#2C3E50'
-    }
+    {
+      nombre: "Francés",
+      emoji: "🇫🇷",
+      nivel: "Básico a Avanzado",
+      certificaciones: ["DELF", "DALF", "MCER"],
+      color: "#2C3E50",
+    },
   ];
 
   const modalidades = [
-    { nombre: 'Presencial', emoji: '🏛️', descripcion: 'Clases en nuestras instalaciones', icono: '🎯' },
-    { nombre: 'Virtual', emoji: '💻', descripcion: 'En línea desde cualquier lugar', icono: '🌐' },
-    { nombre: 'Sabatino', emoji: '📅', descripcion: 'Fines de semana para tu comodidad', icono: '⚡' }
+    {
+      nombre: "Presencial",
+      emoji: "🏛️",
+      descripcion: "Clases en nuestras instalaciones",
+      icono: "🎯",
+    },
+    {
+      nombre: "Virtual",
+      emoji: "💻",
+      descripcion: "En línea desde cualquier lugar",
+      icono: "🌐",
+    },
+    {
+      nombre: "Sabatino",
+      emoji: "📅",
+      descripcion: "Fines de semana para tu comodidad",
+      icono: "⚡",
+    },
   ];
 
   const certificaciones = [
-    { nombre: 'TOEFL ITP', emoji: '📜', descripcion: 'Certificación internacional de inglés', nivel: 'Internacional' },
-    { nombre: 'Certificaciones alineadas al MCER', emoji: '🎓', descripcion: 'Marco Común Europeo de Referencia', nivel: 'Europeo' },
-    { nombre: 'Evaluaciones institucionales', emoji: '✅', descripcion: 'Con respaldo universitario', nivel: 'Nacional' }
+    {
+      nombre: "TOEFL ITP",
+      emoji: "📜",
+      descripcion: "Certificación internacional de inglés",
+      nivel: "Internacional",
+    },
+    {
+      nombre: "Certificaciones alineadas al MCER",
+      emoji: "🎓",
+      descripcion: "Marco Común Europeo de Referencia",
+      nivel: "Europeo",
+    },
+    {
+      nombre: "Evaluaciones institucionales",
+      emoji: "✅",
+      descripcion: "Con respaldo universitario",
+      nivel: "Nacional",
+    },
   ];
 
   const dirigidoA = [
-    'Estudiantes universitarios',
-    'Egresados',
-    'Personal administrativo y docente',
-    'Público en general',
-    'Empresas e instituciones'
+    "Estudiantes universitarios",
+    "Egresados",
+    "Personal administrativo y docente",
+    "Público en general",
+    "Empresas e instituciones",
   ];
 
   const ventajas = [
-    { titulo: 'Respaldo Universitario', emoji: '🏛️', descripcion: 'Aval de la Universidad Tecnológica de Nayarit' },
-    { titulo: 'Docentes Certificados', emoji: '👨‍🏫', descripcion: 'Profesores capacitados y con experiencia' },
-    { titulo: 'Estándares Internacionales', emoji: '🌍', descripcion: 'Programas alineados al MCER' },
-    { titulo: 'Costos Accesibles', emoji: '💰', descripcion: 'Precios competitivos para todos' },
-    { titulo: 'Certificaciones Oficiales', emoji: '🏅', descripcion: 'Reconocimiento nacional e internacional' }
+    {
+      titulo: "Respaldo Universitario",
+      emoji: "🏛️",
+      descripcion: "Aval de la Universidad Tecnológica de Nayarit",
+    },
+    {
+      titulo: "Docentes Certificados",
+      emoji: "👨‍🏫",
+      descripcion: "Profesores capacitados y con experiencia",
+    },
+    {
+      titulo: "Estándares Internacionales",
+      emoji: "🌍",
+      descripcion: "Programas alineados al MCER",
+    },
+    {
+      titulo: "Costos Accesibles",
+      emoji: "💰",
+      descripcion: "Precios competitivos para todos",
+    },
+    {
+      titulo: "Certificaciones Oficiales",
+      emoji: "🏅",
+      descripcion: "Reconocimiento nacional e internacional",
+    },
   ];
 
   const idealesPara = [
-    'Titulación',
-    'Movilidad académica',
-    'Requisitos laborales',
-    'Estudios de posgrado'
+    "Titulación",
+    "Movilidad académica",
+    "Requisitos laborales",
+    "Estudios de posgrado",
   ];
 
   return (
     <>
       <div className="banner-container-ceelex">
-        <img 
-          src={bannerCEELEX} 
-          alt="Banner CEELEX" 
-          className="banner-ceelex" 
-        />
+        <img src={bannerCEELEX} alt="Banner CEELEX" className="banner-ceelex" />
       </div>
 
       <section className="content-ceelex">
@@ -75,9 +121,13 @@ function CEELEX() {
             </div>
             <div className="intro-texto">
               <p className="intro-parrafo">
-                El <strong>CEELEX</strong> de la Universidad Tecnológica de Nayarit es el espacio institucional 
-                dedicado a la <span className="texto-destacado">enseñanza, evaluación y certificación</span> de lenguas extranjeras, 
-                dirigido a estudiantes, egresados, personal universitario y público en general.
+                El <strong>CEELEX</strong> de la Universidad Tecnológica de
+                Nayarit es el espacio institucional dedicado a la{" "}
+                <span className="texto-destacado">
+                  enseñanza, evaluación y certificación
+                </span>{" "}
+                de lenguas extranjeras, dirigido a estudiantes, egresados,
+                personal universitario y público en general.
               </p>
               <div className="intro-frase">
                 <span className="frase-comillas">"</span>
@@ -96,7 +146,8 @@ function CEELEX() {
               Idiomas que ofrecemos
             </h2>
             <p className="section-subtitle-ceelex">
-              Nuestros programas se estructuran conforme al Marco Común Europeo de Referencia para las Lenguas (MCER)
+              Nuestros programas se estructuran conforme al Marco Común Europeo
+              de Referencia para las Lenguas (MCER)
             </p>
             <div className="title-decoration-ceelex">
               <span></span>
@@ -107,10 +158,12 @@ function CEELEX() {
 
           <div className="idiomas-grid">
             {idiomas.map((idioma, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="idioma-card"
-                style={{ '--idioma-color': idioma.color } as React.CSSProperties}
+                style={
+                  { "--idioma-color": idioma.color } as React.CSSProperties
+                }
               >
                 <div className="idioma-header">
                   <span className="idioma-emoji">{idioma.emoji}</span>
@@ -124,7 +177,9 @@ function CEELEX() {
                   <span className="cert-etiqueta">Certificaciones:</span>
                   <div className="cert-badges">
                     {idioma.certificaciones.map((cert, idx) => (
-                      <span key={idx} className="cert-badge">{cert}</span>
+                      <span key={idx} className="cert-badge">
+                        {cert}
+                      </span>
                     ))}
                   </div>
                 </div>
@@ -141,7 +196,8 @@ function CEELEX() {
               Modalidades
             </h2>
             <p className="section-subtitle-ceelex">
-              Diseñados para adaptarse a estudiantes, profesionistas y personas que trabajan
+              Diseñados para adaptarse a estudiantes, profesionistas y personas
+              que trabajan
             </p>
             <div className="title-decoration-ceelex">
               <span></span>
@@ -154,8 +210,12 @@ function CEELEX() {
             {modalidades.map((modalidad, index) => (
               <div key={index} className="modalidad-card">
                 <div className="modalidad-icono">
-                  <span className="modalidad-emoji-grande">{modalidad.emoji}</span>
-                  <span className="modalidad-icono-pequeno">{modalidad.icono}</span>
+                  <span className="modalidad-emoji-grande">
+                    {modalidad.emoji}
+                  </span>
+                  <span className="modalidad-icono-pequeno">
+                    {modalidad.icono}
+                  </span>
                 </div>
                 <h3 className="modalidad-nombre">{modalidad.nombre}</h3>
                 <p className="modalidad-descripcion">{modalidad.descripcion}</p>
@@ -189,7 +249,9 @@ function CEELEX() {
                 </div>
                 <div className="certificacion-contenido">
                   <h3 className="certificacion-nombre">{cert.nombre}</h3>
-                  <p className="certificacion-descripcion">{cert.descripcion}</p>
+                  <p className="certificacion-descripcion">
+                    {cert.descripcion}
+                  </p>
                   <span className="certificacion-nivel">{cert.nivel}</span>
                 </div>
               </div>
@@ -277,7 +339,8 @@ function CEELEX() {
               </div>
               <h3 className="ubicacion-titulo">Ubicación</h3>
               <p className="ubicacion-texto">
-                Universidad Tecnológica de Nayarit<br />
+                Universidad Tecnológica de Nayarit
+                <br />
                 Carretera Federal 200 Km 9, Xalisco, Nayarit
               </p>
             </div>
@@ -287,15 +350,21 @@ function CEELEX() {
                 <span className="contacto-emoji">📞</span>
               </div>
               <h3 className="contacto-titulo">Contacto</h3>
-              
+
               <div className="contacto-item">
                 <span className="contacto-item-icono">📧</span>
                 <div className="contacto-item-contenido">
                   <span className="contacto-item-etiqueta">Correo:</span>
-                  <a href="mailto:atencion.ceelex@utnay.edu.mx" className="contacto-email">
+                  <a
+                    href="mailto:atencion.ceelex@utnay.edu.mx"
+                    className="contacto-email"
+                  >
                     atencion.ceelex@utnay.edu.mx
                   </a>
-                  <a href="mailto:ceelex@utnay.edu.mx" className="contacto-email">
+                  <a
+                    href="mailto:ceelex@utnay.edu.mx"
+                    className="contacto-email"
+                  >
                     ceelex@utnay.edu.mx
                   </a>
                 </div>
@@ -305,7 +374,10 @@ function CEELEX() {
                 <span className="contacto-item-icono">📱</span>
                 <div className="contacto-item-contenido">
                   <span className="contacto-item-etiqueta">WhatsApp:</span>
-                  <a href="https://wa.me/523111396384" className="contacto-telefono">
+                  <a
+                    href="https://wa.me/523111396384"
+                    className="contacto-telefono"
+                  >
                     (311) 3961384
                   </a>
                 </div>
@@ -315,13 +387,13 @@ function CEELEX() {
                 <span className="contacto-item-icono">📘</span>
                 <div className="contacto-item-contenido">
                   <span className="contacto-item-etiqueta">Facebook:</span>
-                  <a 
-                    href="https://www.facebook.com/ceelex.ut" 
-                    target="_blank" 
+                  <a
+                    href="https://www.facebook.com/ceelex.ut"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="contacto-facebook"
                   >
-                    Ceelex UT Nayarit 
+                    Ceelex UT Nayarit
                   </a>
                 </div>
               </div>
@@ -334,7 +406,8 @@ function CEELEX() {
           <div className="cta-content-ceelex">
             <h3 className="cta-titulo">¡Comienza hoy mismo!</h3>
             <p className="cta-descripcion">
-              Aprende un nuevo idioma con los mejores, certifica tu conocimiento y abre puertas al mundo
+              Aprende un nuevo idioma con los mejores, certifica tu conocimiento
+              y abre puertas al mundo
             </p>
             {/*
             <Link to="/contacto" className="cta-button-ceelex">

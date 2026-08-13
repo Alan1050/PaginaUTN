@@ -1,40 +1,89 @@
-import React from 'react';
+import React from "react";
 // import { Link } from 'react-router-dom';
-import './Incubadora.css';
-import bannerIncubadora from '../assets/banner/bannerIncubadora.jpg';
+import "./Incubadora.css";
+import bannerIncubadora from "../assets/banner/bannerIncubadora.jpg";
 
 function Incubadora() {
   const sectores = [
-    { nombre: 'Agricultura y ganadería', emoji: '🌾', color: '#4CAF50', descripcion: 'Desarrollo agropecuario y ganadería sostenible' },
-    { nombre: 'Industria', emoji: '🏭', color: '#2196F3', descripcion: 'Transformación y procesos industriales' },
-    { nombre: 'Comercio', emoji: '🏪', color: '#FF9800', descripcion: 'Negocios locales y cadenas comerciales' },
-    { nombre: 'Servicios', emoji: '💼', color: '#9C27B0', descripcion: 'Consultoría, turismo y servicios profesionales' },
-    { nombre: 'Emprendimiento social', emoji: '🤝', color: '#E91E63', descripcion: 'Proyectos con impacto social y comunitario' }
+    {
+      nombre: "Agricultura y ganadería",
+      emoji: "🌾",
+      color: "#4CAF50",
+      descripcion: "Desarrollo agropecuario y ganadería sostenible",
+    },
+    {
+      nombre: "Industria",
+      emoji: "🏭",
+      color: "#2196F3",
+      descripcion: "Transformación y procesos industriales",
+    },
+    {
+      nombre: "Comercio",
+      emoji: "🏪",
+      color: "#FF9800",
+      descripcion: "Negocios locales y cadenas comerciales",
+    },
+    {
+      nombre: "Servicios",
+      emoji: "💼",
+      color: "#9C27B0",
+      descripcion: "Consultoría, turismo y servicios profesionales",
+    },
+    {
+      nombre: "Emprendimiento social",
+      emoji: "🤝",
+      color: "#E91E63",
+      descripcion: "Proyectos con impacto social y comunitario",
+    },
   ];
 
   const servicios = [
-    { nombre: 'Planes de negocio', emoji: '📋', descripcion: 'Estructuración y desarrollo de tu modelo de negocio' },
-    { nombre: 'Diagnósticos', emoji: '🔍', descripcion: 'Evaluación integral de tu empresa' },
-    { nombre: 'Estudios de mercado', emoji: '📊', descripcion: 'Análisis de mercado y competencia' },
-    { nombre: 'Análisis financiero', emoji: '💰', descripcion: 'Proyecciones y viabilidad financiera' },
-    { nombre: 'Capacitación empresarial', emoji: '🎓', descripcion: 'Formación para emprendedores' },
-    { nombre: 'Asistencia técnica', emoji: '🛠️', descripcion: 'Apoyo a empresas del sector social' }
+    {
+      nombre: "Planes de negocio",
+      emoji: "📋",
+      descripcion: "Estructuración y desarrollo de tu modelo de negocio",
+    },
+    {
+      nombre: "Diagnósticos",
+      emoji: "🔍",
+      descripcion: "Evaluación integral de tu empresa",
+    },
+    {
+      nombre: "Estudios de mercado",
+      emoji: "📊",
+      descripcion: "Análisis de mercado y competencia",
+    },
+    {
+      nombre: "Análisis financiero",
+      emoji: "💰",
+      descripcion: "Proyecciones y viabilidad financiera",
+    },
+    {
+      nombre: "Capacitación empresarial",
+      emoji: "🎓",
+      descripcion: "Formación para emprendedores",
+    },
+    {
+      nombre: "Asistencia técnica",
+      emoji: "🛠️",
+      descripcion: "Apoyo a empresas del sector social",
+    },
   ];
 
   const objetivos = [
-    'Motivar y reclutar a emprendedores para impulsar la creación de nuevas empresas',
-    'Establecer programas de asesoría técnico-administrativa para el crecimiento empresarial',
-    'Integrar una red de enlace con emprendedores y empresarios',
-    'Apoyo para programas empresariales y participación en ferias'
+    "Motivar y reclutar a emprendedores para impulsar la creación de nuevas empresas",
+    "Establecer programas de asesoría técnico-administrativa para el crecimiento empresarial",
+    "Integrar una red de enlace con emprendedores y empresarios",
+    "Apoyo para programas empresariales y participación en ferias",
   ];
 
   return (
     <>
       <div className="banner-container-incubadora">
-        <img 
-          src={bannerIncubadora} 
-          alt="Banner Incubadora de Negocios" 
-          className="banner-incubadora" 
+        <img
+          src={bannerIncubadora}
+          alt="Banner Incubadora de Negocios"
+          className="banner-incubadora"
         />
       </div>
 
@@ -58,17 +107,30 @@ function Incubadora() {
               <div className="historia-grid">
                 <div className="historia-texto">
                   <p className="historia-parrafo">
-                    <span className="texto-destacado">La Incubadora de Negocios</span> es un área que pertenece a la 
-                    <strong> Universidad Tecnológica de Nayarit</strong>, creada como plataforma de impulso a la creación de empresas.
+                    <span className="texto-destacado">
+                      La Incubadora de Negocios
+                    </span>{" "}
+                    es un área que pertenece a la
+                    <strong> Universidad Tecnológica de Nayarit</strong>, creada
+                    como plataforma de impulso a la creación de empresas.
                   </p>
                   <p className="historia-parrafo">
-                    En el año <span className="año-destacado">2005</span> fue reconocida como Incubadora de Tecnología Intermedia, 
-                    desde entonces ha atendido a emprendedores a través de un proceso de incubación en los diferentes municipios del estado.
+                    En el año <span className="año-destacado">2005</span> fue
+                    reconocida como Incubadora de Tecnología Intermedia, desde
+                    entonces ha atendido a emprendedores a través de un proceso
+                    de incubación en los diferentes municipios del estado.
                   </p>
                   <p className="historia-parrafo">
-                    Debido al trabajo realizado y al impacto generado en el Estado de Nayarit, el gobierno municipal de Xalisco y estatal, 
-                    <span className="texto-destacado"> reconoce el desempeño</span> de la incubadora y dirige proyectos específicos para el 
-                    desarrollo de planes de negocio con nuestra metodología de incubación.
+                    Debido al trabajo realizado y al impacto generado en el
+                    Estado de Nayarit, el gobierno municipal de Xalisco y
+                    estatal,
+                    <span className="texto-destacado">
+                      {" "}
+                      reconoce el desempeño
+                    </span>{" "}
+                    de la incubadora y dirige proyectos específicos para el
+                    desarrollo de planes de negocio con nuestra metodología de
+                    incubación.
                   </p>
                 </div>
                 <div className="historia-stats">
@@ -98,7 +160,8 @@ function Incubadora() {
               Sectores Económicos
             </h2>
             <p className="section-subtitle">
-              A través de un modelo reconocido, se asesoran proyectos y empresas relacionados con:
+              A través de un modelo reconocido, se asesoran proyectos y empresas
+              relacionados con:
             </p>
             <div className="title-decoration-incubadora">
               <span></span>
@@ -109,10 +172,12 @@ function Incubadora() {
 
           <div className="sectores-grid">
             {sectores.map((sector, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="sector-card"
-                style={{ '--sector-color': sector.color } as React.CSSProperties}
+                style={
+                  { "--sector-color": sector.color } as React.CSSProperties
+                }
               >
                 <div className="sector-icono">
                   <span className="sector-emoji">{sector.emoji}</span>
@@ -134,9 +199,10 @@ function Incubadora() {
               </div>
               <h3 className="mision-titulo">Misión</h3>
               <p className="mision-texto">
-                Ofrecer a los emprendedores de la sociedad en general, servicios para la formulación 
-                y evaluación de ideas de negocios, propiciando un ambiente óptimo para iniciar, 
-                desarrollar y fortalecer sus empresas.
+                Ofrecer a los emprendedores de la sociedad en general, servicios
+                para la formulación y evaluación de ideas de negocios,
+                propiciando un ambiente óptimo para iniciar, desarrollar y
+                fortalecer sus empresas.
               </p>
               <div className="mision-decoration"></div>
             </div>
@@ -147,9 +213,9 @@ function Incubadora() {
               </div>
               <h3 className="vision-titulo">Visión</h3>
               <p className="vision-texto">
-                Consolidar el proceso de incubación y la cultura de emprendimiento en alumnos y 
-                personal de la universidad, así como en clientes externos, para fomentar la creación 
-                de empresas.
+                Consolidar el proceso de incubación y la cultura de
+                emprendimiento en alumnos y personal de la universidad, así como
+                en clientes externos, para fomentar la creación de empresas.
               </p>
               <div className="vision-decoration"></div>
             </div>
@@ -214,9 +280,9 @@ function Incubadora() {
           <div className="cta-content-incubadora">
             <h3 className="cta-titulo">¿Tienes una idea de negocio?</h3>
             <p className="cta-descripcion">
-          Conviértela en realidad con el apoyo de nuestra incubadora
+              Conviértela en realidad con el apoyo de nuestra incubadora
             </p>
-                {/*
+            {/*
                             <Link to="/contacto" className="cta-button-incubadora">
               <span>Solicita información</span>
               <svg className="cta-arrow" viewBox="0 0 24 24">

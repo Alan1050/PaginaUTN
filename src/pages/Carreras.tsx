@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 import "./Carrera.css";
 
-import trabajandoJaguar from '../assets/banner/Trabajando.jpg'
+import trabajandoJaguar from "../assets/banner/Trabajando.jpg";
 
 // Logos de las Carreras:
 
@@ -39,81 +39,78 @@ import PlanLINM_PDF from "../assets/planesEstudio/pdf/LINM.pdf";
 import PlanLSP_PDF from "../assets/planesEstudio/pdf/LSP.pdf";
 import PlanLGT_PDF from "../assets/planesEstudio/pdf/LGT.pdf";
 import PlanIA_PDF from "../assets/planesEstudio/pdf/IA.pdf";
-import PlanIMT from "../assets/planesEstudio/pdf/IMT.pdf"
+import PlanIMT from "../assets/planesEstudio/pdf/IMT.pdf";
 
 // Baners:
 
 // IAL (Ingenieria en Alimentos)
 import bannerIAL from "../assets/banner/bannerIAL.jpg";
-import banner2IAL from '../assets/banner/IAL1.jpg';
-import banner3IAL from '../assets/banner/IAL2.jpg';
+import banner2IAL from "../assets/banner/IAL1.jpg";
+import banner3IAL from "../assets/banner/IAL2.jpg";
 
 // IC (Ingenieria Civil)
 import bannerIC from "../assets/banner/bannerIC.jpg";
-import banner2IC from '../assets/banner/IC1.jpg';
-import banner3IC from '../assets/banner/IC2.jpg';
+import banner2IC from "../assets/banner/IC1.jpg";
+import banner3IC from "../assets/banner/IC2.jpg";
 
 // ILI (Licenciatura en Logistica Internacional)
 import bannerILI from "../assets/banner/bannerILI.jpg";
-import banner2ILI from '../assets/banner/ILI1.png';
-import banner3ILI from '../assets/banner/ILI2.png';
+import banner2ILI from "../assets/banner/ILI1.png";
+import banner3ILI from "../assets/banner/ILI2.png";
 
 // IMI (Ingenieria en Mantenimiento Industrial)
 import bannerIMI from "../assets/banner/bannerIMI.jpg";
-import banner2IMI from '../assets/banner/IMI1.jpg';
-import banner3IMI from '../assets/banner/IMI2.jpg';
+import banner2IMI from "../assets/banner/IMI1.jpg";
+import banner3IMI from "../assets/banner/IMI2.jpg";
 
 // ITIID (Ingenieria en Tecnologias de la Informacion en Innovación Digital)
 import bannerITIID from "../assets/banner/bannerITIID.jpg";
-import banner2ITIID from '../assets/banner/ITIID1.jpg';
-import banner3ITIID from '../assets/banner/ITIID2.jpg';
+import banner2ITIID from "../assets/banner/ITIID1.jpg";
+import banner3ITIID from "../assets/banner/ITIID2.jpg";
 
 // LAD (Licenciatura en Administracion)
 import bannerLAD from "../assets/banner/bannerLAD.jpg";
-import banner2LAD from '../assets/banner/LAD1.jpg';
-import banner3LAD from '../assets/banner/LAD2.jpg';
+import banner2LAD from "../assets/banner/LAD1.jpg";
+import banner3LAD from "../assets/banner/LAD2.jpg";
 
 // LGDT (Licenciatura en Gestión y Desarrollo Turistico)
 import bannerLGDT from "../assets/banner/bannerLGDT.jpg";
-import banner2LGDT from '../assets/banner/LGDT1.jpg';
-import banner3LGDT from '../assets/banner/LGDT2.jpg';
-import banner4LGDT from '../assets/banner/LGDT3.jpg';
+import banner2LGDT from "../assets/banner/LGDT1.jpg";
+import banner3LGDT from "../assets/banner/LGDT2.jpg";
+import banner4LGDT from "../assets/banner/LGDT3.jpg";
 
 // LINM (Licenciatura en Mercadotecnia)
 import bannerLINM from "../assets/banner/bannerLINM.jpg";
-import banner2LINM from '../assets/banner/LINM1.png';
-import banner3LINM from '../assets/banner/LINM2.jpg';
+import banner2LINM from "../assets/banner/LINM1.png";
+import banner3LINM from "../assets/banner/LINM2.jpg";
 
 // LSP (Licenciatura en Psicologia)
 import bannerLSP from "../assets/banner/bannerLSP.jpg";
-import banner2LSP from '../assets/banner/LSP1.jpg';
-import banner3LSP from '../assets/banner/LSP2.jpg';
+import banner2LSP from "../assets/banner/LSP1.jpg";
+import banner3LSP from "../assets/banner/LSP2.jpg";
 
 // LGT (Licenciatura en Gastronomia)
 import bannerLGT from "../assets/banner/bannerLGT.jpg";
-import banner2LGT from '../assets/banner/LGT1.jpg';
-import banner3LGT from '../assets/banner/LGT2.jpg';
+import banner2LGT from "../assets/banner/LGT1.jpg";
+import banner3LGT from "../assets/banner/LGT2.jpg";
 
 // IA (Inteligencia Artificial)
 import bannerIA from "../assets/banner/bannerIA.jpg";
-import banner2IA from '../assets/banner/IA1.jpg';
-import banner3IA from '../assets/banner/IA2.jpg';
+import banner2IA from "../assets/banner/IA1.jpg";
+import banner3IA from "../assets/banner/IA2.jpg";
 
 // IMS (Ingenieria en Semiconductores)
 import bannerIMS from "../assets/banner/bannerIMS.jpg";
-import banner2IMS from '../assets/banner/IMS1.jpg';
-import banner3IMS from '../assets/banner/IMS2.jpg';
+import banner2IMS from "../assets/banner/IMS1.jpg";
+import banner3IMS from "../assets/banner/IMS2.jpg";
 
 // IMT (Ingenieria en Mecatronica)
 import bannerIMT from "../assets/banner/bannerIMT.jpg";
-import banner2IMT from '../assets/banner/IMT1.jpg';
-import banner3IMT from '../assets/banner/IMT2.jpg';
+import banner2IMT from "../assets/banner/IMT1.jpg";
+import banner3IMT from "../assets/banner/IMT2.jpg";
 
 // LPS (Licenciatura en Psicologia)
 import bannerLPS from "../assets/banner/bannerLPS2.jpg";
-
-
-
 
 // Interfaz para los datos de carrera
 interface CarreraInfo {
@@ -152,10 +149,11 @@ function Carrera() {
   const { nombre } = useParams<{ nombre: string }>();
   const label = nombre; // Asigna a una variable con el nombre correcto
   const [isMobile, setIsMobile] = useState(false);
-  const [carreraSeleccionada, setCarreraSeleccionada] = useState<CarreraInfo | null>(null);
+  const [carreraSeleccionada, setCarreraSeleccionada] =
+    useState<CarreraInfo | null>(null);
   const [cuatrimestreActivo, setCuatrimestreActivo] = useState<number>(1);
   const [cuatrimestres, setCuatrimestres] = useState<Cuatrimestre[]>([]);
-    const [currentBannerIndex, setCurrentBannerIndex] = useState<number>(0);
+  const [currentBannerIndex, setCurrentBannerIndex] = useState<number>(0);
   const [banners, setBanners] = useState<string[]>([]);
 
   // Ref para el contenedor de cuatrimestres en móvil
@@ -1506,7 +1504,7 @@ function Carrera() {
           { id: "LAD104", nombre: "Fundamentos de Administración" },
           { id: "LAD105", nombre: "Fundamentos Matemáticos" },
           { id: "LAD106", nombre: "Inglés I" },
-          { id: "LAD107", nombre: "Marco Legal de las Organizaciones" }
+          { id: "LAD107", nombre: "Marco Legal de las Organizaciones" },
         ],
       },
       {
@@ -1515,11 +1513,14 @@ function Carrera() {
         materias: [
           { id: "LAD201", nombre: "Contabilidad II" },
           { id: "LAD202", nombre: "Derecho Corporativo" },
-          { id: "LAD203", nombre: "Habilidades Socioemocionales y Manejo de Conflictos" },
+          {
+            id: "LAD203",
+            nombre: "Habilidades Socioemocionales y Manejo de Conflictos",
+          },
           { id: "LAD204", nombre: "Inglés II" },
           { id: "LAD205", nombre: "Microeconomía" },
           { id: "LAD206", nombre: "Planeación Estratégica" },
-          { id: "LAD207", nombre: "Probabilidad y Estadística" }
+          { id: "LAD207", nombre: "Probabilidad y Estadística" },
         ],
       },
       {
@@ -1527,12 +1528,15 @@ function Carrera() {
         nombre: "Tercer",
         materias: [
           { id: "LAD301", nombre: "Análisis Financiero" },
-          { id: "LAD302", nombre: "Desarrollo del Pensamiento y Toma de Decisiones" },
+          {
+            id: "LAD302",
+            nombre: "Desarrollo del Pensamiento y Toma de Decisiones",
+          },
           { id: "LAD303", nombre: "Fundamentos de Calidad" },
           { id: "LAD304", nombre: "Fundamentos de Mercadotecnia" },
           { id: "LAD305", nombre: "Inglés III" },
           { id: "LAD306", nombre: "Macroeconomía" },
-          { id: "LAD307", nombre: "Proyecto Integrador I" }
+          { id: "LAD307", nombre: "Proyecto Integrador I" },
         ],
       },
       {
@@ -1545,7 +1549,7 @@ function Carrera() {
           { id: "LAD404", nombre: "Ética Profesional" },
           { id: "LAD405", nombre: "Fundamentos de Sistemas de Producción" },
           { id: "LAD406", nombre: "Inglés IV" },
-          { id: "LAD407", nombre: "Innovación y Emprendimiento" }
+          { id: "LAD407", nombre: "Innovación y Emprendimiento" },
         ],
       },
       {
@@ -1558,7 +1562,7 @@ function Carrera() {
           { id: "LAD504", nombre: "Inglés V" },
           { id: "LAD505", nombre: "Evaluación Financiera de Proyectos" },
           { id: "LAD506", nombre: "Liderazgo de Equipos de Alto Desempeño" },
-          { id: "LAD507", nombre: "Proyecto Integrador II" }
+          { id: "LAD507", nombre: "Proyecto Integrador II" },
         ],
       },
       {
@@ -1576,7 +1580,7 @@ function Carrera() {
           { id: "LAD704", nombre: "Inglés VI" },
           { id: "LAD705", nombre: "Mercadotecnia Estratégica" },
           { id: "LAD706", nombre: "Proyectos de Innovación Sostenibles" },
-          { id: "LAD707", nombre: "Tecnologías Aplicadas a los Negocios" }
+          { id: "LAD707", nombre: "Tecnologías Aplicadas a los Negocios" },
         ],
       },
       {
@@ -1585,11 +1589,17 @@ function Carrera() {
         materias: [
           { id: "LAD801", nombre: "Administración y Gestión de la Calidad" },
           { id: "LAD802", nombre: "Dirección Estratégica" },
-          { id: "LAD803", nombre: "Evaluación en el Desempeño del Capital Humano" },
+          {
+            id: "LAD803",
+            nombre: "Evaluación en el Desempeño del Capital Humano",
+          },
           { id: "LAD804", nombre: "Inglés VII" },
           { id: "LAD805", nombre: "Investigación de Operaciones" },
           { id: "LAD806", nombre: "Modelos de Negocios" },
-          { id: "LAD807", nombre: "Sistemas de Información Aplicados en la Organización" }
+          {
+            id: "LAD807",
+            nombre: "Sistemas de Información Aplicados en la Organización",
+          },
         ],
       },
       {
@@ -1598,18 +1608,21 @@ function Carrera() {
         materias: [
           { id: "LAD901", nombre: "Comercio y Logística Internacional" },
           { id: "LAD902", nombre: "Consultoría Empresarial" },
-          { id: "LAD903", nombre: "Desarrollo en Proyectos de Emprendimiento Social" },
+          {
+            id: "LAD903",
+            nombre: "Desarrollo en Proyectos de Emprendimiento Social",
+          },
           { id: "LAD904", nombre: "Finanzas Corporativas" },
           { id: "LAD905", nombre: "Gestión de la Propiedad Intelectual" },
           { id: "LAD906", nombre: "Inglés VIII" },
-          { id: "LAD907", nombre: "Proyecto Integrador III" }
+          { id: "LAD907", nombre: "Proyecto Integrador III" },
         ],
       },
       {
         id: 10,
         nombre: "Décimo",
         materias: [
-          { id: "LAD1001", nombre: "Estadía en el Sector Productivo" }
+          { id: "LAD1001", nombre: "Estadía en el Sector Productivo" },
         ],
       },
     ],
@@ -1624,7 +1637,7 @@ function Carrera() {
           { id: "ITIID104", nombre: "Fundamentos de Redes" },
           { id: "ITIID105", nombre: "Fundamentos de Programación" },
           { id: "ITIID106", nombre: "Fundamentos Matemáticos" },
-          { id: "ITIID107", nombre: "Física" }
+          { id: "ITIID107", nombre: "Física" },
         ],
       },
       {
@@ -1636,8 +1649,11 @@ function Carrera() {
           { id: "ITIID203", nombre: "Programación Estructurada" },
           { id: "ITIID204", nombre: "Conmutación y Enrutamiento de Redes" },
           { id: "ITIID205", nombre: "Sistemas Operativos" },
-          { id: "ITIID206", nombre: "Habilidades Socioemocionales y Manejo de Conflictos" },
-          { id: "ITIID207", nombre: "Inglés II" }
+          {
+            id: "ITIID206",
+            nombre: "Habilidades Socioemocionales y Manejo de Conflictos",
+          },
+          { id: "ITIID207", nombre: "Inglés II" },
         ],
       },
       {
@@ -1646,11 +1662,17 @@ function Carrera() {
         materias: [
           { id: "ITIID301", nombre: "Cálculo Integral" },
           { id: "ITIID302", nombre: "Inglés III" },
-          { id: "ITIID303", nombre: "Desarrollo del Pensamiento y Toma de Decisiones" },
+          {
+            id: "ITIID303",
+            nombre: "Desarrollo del Pensamiento y Toma de Decisiones",
+          },
           { id: "ITIID304", nombre: "Proyecto Integrador I" },
           { id: "ITIID305", nombre: "Bases de Datos" },
           { id: "ITIID306", nombre: "Programación Orientada a Objetos" },
-          { id: "ITIID307", nombre: "Tópicos de Calidad para el Diseño de Software" }
+          {
+            id: "ITIID307",
+            nombre: "Tópicos de Calidad para el Diseño de Software",
+          },
         ],
       },
       {
@@ -1663,7 +1685,7 @@ function Carrera() {
           { id: "ITIID404", nombre: "Desarrollo de Aplicaciones Móviles" },
           { id: "ITIID405", nombre: "Estructura de Datos" },
           { id: "ITIID406", nombre: "Ética Profesional" },
-          { id: "ITIID407", nombre: "Inglés IV" }
+          { id: "ITIID407", nombre: "Inglés IV" },
         ],
       },
       {
@@ -1676,14 +1698,17 @@ function Carrera() {
           { id: "ITIID504", nombre: "Aplicaciones Web Orientadas a Servicios" },
           { id: "ITIID505", nombre: "Bases de Datos Avanzadas" },
           { id: "ITIID506", nombre: "Ecuaciones Diferenciales" },
-          { id: "ITIID507", nombre: "Estándares y Métricas para el Desarrollo de Software" }
+          {
+            id: "ITIID507",
+            nombre: "Estándares y Métricas para el Desarrollo de Software",
+          },
         ],
       },
       {
         id: 6,
         nombre: "Sexto",
         materias: [
-          { id: "ITIID601", nombre: "Estadía en el Sector Productivo" }
+          { id: "ITIID601", nombre: "Estadía en el Sector Productivo" },
         ],
       },
       {
@@ -1692,11 +1717,14 @@ function Carrera() {
         materias: [
           { id: "ITIID701", nombre: "Habilidades Gerenciales" },
           { id: "ITIID702", nombre: "Inglés VI" },
-          { id: "ITIID703", nombre: "Ética y Legislación en Tecnologías de la Información" },
+          {
+            id: "ITIID703",
+            nombre: "Ética y Legislación en Tecnologías de la Información",
+          },
           { id: "ITIID704", nombre: "Formulación de Proyectos de Tecnología" },
           { id: "ITIID705", nombre: "Fundamentos de Inteligencia Artificial" },
           { id: "ITIID706", nombre: "Bases de Datos en la Nube" },
-          { id: "ITIID707", nombre: "Seguridad Informática" }
+          { id: "ITIID707", nombre: "Seguridad Informática" },
         ],
       },
       {
@@ -1704,13 +1732,19 @@ function Carrera() {
         nombre: "Octavo",
         materias: [
           { id: "ITIID801", nombre: "Inglés VII" },
-          { id: "ITIID802", nombre: "Programación para Inteligencia Artificial" },
+          {
+            id: "ITIID802",
+            nombre: "Programación para Inteligencia Artificial",
+          },
           { id: "ITIID803", nombre: "Electrónica Digital" },
           { id: "ITIID804", nombre: "Gestión de Proyectos de Tecnología" },
           { id: "ITIID805", nombre: "Informática Forense" },
           { id: "ITIID806", nombre: "Programación Móvil Avanzada" },
-          { id: "ITIID807", nombre: "Programación para Inteligencia Artificial" },
-          { id: "ITIID808", nombre: "Administración de Servidores" }
+          {
+            id: "ITIID807",
+            nombre: "Programación para Inteligencia Artificial",
+          },
+          { id: "ITIID808", nombre: "Administración de Servidores" },
         ],
       },
       {
@@ -1718,19 +1752,22 @@ function Carrera() {
         nombre: "Noveno",
         materias: [
           { id: "ITIID901", nombre: "Inglés VIII" },
-          { id: "ITIID902", nombre: "Frameworks para el Desarrollo Multiplataforma" },
+          {
+            id: "ITIID902",
+            nombre: "Frameworks para el Desarrollo Multiplataforma",
+          },
           { id: "ITIID903", nombre: "Proyecto Integrador III" },
           { id: "ITIID904", nombre: "Ciencia de Datos" },
           { id: "ITIID905", nombre: "Evaluación de Proyectos de Tecnología" },
           { id: "ITIID906", nombre: "Internet de las Cosas" },
-          { id: "ITIID907", nombre: "Tecnologías Disruptivas" }
+          { id: "ITIID907", nombre: "Tecnologías Disruptivas" },
         ],
       },
       {
         id: 10,
         nombre: "Décimo",
         materias: [
-          { id: "ITIID1001", nombre: "Estadía en el Sector Productivo" }
+          { id: "ITIID1001", nombre: "Estadía en el Sector Productivo" },
         ],
       },
     ],
@@ -1745,7 +1782,7 @@ function Carrera() {
           { id: "IC104", nombre: "Dibujo Arquitectónico y Estructural" },
           { id: "IC105", nombre: "Fundamentos Matemáticos" },
           { id: "IC106", nombre: "Inglés I" },
-          { id: "IC107", nombre: "Ofimática" }
+          { id: "IC107", nombre: "Ofimática" },
         ],
       },
       {
@@ -1755,10 +1792,13 @@ function Carrera() {
           { id: "IC201", nombre: "Cálculo Diferencial" },
           { id: "IC202", nombre: "Construcción II" },
           { id: "IC203", nombre: "Física" },
-          { id: "IC204", nombre: "Habilidades Socioemocionales y Manejo de Conflictos" },
+          {
+            id: "IC204",
+            nombre: "Habilidades Socioemocionales y Manejo de Conflictos",
+          },
           { id: "IC205", nombre: "Inglés II" },
           { id: "IC206", nombre: "Probabilidad y Estadística" },
-          { id: "IC207", nombre: "Topografía I" }
+          { id: "IC207", nombre: "Topografía I" },
         ],
       },
       {
@@ -1768,10 +1808,13 @@ function Carrera() {
           { id: "IC301", nombre: "Análisis de Costos I" },
           { id: "IC302", nombre: "Cálculo Integral" },
           { id: "IC303", nombre: "Construcción III" },
-          { id: "IC304", nombre: "Desarrollo del Pensamiento y Toma de Decisiones" },
+          {
+            id: "IC304",
+            nombre: "Desarrollo del Pensamiento y Toma de Decisiones",
+          },
           { id: "IC305", nombre: "Inglés III" },
           { id: "IC306", nombre: "Proyecto Integrador I" },
-          { id: "IC307", nombre: "Topografía II" }
+          { id: "IC307", nombre: "Topografía II" },
         ],
       },
       {
@@ -1784,7 +1827,7 @@ function Carrera() {
           { id: "IC404", nombre: "Ética Profesional" },
           { id: "IC405", nombre: "Inglés IV" },
           { id: "IC406", nombre: "Mecánica de Suelos I" },
-          { id: "IC407", nombre: "Resistencia de Materiales" }
+          { id: "IC407", nombre: "Resistencia de Materiales" },
         ],
       },
       {
@@ -1797,7 +1840,7 @@ function Carrera() {
           { id: "IC504", nombre: "Hidráulica" },
           { id: "IC505", nombre: "Inglés V" },
           { id: "IC506", nombre: "Liderazgo de Equipos de Alto Desempeño" },
-          { id: "IC507", nombre: "Proyecto Integrador II" }
+          { id: "IC507", nombre: "Proyecto Integrador II" },
         ],
       },
       {
@@ -1809,13 +1852,16 @@ function Carrera() {
         id: 7,
         nombre: "Séptimo",
         materias: [
-          { id: "IC701", nombre: "Diseño de Elementos de Concreto y Mampostería" },
+          {
+            id: "IC701",
+            nombre: "Diseño de Elementos de Concreto y Mampostería",
+          },
           { id: "IC702", nombre: "Habilidades Gerenciales" },
           { id: "IC703", nombre: "Hidráulica de Canales" },
           { id: "IC704", nombre: "Ingeniería de Costos" },
           { id: "IC705", nombre: "Inglés VI" },
           { id: "IC706", nombre: "Mecánica de Suelos II" },
-          { id: "IC707", nombre: "Movilidad e Infraestructura del Transporte" }
+          { id: "IC707", nombre: "Movilidad e Infraestructura del Transporte" },
         ],
       },
       {
@@ -1828,7 +1874,7 @@ function Carrera() {
           { id: "IC804", nombre: "Diseño de Instalaciones en Edificaciones" },
           { id: "IC805", nombre: "Diseño de Pavimentos" },
           { id: "IC806", nombre: "Inglés VII" },
-          { id: "IC807", nombre: "Planeación y Programación de Obra" }
+          { id: "IC807", nombre: "Planeación y Programación de Obra" },
         ],
       },
       {
@@ -1841,7 +1887,7 @@ function Carrera() {
           { id: "IC904", nombre: "Proyecto Estructural Asistido" },
           { id: "IC905", nombre: "Proyecto Geométrico de Caminos" },
           { id: "IC906", nombre: "Proyecto Integrador III" },
-          { id: "IC907", nombre: "Temas Selectos de Ingeniería" }
+          { id: "IC907", nombre: "Temas Selectos de Ingeniería" },
         ],
       },
       {
@@ -1857,11 +1903,14 @@ function Carrera() {
         materias: [
           { id: "LINM101", nombre: "Comunicación y Habilidades Digitales" },
           { id: "LINM102", nombre: "Desarrollo Humano y Valores" },
-          { id: "LINM103", nombre: "Fundamentos de Administración y Entorno Empresarial" },
+          {
+            id: "LINM103",
+            nombre: "Fundamentos de Administración y Entorno Empresarial",
+          },
           { id: "LINM104", nombre: "Informática" },
           { id: "LINM105", nombre: "Inglés I" },
           { id: "LINM106", nombre: "Matemáticas" },
-          { id: "LINM107", nombre: "Mercadotecnia" }
+          { id: "LINM107", nombre: "Mercadotecnia" },
         ],
       },
       {
@@ -1872,9 +1921,12 @@ function Carrera() {
           { id: "LINM202", nombre: "Contabilidad para Negocios" },
           { id: "LINM203", nombre: "Economía" },
           { id: "LINM204", nombre: "Estadística I" },
-          { id: "LINM205", nombre: "Habilidades Socioemocionales y Manejo de Conflictos" },
+          {
+            id: "LINM205",
+            nombre: "Habilidades Socioemocionales y Manejo de Conflictos",
+          },
           { id: "LINM206", nombre: "Inglés II" },
-          { id: "LINM207", nombre: "Planeación Estratégica" }
+          { id: "LINM207", nombre: "Planeación Estratégica" },
         ],
       },
       {
@@ -1887,7 +1939,10 @@ function Carrera() {
           { id: "LINM304", nombre: "Legislación Comercial" },
           { id: "LINM305", nombre: "Proyecto Integrador I" },
           { id: "LINM306", nombre: "Sistema de Investigación de Mercados I" },
-          { id: "LINM307", nombre: "Desarrollo del Pensamiento y Toma de Decisiones" }
+          {
+            id: "LINM307",
+            nombre: "Desarrollo del Pensamiento y Toma de Decisiones",
+          },
         ],
       },
       {
@@ -1900,7 +1955,7 @@ function Carrera() {
           { id: "LINM404", nombre: "Diseño Digital y Multimedia" },
           { id: "LINM405", nombre: "Gestión de Ventas" },
           { id: "LINM406", nombre: "Mezcla Promocional" },
-          { id: "LINM407", nombre: "Sistema de Investigación de Mercados II" }
+          { id: "LINM407", nombre: "Sistema de Investigación de Mercados II" },
         ],
       },
       {
@@ -1913,14 +1968,14 @@ function Carrera() {
           { id: "LINM504", nombre: "Mercadotecnia Digital I" },
           { id: "LINM505", nombre: "Mercadotecnia Estratégica" },
           { id: "LINM506", nombre: "Mercadotecnia de Servicios" },
-          { id: "LINM507", nombre: "Proyecto Integrador II" }
+          { id: "LINM507", nombre: "Proyecto Integrador II" },
         ],
       },
       {
         id: 6,
         nombre: "Sexto",
         materias: [
-          { id: "LINM601", nombre: "Estadía en el Sector Productivo" }
+          { id: "LINM601", nombre: "Estadía en el Sector Productivo" },
         ],
       },
       {
@@ -1932,8 +1987,11 @@ function Carrera() {
           { id: "LINM703", nombre: "Habilidades Gerenciales" },
           { id: "LINM704", nombre: "Mercadotecnia Internacional" },
           { id: "LINM705", nombre: "Planeación y Organización del Trabajo" },
-          { id: "LINM706", nombre: "Tendencias del Mercado y Consumidor Global" },
-          { id: "LINM707", nombre: "Inglés VI" }
+          {
+            id: "LINM706",
+            nombre: "Tendencias del Mercado y Consumidor Global",
+          },
+          { id: "LINM707", nombre: "Inglés VI" },
         ],
       },
       {
@@ -1946,7 +2004,7 @@ function Carrera() {
           { id: "LINM804", nombre: "Inglés VII" },
           { id: "LINM805", nombre: "Inteligencia de Mercados" },
           { id: "LINM806", nombre: "Inteligencia Financiera" },
-          { id: "LINM807", nombre: "Mercadotecnia Digital II" }
+          { id: "LINM807", nombre: "Mercadotecnia Digital II" },
         ],
       },
       {
@@ -1954,19 +2012,22 @@ function Carrera() {
         nombre: "Noveno",
         materias: [
           { id: "LINM901", nombre: "Cadena de Suministro" },
-          { id: "LINM902", nombre: "Comunicación Integral de la Mercadotecnia" },
+          {
+            id: "LINM902",
+            nombre: "Comunicación Integral de la Mercadotecnia",
+          },
           { id: "LINM903", nombre: "Cultura Emprendedora" },
           { id: "LINM904", nombre: "Derecho Corporativo" },
           { id: "LINM905", nombre: "Inglés VIII" },
           { id: "LINM906", nombre: "Plan de Negocios" },
-          { id: "LINM907", nombre: "Proyecto Integrador III" }
+          { id: "LINM907", nombre: "Proyecto Integrador III" },
         ],
       },
       {
         id: 10,
         nombre: "Décimo",
         materias: [
-          { id: "LINM1001", nombre: "Estadía en el Sector Productivo" }
+          { id: "LINM1001", nombre: "Estadía en el Sector Productivo" },
         ],
       },
     ],
@@ -1981,7 +2042,7 @@ function Carrera() {
           { id: "LSP104", nombre: "Informática Aplicada" },
           { id: "LSP105", nombre: "Inglés I" },
           { id: "LSP106", nombre: "Marco Jurídico de la Función Policial" },
-          { id: "LSP107", nombre: "Matemáticas Aplicadas" }
+          { id: "LSP107", nombre: "Matemáticas Aplicadas" },
         ],
       },
       {
@@ -1991,10 +2052,13 @@ function Carrera() {
           { id: "LSP201", nombre: "Capacidad Física y Orden Cerrado II" },
           { id: "LSP202", nombre: "Derechos Humanos" },
           { id: "LSP203", nombre: "Estructura Geográfica y Socioemocional" },
-          { id: "LSP204", nombre: "Habilidades Socioemocionales y Manejo de Conflictos" },
+          {
+            id: "LSP204",
+            nombre: "Habilidades Socioemocionales y Manejo de Conflictos",
+          },
           { id: "LSP205", nombre: "Inglés II" },
           { id: "LSP206", nombre: "Proximidad Social" },
-          { id: "LSP207", nombre: "Tránsito y Vialidad" }
+          { id: "LSP207", nombre: "Tránsito y Vialidad" },
         ],
       },
       {
@@ -2002,12 +2066,18 @@ function Carrera() {
         nombre: "Tercer",
         materias: [
           { id: "LSP301", nombre: "Acondicionamiento Físico I" },
-          { id: "LSP302", nombre: "Desarrollo del Pensamiento y Toma de Decisiones" },
+          {
+            id: "LSP302",
+            nombre: "Desarrollo del Pensamiento y Toma de Decisiones",
+          },
           { id: "LSP303", nombre: "Fundamentos de Criminalística" },
           { id: "LSP304", nombre: "Inglés III" },
           { id: "LSP305", nombre: "Prevención del Delito" },
           { id: "LSP306", nombre: "Proyecto Integrador I" },
-          { id: "LSP307", nombre: "Uso Diferenciado y Proporcional de la Fuerza" }
+          {
+            id: "LSP307",
+            nombre: "Uso Diferenciado y Proporcional de la Fuerza",
+          },
         ],
       },
       {
@@ -2020,20 +2090,23 @@ function Carrera() {
           { id: "LSP404", nombre: "Probabilidad y Estadística" },
           { id: "LSP405", nombre: "Protección Civil" },
           { id: "LSP406", nombre: "Psicología Aplicada a la Función Policial" },
-          { id: "LSP407", nombre: "Técnicas y Tácticas Policiales I" }
+          { id: "LSP407", nombre: "Técnicas y Tácticas Policiales I" },
         ],
       },
       {
         id: 5,
         nombre: "Quinto",
         materias: [
-          { id: "LSP501", nombre: "Actuación Inicial en el Lugar de Intervención" },
+          {
+            id: "LSP501",
+            nombre: "Actuación Inicial en el Lugar de Intervención",
+          },
           { id: "LSP502", nombre: "Inglés V" },
           { id: "LSP503", nombre: "Liderazgo de Equipos de Alto Desempeño" },
           { id: "LSP504", nombre: "Métodos y Técnicas de Investigación" },
           { id: "LSP505", nombre: "Proyecto Integrador II" },
           { id: "LSP506", nombre: "Seguridad Penitenciaria" },
-          { id: "LSP507", nombre: "Técnicas y Tácticas Policiales II" }
+          { id: "LSP507", nombre: "Técnicas y Tácticas Policiales II" },
         ],
       },
       {
@@ -2050,8 +2123,14 @@ function Carrera() {
           { id: "LSP703", nombre: "Elementos Materiales Probatorios" },
           { id: "LSP704", nombre: "Habilidades Gerenciales" },
           { id: "LSP705", nombre: "Inglés VI" },
-          { id: "LSP706", nombre: "Marco Normativo Aplicable a los Proyectos de Seguridad" },
-          { id: "LSP707", nombre: "Protocolos Aplicables en Materia de Seguridad" }
+          {
+            id: "LSP706",
+            nombre: "Marco Normativo Aplicable a los Proyectos de Seguridad",
+          },
+          {
+            id: "LSP707",
+            nombre: "Protocolos Aplicables en Materia de Seguridad",
+          },
         ],
       },
       {
@@ -2064,7 +2143,7 @@ function Carrera() {
           { id: "LSP804", nombre: "Inteligencia Operativa Policial" },
           { id: "LSP805", nombre: "Procesamiento del Lugar de Intervención" },
           { id: "LSP806", nombre: "Servicios Periciales y Forenses" },
-          { id: "LSP807", nombre: "Técnicas de Entrevista" }
+          { id: "LSP807", nombre: "Técnicas de Entrevista" },
         ],
       },
       {
@@ -2075,16 +2154,19 @@ function Carrera() {
           { id: "LSP902", nombre: "Análisis del Fenómeno Delictivo" },
           { id: "LSP903", nombre: "Inglés VIII" },
           { id: "LSP904", nombre: "Integración de Carpetas de Investigación" },
-          { id: "LSP905", nombre: "Pensamiento Innovador Aplicado a la Seguridad" },
+          {
+            id: "LSP905",
+            nombre: "Pensamiento Innovador Aplicado a la Seguridad",
+          },
           { id: "LSP906", nombre: "Proyecto Integrador III" },
-          { id: "LSP907", nombre: "Sistema Penal Acusatorio" }
+          { id: "LSP907", nombre: "Sistema Penal Acusatorio" },
         ],
       },
       {
         id: 10,
         nombre: "Décimo",
         materias: [
-          { id: "LSP1001", nombre: "Estadía en el Sector Productivo" }
+          { id: "LSP1001", nombre: "Estadía en el Sector Productivo" },
         ],
       },
     ],
@@ -2098,8 +2180,11 @@ function Carrera() {
           { id: "ILI103", nombre: "Estructura Organizacional" },
           { id: "ILI104", nombre: "Fundamentos Matemáticos" },
           { id: "ILI105", nombre: "Inglés I" },
-          { id: "ILI106", nombre: "Normatividad Aplicada al Comercio Exterior I" },
-          { id: "ILI107", nombre: "Desarrollo Humano y Valores" }
+          {
+            id: "ILI106",
+            nombre: "Normatividad Aplicada al Comercio Exterior I",
+          },
+          { id: "ILI107", nombre: "Desarrollo Humano y Valores" },
         ],
       },
       {
@@ -2109,10 +2194,16 @@ function Carrera() {
           { id: "ILI201", nombre: "Cálculo Diferencial" },
           { id: "ILI202", nombre: "Clasificación Arancelaria I" },
           { id: "ILI203", nombre: "Fundamentos de Logística" },
-          { id: "ILI204", nombre: "Habilidades Socioemocionales y Manejo de Conflictos" },
+          {
+            id: "ILI204",
+            nombre: "Habilidades Socioemocionales y Manejo de Conflictos",
+          },
           { id: "ILI205", nombre: "Inglés II" },
           { id: "ILI206", nombre: "Mercadotecnia Internacional" },
-          { id: "ILI207", nombre: "Normatividad Aplicada al Comercio Exterior II" }
+          {
+            id: "ILI207",
+            nombre: "Normatividad Aplicada al Comercio Exterior II",
+          },
         ],
       },
       {
@@ -2122,10 +2213,13 @@ function Carrera() {
           { id: "ILI301", nombre: "Administración de Ventas" },
           { id: "ILI302", nombre: "Cálculo Integral" },
           { id: "ILI303", nombre: "Clasificación Arancelaria II" },
-          { id: "ILI304", nombre: "Desarrollo del Pensamiento y Toma de Decisiones" },
+          {
+            id: "ILI304",
+            nombre: "Desarrollo del Pensamiento y Toma de Decisiones",
+          },
           { id: "ILI305", nombre: "Física" },
           { id: "ILI306", nombre: "Inglés III" },
-          { id: "ILI307", nombre: "Proyecto Integrador I" }
+          { id: "ILI307", nombre: "Proyecto Integrador I" },
         ],
       },
       {
@@ -2138,7 +2232,7 @@ function Carrera() {
           { id: "ILI404", nombre: "Inglés IV" },
           { id: "ILI405", nombre: "Presupuestos Logísticos" },
           { id: "ILI406", nombre: "Probabilidad y Estadística" },
-          { id: "ILI407", nombre: "Trámites Legales Aplicados" }
+          { id: "ILI407", nombre: "Trámites Legales Aplicados" },
         ],
       },
       {
@@ -2151,7 +2245,7 @@ function Carrera() {
           { id: "ILI504", nombre: "Liderazgo de Equipos de Alto Desempeño" },
           { id: "ILI505", nombre: "Pedimentos y su Legislación" },
           { id: "ILI506", nombre: "Proyecto Integrador II" },
-          { id: "ILI507", nombre: "Seguimiento Logístico" }
+          { id: "ILI507", nombre: "Seguimiento Logístico" },
         ],
       },
       {
@@ -2169,40 +2263,52 @@ function Carrera() {
           { id: "ILI704", nombre: "Habilidades Gerenciales" },
           { id: "ILI705", nombre: "Inglés VI" },
           { id: "ILI706", nombre: "Seguridad en la Cadena de Suministro" },
-          { id: "ILI707", nombre: "Gestión de Operación Aduanera" }
+          { id: "ILI707", nombre: "Gestión de Operación Aduanera" },
         ],
       },
       {
         id: 8,
         nombre: "Octavo",
         materias: [
-          { id: "ILI801", nombre: "Administración de Operaciones de Tráfico I" },
+          {
+            id: "ILI801",
+            nombre: "Administración de Operaciones de Tráfico I",
+          },
           { id: "ILI802", nombre: "Administración de Sistemas Logísticos" },
           { id: "ILI803", nombre: "Cumplimiento Normativo" },
           { id: "ILI804", nombre: "Finanzas Internacionales" },
           { id: "ILI805", nombre: "Inglés VII" },
           { id: "ILI806", nombre: "Investigación de Operaciones" },
-          { id: "ILI807", nombre: "Metodología de la Investigación" }
+          { id: "ILI807", nombre: "Metodología de la Investigación" },
         ],
       },
       {
         id: 9,
         nombre: "Noveno",
         materias: [
-          { id: "ILI901", nombre: "Administración de Operaciones de Tráfico II" },
-          { id: "ILI902", nombre: "Administración de Proyectos con Enfoque Sostenible" },
+          {
+            id: "ILI901",
+            nombre: "Administración de Operaciones de Tráfico II",
+          },
+          {
+            id: "ILI902",
+            nombre: "Administración de Proyectos con Enfoque Sostenible",
+          },
           { id: "ILI903", nombre: "Gestión de la Calidad en la Logística" },
           { id: "ILI904", nombre: "Logística de Transporte" },
           { id: "ILI905", nombre: "Proyecto Integrador III" },
-          { id: "ILI906", nombre: "Infracciones, Sanciones y Medios de Defensa" },
-          { id: "ILI907", nombre: "Inglés VIII" }
+          {
+            id: "ILI906",
+            nombre: "Infracciones, Sanciones y Medios de Defensa",
+          },
+          { id: "ILI907", nombre: "Inglés VIII" },
         ],
       },
       {
         id: 10,
         nombre: "Décimo",
         materias: [
-          { id: "ILI1001", nombre: "Estadía en el Sector Productivo" }
+          { id: "ILI1001", nombre: "Estadía en el Sector Productivo" },
         ],
       },
     ],
@@ -2217,7 +2323,7 @@ function Carrera() {
           { id: "LGT104", nombre: "Inglés I" },
           { id: "LGT105", nombre: "Introducción a la Gastronomía" },
           { id: "LGT106", nombre: "Matemáticas Aplicadas a la Gastronomía" },
-          { id: "LGT107", nombre: "Seguridad e Higiene en los Alimentos" }
+          { id: "LGT107", nombre: "Seguridad e Higiene en los Alimentos" },
         ],
       },
       {
@@ -2227,10 +2333,13 @@ function Carrera() {
           { id: "LGT201", nombre: "Bases Culinarias II" },
           { id: "LGT202", nombre: "Estandarización de Platillos" },
           { id: "LGT203", nombre: "Fundamentos de Nutrición" },
-          { id: "LGT204", nombre: "Habilidades Socioemocionales y Manejo de Conflictos" },
+          {
+            id: "LGT204",
+            nombre: "Habilidades Socioemocionales y Manejo de Conflictos",
+          },
           { id: "LGT205", nombre: "Inglés II" },
           { id: "LGT206", nombre: "Panadería" },
-          { id: "LGT207", nombre: "Servicio de Alimentos y Bebidas" }
+          { id: "LGT207", nombre: "Servicio de Alimentos y Bebidas" },
         ],
       },
       {
@@ -2239,11 +2348,14 @@ function Carrera() {
         materias: [
           { id: "LGT301", nombre: "Bases Culinarias III" },
           { id: "LGT302", nombre: "Costos y Presupuestos" },
-          { id: "LGT303", nombre: "Desarrollo del Pensamiento y Toma de Decisiones" },
+          {
+            id: "LGT303",
+            nombre: "Desarrollo del Pensamiento y Toma de Decisiones",
+          },
           { id: "LGT304", nombre: "Inglés III" },
           { id: "LGT305", nombre: "Operación de Bar" },
           { id: "LGT306", nombre: "Pastelería" },
-          { id: "LGT307", nombre: "Proyecto Integrador I" }
+          { id: "LGT307", nombre: "Proyecto Integrador I" },
         ],
       },
       {
@@ -2256,7 +2368,7 @@ function Carrera() {
           { id: "LGT404", nombre: "Fundamentos de Vitivinicultura" },
           { id: "LGT405", nombre: "Inglés IV" },
           { id: "LGT406", nombre: "Mercadotecnia de Servicios Gastronómicos" },
-          { id: "LGT407", nombre: "Repostería" }
+          { id: "LGT407", nombre: "Repostería" },
         ],
       },
       {
@@ -2268,8 +2380,11 @@ function Carrera() {
           { id: "LGT503", nombre: "Inglés V" },
           { id: "LGT504", nombre: "Liderazgo de Equipos de Alto Desempeño" },
           { id: "LGT505", nombre: "Logística de Eventos" },
-          { id: "LGT506", nombre: "Metodología de la Investigación Aplicada a la Gastronomía" },
-          { id: "LGT507", nombre: "Proyecto Integrador II" }
+          {
+            id: "LGT506",
+            nombre: "Metodología de la Investigación Aplicada a la Gastronomía",
+          },
+          { id: "LGT507", nombre: "Proyecto Integrador II" },
         ],
       },
       {
@@ -2287,7 +2402,7 @@ function Carrera() {
           { id: "LGT704", nombre: "Contabilidad" },
           { id: "LGT705", nombre: "Habilidades Gerenciales" },
           { id: "LGT706", nombre: "Inglés VI" },
-          { id: "LGT707", nombre: "Patrimonio Gastronómico de México" }
+          { id: "LGT707", nombre: "Patrimonio Gastronómico de México" },
         ],
       },
       {
@@ -2300,7 +2415,7 @@ function Carrera() {
           { id: "LGT804", nombre: "Cocina Mexicana II" },
           { id: "LGT805", nombre: "Ingeniería de Menú" },
           { id: "LGT806", nombre: "Inglés VII" },
-          { id: "LGT807", nombre: "Planeación y Administración del Trabajo" }
+          { id: "LGT807", nombre: "Planeación y Administración del Trabajo" },
         ],
       },
       {
@@ -2309,83 +2424,91 @@ function Carrera() {
         materias: [
           { id: "LGT901", nombre: "Cocina Contemporánea" },
           { id: "LGT902", nombre: "Desarrollo de Negocios Gastronómicos" },
-          { id: "LGT903", nombre: "Gestión de la Calidad en Procesos Gastronómicos" },
+          {
+            id: "LGT903",
+            nombre: "Gestión de la Calidad en Procesos Gastronómicos",
+          },
           { id: "LGT904", nombre: "Inglés VIII" },
           { id: "LGT905", nombre: "Mixología" },
           { id: "LGT906", nombre: "Proyecto Integrador III" },
           { id: "LGT907", nombre: "Optativa: Ahumados" },
           { id: "LGT908", nombre: "Optativa: Cocina Regional" },
           { id: "LGT909", nombre: "Optativa: Escultura Culinaria" },
-          { id: "LGT910", nombre: "Optativa: Vitivinicultura de las Regiones de México" }
+          {
+            id: "LGT910",
+            nombre: "Optativa: Vitivinicultura de las Regiones de México",
+          },
         ],
       },
       {
         id: 10,
         nombre: "Décimo",
         materias: [
-          { id: "LGT1001", nombre: "Estadía en el Sector Productivo" }
+          { id: "LGT1001", nombre: "Estadía en el Sector Productivo" },
         ],
       },
     ],
   };
   // En tu componente principal, agrega estos estados
-  const [activeSection, setActiveSection] = useState<string>("perfil"); 
+  const [activeSection, setActiveSection] = useState<string>("perfil");
 
-    // NUEVAS FUNCIONES PARA EL CARRUSEL
-const nextBanner = () => {
-  if (banners.length > 0) {
-    setCurrentBannerIndex((prev) => (prev + 1) % banners.length);
-  }
-};
-
-const prevBanner = () => {
-  if (banners.length > 0) {
-    setCurrentBannerIndex((prev) => (prev - 1 + banners.length) % banners.length);
-  }
-};
-
-const goToBanner = (index: number) => {
-  setCurrentBannerIndex(index);
-};
-
-// Auto-play del carrusel
-useEffect(() => {
-  if (banners.length > 1 && carreraSeleccionada?.label !== "LPS") {
-    const interval = setInterval(() => {
+  // NUEVAS FUNCIONES PARA EL CARRUSEL
+  const nextBanner = () => {
+    if (banners.length > 0) {
       setCurrentBannerIndex((prev) => (prev + 1) % banners.length);
-    }, 6000); // Cambia cada 6 segundos
+    }
+  };
 
-    return () => clearInterval(interval);
-  }
-}, [banners.length, carreraSeleccionada?.label]);
+  const prevBanner = () => {
+    if (banners.length > 0) {
+      setCurrentBannerIndex(
+        (prev) => (prev - 1 + banners.length) % banners.length,
+      );
+    }
+  };
+
+  const goToBanner = (index: number) => {
+    setCurrentBannerIndex(index);
+  };
+
+  // Auto-play del carrusel
+  useEffect(() => {
+    if (banners.length > 1 && carreraSeleccionada?.label !== "LPS") {
+      const interval = setInterval(() => {
+        setCurrentBannerIndex((prev) => (prev + 1) % banners.length);
+      }, 6000); // Cambia cada 6 segundos
+
+      return () => clearInterval(interval);
+    }
+  }, [banners.length, carreraSeleccionada?.label]);
 
   // Función para alternar secciones
   const toggleSection = (section: string) => {
     setActiveSection(activeSection === section ? "" : section);
   };
   // Encontrar la carrera basada en el parámetro de la URL
-useEffect(() => {
-  if (label) {
-    const carreraEncontrada = carreras.find(
-      (c) => c.label.toLowerCase() === label.toLowerCase(),
-    );
+  useEffect(() => {
+    if (label) {
+      const carreraEncontrada = carreras.find(
+        (c) => c.label.toLowerCase() === label.toLowerCase(),
+      );
 
-    if (carreraEncontrada) {
-      setCarreraSeleccionada(carreraEncontrada);
-      
-      // NUEVO: Cargar los banners de la carrera
-      setBanners(carreraEncontrada.banner || []);
-      setCurrentBannerIndex(0); // Reiniciar al primer banner
-      
-      const materiasCarrera =
-        materiasPorCarrera[carreraEncontrada.label] ||
-        generarCuatrimestresPorDefecto();
-      setCuatrimestres(materiasCarrera);
-    } else {
-      console.error("Carrera no encontrada");
+      if (carreraEncontrada) {
+        setCarreraSeleccionada(carreraEncontrada);
+
+        // NUEVO: Cargar los banners de la carrera
+        setBanners(carreraEncontrada.banner || []);
+        setCurrentBannerIndex(0); // Reiniciar al primer banner
+
+        const materiasCarrera =
+          materiasPorCarrera[carreraEncontrada.label] ||
+          generarCuatrimestresPorDefecto();
+        setCuatrimestres(materiasCarrera);
+      } else {
+        console.error("Carrera no encontrada");
+      }
     }
-  }
-}, [nombre]);
+  }, [nombre]);
 
   // Función para generar cuatrimestres por defecto si no hay datos específicos
   const generarCuatrimestresPorDefecto = (): Cuatrimestre[] => {
@@ -2510,174 +2633,196 @@ useEffect(() => {
         transition: "background-color 0.5s ease",
       }}
     >
-
-{carreraSeleccionada.banner && carreraSeleccionada.banner.length > 0 && (
-  <div
-  className="imageContainerCarrera" 
-  style={{ 
-    position: 'relative', 
-    width: '100%', 
-    overflow: 'hidden',
-    backgroundColor: carreraSeleccionada.color 
-  }}>
-    {/* Contenedor de slides */}
-    <div style={{
-      position: 'relative',
-      width: '100%',
-      height: '100%'
-    }}>
-      {carreraSeleccionada.banner.map((bannerImg, index) => (
+      {carreraSeleccionada.banner && carreraSeleccionada.banner.length > 0 && (
         <div
-          key={index}
+          className="imageContainerCarrera"
           style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            opacity: index === currentBannerIndex ? 1 : 0,
-            transition: 'opacity 0.5s ease-in-out',
-            visibility: index === currentBannerIndex ? 'visible' : 'hidden'
+            position: "relative",
+            width: "100%",
+            overflow: "hidden",
+            backgroundColor: carreraSeleccionada.color,
           }}
         >
-          <img
-            src={bannerImg}
-            alt={`${carreraSeleccionada.nombreCompleto} - Banner ${index + 1}`}
+          {/* Contenedor de slides */}
+          <div
             style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover'
+              position: "relative",
+              width: "100%",
+              height: "100%",
             }}
-            onError={(e) => {
-              console.error(`Error cargando imagen ${index + 1}:`, bannerImg);
-              e.currentTarget.style.display = 'none';
-            }}
-          />
-        </div>
-      ))}
-    </div>
+          >
+            {carreraSeleccionada.banner.map((bannerImg, index) => (
+              <div
+                key={index}
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  opacity: index === currentBannerIndex ? 1 : 0,
+                  transition: "opacity 0.5s ease-in-out",
+                  visibility:
+                    index === currentBannerIndex ? "visible" : "hidden",
+                }}
+              >
+                <img
+                  src={bannerImg}
+                  alt={`${carreraSeleccionada.nombreCompleto} - Banner ${index + 1}`}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
+                  onError={(e) => {
+                    console.error(
+                      `Error cargando imagen ${index + 1}:`,
+                      bannerImg,
+                    );
+                    e.currentTarget.style.display = "none";
+                  }}
+                />
+              </div>
+            ))}
+          </div>
 
-    {/* Botón anterior - solo si hay más de 1 banner */}
-    {carreraSeleccionada.banner.length > 1 && (
-      <button
-        onClick={prevBanner}
-        style={{
-          position: 'absolute',
-          left: '20px',
-          top: '50%',
-          transform: 'translateY(-50%)',
-          backgroundColor: 'rgba(0, 0, 0, 0.5)',
-          color: 'white',
-          border: 'none',
-          borderRadius: '50%',
-          width: '40px',
-          height: '40px',
-          fontSize: '20px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          cursor: 'pointer',
-          zIndex: 10,
-          transition: 'background-color 0.3s ease'
-        }}
-        onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.8)'}
-        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'}
-        aria-label="Imagen anterior"
-      >
-        ‹
-      </button>
-    )}
-
-    {/* Botón siguiente - solo si hay más de 1 banner */}
-    {carreraSeleccionada.banner.length > 1 && (
-      <button
-        onClick={nextBanner}
-        style={{
-          position: 'absolute',
-          right: '20px',
-          top: '50%',
-          transform: 'translateY(-50%)',
-          backgroundColor: 'rgba(0, 0, 0, 0.5)',
-          color: 'white',
-          border: 'none',
-          borderRadius: '50%',
-          width: '40px',
-          height: '40px',
-          fontSize: '20px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          cursor: 'pointer',
-          zIndex: 10,
-          transition: 'background-color 0.3s ease'
-        }}
-        onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.8)'}
-        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'}
-        aria-label="Imagen siguiente"
-      >
-        ›
-      </button>
-    )}
-
-    {/* Indicadores (puntos) - solo si hay más de 1 banner */}
-    {carreraSeleccionada.banner.length > 1 && (
-      <div style={{
-        position: 'absolute',
-        bottom: '20px',
-        left: '50%',
-        transform: 'translateX(-50%)',
-        display: 'flex',
-        gap: '10px',
-        zIndex: 10
-      }}>
-        {carreraSeleccionada.banner.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToBanner(index)}
-            style={{
-              width: index === currentBannerIndex ? '25px' : '12px',
-              height: '12px',
-              borderRadius: index === currentBannerIndex ? '12px' : '50%',
-              backgroundColor: index === currentBannerIndex ? 'white' : 'rgba(255, 255, 255, 0.5)',
-              border: 'none',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease',
-              padding: 0
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = 'white';
-              e.currentTarget.style.transform = 'scale(1.1)';
-            }}
-            onMouseLeave={(e) => {
-              if (index !== currentBannerIndex) {
-                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+          {/* Botón anterior - solo si hay más de 1 banner */}
+          {carreraSeleccionada.banner.length > 1 && (
+            <button
+              onClick={prevBanner}
+              style={{
+                position: "absolute",
+                left: "20px",
+                top: "50%",
+                transform: "translateY(-50%)",
+                backgroundColor: "rgba(0, 0, 0, 0.5)",
+                color: "white",
+                border: "none",
+                borderRadius: "50%",
+                width: "40px",
+                height: "40px",
+                fontSize: "20px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                cursor: "pointer",
+                zIndex: 10,
+                transition: "background-color 0.3s ease",
+              }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.backgroundColor = "rgba(0, 0, 0, 0.8)")
               }
-              e.currentTarget.style.transform = 'scale(1)';
-            }}
-            aria-label={`Ir a imagen ${index + 1}`}
-          />
-        ))}
-      </div>
-    )}
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.backgroundColor = "rgba(0, 0, 0, 0.5)")
+              }
+              aria-label="Imagen anterior"
+            >
+              ‹
+            </button>
+          )}
 
-    {/* Contador de imágenes - solo si hay más de 1 banner */}
-    {carreraSeleccionada.banner.length > 1 && (
-      <div style={{
-        position: 'absolute',
-        top: '20px',
-        right: '20px',
-        backgroundColor: 'rgba(0, 0, 0, 0.6)',
-        color: 'white',
-        padding: '6px 12px',
-        borderRadius: '20px',
-        fontSize: '14px',
-        zIndex: 10
-      }}>
-        {currentBannerIndex + 1} / {carreraSeleccionada.banner.length}
-      </div>
-    )}
-  </div>
-)}
+          {/* Botón siguiente - solo si hay más de 1 banner */}
+          {carreraSeleccionada.banner.length > 1 && (
+            <button
+              onClick={nextBanner}
+              style={{
+                position: "absolute",
+                right: "20px",
+                top: "50%",
+                transform: "translateY(-50%)",
+                backgroundColor: "rgba(0, 0, 0, 0.5)",
+                color: "white",
+                border: "none",
+                borderRadius: "50%",
+                width: "40px",
+                height: "40px",
+                fontSize: "20px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                cursor: "pointer",
+                zIndex: 10,
+                transition: "background-color 0.3s ease",
+              }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.backgroundColor = "rgba(0, 0, 0, 0.8)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.backgroundColor = "rgba(0, 0, 0, 0.5)")
+              }
+              aria-label="Imagen siguiente"
+            >
+              ›
+            </button>
+          )}
+
+          {/* Indicadores (puntos) - solo si hay más de 1 banner */}
+          {carreraSeleccionada.banner.length > 1 && (
+            <div
+              style={{
+                position: "absolute",
+                bottom: "20px",
+                left: "50%",
+                transform: "translateX(-50%)",
+                display: "flex",
+                gap: "10px",
+                zIndex: 10,
+              }}
+            >
+              {carreraSeleccionada.banner.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToBanner(index)}
+                  style={{
+                    width: index === currentBannerIndex ? "25px" : "12px",
+                    height: "12px",
+                    borderRadius: index === currentBannerIndex ? "12px" : "50%",
+                    backgroundColor:
+                      index === currentBannerIndex
+                        ? "white"
+                        : "rgba(255, 255, 255, 0.5)",
+                    border: "none",
+                    cursor: "pointer",
+                    transition: "all 0.3s ease",
+                    padding: 0,
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = "white";
+                    e.currentTarget.style.transform = "scale(1.1)";
+                  }}
+                  onMouseLeave={(e) => {
+                    if (index !== currentBannerIndex) {
+                      e.currentTarget.style.backgroundColor =
+                        "rgba(255, 255, 255, 0.5)";
+                    }
+                    e.currentTarget.style.transform = "scale(1)";
+                  }}
+                  aria-label={`Ir a imagen ${index + 1}`}
+                />
+              ))}
+            </div>
+          )}
+
+          {/* Contador de imágenes - solo si hay más de 1 banner */}
+          {carreraSeleccionada.banner.length > 1 && (
+            <div
+              style={{
+                position: "absolute",
+                top: "20px",
+                right: "20px",
+                backgroundColor: "rgba(0, 0, 0, 0.6)",
+                color: "white",
+                padding: "6px 12px",
+                borderRadius: "20px",
+                fontSize: "14px",
+                zIndex: 10,
+              }}
+            >
+              {currentBannerIndex + 1} / {carreraSeleccionada.banner.length}
+            </div>
+          )}
+        </div>
+      )}
 
       <div
         className="CarreraContent"
@@ -2751,7 +2896,7 @@ useEffect(() => {
                         {carreraSeleccionada.egreasdo &&
                           carreraSeleccionada.egreasdo.trim() !== "" && (
                             <p
-                            className="text"
+                              className="text"
                               style={{
                                 fontSize: "1.1rem",
                                 lineHeight: "1.6",
@@ -2973,156 +3118,313 @@ useEffect(() => {
                 </div>
 
                 {/* Plan De Estudios */}
-                  {carreraSeleccionada.label !== "IMS" && (
-                                    <div className="Seccion" style={{ marginBottom: "3rem" }}>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      marginBottom: "2rem",
-                      flexWrap: "wrap",
-                      gap: "1rem",
-                    }}
-                  >
-                    <h2
-                      style={{
-                        color: carreraSeleccionada.color,
-                        fontSize: "2rem",
-                        marginBottom: "0",
-                        borderBottom: `3px solid ${carreraSeleccionada.color}`,
-                        paddingBottom: "0.5rem",
-                        display: "inline-block",
-                      }}
-                    >
-                      📚 Plan de Estudios
-                    </h2>
-
-                    {carreraSeleccionada.planEstudioPDF && (
-                      <a
-                        href={carreraSeleccionada.planEstudioPDF}
-                        download
-                        style={{
-                          backgroundColor: carreraSeleccionada.color,
-                          color: "white",
-                          padding: "0.75rem 1.5rem",
-                          borderRadius: "8px",
-                          textDecoration: "none",
-                          fontWeight: "bold",
-                          display: "inline-flex",
-                          alignItems: "center",
-                          gap: "0.5rem",
-                          transition: "all 0.3s ease",
-                          boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.transform = "translateY(-3px)";
-                          e.currentTarget.style.boxShadow =
-                            "0 6px 16px rgba(0,0,0,0.2)";
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.transform = "translateY(0)";
-                          e.currentTarget.style.boxShadow =
-                            "0 4px 12px rgba(0,0,0,0.15)";
-                        }}
-                      >
-                        <i className="fas fa-download"></i>
-                        Descargar PDF
-                      </a>
-                    )}
-                  </div>
-
-                  <div
-                    style={{
-                      backgroundColor: "white",
-                      borderRadius: "15px",
-                      overflow: "hidden",
-                      boxShadow: "0 8px 30px rgba(0,0,0,0.12)",
-                      border: `1px solid ${carreraSeleccionada.color}20`,
-                    }}
-                  >
-                    <div
-                      style={{
-                        backgroundColor: `${carreraSeleccionada.color}10`,
-                        padding: "1.5rem",
-                        borderBottom: `1px solid ${carreraSeleccionada.color}20`,
-                      }}
-                    >
-                      <h1
-                        style={{
-                          color: carreraSeleccionada.color,
-                          fontSize: isMobile ? "1.8rem" : "2.5rem",
-                          marginBottom: "0.5rem",
-                          textAlign: "center",
-                        }}
-                      >
-                        {cuatrimestreActivo <= 6
-                          ? carreraSeleccionada.tsu
-                          : carreraSeleccionada.nombreCompleto}
-                      </h1>
-                    </div>
-
-                    {/* Contenedor principal del plan */}
+                {carreraSeleccionada.label !== "IMS" && (
+                  <div className="Seccion" style={{ marginBottom: "3rem" }}>
                     <div
                       style={{
                         display: "flex",
-                        flexDirection: isMobile ? "column" : "row",
-                        minHeight: "500px",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        marginBottom: "2rem",
+                        flexWrap: "wrap",
+                        gap: "1rem",
                       }}
                     >
-                      {/* Panel lateral con cuatrimestres */}
+                      <h2
+                        style={{
+                          color: carreraSeleccionada.color,
+                          fontSize: "2rem",
+                          marginBottom: "0",
+                          borderBottom: `3px solid ${carreraSeleccionada.color}`,
+                          paddingBottom: "0.5rem",
+                          display: "inline-block",
+                        }}
+                      >
+                        📚 Plan de Estudios
+                      </h2>
+
+                      {carreraSeleccionada.planEstudioPDF && (
+                        <a
+                          href={carreraSeleccionada.planEstudioPDF}
+                          download
+                          style={{
+                            backgroundColor: carreraSeleccionada.color,
+                            color: "white",
+                            padding: "0.75rem 1.5rem",
+                            borderRadius: "8px",
+                            textDecoration: "none",
+                            fontWeight: "bold",
+                            display: "inline-flex",
+                            alignItems: "center",
+                            gap: "0.5rem",
+                            transition: "all 0.3s ease",
+                            boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.transform =
+                              "translateY(-3px)";
+                            e.currentTarget.style.boxShadow =
+                              "0 6px 16px rgba(0,0,0,0.2)";
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.transform = "translateY(0)";
+                            e.currentTarget.style.boxShadow =
+                              "0 4px 12px rgba(0,0,0,0.15)";
+                          }}
+                        >
+                          <i className="fas fa-download"></i>
+                          Descargar PDF
+                        </a>
+                      )}
+                    </div>
+
+                    <div
+                      style={{
+                        backgroundColor: "white",
+                        borderRadius: "15px",
+                        overflow: "hidden",
+                        boxShadow: "0 8px 30px rgba(0,0,0,0.12)",
+                        border: `1px solid ${carreraSeleccionada.color}20`,
+                      }}
+                    >
                       <div
                         style={{
-                          width: isMobile ? "100%" : "250px",
-                          backgroundColor: `${carreraSeleccionada.color}08`,
-                          borderRight: isMobile
-                            ? "none"
-                            : `1px solid ${carreraSeleccionada.color}20`,
-                          overflowY: "scroll", // Cambia de "auto" a "scroll"
-                          maxHeight: isMobile ? "none" : "550px",
+                          backgroundColor: `${carreraSeleccionada.color}10`,
+                          padding: "1.5rem",
+                          borderBottom: `1px solid ${carreraSeleccionada.color}20`,
                         }}
-                        className="lat"
                       >
-                        <div style={{ padding: isMobile ? "1rem" : "1.5rem" }}>
-                          <h3
-                            style={{
-                              color: carreraSeleccionada.color,
-                              marginBottom: "1rem",
-                              fontSize: isMobile ? "1.1rem" : "1.2rem",
-                            }}
-                          >
-                            <i
-                              className="fas fa-calendar-alt"
-                              style={{ marginRight: "0.5rem" }}
-                            ></i>
-                            Cuatrimestres
-                          </h3>
+                        <h1
+                          style={{
+                            color: carreraSeleccionada.color,
+                            fontSize: isMobile ? "1.8rem" : "2.5rem",
+                            marginBottom: "0.5rem",
+                            textAlign: "center",
+                          }}
+                        >
+                          {cuatrimestreActivo <= 6
+                            ? carreraSeleccionada.tsu
+                            : carreraSeleccionada.nombreCompleto}
+                        </h1>
+                      </div>
 
-                          {/* Versión móvil - Carrusel horizontal */}
-                          {isMobile ? (
-                            <div style={{ position: "relative" }}>
+                      {/* Contenedor principal del plan */}
+                      <div
+                        style={{
+                          display: "flex",
+                          flexDirection: isMobile ? "column" : "row",
+                          minHeight: "500px",
+                        }}
+                      >
+                        {/* Panel lateral con cuatrimestres */}
+                        <div
+                          style={{
+                            width: isMobile ? "100%" : "250px",
+                            backgroundColor: `${carreraSeleccionada.color}08`,
+                            borderRight: isMobile
+                              ? "none"
+                              : `1px solid ${carreraSeleccionada.color}20`,
+                            overflowY: "scroll", // Cambia de "auto" a "scroll"
+                            maxHeight: isMobile ? "none" : "550px",
+                          }}
+                          className="lat"
+                        >
+                          <div
+                            style={{ padding: isMobile ? "1rem" : "1.5rem" }}
+                          >
+                            <h3
+                              style={{
+                                color: carreraSeleccionada.color,
+                                marginBottom: "1rem",
+                                fontSize: isMobile ? "1.1rem" : "1.2rem",
+                              }}
+                            >
+                              <i
+                                className="fas fa-calendar-alt"
+                                style={{ marginRight: "0.5rem" }}
+                              ></i>
+                              Cuatrimestres
+                            </h3>
+
+                            {/* Versión móvil - Carrusel horizontal */}
+                            {isMobile ? (
+                              <div style={{ position: "relative" }}>
+                                <div
+                                  ref={cuatrimestresContainerRef}
+                                  style={{
+                                    display: "flex",
+                                    overflowX: "auto",
+                                    scrollbarWidth: "none",
+                                    msOverflowStyle: "none",
+                                    padding: "0.5rem 0",
+                                    gap: "0.5rem",
+                                    scrollBehavior: "smooth",
+                                  }}
+                                >
+                                  {cuatrimestres.map((cuatrimestre) => (
+                                    <button
+                                      key={cuatrimestre.id}
+                                      data-id={cuatrimestre.id}
+                                      onClick={() =>
+                                        setCuatrimestreActivo(cuatrimestre.id)
+                                      }
+                                      style={{
+                                        padding: "0.75rem 1rem",
+                                        textAlign: "center",
+                                        border: "none",
+                                        borderRadius: "8px",
+                                        cursor: "pointer",
+                                        transition: "all 0.3s ease",
+                                        backgroundColor:
+                                          cuatrimestreActivo === cuatrimestre.id
+                                            ? carreraSeleccionada.color
+                                            : "transparent",
+                                        color:
+                                          cuatrimestreActivo === cuatrimestre.id
+                                            ? "white"
+                                            : "#333",
+                                        fontWeight:
+                                          cuatrimestreActivo === cuatrimestre.id
+                                            ? "bold"
+                                            : "normal",
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                        minWidth: "100px",
+                                        flexShrink: 0,
+                                        whiteSpace: "nowrap",
+                                      }}
+                                    >
+                                      <div
+                                        style={{
+                                          width: "24px",
+                                          height: "24px",
+                                          borderRadius: "50%",
+                                          display: "flex",
+                                          alignItems: "center",
+                                          justifyContent: "center",
+                                          backgroundColor:
+                                            cuatrimestreActivo ===
+                                            cuatrimestre.id
+                                              ? "white"
+                                              : carreraSeleccionada.color,
+                                          color:
+                                            cuatrimestreActivo ===
+                                            cuatrimestre.id
+                                              ? carreraSeleccionada.color
+                                              : "white",
+                                          fontWeight: "bold",
+                                          fontSize: "0.8rem",
+                                          marginBottom: "0.25rem",
+                                        }}
+                                      >
+                                        {cuatrimestre.id}
+                                      </div>
+                                      <span style={{ fontSize: "0.85rem" }}>
+                                        {cuatrimestre.nombre}
+                                      </span>
+                                    </button>
+                                  ))}
+                                </div>
+
+                                {/* Flechas de navegación para móvil */}
+                                <div
+                                  style={{
+                                    display: "flex",
+                                    justifyContent: "space-between",
+                                    marginTop: "0.5rem",
+                                  }}
+                                >
+                                  <button
+                                    onClick={anteriorCuatrimestre}
+                                    disabled={cuatrimestreActivo === 1}
+                                    style={{
+                                      padding: "0.5rem 1rem",
+                                      border: "none",
+                                      borderRadius: "6px",
+                                      backgroundColor:
+                                        cuatrimestreActivo === 1
+                                          ? "#ccc"
+                                          : carreraSeleccionada.color,
+                                      color: "white",
+                                      cursor:
+                                        cuatrimestreActivo === 1
+                                          ? "not-allowed"
+                                          : "pointer",
+                                      display: "flex",
+                                      alignItems: "center",
+                                      gap: "0.5rem",
+                                      fontSize: "0.85rem",
+                                    }}
+                                  >
+                                    <i className="fas fa-chevron-left"></i>
+                                    Anterior
+                                  </button>
+
+                                  <div
+                                    style={{
+                                      display: "flex",
+                                      alignItems: "center",
+                                      fontSize: "0.9rem",
+                                      fontWeight: "bold",
+                                      color: carreraSeleccionada.color,
+                                    }}
+                                  >
+                                    {cuatrimestreActivo} de{" "}
+                                    {cuatrimestres.length}
+                                  </div>
+
+                                  <button
+                                    onClick={siguienteCuatrimestre}
+                                    disabled={
+                                      cuatrimestreActivo ===
+                                      cuatrimestres.length
+                                    }
+                                    style={{
+                                      padding: "0.5rem 1rem",
+                                      border: "none",
+                                      borderRadius: "6px",
+                                      backgroundColor:
+                                        cuatrimestreActivo ===
+                                        cuatrimestres.length
+                                          ? "#ccc"
+                                          : carreraSeleccionada.color,
+                                      color: "white",
+                                      cursor:
+                                        cuatrimestreActivo ===
+                                        cuatrimestres.length
+                                          ? "not-allowed"
+                                          : "pointer",
+                                      display: "flex",
+                                      alignItems: "center",
+                                      gap: "0.5rem",
+                                      fontSize: "0.85rem",
+                                    }}
+                                  >
+                                    Siguiente
+                                    <i className="fas fa-chevron-right"></i>
+                                  </button>
+                                </div>
+                              </div>
+                            ) : (
+                              /* Versión escritorio - Lista vertical */
                               <div
-                                ref={cuatrimestresContainerRef}
                                 style={{
                                   display: "flex",
-                                  overflowX: "auto",
-                                  scrollbarWidth: "none",
-                                  msOverflowStyle: "none",
-                                  padding: "0.5rem 0",
+                                  flexDirection: "column",
                                   gap: "0.5rem",
-                                  scrollBehavior: "smooth",
                                 }}
                               >
                                 {cuatrimestres.map((cuatrimestre) => (
                                   <button
                                     key={cuatrimestre.id}
-                                    data-id={cuatrimestre.id}
                                     onClick={() =>
                                       setCuatrimestreActivo(cuatrimestre.id)
                                     }
                                     style={{
-                                      padding: "0.75rem 1rem",
-                                      textAlign: "center",
+                                      padding: "1rem",
+                                      textAlign: "left",
                                       border: "none",
                                       borderRadius: "8px",
                                       cursor: "pointer",
@@ -3140,18 +3442,29 @@ useEffect(() => {
                                           ? "bold"
                                           : "normal",
                                       display: "flex",
-                                      flexDirection: "column",
                                       alignItems: "center",
-                                      justifyContent: "center",
-                                      minWidth: "100px",
-                                      flexShrink: 0,
-                                      whiteSpace: "nowrap",
+                                      gap: "0.75rem",
+                                    }}
+                                    onMouseEnter={(e) => {
+                                      if (
+                                        cuatrimestreActivo !== cuatrimestre.id
+                                      ) {
+                                        e.currentTarget.style.backgroundColor = `${carreraSeleccionada.color}15`;
+                                      }
+                                    }}
+                                    onMouseLeave={(e) => {
+                                      if (
+                                        cuatrimestreActivo !== cuatrimestre.id
+                                      ) {
+                                        e.currentTarget.style.backgroundColor =
+                                          "transparent";
+                                      }
                                     }}
                                   >
                                     <div
                                       style={{
-                                        width: "24px",
-                                        height: "24px",
+                                        width: "28px",
+                                        height: "28px",
                                         borderRadius: "50%",
                                         display: "flex",
                                         alignItems: "center",
@@ -3165,365 +3478,212 @@ useEffect(() => {
                                             ? carreraSeleccionada.color
                                             : "white",
                                         fontWeight: "bold",
-                                        fontSize: "0.8rem",
-                                        marginBottom: "0.25rem",
+                                        fontSize: "0.9rem",
                                       }}
                                     >
                                       {cuatrimestre.id}
                                     </div>
-                                    <span style={{ fontSize: "0.85rem" }}>
-                                      {cuatrimestre.nombre}
-                                    </span>
+                                    <span>{cuatrimestre.nombre}</span>
                                   </button>
                                 ))}
                               </div>
+                            )}
+                          </div>
+                        </div>
 
-                              {/* Flechas de navegación para móvil */}
+                        {/* Panel de contenido con las materias */}
+                        <div
+                          style={{
+                            flex: 1,
+                            padding: isMobile ? "1.5rem" : "2rem",
+                          }}
+                        >
+                          {cuatrimestres.length > 0 ? (
+                            <>
+                              <div style={{ marginBottom: "1.5rem" }}>
+                                <h3
+                                  style={{
+                                    fontSize: isMobile ? "1.3rem" : "1.5rem",
+                                    color: carreraSeleccionada.color,
+                                    marginBottom: "0.5rem",
+                                  }}
+                                >
+                                  {
+                                    cuatrimestres.find(
+                                      (c) => c.id === cuatrimestreActivo,
+                                    )?.nombre
+                                  }{" "}
+                                  Cuatrimestre
+                                </h3>
+                                <p
+                                  style={{ color: "#666", fontSize: "0.95rem" }}
+                                >
+                                  {
+                                    cuatrimestres.find(
+                                      (c) => c.id === cuatrimestreActivo,
+                                    )?.materias.length
+                                  }{" "}
+                                  materias en este cuatrimestre
+                                </p>
+                              </div>
+
                               <div
                                 style={{
-                                  display: "flex",
-                                  justifyContent: "space-between",
-                                  marginTop: "0.5rem",
+                                  display: "grid",
+                                  gridTemplateColumns: isMobile
+                                    ? "1fr"
+                                    : "repeat(auto-fill, minmax(300px, 1fr))",
+                                  gap: "1.5rem",
                                 }}
                               >
-                                <button
-                                  onClick={anteriorCuatrimestre}
-                                  disabled={cuatrimestreActivo === 1}
-                                  style={{
-                                    padding: "0.5rem 1rem",
-                                    border: "none",
-                                    borderRadius: "6px",
-                                    backgroundColor:
-                                      cuatrimestreActivo === 1
-                                        ? "#ccc"
-                                        : carreraSeleccionada.color,
-                                    color: "white",
-                                    cursor:
-                                      cuatrimestreActivo === 1
-                                        ? "not-allowed"
-                                        : "pointer",
-                                    display: "flex",
-                                    alignItems: "center",
-                                    gap: "0.5rem",
-                                    fontSize: "0.85rem",
-                                  }}
-                                >
-                                  <i className="fas fa-chevron-left"></i>
-                                  Anterior
-                                </button>
+                                {cuatrimestres
+                                  .find((c) => c.id === cuatrimestreActivo)
+                                  ?.materias.map((materia) => (
+                                    <div
+                                      key={materia.id}
+                                      style={{
+                                        backgroundColor: "#f9f9f9",
+                                        borderRadius: "10px",
+                                        padding: "1.5rem",
+                                        borderLeft: `4px solid ${carreraSeleccionada.color}`,
+                                        transition:
+                                          "transform 0.3s ease, box-shadow 0.3s ease",
+                                        boxShadow: "0 4px 8px rgba(0,0,0,0.05)",
+                                      }}
+                                      onMouseEnter={(e) => {
+                                        e.currentTarget.style.transform =
+                                          "translateY(-5px)";
+                                        e.currentTarget.style.boxShadow =
+                                          "0 8px 16px rgba(0,0,0,0.1)";
+                                      }}
+                                      onMouseLeave={(e) => {
+                                        e.currentTarget.style.transform =
+                                          "translateY(0)";
+                                        e.currentTarget.style.boxShadow =
+                                          "0 4px 8px rgba(0,0,0,0.05)";
+                                      }}
+                                    >
+                                      <div
+                                        style={{
+                                          display: "flex",
+                                          justifyContent: "space-between",
+                                          alignItems: "flex-start",
+                                          marginBottom: "0.75rem",
+                                        }}
+                                      >
+                                        <h4
+                                          style={{
+                                            fontSize: "1.1rem",
+                                            fontWeight: "bold",
+                                            color: "#333",
+                                          }}
+                                        >
+                                          {materia.nombre}
+                                        </h4>
+                                      </div>
 
-                                <div
-                                  style={{
-                                    display: "flex",
-                                    alignItems: "center",
-                                    fontSize: "0.9rem",
-                                    fontWeight: "bold",
-                                    color: carreraSeleccionada.color,
-                                  }}
-                                >
-                                  {cuatrimestreActivo} de {cuatrimestres.length}
-                                </div>
-
-                                <button
-                                  onClick={siguienteCuatrimestre}
-                                  disabled={
-                                    cuatrimestreActivo === cuatrimestres.length
-                                  }
-                                  style={{
-                                    padding: "0.5rem 1rem",
-                                    border: "none",
-                                    borderRadius: "6px",
-                                    backgroundColor:
-                                      cuatrimestreActivo ===
-                                      cuatrimestres.length
-                                        ? "#ccc"
-                                        : carreraSeleccionada.color,
-                                    color: "white",
-                                    cursor:
-                                      cuatrimestreActivo ===
-                                      cuatrimestres.length
-                                        ? "not-allowed"
-                                        : "pointer",
-                                    display: "flex",
-                                    alignItems: "center",
-                                    gap: "0.5rem",
-                                    fontSize: "0.85rem",
-                                  }}
-                                >
-                                  Siguiente
-                                  <i className="fas fa-chevron-right"></i>
-                                </button>
+                                      {/*<div style={{ fontSize: "0.9rem", color: "#666", marginBottom: "0.5rem" }}>
+                              <strong>Código:</strong> {materia.id}
+                            </div> */}
+                                    </div>
+                                  ))}
                               </div>
-                            </div>
+                            </>
                           ) : (
-                            /* Versión escritorio - Lista vertical */
                             <div
                               style={{
-                                display: "flex",
-                                flexDirection: "column",
-                                gap: "0.5rem",
+                                textAlign: "center",
+                                padding: "3rem",
+                                color: "#666",
                               }}
                             >
-                              {cuatrimestres.map((cuatrimestre) => (
-                                <button
-                                  key={cuatrimestre.id}
-                                  onClick={() =>
-                                    setCuatrimestreActivo(cuatrimestre.id)
-                                  }
-                                  style={{
-                                    padding: "1rem",
-                                    textAlign: "left",
-                                    border: "none",
-                                    borderRadius: "8px",
-                                    cursor: "pointer",
-                                    transition: "all 0.3s ease",
-                                    backgroundColor:
-                                      cuatrimestreActivo === cuatrimestre.id
-                                        ? carreraSeleccionada.color
-                                        : "transparent",
-                                    color:
-                                      cuatrimestreActivo === cuatrimestre.id
-                                        ? "white"
-                                        : "#333",
-                                    fontWeight:
-                                      cuatrimestreActivo === cuatrimestre.id
-                                        ? "bold"
-                                        : "normal",
-                                    display: "flex",
-                                    alignItems: "center",
-                                    gap: "0.75rem",
-                                  }}
-                                  onMouseEnter={(e) => {
-                                    if (
-                                      cuatrimestreActivo !== cuatrimestre.id
-                                    ) {
-                                      e.currentTarget.style.backgroundColor = `${carreraSeleccionada.color}15`;
-                                    }
-                                  }}
-                                  onMouseLeave={(e) => {
-                                    if (
-                                      cuatrimestreActivo !== cuatrimestre.id
-                                    ) {
-                                      e.currentTarget.style.backgroundColor =
-                                        "transparent";
-                                    }
-                                  }}
-                                >
-                                  <div
-                                    style={{
-                                      width: "28px",
-                                      height: "28px",
-                                      borderRadius: "50%",
-                                      display: "flex",
-                                      alignItems: "center",
-                                      justifyContent: "center",
-                                      backgroundColor:
-                                        cuatrimestreActivo === cuatrimestre.id
-                                          ? "white"
-                                          : carreraSeleccionada.color,
-                                      color:
-                                        cuatrimestreActivo === cuatrimestre.id
-                                          ? carreraSeleccionada.color
-                                          : "white",
-                                      fontWeight: "bold",
-                                      fontSize: "0.9rem",
-                                    }}
-                                  >
-                                    {cuatrimestre.id}
-                                  </div>
-                                  <span>{cuatrimestre.nombre}</span>
-                                </button>
-                              ))}
+                              <i
+                                className="fas fa-book"
+                                style={{
+                                  fontSize: "3rem",
+                                  marginBottom: "1rem",
+                                  color: "#ddd",
+                                }}
+                              ></i>
+                              <p>
+                                No hay información de materias disponible para
+                                esta carrera.
+                              </p>
                             </div>
                           )}
                         </div>
                       </div>
 
-                      {/* Panel de contenido con las materias */}
+                      {/* Nota al pie */}
                       <div
                         style={{
-                          flex: 1,
-                          padding: isMobile ? "1.5rem" : "2rem",
+                          padding: "1rem 1.5rem",
+                          backgroundColor: "#f8f9fa",
+                          borderTop: `1px solid ${carreraSeleccionada.color}20`,
+                          fontSize: "0.85rem",
+                          color: "#666",
+                          display: "flex",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                          flexWrap: "wrap",
+                          gap: "1rem",
                         }}
                       >
-                        {cuatrimestres.length > 0 ? (
-                          <>
-                            <div style={{ marginBottom: "1.5rem" }}>
-                              <h3
-                                style={{
-                                  fontSize: isMobile ? "1.3rem" : "1.5rem",
-                                  color: carreraSeleccionada.color,
-                                  marginBottom: "0.5rem",
-                                }}
-                              >
-                                {
-                                  cuatrimestres.find(
-                                    (c) => c.id === cuatrimestreActivo,
-                                  )?.nombre
-                                }{" "}
-                                Cuatrimestre
-                              </h3>
-                              <p style={{ color: "#666", fontSize: "0.95rem" }}>
-                                {
-                                  cuatrimestres.find(
-                                    (c) => c.id === cuatrimestreActivo,
-                                  )?.materias.length
-                                }{" "}
-                                materias en este cuatrimestre
-                              </p>
-                            </div>
-
-                            <div
-                              style={{
-                                display: "grid",
-                                gridTemplateColumns: isMobile
-                                  ? "1fr"
-                                  : "repeat(auto-fill, minmax(300px, 1fr))",
-                                gap: "1.5rem",
-                              }}
-                            >
-                              {cuatrimestres
-                                .find((c) => c.id === cuatrimestreActivo)
-                                ?.materias.map((materia) => (
-                                  <div
-                                    key={materia.id}
-                                    style={{
-                                      backgroundColor: "#f9f9f9",
-                                      borderRadius: "10px",
-                                      padding: "1.5rem",
-                                      borderLeft: `4px solid ${carreraSeleccionada.color}`,
-                                      transition:
-                                        "transform 0.3s ease, box-shadow 0.3s ease",
-                                      boxShadow: "0 4px 8px rgba(0,0,0,0.05)",
-                                    }}
-                                    onMouseEnter={(e) => {
-                                      e.currentTarget.style.transform =
-                                        "translateY(-5px)";
-                                      e.currentTarget.style.boxShadow =
-                                        "0 8px 16px rgba(0,0,0,0.1)";
-                                    }}
-                                    onMouseLeave={(e) => {
-                                      e.currentTarget.style.transform =
-                                        "translateY(0)";
-                                      e.currentTarget.style.boxShadow =
-                                        "0 4px 8px rgba(0,0,0,0.05)";
-                                    }}
-                                  >
-                                    <div
-                                      style={{
-                                        display: "flex",
-                                        justifyContent: "space-between",
-                                        alignItems: "flex-start",
-                                        marginBottom: "0.75rem",
-                                      }}
-                                    >
-                                      <h4
-                                        style={{
-                                          fontSize: "1.1rem",
-                                          fontWeight: "bold",
-                                          color: "#333",
-                                        }}
-                                      >
-                                        {materia.nombre}
-                                      </h4>
-                                    </div>
-
-                                    {/*<div style={{ fontSize: "0.9rem", color: "#666", marginBottom: "0.5rem" }}>
-                              <strong>Código:</strong> {materia.id}
-                            </div> */}
-                                  </div>
-                                ))}
-                            </div>
-                          </>
-                        ) : (
+                        <div
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "0.5rem",
+                          }}
+                        >
+                          <i
+                            className="fas fa-info-circle"
+                            style={{ fontSize: "1rem" }}
+                          ></i>
+                          <span>
+                            {isMobile
+                              ? "Desliza o usa las flechas para navegar"
+                              : "Haz clic en un cuatrimestre para ver sus materias"}
+                          </span>
+                        </div>
+                        <div
+                          style={{
+                            display: "flex",
+                            gap: "1rem",
+                            flexWrap: "wrap",
+                          }}
+                        >
                           <div
                             style={{
-                              textAlign: "center",
-                              padding: "3rem",
-                              color: "#666",
+                              display: "flex",
+                              alignItems: "center",
+                              gap: "0.25rem",
                             }}
-                          >
-                            <i
-                              className="fas fa-book"
-                              style={{
-                                fontSize: "3rem",
-                                marginBottom: "1rem",
-                                color: "#ddd",
-                              }}
-                            ></i>
-                            <p>
-                              No hay información de materias disponible para
-                              esta carrera.
-                            </p>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-
-                    {/* Nota al pie */}
-                    <div
-                      style={{
-                        padding: "1rem 1.5rem",
-                        backgroundColor: "#f8f9fa",
-                        borderTop: `1px solid ${carreraSeleccionada.color}20`,
-                        fontSize: "0.85rem",
-                        color: "#666",
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                        flexWrap: "wrap",
-                        gap: "1rem",
-                      }}
-                    >
-                      <div
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "0.5rem",
-                        }}
-                      >
-                        <i
-                          className="fas fa-info-circle"
-                          style={{ fontSize: "1rem" }}
-                        ></i>
-                        <span>
-                          {isMobile
-                            ? "Desliza o usa las flechas para navegar"
-                            : "Haz clic en un cuatrimestre para ver sus materias"}
-                        </span>
-                      </div>
-                      <div
-                        style={{
-                          display: "flex",
-                          gap: "1rem",
-                          flexWrap: "wrap",
-                        }}
-                      >
-                        <div
-                          style={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: "0.25rem",
-                          }}
-                        ></div>
-                        <div
-                          style={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: "0.25rem",
-                          }}
-                        ></div>
+                          ></div>
+                          <div
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              gap: "0.25rem",
+                            }}
+                          ></div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                  )}
-                  {carreraSeleccionada.label === "IMS" && (
-                    <div>
-                      <h1 style={{color: '${carreraSeleccionada.color}'}}>Estamos generando tu nueva carrera ideal</h1>
-                      <img src={trabajandoJaguar} style={{width: "100%"}} alt="" />
-                    </div>
-                  )}
+                )}
+                {carreraSeleccionada.label === "IMS" && (
+                  <div>
+                    <h1 style={{ color: "${carreraSeleccionada.color}" }}>
+                      Estamos generando tu nueva carrera ideal
+                    </h1>
+                    <img
+                      src={trabajandoJaguar}
+                      style={{ width: "100%" }}
+                      alt=""
+                    />
+                  </div>
+                )}
               </div>
               <p
                 className="buttonFace"
@@ -3560,14 +3720,19 @@ useEffect(() => {
           ) : (
             <></>
           ))}
-            
-          
-          {carreraSeleccionada.label === "LPS" && (
+
+        {carreraSeleccionada.label === "LPS" && (
           <div>
-            <h1 style={{ color: carreraSeleccionada.color }}>Comienza una nueva forma de entender la mente</h1>
-            <img src={trabajandoJaguar} alt="" style={{width: "100%", objectFit: "cover", marginTop: "50px"}} />
+            <h1 style={{ color: carreraSeleccionada.color }}>
+              Comienza una nueva forma de entender la mente
+            </h1>
+            <img
+              src={trabajandoJaguar}
+              alt=""
+              style={{ width: "100%", objectFit: "cover", marginTop: "50px" }}
+            />
           </div>
-          )}
+        )}
 
         {/* Botón para volver */}
         <div

@@ -1,121 +1,125 @@
-import React from 'react';
+import React from "react";
 // import { Link } from 'react-router-dom';
-import './ComiteEtica.css';
-import bannerComiteEtica from '../assets/banner/bannerComite.jpg'; // Descomentar cuando tengas la imagen
+import "./ComiteEtica.css";
+import bannerComiteEtica from "../assets/banner/bannerComite.jpg"; // Descomentar cuando tengas la imagen
 
 function ComiteEtica() {
   const funcionesComite = [
     {
-      titulo: 'Difusión y capacitación',
-      emoji: '📢',
-      descripcion: 'Promoción de la cultura de ética e integridad en la Administración Pública',
-      color: '#2E7D32'
+      titulo: "Difusión y capacitación",
+      emoji: "📢",
+      descripcion:
+        "Promoción de la cultura de ética e integridad en la Administración Pública",
+      color: "#2E7D32",
     },
     {
-      titulo: 'Atención a denuncias',
-      emoji: '⚖️',
-      descripcion: 'Recepción y seguimiento de quejas por vulneración del Código de Ética y Conducta',
-      color: '#1565C0'
+      titulo: "Atención a denuncias",
+      emoji: "⚖️",
+      descripcion:
+        "Recepción y seguimiento de quejas por vulneración del Código de Ética y Conducta",
+      color: "#1565C0",
     },
     {
-      titulo: 'Prevención de conflictos',
-      emoji: '🛡️',
-      descripcion: 'Capacitación en prevención de conflictos de intereses y mejora organizacional',
-      color: '#B76E1E'
-    }
+      titulo: "Prevención de conflictos",
+      emoji: "🛡️",
+      descripcion:
+        "Capacitación en prevención de conflictos de intereses y mejora organizacional",
+      color: "#B76E1E",
+    },
   ];
 
   const estructuraComite = [
     {
-      puesto: 'Presidencia',
-      responsable: 'Titular de la Dependencia o Entidad',
-      emoji: '👤',
-      descripcion: 'Lidera y coordina las actividades del Comité'
+      puesto: "Presidencia",
+      responsable: "Titular de la Dependencia o Entidad",
+      emoji: "👤",
+      descripcion: "Lidera y coordina las actividades del Comité",
     },
     {
-      puesto: 'Secretaría Ejecutiva',
-      responsable: 'Designada por la Presidencia',
-      emoji: '📋',
-      descripcion: 'Gestiona y da seguimiento a los acuerdos del Comité'
+      puesto: "Secretaría Ejecutiva",
+      responsable: "Designada por la Presidencia",
+      emoji: "📋",
+      descripcion: "Gestiona y da seguimiento a los acuerdos del Comité",
     },
     {
-      puesto: 'Secretaría Técnica',
-      responsable: 'Persona con perfil jurídico o administrativo',
-      emoji: '⚖️',
-      descripcion: 'Asesora en aspectos legales y técnicos'
+      puesto: "Secretaría Técnica",
+      responsable: "Persona con perfil jurídico o administrativo",
+      emoji: "⚖️",
+      descripcion: "Asesora en aspectos legales y técnicos",
     },
     {
-      puesto: 'Miembros temporales',
-      responsable: 'Elegidos por votación entre servidores públicos',
-      emoji: '🗳️',
-      descripcion: 'Representantes de distintos niveles jerárquicos'
+      puesto: "Miembros temporales",
+      responsable: "Elegidos por votación entre servidores públicos",
+      emoji: "🗳️",
+      descripcion: "Representantes de distintos niveles jerárquicos",
     },
     {
-      puesto: 'Representante del Órgano Interno de Control',
-      responsable: 'Designación institucional',
-      emoji: '🔍',
-      descripcion: 'Garantiza la transparencia y legalidad'
-    }
+      puesto: "Representante del Órgano Interno de Control",
+      responsable: "Designación institucional",
+      emoji: "🔍",
+      descripcion: "Garantiza la transparencia y legalidad",
+    },
   ];
 
   const procedimientoDenuncias = [
     {
       paso: 1,
-      nombre: 'Recepción',
-      descripcion: 'Se recibe la denuncia en el Comité de Ética',
-      emoji: '📥'
+      nombre: "Recepción",
+      descripcion: "Se recibe la denuncia en el Comité de Ética",
+      emoji: "📥",
     },
     {
       paso: 2,
-      nombre: 'Análisis',
-      descripcion: 'Se determina si procede y se analiza la evidencia',
-      emoji: '🔍'
+      nombre: "Análisis",
+      descripcion: "Se determina si procede y se analiza la evidencia",
+      emoji: "🔍",
     },
     {
       paso: 3,
-      nombre: 'Determinación',
-      descripcion: 'Se emiten recomendaciones o canaliza el caso a la instancia correspondiente',
-      emoji: '⚖️'
+      nombre: "Determinación",
+      descripcion:
+        "Se emiten recomendaciones o canaliza el caso a la instancia correspondiente",
+      emoji: "⚖️",
     },
     {
       paso: 4,
-      nombre: 'Seguimiento',
-      descripcion: 'Se vigila el cumplimiento de las recomendaciones',
-      emoji: '📊'
-    }
+      nombre: "Seguimiento",
+      descripcion: "Se vigila el cumplimiento de las recomendaciones",
+      emoji: "📊",
+    },
   ];
 
   const valoresEtica = [
     {
-      valor: 'Integridad',
-      emoji: '⭐',
-      descripcion: 'Actuar con honestidad y rectitud'
+      valor: "Integridad",
+      emoji: "⭐",
+      descripcion: "Actuar con honestidad y rectitud",
     },
     {
-      valor: 'Transparencia',
-      emoji: '🔍',
-      descripcion: 'Manejo claro y abierto de la información'
+      valor: "Transparencia",
+      emoji: "🔍",
+      descripcion: "Manejo claro y abierto de la información",
     },
     {
-      valor: 'Responsabilidad',
-      emoji: '🤝',
-      descripcion: 'Compromiso con las obligaciones institucionales'
+      valor: "Responsabilidad",
+      emoji: "🤝",
+      descripcion: "Compromiso con las obligaciones institucionales",
     },
     {
-      valor: 'Imparcialidad',
-      emoji: '⚖️',
-      descripcion: 'Actuar sin favoritismos ni discriminación'
-    }
+      valor: "Imparcialidad",
+      emoji: "⚖️",
+      descripcion: "Actuar sin favoritismos ni discriminación",
+    },
   ];
 
   return (
     <>
       <div className="banner-container-comite">
-        <img 
-          src={bannerComiteEtica} 
-          alt="Banner Comité de Ética" 
-          className="banner-comite" 
-        /> 
+        <img
+          src={bannerComiteEtica}
+          alt="Banner Comité de Ética"
+          className="banner-comite"
+        />
       </div>
 
       <section className="content-comite">
@@ -127,7 +131,9 @@ function ComiteEtica() {
                 <span className="sabiasque-emoji">💡</span>
               </div>
               <div className="sabiasque-titulo-wrapper">
-                <h2 className="sabiasque-titulo">¿Sabías que contamos con un Comité de Ética?</h2>
+                <h2 className="sabiasque-titulo">
+                  ¿Sabías que contamos con un Comité de Ética?
+                </h2>
                 <div className="sabiasque-logos">
                   <span className="logo-comite">COMITÉ</span>
                   <span className="logo-etica">ÉTICA</span>
@@ -135,9 +141,11 @@ function ComiteEtica() {
               </div>
             </div>
             <p className="sabiasque-texto">
-              Es un <strong>órgano colegiado</strong> encargado de fomentar la cultura de integridad en la 
-              Administración Pública, capacitar en ética y atender denuncias relacionadas con el{' '}
-              <strong>Código de Ética</strong> y el <strong>Código de Conducta</strong>.
+              Es un <strong>órgano colegiado</strong> encargado de fomentar la
+              cultura de integridad en la Administración Pública, capacitar en
+              ética y atender denuncias relacionadas con el{" "}
+              <strong>Código de Ética</strong> y el{" "}
+              <strong>Código de Conducta</strong>.
             </p>
           </div>
         </div>
@@ -186,10 +194,12 @@ function ComiteEtica() {
 
           <div className="funciones-grid">
             {funcionesComite.map((funcion, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="funcion-card"
-                style={{ '--funcion-color': funcion.color } as React.CSSProperties}
+                style={
+                  { "--funcion-color": funcion.color } as React.CSSProperties
+                }
               >
                 <div className="funcion-icono">
                   <span className="funcion-emoji">{funcion.emoji}</span>
@@ -227,8 +237,12 @@ function ComiteEtica() {
                 </div>
                 <div className="estructura-contenido">
                   <h3 className="estructura-puesto">{miembro.puesto}</h3>
-                  <p className="estructura-responsable">{miembro.responsable}</p>
-                  <p className="estructura-descripcion">{miembro.descripcion}</p>
+                  <p className="estructura-responsable">
+                    {miembro.responsable}
+                  </p>
+                  <p className="estructura-descripcion">
+                    {miembro.descripcion}
+                  </p>
                 </div>
               </div>
             ))}
@@ -281,14 +295,20 @@ function ComiteEtica() {
                   <span className="codigo-icono">📘</span>
                   <div className="codigo-texto">
                     <strong>Código de Ética</strong>
-                    <p>Principios y valores que guían el comportamiento de los servidores públicos</p>
+                    <p>
+                      Principios y valores que guían el comportamiento de los
+                      servidores públicos
+                    </p>
                   </div>
                 </div>
                 <div className="codigo-item">
                   <span className="codigo-icono">📗</span>
                   <div className="codigo-texto">
                     <strong>Código de Conducta</strong>
-                    <p>Reglas específicas de actuación para el personal de la UT Nayarit</p>
+                    <p>
+                      Reglas específicas de actuación para el personal de la UT
+                      Nayarit
+                    </p>
                   </div>
                 </div>
               </div>
@@ -302,19 +322,25 @@ function ComiteEtica() {
             <div className="contacto-icono-comite">
               <span className="contacto-emoji-comite">📞</span>
             </div>
-            <h3 className="contacto-titulo-comite">Contacto del Comité de Ética</h3>
-            
+            <h3 className="contacto-titulo-comite">
+              Contacto del Comité de Ética
+            </h3>
+
             <div className="contacto-mensaje-comite">
               <p className="contacto-texto-comite">
-                Para presentar denuncias, recibir asesoría o solicitar capacitación en materia de ética e integridad
+                Para presentar denuncias, recibir asesoría o solicitar
+                capacitación en materia de ética e integridad
               </p>
             </div>
-            
+
             <div className="contacto-item-comite">
               <span className="contacto-item-icono">📧</span>
               <div className="contacto-item-contenido">
                 <span className="contacto-item-etiqueta">Correo:</span>
-                <a href="mailto:comitedeetica@utnay.edu.mx" className="contacto-email-comite">
+                <a
+                  href="mailto:comitedeetica@utnay.edu.mx"
+                  className="contacto-email-comite"
+                >
                   comitedeetica@utnay.edu.mx
                 </a>
               </div>
@@ -332,15 +358,24 @@ function ComiteEtica() {
         {/* CTA Final */}
         <div className="section-cta-comite">
           <div className="cta-content-comite">
-            <h3 className="cta-titulo-comite">Construyamos juntos una cultura de integridad</h3>
+            <h3 className="cta-titulo-comite">
+              Construyamos juntos una cultura de integridad
+            </h3>
             <p className="cta-descripcion-comite">
-              Tu participación es fundamental para fortalecer la ética institucional
+              Tu participación es fundamental para fortalecer la ética
+              institucional
             </p>
             <div className="cta-botones-comite">
-              <a href="mailto:comitedeetica@utnay.edu.mx" className="cta-button-comite cta-button-denuncia">
+              <a
+                href="mailto:comitedeetica@utnay.edu.mx"
+                className="cta-button-comite cta-button-denuncia"
+              >
                 <span>Presentar denuncia</span>
               </a>
-              <a href="mailto:comitedeetica@utnay.edu.mx" className="cta-button-comite cta-button-asesoria">
+              <a
+                href="mailto:comitedeetica@utnay.edu.mx"
+                className="cta-button-comite cta-button-asesoria"
+              >
                 <span>Solicitar asesoría</span>
               </a>
             </div>

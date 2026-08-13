@@ -12,7 +12,6 @@ import GuiaPracticajaSantander from "../assets/extras/GUIA-PRACTICAJA-SANTANDER.
 import GuiaTransferenciaBancariaBanamex from "../assets/extras/GUIA-TRANSFERENCIAS-BANCARIAS-BANAMEX.pdf";
 import GuiaTransferenciaBancariaSantander from "../assets/extras/GUIA-TRANSFERENCIAS-BANCARIAS-SANTANDER.pdf";
 
-
 function GuiasPago() {
   const programas = [
     {
@@ -82,7 +81,8 @@ function GuiasPago() {
         <div className="section-header-Vinculacion">
           <h2 className="section-title">Guias de Pago</h2>
           <p className="section-description">
-            Conoce como realizar tus pagos de manera fácil y segura con nuestras guías detalladas para cada programa.
+            Conoce como realizar tus pagos de manera fácil y segura con nuestras
+            guías detalladas para cada programa.
           </p>
           <div className="title-decoration">
             <span></span>
@@ -107,7 +107,6 @@ function GuiasPago() {
               }
             >
               <div className="card-content">
-
                 <h3 className="programa-nombre">{programa.nombre}</h3>
 
                 <div className="card-hover-info">
@@ -125,7 +124,6 @@ function GuiasPago() {
             </a>
           ))}
         </div>
-
       </section>
     </>
   );

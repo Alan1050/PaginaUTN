@@ -1,11 +1,11 @@
-import './QuienesSomos.css';
-import { useState } from 'react';
+import "./QuienesSomos.css";
+import { useState } from "react";
 
 function QuienesSomos() {
-  const [activeSection, setActiveSection] = useState<string>('mision');
+  const [activeSection, setActiveSection] = useState<string>("mision");
 
   const toggleSection = (section: string) => {
-    setActiveSection(activeSection === section ? '' : section);
+    setActiveSection(activeSection === section ? "" : section);
   };
 
   return (

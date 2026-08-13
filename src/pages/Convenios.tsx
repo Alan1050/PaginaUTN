@@ -1,61 +1,65 @@
-import React from 'react';
+import React from "react";
 // import { Link } from 'react-router-dom';
-import './Convenios.css';
-import bannerConvenios from '../assets/banner/bannerConvenios.jpg'; 
+import "./Convenios.css";
+import bannerConvenios from "../assets/banner/bannerConvenios.jpg";
 
 function Convenios() {
   const beneficiosConvenios = [
     {
-      titulo: 'Proyectos académicos',
-      emoji: '📚',
-      descripcion: 'Desarrollo de proyectos conjuntos para fortalecer la formación profesional',
-      color: '#2E7D32'
+      titulo: "Proyectos académicos",
+      emoji: "📚",
+      descripcion:
+        "Desarrollo de proyectos conjuntos para fortalecer la formación profesional",
+      color: "#2E7D32",
     },
     {
-      titulo: 'Estadías profesionales',
-      emoji: '💼',
-      descripcion: 'Oportunidades para que estudiantes realicen estadías en empresas',
-      color: '#1565C0'
+      titulo: "Estadías profesionales",
+      emoji: "💼",
+      descripcion:
+        "Oportunidades para que estudiantes realicen estadías en empresas",
+      color: "#1565C0",
     },
     {
-      titulo: 'Capacitación continua',
-      emoji: '🎓',
-      descripcion: 'Programas de actualización y desarrollo para el sector productivo',
-      color: '#B76E1E'
-    }
+      titulo: "Capacitación continua",
+      emoji: "🎓",
+      descripcion:
+        "Programas de actualización y desarrollo para el sector productivo",
+      color: "#B76E1E",
+    },
   ];
 
   const ambitos = [
     {
-      ambito: 'Regional',
-      emoji: '🌎',
-      descripcion: 'Fortalecimiento del desarrollo local y regional'
+      ambito: "Regional",
+      emoji: "🌎",
+      descripcion: "Fortalecimiento del desarrollo local y regional",
     },
     {
-      ambito: 'Nacional',
-      emoji: '🇲🇽',
-      descripcion: 'Vinculación con empresas e instituciones de todo el país'
+      ambito: "Nacional",
+      emoji: "🇲🇽",
+      descripcion: "Vinculación con empresas e instituciones de todo el país",
     },
     {
-      ambito: 'Internacional',
-      emoji: '🌐',
-      descripcion: 'Intercambio de conocimientos y experiencias globales'
-    }
+      ambito: "Internacional",
+      emoji: "🌐",
+      descripcion: "Intercambio de conocimientos y experiencias globales",
+    },
   ];
 
   return (
     <>
       <div className="banner-container-convenios">
-        <img 
-          src={bannerConvenios} 
-          alt="Banner Convenios de Colaboración" 
-          className="banner-convenios" 
+        <img
+          src={bannerConvenios}
+          alt="Banner Convenios de Colaboración"
+          className="banner-convenios"
         />
         <div className="banner-overlay-convenios">
           <div className="banner-content-convenios">
             <h1 className="banner-title-convenios">CONVENIOS</h1>
             <p className="banner-subtitle-convenios">
-              Creación de Convenios de Colaboración<br />
+              Creación de Convenios de Colaboración
+              <br />
               Universidad Tecnológica de Nayarit
             </p>
             <div className="banner-decoration-convenios"></div>
@@ -80,9 +84,10 @@ function Convenios() {
               </div>
             </div>
             <p className="introduccion-texto">
-              Se promueve la firma de <strong>Convenios de Colaboración</strong> con empresas e 
-              instituciones públicas y sociales, con el objetivo de fortalecer la vinculación 
-              y el trabajo conjunto en beneficio de la <strong>comunidad universitaria</strong> y del{' '}
+              Se promueve la firma de <strong>Convenios de Colaboración</strong>{" "}
+              con empresas e instituciones públicas y sociales, con el objetivo
+              de fortalecer la vinculación y el trabajo conjunto en beneficio de
+              la <strong>comunidad universitaria</strong> y del{" "}
               <strong>sector productivo</strong>.
             </p>
           </div>
@@ -96,7 +101,8 @@ function Convenios() {
               Beneficios de los Convenios
             </h2>
             <p className="section-subtitle-convenios">
-              Impulsamos proyectos que transforman y fortalecen la formación integral
+              Impulsamos proyectos que transforman y fortalecen la formación
+              integral
             </p>
             <div className="title-decoration-convenios">
               <span></span>
@@ -107,17 +113,27 @@ function Convenios() {
 
           <div className="beneficios-grid-convenios">
             {beneficiosConvenios.map((beneficio, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="beneficio-card-convenios"
-                style={{ '--beneficio-color': beneficio.color } as React.CSSProperties}
+                style={
+                  {
+                    "--beneficio-color": beneficio.color,
+                  } as React.CSSProperties
+                }
               >
                 <div className="beneficio-icono-convenios">
-                  <span className="beneficio-emoji-convenios">{beneficio.emoji}</span>
+                  <span className="beneficio-emoji-convenios">
+                    {beneficio.emoji}
+                  </span>
                 </div>
                 <div className="beneficio-contenido-convenios">
-                  <h3 className="beneficio-titulo-convenios">{beneficio.titulo}</h3>
-                  <p className="beneficio-descripcion-convenios">{beneficio.descripcion}</p>
+                  <h3 className="beneficio-titulo-convenios">
+                    {beneficio.titulo}
+                  </h3>
+                  <p className="beneficio-descripcion-convenios">
+                    {beneficio.descripcion}
+                  </p>
                 </div>
               </div>
             ))}
@@ -129,10 +145,16 @@ function Convenios() {
           <div className="descripcion-contenedor-convenios">
             <div className="descripcion-texto-convenios">
               <p className="descripcion-parrafo-convenios">
-                Estos convenios permiten impulsar <span className="texto-destacado">proyectos académicos y profesionales</span>, 
-                estadías, estancias, intercambio de conocimientos y acciones de capacitación, 
-                contribuyendo a la <span className="texto-destacado">formación integral de los estudiantes</span> y al desarrollo 
-                regional, nacional e internacional.
+                Estos convenios permiten impulsar{" "}
+                <span className="texto-destacado">
+                  proyectos académicos y profesionales
+                </span>
+                , estadías, estancias, intercambio de conocimientos y acciones
+                de capacitación, contribuyendo a la{" "}
+                <span className="texto-destacado">
+                  formación integral de los estudiantes
+                </span>{" "}
+                y al desarrollo regional, nacional e internacional.
               </p>
             </div>
             <div className="descripcion-ambitos">
@@ -141,7 +163,9 @@ function Convenios() {
                   <span className="ambito-emoji">{item.emoji}</span>
                   <div className="ambito-contenido">
                     <span className="ambito-titulo">{item.ambito}</span>
-                    <span className="ambito-descripcion">{item.descripcion}</span>
+                    <span className="ambito-descripcion">
+                      {item.descripcion}
+                    </span>
                   </div>
                 </div>
               ))}
@@ -181,7 +205,9 @@ function Convenios() {
               </div>
               <div className="lista-titulo">
                 <span className="lista-numero">3</span>
-                <span className="lista-texto">Registro público de la propiedad</span>
+                <span className="lista-texto">
+                  Registro público de la propiedad
+                </span>
               </div>
               <div className="lista-titulo">
                 <span className="lista-numero">4</span>
@@ -193,7 +219,9 @@ function Convenios() {
               </div>
               <div className="lista-titulo">
                 <span className="lista-numero">6</span>
-                <span className="lista-texto">CURP del representante legal</span>
+                <span className="lista-texto">
+                  CURP del representante legal
+                </span>
               </div>
               <div className="lista-titulo">
                 <span className="lista-numero">7</span>
@@ -201,7 +229,9 @@ function Convenios() {
               </div>
               <div className="lista-titulo">
                 <span className="lista-numero">8</span>
-                <span className="lista-texto">Comprobante de Domicilio de la empresa</span>
+                <span className="lista-texto">
+                  Comprobante de Domicilio de la empresa
+                </span>
               </div>
             </div>
           </div>
@@ -215,7 +245,8 @@ function Convenios() {
               Persona Física
             </h2>
             <p className="section-subtitle-convenios">
-              Documentación requerida para personas físicas con actividad empresarial
+              Documentación requerida para personas físicas con actividad
+              empresarial
             </p>
             <div className="title-decoration-convenios">
               <span></span>
@@ -235,15 +266,21 @@ function Convenios() {
               </div>
               <div className="lista-item-fisica">
                 <span className="lista-numero-fisica">2</span>
-                <span className="lista-texto-fisica">CURP del representante</span>
+                <span className="lista-texto-fisica">
+                  CURP del representante
+                </span>
               </div>
               <div className="lista-item-fisica">
                 <span className="lista-numero-fisica">3</span>
-                <span className="lista-texto-fisica">INE del representante</span>
+                <span className="lista-texto-fisica">
+                  INE del representante
+                </span>
               </div>
               <div className="lista-item-fisica">
                 <span className="lista-numero-fisica">4</span>
-                <span className="lista-texto-fisica">Comprobante de Domicilio de la empresa</span>
+                <span className="lista-texto-fisica">
+                  Comprobante de Domicilio de la empresa
+                </span>
               </div>
             </div>
           </div>
@@ -268,23 +305,33 @@ function Convenios() {
               <div className="step-numero-convenios">1</div>
               <div className="step-contenido-convenios">
                 <h4 className="step-titulo-convenios">Contacto inicial</h4>
-                <p className="step-descripcion-convenios">Comunicación con el área de vinculación</p>
+                <p className="step-descripcion-convenios">
+                  Comunicación con el área de vinculación
+                </p>
               </div>
             </div>
             <div className="step-connector-convenios"></div>
             <div className="step-item-convenios">
               <div className="step-numero-convenios">2</div>
               <div className="step-contenido-convenios">
-                <h4 className="step-titulo-convenios">Revisión de requisitos</h4>
-                <p className="step-descripcion-convenios">Verificación de documentación</p>
+                <h4 className="step-titulo-convenios">
+                  Revisión de requisitos
+                </h4>
+                <p className="step-descripcion-convenios">
+                  Verificación de documentación
+                </p>
               </div>
             </div>
             <div className="step-connector-convenios"></div>
             <div className="step-item-convenios">
               <div className="step-numero-convenios">3</div>
               <div className="step-contenido-convenios">
-                <h4 className="step-titulo-convenios">Elaboración del convenio</h4>
-                <p className="step-descripcion-convenios">Desarrollo del documento legal</p>
+                <h4 className="step-titulo-convenios">
+                  Elaboración del convenio
+                </h4>
+                <p className="step-descripcion-convenios">
+                  Desarrollo del documento legal
+                </p>
               </div>
             </div>
             <div className="step-connector-convenios"></div>
@@ -292,7 +339,9 @@ function Convenios() {
               <div className="step-numero-convenios">4</div>
               <div className="step-contenido-convenios">
                 <h4 className="step-titulo-convenios">Firma del convenio</h4>
-                <p className="step-descripcion-convenios">Formalización del acuerdo</p>
+                <p className="step-descripcion-convenios">
+                  Formalización del acuerdo
+                </p>
               </div>
             </div>
           </div>
@@ -304,19 +353,25 @@ function Convenios() {
             <div className="contacto-icono-convenios">
               <span className="contacto-emoji-convenios">📞</span>
             </div>
-            <h3 className="contacto-titulo-convenios">Información y contacto</h3>
-            
+            <h3 className="contacto-titulo-convenios">
+              Información y contacto
+            </h3>
+
             <div className="contacto-mensaje">
               <p className="contacto-texto">
-                Para mayor información, consulta en los correos institucionales correspondientes.
+                Para mayor información, consulta en los correos institucionales
+                correspondientes.
               </p>
             </div>
-            
+
             <div className="contacto-item-convenios">
               <span className="contacto-item-icono">📧</span>
               <div className="contacto-item-contenido">
                 <span className="contacto-item-etiqueta">Correo:</span>
-                <a href="mailto:convenios@utnay.edu.mx" className="contacto-email">
+                <a
+                  href="mailto:convenios@utnay.edu.mx"
+                  className="contacto-email"
+                >
                   convenios@utnay.edu.mx
                 </a>
               </div>
@@ -324,7 +379,8 @@ function Convenios() {
 
             <div className="contacto-adicional">
               <p className="contacto-adicional-texto">
-                También puedes contactar al área de Vinculación para recibir asesoría personalizada
+                También puedes contactar al área de Vinculación para recibir
+                asesoría personalizada
               </p>
             </div>
           </div>
@@ -335,7 +391,8 @@ function Convenios() {
           <div className="cta-content-convenios">
             <h3 className="cta-titulo-convenios">¿Listo para colaborar?</h3>
             <p className="cta-descripcion-convenios">
-              Firme un convenio con la UT Nayarit y fortalezca el desarrollo académico y profesional
+              Firme un convenio con la UT Nayarit y fortalezca el desarrollo
+              académico y profesional
             </p>
             {/*
             <Link to="/contacto" className="cta-button-convenios">

@@ -1,0 +1,364 @@
+.page {
+  min-height: 100vh;
+  background: #f5f8f7;
+  color: #1f2937;
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  min-height: 360px;
+  place-items: center;
+  overflow: hidden;
+  padding: 72px 24px;
+  background:
+    radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.12), transparent 28%),
+    linear-gradient(135deg, #0b423e 0%, #10504b 55%, #18817d 100%);
+  color: #ffffff;
+}
+
+.hero::after {
+  position: absolute;
+  z-index: -1;
+  right: -90px;
+  bottom: -180px;
+  width: 420px;
+  height: 420px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 45px rgba(255, 255, 255, 0.035),
+    0 0 0 90px rgba(255, 255, 255, 0.025);
+  content: "";
+}
+
+.heroContent {
+  width: min(920px, 100%);
+  text-align: center;
+}
+
+.eyebrow,
+.sectionHeading > p {
+  margin: 0 0 12px;
+  color: #18817d;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  color: #c7eeeb;
+}
+
+.hero h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(2.35rem, 6vw, 4.7rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.03;
+}
+
+.heroDescription {
+  max-width: 680px;
+  margin: 24px auto 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.7;
+}
+
+.content,
+.resourcesInner {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.content {
+  padding: 72px 0 80px;
+}
+
+.sectionHeading {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.sectionHeading h2 {
+  margin: 0;
+  color: #143d3a;
+  font-size: clamp(1.8rem, 4vw, 2.65rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: minmax(230px, 0.33fr) minmax(0, 1fr);
+  overflow: hidden;
+  border: 1px solid #d8e5e3;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 18px 50px rgba(16, 80, 75, 0.1);
+}
+
+.tabList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px;
+  background: #eaf3f2;
+}
+
+.tabButton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 62px;
+  padding: 14px 16px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: #315653;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 750;
+  text-align: left;
+  text-transform: uppercase;
+  transition: background-color 180ms ease, color 180ms ease,
+    transform 180ms ease;
+}
+
+.tabButton svg {
+  flex: 0 0 auto;
+  font-size: 1.35rem;
+}
+
+.tabButton:hover {
+  background: rgba(255, 255, 255, 0.72);
+  color: #10504b;
+  transform: translateX(2px);
+}
+
+.tabButton:focus-visible {
+  outline: 3px solid rgba(24, 129, 125, 0.35);
+  outline-offset: 2px;
+}
+
+.activeTab,
+.activeTab:hover {
+  background: #10504b;
+  color: #ffffff;
+}
+
+.tabPanel {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 34px;
+  min-height: 330px;
+  padding: clamp(34px, 6vw, 72px);
+  animation: reveal 260ms ease both;
+}
+
+.panelIcon {
+  display: grid;
+  width: 118px;
+  height: 118px;
+  place-items: center;
+  border-radius: 28px;
+  background: linear-gradient(145deg, #10504b, #18817d);
+  color: #ffffff;
+  box-shadow: 0 15px 32px rgba(16, 80, 75, 0.22);
+}
+
+.panelIcon svg {
+  font-size: 3.6rem;
+}
+
+.tabPanel h3,
+.resourceCard h3 {
+  margin: 0;
+  color: #143d3a;
+  font-weight: 800;
+}
+
+.tabPanel h3 {
+  font-size: clamp(1.55rem, 3vw, 2.1rem);
+}
+
+.tabPanel p {
+  max-width: 670px;
+  margin: 18px 0 0;
+  color: #52615f;
+  font-size: 1.04rem;
+  line-height: 1.78;
+}
+
+.resources {
+  padding: 72px 0 88px;
+  background: #ffffff;
+}
+
+.resourceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.resourceCard {
+  display: flex;
+  min-height: 300px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px;
+  border: 1px solid #dce8e6;
+  border-radius: 18px;
+  background: #f9fbfb;
+  transition: border-color 180ms ease, box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.resourceCard:hover {
+  border-color: rgba(24, 129, 125, 0.45);
+  box-shadow: 0 15px 36px rgba(16, 80, 75, 0.1);
+  transform: translateY(-4px);
+}
+
+.resourceIcon {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 24px;
+  place-items: center;
+  border-radius: 15px;
+  background: #dcefed;
+  color: #10504b;
+}
+
+.resourceIcon svg {
+  font-size: 1.7rem;
+}
+
+.resourceCard h3 {
+  font-size: 1.2rem;
+  line-height: 1.35;
+}
+
+.resourceCard p {
+  margin: 12px 0 24px;
+  color: #62706e;
+  line-height: 1.65;
+}
+
+.resourceCard a,
+.pending {
+  margin-top: auto;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.resourceCard a {
+  color: #10504b;
+  text-decoration: none;
+}
+
+.resourceCard a:hover {
+  text-decoration: underline;
+}
+
+.pending {
+  color: #7a8987;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 780px) {
+  .hero {
+    min-height: 300px;
+    padding: 56px 20px;
+  }
+
+  .content,
+  .resourcesInner {
+    width: min(100% - 32px, 620px);
+  }
+
+  .content,
+  .resources {
+    padding-top: 52px;
+    padding-bottom: 60px;
+  }
+
+  .tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .tabList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px;
+  }
+
+  .tabButton {
+    justify-content: center;
+    min-height: 76px;
+    padding: 10px 8px;
+    text-align: center;
+  }
+
+  .tabButton span {
+    display: none;
+  }
+
+  .tabButton:hover {
+    transform: none;
+  }
+
+  .tabPanel {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    min-height: 0;
+    padding: 32px 24px 40px;
+  }
+
+  .panelIcon {
+    width: 82px;
+    height: 82px;
+    border-radius: 22px;
+  }
+
+  .panelIcon svg {
+    font-size: 2.45rem;
+  }
+
+  .resourceGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .resourceCard {
+    min-height: 260px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tabPanel,
+  .tabButton,
+  .resourceCard {
+    animation: none;
+    transition: none;
+  }
+}

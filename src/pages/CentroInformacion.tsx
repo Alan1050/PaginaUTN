@@ -19,9 +19,10 @@ function CentroInformacion() {
         <div className="biblioteca-intro">
           <div className="intro-card">
             <p className="intro-text">
-              La Biblioteca Universitaria es un espacio académico fundamental que contribuye al
-              fortalecimiento del proceso de enseñanza–aprendizaje, la investigación y la
-              formación integral de la comunidad estudiantil.
+              La Biblioteca Universitaria es un espacio académico fundamental
+              que contribuye al fortalecimiento del proceso de
+              enseñanza–aprendizaje, la investigación y la formación integral de
+              la comunidad estudiantil.
             </p>
           </div>
         </div>
@@ -34,15 +35,17 @@ function CentroInformacion() {
           </h2>
           <div className="objetivo-card">
             <p className="objetivo-texto">
-              Brindar acceso a recursos bibliográficos físicos y digitales actualizados, así como ofrecer 
-              servicios de orientación, consulta y apoyo documental que faciliten el desarrollo académico 
-              y profesional de estudiantes, docentes y personal administrativo.
+              Brindar acceso a recursos bibliográficos físicos y digitales
+              actualizados, así como ofrecer servicios de orientación, consulta
+              y apoyo documental que faciliten el desarrollo académico y
+              profesional de estudiantes, docentes y personal administrativo.
             </p>
             <p className="objetivo-texto secundario">
-              Se promueve el hábito de la lectura, el pensamiento crítico y la cultura de la
-              investigación, proporcionando un ambiente adecuado para el estudio individual y
-              colaborativo. A través de sus servicios, la Biblioteca Universitaria se consolida
-              como un eje estratégico para el desarrollo del conocimiento y la excelencia
+              Se promueve el hábito de la lectura, el pensamiento crítico y la
+              cultura de la investigación, proporcionando un ambiente adecuado
+              para el estudio individual y colaborativo. A través de sus
+              servicios, la Biblioteca Universitaria se consolida como un eje
+              estratégico para el desarrollo del conocimiento y la excelencia
               educativa.
             </p>
           </div>
@@ -71,7 +74,9 @@ function CentroInformacion() {
 
             <div className="servicio-card">
               <div className="servicio-icon">🏠</div>
-              <h3 className="servicio-nombre">Préstamo de libros a domicilio</h3>
+              <h3 className="servicio-nombre">
+                Préstamo de libros a domicilio
+              </h3>
             </div>
 
             <div className="servicio-card">
@@ -86,7 +91,9 @@ function CentroInformacion() {
 
             <div className="servicio-card">
               <div className="servicio-icon">📸</div>
-              <h3 className="servicio-nombre">Toma de fotos para las credenciales</h3>
+              <h3 className="servicio-nombre">
+                Toma de fotos para las credenciales
+              </h3>
             </div>
 
             <div className="servicio-card">
@@ -96,7 +103,9 @@ function CentroInformacion() {
 
             <div className="servicio-card">
               <div className="servicio-icon">📄</div>
-              <h3 className="servicio-nombre">Revisión de memorias de estadías</h3>
+              <h3 className="servicio-nombre">
+                Revisión de memorias de estadías
+              </h3>
             </div>
           </div>
         </div>
@@ -108,13 +117,18 @@ function CentroInformacion() {
               <div className="horario-icon">⏰</div>
               <h3 className="horario-titulo">Horario de atención</h3>
               <p className="horario-texto">Lunes a Viernes</p>
-              <p className="horario-texto horario-destacado">8:00 - 19:00 hrs</p>
+              <p className="horario-texto horario-destacado">
+                8:00 - 19:00 hrs
+              </p>
             </div>
 
             <div className="contacto-card">
               <div className="contacto-icon">📧</div>
               <h3 className="contacto-titulo">Correo electrónico</h3>
-              <a href="mailto:biblioteca@utnay.edu.mx" className="contacto-email">
+              <a
+                href="mailto:biblioteca@utnay.edu.mx"
+                className="contacto-email"
+              >
                 biblioteca@utnay.edu.mx
               </a>
             </div>
@@ -122,16 +136,18 @@ function CentroInformacion() {
             <div className="enlace-card">
               <div className="enlace-icon">🔗</div>
               <h3 className="enlace-titulo">Biblioteca Digital</h3>
-              <a 
-                href="https://www.digitaliapublishing.com/novedades" 
-                target="_blank" 
+              <a
+                href="https://www.digitaliapublishing.com/novedades"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="enlace-boton"
               >
                 Acceder a Digitalia Publishing
                 <span className="enlace-flecha">→</span>
               </a>
-              <p className="enlace-descripcion">Consulta las novedades y recursos digitales</p>
+              <p className="enlace-descripcion">
+                Consulta las novedades y recursos digitales
+              </p>
             </div>
           </div>
         </div>

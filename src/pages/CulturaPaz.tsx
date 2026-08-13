@@ -81,11 +81,11 @@ function CulturaPaz() {
     }),
     [],
   );
-  const [activeSection, setActiveSection] = useState<string>("perfil"); 
+  const [activeSection, setActiveSection] = useState<string>("perfil");
 
-    const toggleSection = (section: string) => {
-      setActiveSection(activeSection === section ? "" : section);
-    };
+  const toggleSection = (section: string) => {
+    setActiveSection(activeSection === section ? "" : section);
+  };
 
   // Manejar el resize con useCallback
   const handleResize = useCallback(() => {

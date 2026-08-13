@@ -1,0 +1,249 @@
+.page {
+  min-height: 100vh;
+  background: #f5f8f7;
+  color: #1f2937;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: 280px;
+  padding: 56px 24px;
+  background: #10504b;
+  color: #ffffff;
+}
+
+.heroContent {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero p {
+  margin: 0 0 10px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  opacity: 0.86;
+}
+
+.hero h1 {
+  max-width: 900px;
+  margin: 0 auto;
+  color: #ffffff;
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.content {
+  width: min(1120px, calc(100% - 48px));
+  margin: 40px auto 72px;
+}
+
+.yearItem {
+  overflow: hidden;
+  margin-bottom: 24px;
+  border: 2px solid #dbe7e5;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.08);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.yearItem.active {
+  border-color: #10504b;
+  box-shadow: 0 6px 20px rgba(16, 80, 75, 0.16);
+}
+
+.yearHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border: 0;
+  color: #ffffff;
+  cursor: pointer;
+  text-align: left;
+}
+
+.yearHeader {
+  min-height: 78px;
+  padding: 20px 24px;
+  background: #10504b;
+}
+
+.yearHeader:hover {
+  background: #18817d;
+}
+
+.yearHeader:focus {
+  outline: none;
+}
+
+.yearHeader:focus-visible {
+  box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.7);
+}
+
+.yearHeader h2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  margin: 0;
+  color: #ffffff;
+  line-height: 1.25;
+}
+
+.yearHeader h2 {
+  font-size: 1.45rem;
+  font-weight: 700;
+}
+
+.yearIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  min-width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+.toggleIcon {
+  min-width: 30px;
+  color: inherit;
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 1;
+  text-align: center;
+}
+
+.yearContent {
+  padding: 24px;
+  background: rgba(16, 80, 75, 0.06);
+  animation: slideDown 0.3s ease;
+}
+
+.fileList {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fileList li {
+  min-width: 0;
+}
+
+.fileLink {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border: 1px solid rgba(16, 80, 75, 0.16);
+  border-radius: 12px;
+  background: #ffffff;
+  color: #1f2937;
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+    border-color 0.18s ease, background-color 0.18s ease;
+}
+
+.fileLink:hover {
+  border-color: rgba(16, 80, 75, 0.4);
+  background: #f3faf9;
+  box-shadow: 0 8px 22px rgba(16, 80, 75, 0.1);
+  transform: translateY(-1px);
+}
+
+.fileType {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  min-width: 48px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(16, 80, 75, 0.1);
+  color: #10504b;
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+.fileName {
+  min-width: 0;
+  flex: 1;
+  overflow-wrap: anywhere;
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.fileAction {
+  flex-shrink: 0;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(16, 80, 75, 0.12);
+  color: #10504b;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.emptyState {
+  padding: 24px;
+  border: 1px dashed rgba(16, 80, 75, 0.35);
+  border-radius: 12px;
+  background: #ffffff;
+  color: #52615f;
+  font-weight: 700;
+  text-align: center;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 220px;
+    padding: 40px 18px;
+  }
+
+  .content {
+    width: min(100% - 32px, 620px);
+    margin: 28px auto 48px;
+  }
+
+  .yearHeader {
+    padding: 18px 20px;
+  }
+
+  .yearHeader h2 {
+    font-size: 1.18rem;
+  }
+
+  .yearContent {
+    padding: 18px;
+  }
+
+  .fileLink {
+    padding: 12px;
+  }
+
+  .fileAction {
+    display: none;
+  }
+}

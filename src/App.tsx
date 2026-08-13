@@ -32,6 +32,9 @@ import CulturaPaz from "./pages/CulturaPaz.tsx";
 import CentroInformacion from "./pages/CentroInformacion.tsx";
 import BackButton from "./components/BackButton.tsx";
 import ExamenIngreso from "./pages/ExamenIngreso.tsx";
+import SEO from "./components/SEO.tsx";
+import Mir from "./pages/Mir.tsx";
+import Documentacion from "./pages/SidOut.tsx";
 
 function ScrollToTop() {
   const { pathname, search, hash } = useLocation();
@@ -75,6 +78,7 @@ function App() {
       {" "}
       {/* Se cambia segun la ubicacion de la carpeta */}
       <ScrollToTop />
+      <SEO />
       {!isMobile && <NavContacto />}
       <Nav />
       <BackButton
@@ -101,7 +105,6 @@ function App() {
         <Route path="/Incubadora" element={<Incubadora />} />
         <Route path="/CEELEX" element={<CEELEX />} />
         <Route path="/ECECUT" element={<ECECUT />} />
-        <Route path="/InformesFinancieros" element={<InformesFinancieros />} />
         <Route path="/Resultados" element={<ExamenIngreso />} />
         <Route
           path="/ExtensionUniversitaria"
@@ -116,6 +119,8 @@ function App() {
         <Route path="/ComiteEtica" element={<ComiteEtica />} />
         <Route path="/Egresados" element={<Egresados />} />
         <Route path="/Informes/Financieros" element={<InformesFinancieros />} />
+        <Route path="/MIR" element={<Mir />} />
+        <Route path="/SidOut" element={<Documentacion />} />
         <Route path="/CulturaPaz" element={<CulturaPaz />} />
         <Route path="/CentroInformacion" element={<CentroInformacion />} />
         <Route path="/GuiasPago" element={<GuiasPago />} />

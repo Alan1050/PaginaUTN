@@ -670,13 +670,18 @@ function Nav() {
                           </a>
                         </li>
                         <li>
-                          <a href="" onClick={(e) => handleLinkClick(e, "")}>
+                          <a
+                            href="/SidOut"
+                            onClick={(e) =>
+                              handleLinkClick(e, "/SidOut")
+                            }
+                          >
                             SidOut
                           </a>
                         </li>
                         <li>
                           <a
-                            href="https://www.utnay.edu.mx/planeacion/mir.html"
+                            href="/MIR"
                             onClick={(e) => handleLinkClick(e, "")}
                           >
                             Reporte Avance Trimestral MIR
@@ -684,7 +689,7 @@ function Nav() {
                         </li>
                         <li>
                           <a
-                            href="https://www.utnay.edu.mx/informes/informes.html"
+                            href="/Informes/Financieros"
                             onClick={(e) => handleLinkClick(e, "")}
                           >
                             Informes Financieros
@@ -1364,7 +1369,7 @@ function Nav() {
                       </li>
                       <li>
                         <a
-                          href=""
+                          href="/SidOut"
                           onClick={(e) => {
                             e.stopPropagation();
                             closeMenu();
@@ -1375,7 +1380,7 @@ function Nav() {
                       </li>
                       <li>
                         <a
-                          href="https://www.utnay.edu.mx/planeacion/mir.html"
+                          href="/MIR"
                           onClick={(e) => handleLinkClick(e, "")}
                         >
                           Reporte Avance Trimestral MIR
@@ -1383,7 +1388,7 @@ function Nav() {
                       </li>
                       <li>
                         <a
-                          href="https://www.utnay.edu.mx/informes/informes.html"
+                          href="/Informes/Financieros"
                           onClick={(e) => handleLinkClick(e, "")}
                         >
                           Informes Financieros

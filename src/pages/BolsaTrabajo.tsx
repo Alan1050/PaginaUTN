@@ -1,64 +1,71 @@
-import React from 'react';
+import React from "react";
 // import { Link } from 'react-router-dom';
-import './BolsaTrabajo.css';
-import bannerBolsaTrabajo from '../assets/banner/bannerBolsaTrabajo.jpg'; // Descomentar cuando tengas la imagen
+import "./BolsaTrabajo.css";
+import bannerBolsaTrabajo from "../assets/banner/bannerBolsaTrabajo.jpg"; // Descomentar cuando tengas la imagen
 
 function BolsaTrabajo() {
   const beneficiosEmpresarios = [
     {
-      titulo: 'Talento calificado',
-      emoji: '🎯',
-      descripcion: 'Acceso a egresados con formación profesional y competencias actualizadas',
-      color: '#2E7D32'
+      titulo: "Talento calificado",
+      emoji: "🎯",
+      descripcion:
+        "Acceso a egresados con formación profesional y competencias actualizadas",
+      color: "#2E7D32",
     },
     {
-      titulo: 'Registro gratuito',
-      emoji: '✨',
-      descripcion: 'Sin costo para publicar tus vacantes y encontrar al candidato ideal',
-      color: '#1565C0'
+      titulo: "Registro gratuito",
+      emoji: "✨",
+      descripcion:
+        "Sin costo para publicar tus vacantes y encontrar al candidato ideal",
+      color: "#1565C0",
     },
     {
-      titulo: 'Vinculación directa',
-      emoji: '🤝',
-      descripcion: 'Conexión inmediata con el talento de la Universidad Tecnológica de Nayarit',
-      color: '#B76E1E'
-    }
+      titulo: "Vinculación directa",
+      emoji: "🤝",
+      descripcion:
+        "Conexión inmediata con el talento de la Universidad Tecnológica de Nayarit",
+      color: "#B76E1E",
+    },
   ];
 
   const beneficiosEgresados = [
     {
-      titulo: 'Oportunidades laborales',
-      emoji: '💼',
-      descripcion: 'Acceso a vacantes de empresas que buscan tu perfil profesional',
-      color: '#2E7D32'
+      titulo: "Oportunidades laborales",
+      emoji: "💼",
+      descripcion:
+        "Acceso a vacantes de empresas que buscan tu perfil profesional",
+      color: "#2E7D32",
     },
     {
-      titulo: 'Conexión directa',
-      emoji: '📱',
-      descripcion: 'Comunicación inmediata a través de WhatsApp con los reclutadores',
-      color: '#1565C0'
+      titulo: "Conexión directa",
+      emoji: "📱",
+      descripcion:
+        "Comunicación inmediata a través de WhatsApp con los reclutadores",
+      color: "#1565C0",
     },
     {
-      titulo: 'Actualización constante',
-      emoji: '🔄',
-      descripcion: 'Notificaciones de nuevas vacantes disponibles en tiempo real',
-      color: '#B76E1E'
-    }
+      titulo: "Actualización constante",
+      emoji: "🔄",
+      descripcion:
+        "Notificaciones de nuevas vacantes disponibles en tiempo real",
+      color: "#B76E1E",
+    },
   ];
 
   return (
     <>
       <div className="banner-container-bolsa">
-        <img 
-          src={bannerBolsaTrabajo} 
-          alt="Banner Bolsa de Trabajo" 
-          className="banner-bolsa" 
-        /> 
+        <img
+          src={bannerBolsaTrabajo}
+          alt="Banner Bolsa de Trabajo"
+          className="banner-bolsa"
+        />
         <div className="banner-overlay-bolsa">
           <div className="banner-content-bolsa">
             <h1 className="banner-title-bolsa">BOLSA DE TRABAJO</h1>
             <p className="banner-subtitle-bolsa">
-              Conectando talento universitario<br />
+              Conectando talento universitario
+              <br />
               con el sector productivo
             </p>
             <div className="banner-decoration-bolsa"></div>
@@ -75,7 +82,9 @@ function BolsaTrabajo() {
                 <span className="introduccion-emoji-bolsa">🎓</span>
               </div>
               <div className="introduccion-titulo-wrapper-bolsa">
-                <h2 className="introduccion-titulo-bolsa">Vinculación Laboral UT Nayarit</h2>
+                <h2 className="introduccion-titulo-bolsa">
+                  Vinculación Laboral UT Nayarit
+                </h2>
                 <div className="introduccion-logos-bolsa">
                   <span className="logo-ut-bolsa">UTNay</span>
                   <span className="logo-empleo-bolsa">EMPLEO</span>
@@ -83,8 +92,10 @@ function BolsaTrabajo() {
               </div>
             </div>
             <p className="introduccion-texto-bolsa">
-              Está dirigida a <strong>empresarios y egresados</strong>, con el objetivo de fortalecer la 
-              vinculación laboral y generar <strong>oportunidades de empleo</strong> para la comunidad universitaria.
+              Está dirigida a <strong>empresarios y egresados</strong>, con el
+              objetivo de fortalecer la vinculación laboral y generar{" "}
+              <strong>oportunidades de empleo</strong> para la comunidad
+              universitaria.
             </p>
           </div>
         </div>
@@ -97,7 +108,8 @@ function BolsaTrabajo() {
               Empresarios
             </h2>
             <p className="section-subtitle-bolsa">
-              Las empresas interesadas en ofertar vacantes pueden registrarse y compartir sus oportunidades laborales
+              Las empresas interesadas en ofertar vacantes pueden registrarse y
+              compartir sus oportunidades laborales
             </p>
             <div className="title-decoration-bolsa">
               <span></span>
@@ -109,17 +121,27 @@ function BolsaTrabajo() {
           <div className="empresarios-contenido-bolsa">
             <div className="empresarios-beneficios-bolsa">
               {beneficiosEmpresarios.map((beneficio, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="beneficio-card-bolsa"
-                  style={{ '--beneficio-color': beneficio.color } as React.CSSProperties}
+                  style={
+                    {
+                      "--beneficio-color": beneficio.color,
+                    } as React.CSSProperties
+                  }
                 >
                   <div className="beneficio-icono-bolsa">
-                    <span className="beneficio-emoji-bolsa">{beneficio.emoji}</span>
+                    <span className="beneficio-emoji-bolsa">
+                      {beneficio.emoji}
+                    </span>
                   </div>
                   <div className="beneficio-contenido-bolsa">
-                    <h3 className="beneficio-titulo-bolsa">{beneficio.titulo}</h3>
-                    <p className="beneficio-descripcion-bolsa">{beneficio.descripcion}</p>
+                    <h3 className="beneficio-titulo-bolsa">
+                      {beneficio.titulo}
+                    </h3>
+                    <p className="beneficio-descripcion-bolsa">
+                      {beneficio.descripcion}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -132,17 +154,23 @@ function BolsaTrabajo() {
                 </div>
                 <h3 className="cta-titulo-bolsa">Registra tus vacantes</h3>
                 <p className="cta-descripcion-bolsa">
-                  Comparte las oportunidades laborales de tu empresa y encuentra al talento que necesitas
+                  Comparte las oportunidades laborales de tu empresa y encuentra
+                  al talento que necesitas
                 </p>
-                <a 
-                  href="https://forms.gle/7rDUNCtgskoqnJMy9" 
-                  target="_blank" 
+                <a
+                  href="https://forms.gle/7rDUNCtgskoqnJMy9"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="cta-button-bolsa cta-button-empresarios"
                 >
                   <span>Registrar empresa</span>
                   <svg className="cta-arrow-bolsa" viewBox="0 0 24 24">
-                    <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path
+                      d="M5 12h14M12 5l7 7-7 7"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </a>
               </div>
@@ -158,7 +186,8 @@ function BolsaTrabajo() {
               Egresados
             </h2>
             <p className="section-subtitle-bolsa">
-              Si deseas formar parte de nuestra Bolsa de Trabajo y conocer vacantes disponibles
+              Si deseas formar parte de nuestra Bolsa de Trabajo y conocer
+              vacantes disponibles
             </p>
             <div className="title-decoration-bolsa">
               <span></span>
@@ -170,17 +199,27 @@ function BolsaTrabajo() {
           <div className="egresados-contenido-bolsa">
             <div className="egresados-beneficios-bolsa">
               {beneficiosEgresados.map((beneficio, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="beneficio-card-bolsa"
-                  style={{ '--beneficio-color': beneficio.color } as React.CSSProperties}
+                  style={
+                    {
+                      "--beneficio-color": beneficio.color,
+                    } as React.CSSProperties
+                  }
                 >
                   <div className="beneficio-icono-bolsa">
-                    <span className="beneficio-emoji-bolsa">{beneficio.emoji}</span>
+                    <span className="beneficio-emoji-bolsa">
+                      {beneficio.emoji}
+                    </span>
                   </div>
                   <div className="beneficio-contenido-bolsa">
-                    <h3 className="beneficio-titulo-bolsa">{beneficio.titulo}</h3>
-                    <p className="beneficio-descripcion-bolsa">{beneficio.descripcion}</p>
+                    <h3 className="beneficio-titulo-bolsa">
+                      {beneficio.titulo}
+                    </h3>
+                    <p className="beneficio-descripcion-bolsa">
+                      {beneficio.descripcion}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -193,17 +232,23 @@ function BolsaTrabajo() {
                 </div>
                 <h3 className="cta-titulo-bolsa">Únete al grupo de WhatsApp</h3>
                 <p className="cta-descripcion-bolsa">
-                  Conoce las vacantes disponibles y recibe notificaciones de nuevas oportunidades
+                  Conoce las vacantes disponibles y recibe notificaciones de
+                  nuevas oportunidades
                 </p>
-                <a 
-                  href="https://chat.whatsapp.com/CSTHAhTM1aEBRHvHdpmEDJ" 
-                  target="_blank" 
+                <a
+                  href="https://chat.whatsapp.com/CSTHAhTM1aEBRHvHdpmEDJ"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="cta-button-bolsa cta-button-egresados"
                 >
                   <span>Unirse al grupo</span>
                   <svg className="cta-arrow-bolsa" viewBox="0 0 24 24">
-                    <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path
+                      d="M5 12h14M12 5l7 7-7 7"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </a>
               </div>
@@ -217,8 +262,9 @@ function BolsaTrabajo() {
             <div className="mensaje-contenido-bolsa">
               <span className="mensaje-icono-bolsa">🤝</span>
               <p className="mensaje-texto-bolsa">
-                La <strong>Universidad Tecnológica de Nayarit</strong> continúa impulsando la conexión entre el talento de sus egresados 
-                y el sector productivo.
+                La <strong>Universidad Tecnológica de Nayarit</strong> continúa
+                impulsando la conexión entre el talento de sus egresados y el
+                sector productivo.
               </p>
             </div>
           </div>
@@ -231,19 +277,23 @@ function BolsaTrabajo() {
               <span className="contacto-emoji-bolsa">📞</span>
             </div>
             <h3 className="contacto-titulo-bolsa">Información y contacto</h3>
-            
+
             <div className="contacto-mensaje-bolsa">
               <p className="contacto-texto-bolsa">
-                Para mayor información, consulta en los correos institucionales correspondientes.
+                Para mayor información, consulta en los correos institucionales
+                correspondientes.
               </p>
             </div>
-            
+
             <div className="contacto-items-bolsa">
               <div className="contacto-item-bolsa">
                 <span className="contacto-item-icono">📧</span>
                 <div className="contacto-item-contenido">
                   <span className="contacto-item-etiqueta">Correo:</span>
-                  <a href="mailto:bolsatrabajo@utnay.edu.mx" className="contacto-email-bolsa">
+                  <a
+                    href="mailto:bolsatrabajo@utnay.edu.mx"
+                    className="contacto-email-bolsa"
+                  >
                     bolsatrabajo@utnay.edu.mx
                   </a>
                 </div>
@@ -253,7 +303,10 @@ function BolsaTrabajo() {
                 <span className="contacto-item-icono">📱</span>
                 <div className="contacto-item-contenido">
                   <span className="contacto-item-etiqueta">WhatsApp:</span>
-                  <a href="https://wa.me/523114469297" className="contacto-whatsapp-bolsa">
+                  <a
+                    href="https://wa.me/523114469297"
+                    className="contacto-whatsapp-bolsa"
+                  >
                     +52 (311) 446 9297
                   </a>
                 </div>
@@ -262,7 +315,9 @@ function BolsaTrabajo() {
 
             <div className="contacto-horario-bolsa">
               <span className="horario-icono">⏰</span>
-              <span className="horario-texto">Lunes a viernes de 9:00 a 18:00 hrs</span>
+              <span className="horario-texto">
+                Lunes a viernes de 9:00 a 18:00 hrs
+              </span>
             </div>
           </div>
         </div>
@@ -270,22 +325,25 @@ function BolsaTrabajo() {
         {/* CTA Final */}
         <div className="section-cta-bolsa">
           <div className="cta-content-bolsa">
-            <h3 className="cta-titulo-principal-bolsa">¿Eres egresado o empresario?</h3>
+            <h3 className="cta-titulo-principal-bolsa">
+              ¿Eres egresado o empresario?
+            </h3>
             <p className="cta-descripcion-principal-bolsa">
-              Forma parte de nuestra comunidad laboral y accede a las mejores oportunidades
+              Forma parte de nuestra comunidad laboral y accede a las mejores
+              oportunidades
             </p>
             <div className="cta-botones-bolsa">
-              <a 
-                href="https://forms.gle/7rDUNCtgskoqnJMy9" 
-                target="_blank" 
+              <a
+                href="https://forms.gle/7rDUNCtgskoqnJMy9"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="cta-button-principal-bolsa cta-button-empresarios-principal"
               >
                 <span>Soy empresario</span>
               </a>
-              <a 
-                href="https://chat.whatsapp.com/CSTHAhTM1aEBRHvHdpmEDJ" 
-                target="_blank" 
+              <a
+                href="https://chat.whatsapp.com/CSTHAhTM1aEBRHvHdpmEDJ"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="cta-button-principal-bolsa cta-button-egresados-principal"
               >

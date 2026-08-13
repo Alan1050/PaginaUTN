@@ -16,7 +16,6 @@ function ExamenIngreso() {
       <section className="content-vinculacion resultados-section">
         <div className="resultados-card">
           <div className="resultados-header">
-
             <h1>Resultados del Examen de Ingreso</h1>
           </div>
 
