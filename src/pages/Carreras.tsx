@@ -41,6 +41,8 @@ import PlanLGT_PDF from "../assets/planesEstudio/pdf/LGT.pdf";
 import PlanIA_PDF from "../assets/planesEstudio/pdf/IA.pdf";
 import PlanIMT from "../assets/planesEstudio/pdf/IMT.pdf";
 
+import { URL_ASSETS_FINANZAS } from "../config/constants";
+
 // Baners:
 
 // IAL (Ingenieria en Alimentos)

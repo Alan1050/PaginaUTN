@@ -1,6 +1,8 @@
 import { useState } from "react";
 import styles from "./Mir.module.css";
 
+import { URL_ASSETS_FINANZAS } from "../config/constants";
+
 type MirFile = {
   key: string;
   name: string;

@@ -1,7 +1,7 @@
 import React from "react";
 // import { Link } from 'react-router-dom';
 import "./Egresados.css";
-import bannerEgresados from "../assets/banner/bannerEgresados.jpg"; // Descomentar cuando tengas la imagen
+import bannerEgresados from "../assets/banner/bannerEgresados.jpg";
 
 function Egresados() {
   const programasEgresados = [

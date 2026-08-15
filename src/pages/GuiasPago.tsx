@@ -12,6 +12,8 @@ import GuiaPracticajaSantander from "../assets/extras/GUIA-PRACTICAJA-SANTANDER.
 import GuiaTransferenciaBancariaBanamex from "../assets/extras/GUIA-TRANSFERENCIAS-BANCARIAS-BANAMEX.pdf";
 import GuiaTransferenciaBancariaSantander from "../assets/extras/GUIA-TRANSFERENCIAS-BANCARIAS-SANTANDER.pdf";
 
+import { URL_ASSETS_FINANZAS } from "../config/constants";
+
 function GuiasPago() {
   const programas = [
     {

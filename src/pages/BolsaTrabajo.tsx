@@ -1,7 +1,7 @@
 import React from "react";
 // import { Link } from 'react-router-dom';
 import "./BolsaTrabajo.css";
-import bannerBolsaTrabajo from "../assets/banner/bannerBolsaTrabajo.jpg"; // Descomentar cuando tengas la imagen
+import bannerBolsaTrabajo from "../assets/banner/bannerBolsaTrabajo.jpg"; 
 
 function BolsaTrabajo() {
   const beneficiosEmpresarios = [

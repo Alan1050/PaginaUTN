@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from "react";
 import "./InformesFinancieros.css";
 import trabajandoJaguar from "../assets/banner/Trabajando.jpg";
 
+import { URL_ASSETS_FINANZAS } from "../config/constants";
+
 type CategoryKey = "contable" | "presupuestal" | "programatico" | "otros";
 
 type FinancialFile = {

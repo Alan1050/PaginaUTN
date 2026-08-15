@@ -7,6 +7,8 @@ import AppSiga from "../assets/logos/LOGO APPSIGA.png";
 import CalendarioEscolar from "../assets/extras/CALENDARIO ESCOLAR 2026.pdf";
 import convocatoria from "../assets/extras/Convocatoria Ingreso 2026-2027.pdf";
 
+import { URL_ASSETS_FINANZAS } from "../config/constants";
+
 function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isAspirantesOpen, setIsAspirantesOpen] = useState<boolean>(false);
@@ -672,18 +674,13 @@ function Nav() {
                         <li>
                           <a
                             href="/SidOut"
-                            onClick={(e) =>
-                              handleLinkClick(e, "/SidOut")
-                            }
+                            onClick={(e) => handleLinkClick(e, "/SidOut")}
                           >
                             SidOut
                           </a>
                         </li>
                         <li>
-                          <a
-                            href="/MIR"
-                            onClick={(e) => handleLinkClick(e, "")}
-                          >
+                          <a href="/" onClick={(e) => handleLinkClick(e, "")}>
                             Reporte Avance Trimestral MIR
                           </a>
                         </li>
@@ -1379,10 +1376,7 @@ function Nav() {
                         </a>
                       </li>
                       <li>
-                        <a
-                          href="/MIR"
-                          onClick={(e) => handleLinkClick(e, "")}
-                        >
+                        <a href="/" onClick={(e) => handleLinkClick(e, "")}>
                           Reporte Avance Trimestral MIR
                         </a>
                       </li>

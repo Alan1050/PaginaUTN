@@ -12,6 +12,8 @@ import Compañeros from "../assets/extras/Convocatoria Beca Compañeros.pdf";
 import Deportivas from "../assets/extras/Convocatoria Beca Derpotiva-Cultural.pdf";
 import Familia from "../assets/extras/Convocatoria Beca Familia.pdf";
 
+import { URL_ASSETS_FINANZAS } from "../config/constants";
+
 interface Descuento {
   rango: string;
   descuento: string;
