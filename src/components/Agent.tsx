@@ -13,7 +13,7 @@ interface AgentProps {
 const quickQuestions = [
   "Oferta educativa",
   "Becas disponibles",
-  "Proceso de admision",
+  "Resultados de admisión",
   "Guias de pago",
 ];
 
@@ -109,7 +109,6 @@ const saveAgentResponseCache = (
       })
     );
   } catch {
-    // El navegador puede bloquear storage; en ese caso el agente sigue sin cache.
   }
 };
 
@@ -191,7 +190,10 @@ const Agent: React.FC<AgentProps> = ({
         : { error: await response.text() };
 
       if (!response.ok) {
-        throw new Error(data.error || "No pude consultar el agente.");
+        throw new Error(
+          data.error ||
+            "Oh oh, seguimos innovando, pronto tendremos más información.",
+        );
       }
 
       const assistantMessage: ChatMessage = {
@@ -279,14 +281,18 @@ const Agent: React.FC<AgentProps> = ({
                   className={`agent-message agent-message-${message.role}`}
                   key={message.id}
                 >
-                  {message.content}
+                  <span style={{ whiteSpace: "pre-line" }}>
+                    {message.content}
+                  </span>
                   {message.links && message.links.length > 0 && (
                     <div className="agent-message-links">
                       {message.links.map((link) => (
                         <a
                           href={link.url}
                           key={`${message.id}-${link.url}`}
-                          target={link.url.startsWith("http") ? "_blank" : undefined}
+                          target={
+                            link.url.startsWith("http") ? "_blank" : undefined
+                          }
                           rel={
                             link.url.startsWith("http")
                               ? "noreferrer"

@@ -2,7 +2,6 @@ import "./Resultados.css";
 import bannerResultados from "../assets/banner/bannerResultados.jpg";
 import ResultadosPDF from "../assets/extras/RESULTADOS JUNIO 2026.pdf";
 
-import { URL_ASSETS_FINANZAS } from "../config/constants";
 
 function ExamenIngreso() {
   return (

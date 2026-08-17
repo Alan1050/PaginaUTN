@@ -70,13 +70,6 @@ function Incubadora() {
     },
   ];
 
-  const objetivos = [
-    "Motivar y reclutar a emprendedores para impulsar la creación de nuevas empresas",
-    "Establecer programas de asesoría técnico-administrativa para el crecimiento empresarial",
-    "Integrar una red de enlace con emprendedores y empresarios",
-    "Apoyo para programas empresariales y participación en ferias",
-  ];
-
   return (
     <>
       <div className="banner-container-incubadora">
@@ -185,62 +178,6 @@ function Incubadora() {
                 <h3 className="sector-nombre">{sector.nombre}</h3>
                 <p className="sector-descripcion">{sector.descripcion}</p>
                 <div className="sector-barra"></div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Misión y Visión */}
-        <div className="section-mision-vision">
-          <div className="mision-vision-grid">
-            <div className="mision-card">
-              <div className="mision-icono">
-                <span className="icono-emoji">🎯</span>
-              </div>
-              <h3 className="mision-titulo">Misión</h3>
-              <p className="mision-texto">
-                Ofrecer a los emprendedores de la sociedad en general, servicios
-                para la formulación y evaluación de ideas de negocios,
-                propiciando un ambiente óptimo para iniciar, desarrollar y
-                fortalecer sus empresas.
-              </p>
-              <div className="mision-decoration"></div>
-            </div>
-
-            <div className="vision-card">
-              <div className="vision-icono">
-                <span className="icono-emoji">🔭</span>
-              </div>
-              <h3 className="vision-titulo">Visión</h3>
-              <p className="vision-texto">
-                Consolidar el proceso de incubación y la cultura de
-                emprendimiento en alumnos y personal de la universidad, así como
-                en clientes externos, para fomentar la creación de empresas.
-              </p>
-              <div className="vision-decoration"></div>
-            </div>
-          </div>
-        </div>
-
-        {/* Objetivos */}
-        <div className="section-objetivos">
-          <div className="section-header-incubadora">
-            <h2 className="section-title-incubadora">
-              <span className="title-emoji">✅</span>
-              Objetivos
-            </h2>
-            <div className="title-decoration-incubadora">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </div>
-
-          <div className="objetivos-container">
-            {objetivos.map((objetivo, index) => (
-              <div key={index} className="objetivo-item">
-                <div className="objetivo-numero">{index + 1}</div>
-                <p className="objetivo-texto">{objetivo}</p>
               </div>
             ))}
           </div>

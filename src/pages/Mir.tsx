@@ -1,73 +1,16 @@
 import { useState } from "react";
 import styles from "./Mir.module.css";
+import { obtenerAniosMir } from "../services/informesMir";
 
-import { URL_ASSETS_FINANZAS } from "../config/constants";
+const aniosMir = obtenerAniosMir();
 
-type MirFile = {
-  key: string;
-  name: string;
-  url: string;
-  extension: string;
-};
-
-type MirYear = {
-  key: string;
-  label: string;
-  files: MirFile[];
-};
-
-const mirAssets = import.meta.glob("../assets/mir/**/*", {
-  eager: true,
-  query: "?url",
-  import: "default",
-}) as Record<string, string>;
-
-const getFileExtension = (fileName: string) =>
-  fileName.includes(".") ? fileName.split(".").pop()!.toUpperCase() : "ARCHIVO";
-
-const buildMirTree = (assets: Record<string, string>): MirYear[] => {
-  const years = new Map<string, MirFile[]>();
-
-  Object.entries(assets).forEach(([filePath, url]) => {
-    const parts = filePath.split("/");
-    const rootIndex = parts.findIndex((part) => part === "mir");
-    const year = parts[rootIndex + 1];
-    const fileName = parts.at(-1);
-
-    if (rootIndex === -1 || !year || !fileName || fileName.startsWith(".")) {
-      return;
-    }
-
-    if (!years.has(year)) {
-      years.set(year, []);
-    }
-
-    years.get(year)!.push({
-      key: filePath,
-      name: fileName,
-      url,
-      extension: getFileExtension(fileName),
-    });
-  });
-
-  return [...years.entries()]
-    .sort(([a], [b]) => Number(b) - Number(a))
-    .map(([year, files]) => ({
-      key: year,
-      label: year,
-      files: files.sort((a, b) =>
-        a.name.localeCompare(b.name, "es", {
-          sensitivity: "base",
-          numeric: true,
-        }),
-      ),
-    }));
-};
-
-const mirTree = buildMirTree(mirAssets);
+const obtenerEtiquetaTipo = (tipo: string | undefined, archivo: string) =>
+  (tipo || archivo.split(".").pop() || "archivo").toUpperCase();
 
 function Mir() {
-  const [activeYear, setActiveYear] = useState(mirTree[0]?.key ?? "");
+  const [activeYear, setActiveYear] = useState(
+    aniosMir[0] ? String(aniosMir[0].anio) : "",
+  );
 
   const toggleYear = (yearKey: string) => {
     setActiveYear((current) => (current === yearKey ? "" : yearKey));
@@ -82,23 +25,24 @@ function Mir() {
       </section>
 
       <section className={styles.content} aria-label="Reportes MIR por año">
-        {mirTree.length ? (
-          mirTree.map((year) => {
-            const isYearOpen = activeYear === year.key;
+        {aniosMir.length ? (
+          aniosMir.map((year) => {
+            const yearKey = String(year.anio);
+            const isYearOpen = activeYear === yearKey;
 
             return (
               <article
                 className={`${styles.yearItem} ${isYearOpen ? styles.active : ""}`}
-                key={year.key}
+                key={yearKey}
               >
                 <button
                   type="button"
                   className={styles.yearHeader}
-                  onClick={() => toggleYear(year.key)}
+                  onClick={() => toggleYear(yearKey)}
                   aria-expanded={isYearOpen}
-                  aria-controls={`mir-year-${year.key}`}
+                  aria-controls={`mir-year-${yearKey}`}
                 >
-                  <h2>{year.label}</h2>
+                  <h2>{year.anio}</h2>
                   <span className={styles.toggleIcon} aria-hidden="true">
                     {isYearOpen ? "−" : "+"}
                   </span>
@@ -107,33 +51,39 @@ function Mir() {
                 {isYearOpen && (
                   <div
                     className={styles.yearContent}
-                    id={`mir-year-${year.key}`}
+                    id={`mir-year-${yearKey}`}
                   >
-                    <ul
-                      className={styles.fileList}
-                      aria-label={`Archivos MIR de ${year.label}`}
-                    >
-                      {year.files.map((file) => (
-                        <li key={file.key}>
-                          <a
-                            className={styles.fileLink}
-                            href={file.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <span
-                              className={styles.fileType}
-                              aria-hidden="true"
+                    {year.archivos.length ? (
+                      <ul
+                        className={styles.fileList}
+                        aria-label={`Archivos MIR de ${year.anio}`}
+                      >
+                        {year.archivos.map((file) => (
+                          <li key={file.id}>
+                            <a
+                              className={styles.fileLink}
+                              href={file.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
                             >
-                              {file.extension}
-                            </span>
-                            <span className={styles.fileName}>
-                              {file.name.replace(/\.[^.]+$/, "")}
-                            </span>
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
+                              <span
+                                className={styles.fileType}
+                                aria-hidden="true"
+                              >
+                                {obtenerEtiquetaTipo(file.tipo, file.archivo)}
+                              </span>
+                              <span className={styles.fileName}>
+                                {file.nombre.replace(/\.[^.]+$/, "")}
+                              </span>
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className={styles.emptyState}>
+                        No hay archivos MIR disponibles para {year.anio}.
+                      </p>
+                    )}
                   </div>
                 )}
               </article>
@@ -141,7 +91,7 @@ function Mir() {
           })
         ) : (
           <p className={styles.emptyState}>
-            No se encontraron archivos en la carpeta MIR.
+            No hay informes MIR disponibles.
           </p>
         )}
       </section>

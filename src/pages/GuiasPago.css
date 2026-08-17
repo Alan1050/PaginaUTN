@@ -253,6 +253,11 @@
 
 /* ========== TEXTO DE LA TARJETA ========== */
 .programa-nombre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 4.2em;
     color: #1a2e35;
     font-size: 1.4rem;
     font-weight: 700;
@@ -301,6 +306,7 @@
     border: 2px solid var(--programa-color);
     position: relative;
     z-index: 3;
+    margin-top: auto;
 }
 
 .programa-card:hover .card-hover-info {
@@ -566,6 +572,10 @@
     .programas-grid {
         grid-template-columns: 1fr;
         max-width: 350px;
+    }
+
+    .programa-nombre {
+        min-height: auto;
     }
     
     .card-content {

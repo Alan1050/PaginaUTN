@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
-
+import { URL_ASSETS_PLANES_ESTUDIO } from "../config/constants"
 import "./Carrera.css";
 
 import trabajandoJaguar from "../assets/banner/Trabajando.jpg";
@@ -25,23 +25,6 @@ import LogoLPS from "../assets/logos/LPS.png";
 // Planes de estudio imagenes:
 
 import logoFace from "../assets/logos/logo-de-facebook.png";
-
-// Planes de estudio PDF:
-
-import PlanIAL_PDF from "../assets/planesEstudio/pdf/IAL.pdf";
-import PlanIC_PDF from "../assets/planesEstudio/pdf/IC.pdf";
-import PlanILI_PDF from "../assets/planesEstudio/pdf/ILI.pdf";
-import PlanIMI_PDF from "../assets/planesEstudio/pdf/IMI.pdf";
-import PlanITIID_PDF from "../assets/planesEstudio/pdf/ITIID.pdf";
-import PlanLAD_PDF from "../assets/planesEstudio/pdf/LAD.pdf";
-import PlanLGDT_PDF from "../assets/planesEstudio/pdf/LGDT.pdf";
-import PlanLINM_PDF from "../assets/planesEstudio/pdf/LINM.pdf";
-import PlanLSP_PDF from "../assets/planesEstudio/pdf/LSP.pdf";
-import PlanLGT_PDF from "../assets/planesEstudio/pdf/LGT.pdf";
-import PlanIA_PDF from "../assets/planesEstudio/pdf/IA.pdf";
-import PlanIMT from "../assets/planesEstudio/pdf/IMT.pdf";
-
-import { URL_ASSETS_FINANZAS } from "../config/constants";
 
 // Baners:
 
@@ -238,7 +221,7 @@ function Carrera() {
         "Evaluar la calidad de los alimentos",
         "Investigar y desarrollar nuevas tecnologías para la producción de alimentos",
       ],
-      planEstudioPDF: PlanIAL_PDF,
+      planEstudioPDF: `${URL_ASSETS_PLANES_ESTUDIO}/IAL.pdf`,
       campoLaboral: [
         "Industria de alimentos y bebidas: Procesamiento y conservación de alimentos, desarrollo de nuevos productos, control y aseguramiento de la calidad, mejora de procesos productivos.",
         "Inocuidad y normatividad: Implementación de BPM, HACCP e ISO, Supervisión sanitaria y cumplimiento de normas nacionales e internacionales.",
@@ -270,7 +253,7 @@ function Carrera() {
       egreasdo:
         "El egresado en Técnico Superior Universitario en Inteligencia Artificial podrá desarrollar aplicaciones que incluyan la implementación de algoritmos o funciones de Inteligencia Artificial que permitan optimizar el rendimiento de una organización, para resolver problemas del sector productivo, con un enfoque de inclusión, compromiso con la responsabilidad social, equidad social y de género, excelencia, vanguardia, innovación social e interculturalidad.",
       tareas: [],
-      planEstudioPDF: PlanIA_PDF,
+      planEstudioPDF: `${URL_ASSETS_PLANES_ESTUDIO}/IA.pdf`,
       campoLaboral: [
         "Desarrollador Front-End, Back-End o Full Stack.",
         "Desarrollador de aplicaciones móviles.",
@@ -323,7 +306,7 @@ function Carrera() {
       egreasdo:
         "El egresado de la Ingeniería en Mantenimiento Industrial podrá optimizar las actividades del mantenimiento y las condiciones de operación de los equipos, instalaciones y maquinaria, a través de técnicas y herramientas. Así como incrementar la eficiencia global de los equipos y reducir los costos de mantenimiento.",
       tareas: [],
-      planEstudioPDF: PlanIMI_PDF,
+      planEstudioPDF: `${URL_ASSETS_PLANES_ESTUDIO}/IMI.pdf`,
       campoLaboral: [
         "Empresas públicas y privadas dedicadas de los sectores primario, secundario y terciario tales como: Empresas dedicadas a la Minería, Pesca y Agricultura.",
         "Empresas metalmecánicas, alimenticias, del plástico, químicas, del vestir, aeronáuticas, automotrices, de electrodomésticos, farmacéuticas, entre otras.",
@@ -351,7 +334,7 @@ function Carrera() {
       egreasdo:
         "El egresado en Ingeniería en Mecatrónica podrá desarrollar proyectos de automatización y control, a través del diseño, administración y aplicación de nuevas tecnologías. Así como operar y dar mantenimiento a sistemas de procesos de producción con equipo automatizado y/o robotizado para satisfacer las necesidades del sector productivo.",
       tareas: [],
-      planEstudioPDF: PlanIMT,
+      planEstudioPDF: `${URL_ASSETS_PLANES_ESTUDIO}/IMT.pdf`,
       campoLaboral: [
         "Empresas públicas y privadas dedicadas a procesos productivos industriales.",
         "Empresas concesionarias de equipos automáticos y máquinas autómatas y de venta de partes.",
@@ -378,7 +361,7 @@ function Carrera() {
       egreasdo:
         "El egresado de Licenciatura en Gestión y Desarrollo Turístico se distingue por poseer las competencias profesionales esenciales que respaldan su desempeño con éxito en el dinámico entorno laboral, abarcando tanto el ámbito local como el regional y nacional. Este perfil integral no solo se ajusta a las demandas actuales del sector, sino que también anticipa y se adapta a las transformaciones y desafíos emergentes de la Licenciatura en Gestión y Desarrollo Turístico. Su capacidad para integrar conocimientos técnicos especializados, habilidades analíticas y una visión innovadora lo posiciona como un profesional altamente cualificado y preparado para contribuir significativamente al avance de la disciplina y a la resolución eficiente de problemáticas complejas en distintos contextos.",
       tareas: [],
-      planEstudioPDF: PlanLGDT_PDF,
+      planEstudioPDF: `${URL_ASSETS_PLANES_ESTUDIO}/LGDT.pdf`,
       campoLaboral: [
         "Administrador de empresas turísticas.",
         "Consultor de servicios turísticos. ",
@@ -415,7 +398,7 @@ function Carrera() {
       egreasdo:
         "El egresado de la Licenciatura en Administración, será capaz de apoyar los procesos de administración de los recursos de manera sostenible y con visión social para el funcionamiento óptimo de una organización, Identificar oportunidades de negocios mediante la formulación y evaluación de proyectos de inversión, así como desarrollar la capacidad de dirigir y liderar eficazmente organizaciones mediante el diseño y la implementación de modelos estratégicos innovadores.",
       tareas: [],
-      planEstudioPDF: PlanLAD_PDF,
+      planEstudioPDF: `${URL_ASSETS_PLANES_ESTUDIO}/LAD.pdf`,
       campoLaboral: [
         "Gerente de Proyectos.",
         "Director de Desarrollo de Negocios.",
@@ -473,7 +456,7 @@ function Carrera() {
       egreasdo:
         "El egresado en la Ingeniería en Tecnologías de la Información e Innovación Digital es capaz de desarrollar soluciones de integración de tecnologías de la información mediante metodologías y herramientas de seguridad informática, internet de las cosas, sistemas inteligentes y administración de proyectos; con base en las normas y estándares aplicables para atender las áreas de oportunidad, resolver las necesidades y optimizar los procesos y recursos de diversos sectores.",
       tareas: [],
-      planEstudioPDF: PlanITIID_PDF,
+      planEstudioPDF: `${URL_ASSETS_PLANES_ESTUDIO}/ITIID.pdf`,
       campoLaboral: [
         "Desarrollador Front-End, Back-End o Full Stack.",
         "Desarrollador de aplicaciones móviles.",
@@ -530,7 +513,7 @@ function Carrera() {
         "Emplear técnicas de control de calidad en los materiales y procesos constructivos.",
         "Dirigir equipos técnicos para determinar la factibilidad de los proyectos.",
       ],
-      planEstudioPDF: PlanIC_PDF,
+      planEstudioPDF: `${URL_ASSETS_PLANES_ESTUDIO}/IC.pdf`,
       campoLaboral: [
         "Construcción de obras: Vivienda, edificios, hospitales, escuelas, puentes, carreteras, presas y obras hidráulicas.",
         "Diseño y planeación: Cálculo estructural y proyectos de infraestructura urbana y rural.",
@@ -562,7 +545,7 @@ function Carrera() {
       egreasdo:
         "El egresado de la Licenciatura en Negocios y Mercadotecnia será capaz de gestionar el proceso de comercialización de productos y/o servicios a partir del diagnóstico de mercado, condiciones del entorno, estrategias de venta y herramientas administrativas, desarrollar e implementar planes estratégicos con enfoque a la creación de unidades estratégicas de negocios a partir del análisis situacional del entorno, así como evaluar unidades estratégicas de negocios a través de modelos estratégicos sostenibles e innovadores que busquen fortalecer la economía social y solidaria en mercados nacionales e internacionales.",
       tareas: [],
-      planEstudioPDF: PlanLINM_PDF,
+      planEstudioPDF: `${URL_ASSETS_PLANES_ESTUDIO}/LINM.pdf`,
       campoLaboral: [
         "Instituciones públicas y privadas del sector industrial, comercial o de servicios.",
         "Agencias de mercadotecnia, investigación de mercados y de publicidad.",
@@ -600,7 +583,7 @@ function Carrera() {
       egreasdo:
         "El licenciado en Seguridad Pública poseerá las competencias profesionales esenciales que respaldan su desempeño mediante el uso de modelos de seguridad, políticas en materia de capacitación, combate, prevención e investigación del hecho delictivo, manejo de herramientas tecnológicas, así como estrategias de vinculación social, para disminuir y erradicar los índices delictivos, así como garantizar la seguridad de la sociedad a nivel nacional.",
       tareas: [],
-      planEstudioPDF: PlanLSP_PDF,
+      planEstudioPDF: `${URL_ASSETS_PLANES_ESTUDIO}/LSP.pdf`,
       campoLaboral: [
         "Policía Municipal.",
         "Policía Estatal.",
@@ -645,7 +628,7 @@ function Carrera() {
         "El egresado de Ingeniería en Logística Internacional analizará riesgos comerciales, políticos, logísticos y económicos en el ámbito internacional, además de realizar trámites aduanales para la importación y exportación de mercancías, el desarrollo de estrategias de operación logística y comercialización, la planeación y desarrollo de estrategias logísticas para el intercambio de mercancías y servicios. También negociará  acuerdos internacionales en el ámbito público y privado, asimismo podrá identificar, diseñar, desarrollar y dar seguimiento a los modelos de internacionalización de empresas.",
       banner: [bannerILI, banner2ILI, banner3ILI],
       tareas: [],
-      planEstudioPDF: PlanILI_PDF,
+      planEstudioPDF: `${URL_ASSETS_PLANES_ESTUDIO}/ILI.pdf`,
       campoLaboral: [
         "Comercio exterior y aduanas: Importación y exportación, clasificación arancelaria, cumplimiento normativo y documentación, trámites aduanales.",
         "Transporte y distribución: Logística terrestre, marítima y aérea, planeación de rutas, gestión de flotas y operadores logísticos.",
@@ -677,7 +660,7 @@ function Carrera() {
         "El Licenciado en Gastronomía se distingue por poseer las competencias profesionales esenciales que respaldan su desempeño con éxito en el dinámico entorno laboral, abarcando tanto el ámbito local como el regional y nacional. Este perfil integral no solo se ajusta a las demandas actuales del sector, sino que también anticipa y se adapta a las transformaciones y desafíos emergentes de la Licenciatura en Gastronomía. Su capacidad para integrar conocimientos técnicos especializados, habilidades analíticas y una visión innovadora lo posiciona como un profesional altamente cualificado y preparado para contribuir significativamente al avance de la disciplina y a la resolución eficiente de problemáticas complejas en distintos contextos.",
       banner: [bannerLGT, banner2LGT, banner3LGT],
       tareas: [],
-      planEstudioPDF: PlanLGT_PDF,
+      planEstudioPDF: `${URL_ASSETS_PLANES_ESTUDIO}/LGT.pdf`,
       campoLaboral: [
         "Chef, souschef, chef de línea o cocinero.",
         "Consultor gastronómico.",
@@ -3149,6 +3132,7 @@ function Carrera() {
                         <a
                           href={carreraSeleccionada.planEstudioPDF}
                           download
+                          target="_blank"
                           style={{
                             backgroundColor: carreraSeleccionada.color,
                             color: "white",

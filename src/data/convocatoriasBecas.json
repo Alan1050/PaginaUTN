@@ -1,0 +1,32 @@
+{
+  "convocatorias": [
+    {
+      "id": "convocatoria-beca-academica-pdf",
+      "idBeca": "academica",
+      "nombre": "Convocatoria Beca Académica.pdf",
+      "archivo": "Convocatoria Beca Académica.pdf",
+      "tipo": "pdf"
+    },
+    {
+      "id": "convocatoria-beca-deportiva-pdf",
+      "idBeca": "deportiva",
+      "nombre": "Convocatoria Beca Deportiva-Cultural.pdf",
+      "archivo": "Convocatoria Beca Derpotiva-Cultural.pdf",
+      "tipo": "pdf"
+    },
+    {
+      "id": "convocatoria-beca-companeros-pdf",
+      "idBeca": "compañeros",
+      "nombre": "Convocatoria Beca Compañeros.pdf",
+      "archivo": "Convocatoria Beca Compañeros.pdf",
+      "tipo": "pdf"
+    },
+    {
+      "id": "convocatoria-beca-familia-pdf",
+      "idBeca": "familia",
+      "nombre": "Convocatoria Beca Familia.pdf",
+      "archivo": "Convocatoria Beca Familia.pdf",
+      "tipo": "pdf"
+    }
+  ]
+}

@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import "./AvisoPrivacidad.css";
 import avisoPrivacidadPDF from "../assets/extras/aviso de privacidad.pdf";
 
-import { URL_ASSETS_FINANZAS } from "../config/constants";
 
 function AvisoPrivacidad() {
   const [isMobile, setIsMobile] = useState(false);
@@ -52,7 +51,6 @@ function AvisoPrivacidad() {
         </div>
       </section>
 
-      {/* Modal solo para desktop */}
       {!isMobile && showModal && (
         <div className="aviso-modal-overlay" onClick={handleCloseModal}>
           <div

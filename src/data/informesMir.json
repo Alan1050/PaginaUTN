@@ -1,0 +1,62 @@
+{
+  "anios": [
+    {
+      "anio": 2026,
+      "archivos": [
+        {
+          "id": "ficha-tecnica-indicadores-2026-1",
+          "nombre": "1FICHA TECNICA INDICADORES  2026.xlsx",
+          "archivo": "1FICHA TECNICA INDICADORES  2026.xlsx",
+          "tipo": "xlsx"
+        },
+        {
+          "id": "ficha-tecnica-indicadores-2026-2",
+          "nombre": "FTECNICA INDICADORES  2026.xlsx",
+          "archivo": "FTECNICA INDICADORES  2026.xlsx",
+          "tipo": "xlsx"
+        },
+        {
+          "id": "mir-primer-trimestre-2026",
+          "nombre": "MIR 1er Trimestre.pdf",
+          "archivo": "MIR 1er Trimestre.pdf",
+          "tipo": "pdf"
+        }
+      ]
+    },
+    {
+      "anio": 2025,
+      "archivos": [
+        {
+          "id": "ficha-tecnica-indicadores-2025",
+          "nombre": "FICHA TECNICA INDICADORES  2025.xlsx",
+          "archivo": "FICHA TECNICA INDICADORES  2025.xlsx",
+          "tipo": "xlsx"
+        },
+        {
+          "id": "mir-primer-trimestre-2025",
+          "nombre": "MIR 1ER. TRIMESTRE.pdf",
+          "archivo": "MIR 1ER. TRIMESTRE.pdf",
+          "tipo": "pdf"
+        },
+        {
+          "id": "mir-segundo-trimestre-2025",
+          "nombre": "MIR 2DO. TRIMESTRE.pdf",
+          "archivo": "MIR 2DO. TRIMESTRE.pdf",
+          "tipo": "pdf"
+        },
+        {
+          "id": "mir-tercer-trimestre-2025",
+          "nombre": "MIR 3ER TREMESTRE.pdf",
+          "archivo": "MIR 3ER TREMESTRE.pdf",
+          "tipo": "pdf"
+        },
+        {
+          "id": "mir-cuarto-trimestre-2025",
+          "nombre": "MIR 4TO TRIMESTRE.pdf",
+          "archivo": "MIR 4TO TRIMESTRE.pdf",
+          "tipo": "pdf"
+        }
+      ]
+    }
+  ]
+}

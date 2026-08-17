@@ -27,7 +27,7 @@ import ComiteEtica from "./pages/ComiteEtica.tsx";
 import Egresados from "./pages/Egresados.tsx";
 import InformesFinancieros from "./pages/InformesFinancieros.tsx";
 import GuiasPago from "./pages/GuiasPago.tsx";
-// import Agent from './components/Agent';
+import Agent from './components/Agent';
 import CulturaPaz from "./pages/CulturaPaz.tsx";
 import CentroInformacion from "./pages/CentroInformacion.tsx";
 import BackButton from "./components/BackButton.tsx";
@@ -70,13 +70,11 @@ function App() {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  // Lista de rutas donde NO queremos mostrar el botón
   const excludedRoutes = ["/"];
 
   return (
     <Router basename="/">
-      {" "}
-      {/* Se cambia segun la ubicacion de la carpeta */}
+
       <ScrollToTop />
       <SEO />
       {!isMobile && <NavContacto />}
@@ -85,15 +83,15 @@ function App() {
         position="bottom-right"
         color="#18817d"
         hoverColor="#18817d"
-        size={isMobile ? "small" : "medium"} // Se adapta al tamaño de pantalla
+        size={isMobile ? "small" : "medium"} 
         excludePaths={excludedRoutes}
       />
-      {/* Agente flotante de consulta  
+  
       <Agent
         position="bottom-right"
-        size={isMobile ? "small" : "medium"} // Se adapta al tamaño de pantalla
+        size={isMobile ? "small" : "medium"} 
         excludePaths={excludedRoutes}
-      />*/}
+      /> 
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/Carrera/:nombre" element={<CarreraPage />} />
@@ -124,7 +122,6 @@ function App() {
         <Route path="/CulturaPaz" element={<CulturaPaz />} />
         <Route path="/CentroInformacion" element={<CentroInformacion />} />
         <Route path="/GuiasPago" element={<GuiasPago />} />
-        {/* Ruta para manejar 404 - Redirige a Home */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <Footer />

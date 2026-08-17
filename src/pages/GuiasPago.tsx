@@ -6,13 +6,7 @@ import iconoECECUT from "../assets/logos/iconoECECUT.png";
 import iconoEU from "../assets/logos/iconoEU.png";
 import iconoIncubadora from "../assets/logos/iconoIncubadora.png";
 import iconoMovilidad from "../assets/logos/iconoMovilidadEstadias.png";
-import GuiaBancaSantander from "../assets/extras/GUIA-BANCA-SANTANDER.pdf";
-import GuiaBancaBanamex from "../assets/extras/GUIA-BANCA-BANAMEX.pdf";
-import GuiaPracticajaSantander from "../assets/extras/GUIA-PRACTICAJA-SANTANDER.pdf";
-import GuiaTransferenciaBancariaBanamex from "../assets/extras/GUIA-TRANSFERENCIAS-BANCARIAS-BANAMEX.pdf";
-import GuiaTransferenciaBancariaSantander from "../assets/extras/GUIA-TRANSFERENCIAS-BANCARIAS-SANTANDER.pdf";
 
-import { URL_ASSETS_FINANZAS } from "../config/constants";
 
 function GuiasPago() {
   const programas = [
@@ -21,7 +15,7 @@ function GuiasPago() {
       nombre: "Banca Banamex",
       icono: iconoIncubadora,
       descripcion: "Impulsa tu idea de negocio con asesoría y recursos",
-      link: GuiaBancaBanamex,
+      link: "https://assets.utnay.edu.mx/Guias/GUIA-BANCA-BANAMEX.pdf",
       color: "#FF6B6B",
       gradient:
         "linear-gradient(145deg, #FF6B6B 0%, #FF8E8E 50%, #FFB5B5 100%)",
@@ -32,7 +26,7 @@ function GuiasPago() {
       icono: iconoCELEX,
       descripcion:
         "Centro de Enseñanza Especializado en Lenguas Extranjeras - Aprende idiomas",
-      link: GuiaBancaSantander,
+      link: "https://assets.utnay.edu.mx/Guias/GUIA-BANCA-SANTANDER.pdf",
       color: "#4043f1",
       gradient:
         "linear-gradient(145deg, #4043f1 0%, #6668fe 50%, #0004ff 100%)",
@@ -42,7 +36,7 @@ function GuiasPago() {
       nombre: "Practicaja Santander",
       icono: iconoECECUT,
       descripcion: "Educación Continua - Cursos y diplomados",
-      link: GuiaPracticajaSantander,
+      link: "https://assets.utnay.edu.mx/Guias/GUIA-PRACTICAJA-SANTANDER.pdf",
       color: "#FFD93D",
       gradient:
         "linear-gradient(145deg, #FFD93D 0%, #FFE270 50%, #FFF0B5 100%)",
@@ -52,7 +46,7 @@ function GuiasPago() {
       nombre: "Transferencia Bancaria Banamex",
       icono: iconoEU,
       descripcion: "Aprende en la empresa y estudia en la universidad",
-      link: GuiaTransferenciaBancariaBanamex,
+      link: "https://assets.utnay.edu.mx/Guias/GUIA-TRANSFERENCIAS-BANCARIAS-BANAMEX.pdf",
       color: "#6C5CE7",
       gradient:
         "linear-gradient(145deg, #6C5CE7 0%, #8F7EFF 50%, #B5A8FF 100%)",
@@ -62,7 +56,7 @@ function GuiasPago() {
       nombre: "Transferencia Bancaria Santander",
       icono: iconoMovilidad,
       descripcion: "Intercambio nacional e internacional",
-      link: GuiaTransferenciaBancariaSantander,
+      link: "https://assets.utnay.edu.mx/Guias/GUIA-TRANSFERENCIAS-BANCARIAS-SANTANDER.pdf",
       color: "#FF8C42",
       gradient:
         "linear-gradient(145deg, #FF8C42 0%, #FFA86B 50%, #FFC594 100%)",

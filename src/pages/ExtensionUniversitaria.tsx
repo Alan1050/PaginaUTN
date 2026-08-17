@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 // import { Link } from 'react-router-dom';
 import "./ExtensionUniversitaria.css";
 import bannerExtension from "../assets/banner/bannerExtension.jpg";
 
 function ExtensionUniversitaria() {
+  const [activeTrainingSection, setActiveTrainingSection] =
+    useState<string>("diplomados");
+
+  const toggleTrainingSection = (section: string) => {
+    setActiveTrainingSection((current) =>
+      current === section ? "" : section,
+    );
+  };
+
   const diplomados = [
     "Administración de recursos humanos",
     "Desarrollo de habilidades gerenciales",
@@ -104,11 +113,6 @@ function ExtensionUniversitaria() {
   ];
 
   const sectores = [
-    {
-      nombre: "Estudiantes",
-      emoji: "👨‍🎓",
-      descripcion: "Complementa tu formación académica",
-    },
     {
       nombre: "Egresados",
       emoji: "👩‍🎓",
@@ -229,35 +233,87 @@ function ExtensionUniversitaria() {
           </div>
 
           {/* Diplomados */}
-          <div className="diplomados-section">
-            <h3 className="subtitulo-extension">
-              <span className="subtitulo-icono">📜</span>
-              Diplomados ofrecidos en:
-            </h3>
-            <div className="diplomados-grid">
-              {diplomados.map((diplomado, index) => (
-                <div key={index} className="diplomado-item">
-                  <span className="diplomado-check">✓</span>
-                  <span className="diplomado-nombre">{diplomado}</span>
+          <div
+            className={`diplomados-section extension-training-accordion ${
+              activeTrainingSection === "diplomados" ? "active" : ""
+            }`}
+          >
+            <button
+              type="button"
+              className="extension-training-header"
+              onClick={() => toggleTrainingSection("diplomados")}
+              aria-expanded={activeTrainingSection === "diplomados"}
+              aria-controls="extension-diplomados-content"
+            >
+              <h3 className="subtitulo-extension">
+                <span className="subtitulo-icono">📜</span>
+                Diplomados ofertados
+              </h3>
+              <span className="extension-training-toggle" aria-hidden="true">
+                {activeTrainingSection === "diplomados" ? "−" : "+"}
+              </span>
+            </button>
+
+            {activeTrainingSection === "diplomados" && (
+              <div
+                className="extension-training-content"
+                id="extension-diplomados-content"
+              >
+                <div className="diplomados-grid">
+                  {diplomados.map((diplomado) => (
+                    <div className="diplomado-item" key={diplomado}>
+                      <span className="diplomado-check" aria-hidden="true">
+                        ✓
+                      </span>
+                      <span className="diplomado-nombre">{diplomado}</span>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            )}
           </div>
 
           {/* Áreas de capacitación */}
-          <div className="capacitaciones-section">
-            <h3 className="subtitulo-extension">
-              <span className="subtitulo-icono">📋</span>
-              Programas de capacitación en:
-            </h3>
-            <div className="capacitaciones-grid">
-              {capacitaciones.map((capacitacion, index) => (
-                <div key={index} className="capacitacion-item">
-                  <span className="capacitacion-bullet">•</span>
-                  <span className="capacitacion-nombre">{capacitacion}</span>
+          <div
+            className={`capacitaciones-section extension-training-accordion ${
+              activeTrainingSection === "capacitaciones" ? "active" : ""
+            }`}
+          >
+            <button
+              type="button"
+              className="extension-training-header"
+              onClick={() => toggleTrainingSection("capacitaciones")}
+              aria-expanded={activeTrainingSection === "capacitaciones"}
+              aria-controls="extension-capacitaciones-content"
+            >
+              <h3 className="subtitulo-extension">
+                <span className="subtitulo-icono">📋</span>
+                Programas de capacitación en:
+              </h3>
+              <span className="extension-training-toggle" aria-hidden="true">
+                {activeTrainingSection === "capacitaciones" ? "−" : "+"}
+              </span>
+            </button>
+
+            {activeTrainingSection === "capacitaciones" && (
+              <div
+                className="extension-training-content"
+                id="extension-capacitaciones-content"
+              >
+                <div className="capacitaciones-grid">
+                  {capacitaciones.map((capacitacion, index) => (
+                    <div className="capacitacion-item" key={capacitacion}>
+                      <span className="capacitacion-bullet" aria-hidden="true">
+                        {index + 1}
+                      </span>
+                      <span className="capacitacion-nombre">
+                        {capacitacion}
+                      </span>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            )}
           </div>
 
           {/* Beneficios de capacitación */}
@@ -268,7 +324,7 @@ function ExtensionUniversitaria() {
             </h3>
             <div className="beneficios-grid">
               {beneficiosCapacitacion.map((beneficio, index) => (
-                <div key={index} className="beneficio-item">
+                <div key={beneficio} className="beneficio-item">
                   <span className="beneficio-numero">{index + 1}</span>
                   <p className="beneficio-texto">{beneficio}</p>
                 </div>

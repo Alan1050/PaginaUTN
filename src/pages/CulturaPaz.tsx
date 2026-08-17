@@ -3,7 +3,6 @@ import "./CulturaPaz.css";
 import bannerCulturaPaz from "../assets/banner/banerCulturaPaz.jpg";
 import Programa from "../assets/extras/PROGRAMA CULTURA DE LA PAZ.pdf";
 
-import { URL_ASSETS_FINANZAS } from "../config/constants";
 
 // Interfaces para TypeScript
 interface AccionInfo {

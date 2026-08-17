@@ -459,9 +459,26 @@
       "Costo de la inscripción?",
       "Costo de la reinscripción?",
       "Costo de la colegiatura?",
-      "Costos"
+      "Costos",
+      "Cuanto cuesta?"
     ],
-    "answer": "Los pagos se realizan cada 4 meses y el costo varía según la carrera de tu interes, rondando entre los $1,600 a $2,000 pesos por cuatrimestre. Si te interesa conocer los costos específicos de cada carrera, puedes llamar a Servicios Escolares."
+  "answer": "Los pagos se realizan cada 4 meses y varían según la carrera:\nGastronomía: $1,550 T.S.U. | $2,000 Licenciatura.\nOtras carreras: $1,250 T.S.U. | $1,500 Lic./Ing.\nInscripción: $275 T.S.U. | $400 Lic./Ing.\nReinscripción: $225 T.S.U. | $325 Lic./Ing."
+  },
+  {
+    "id": "resultados-admision",
+    "title": "Resultados de Admisión",
+    "priority": 5,
+    "keywords": [
+      "Resultados de admisión",
+      "Como saber si quede?"
+    ],
+    "answer": "Para poder conocer los resultados de admisión, puedes ingresar al siguiente enlace y buscar tu nombre en la lista de admitidos. Si tienes alguna duda, puedes comunicarte con Servicios Escolares.",
+    "links": [
+      {
+        "label": "Conocer Resultados de Admisión",
+        "url": "/Resultados"
+      }
+    ]
   },
   {
     "id": "admision",

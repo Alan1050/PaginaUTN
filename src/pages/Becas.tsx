@@ -7,12 +7,7 @@ import iconoBecaFamilia from "../assets/logos/iconoBecaFamilia.png";
 import iconoBecaCompañeros from "../assets/logos/iconoBecaCompañeros.png";
 import iconoBecaDeportiva from "../assets/logos/iconoBecaDeportiva.png";
 import iconoBecaAcademica from "../assets/logos/iconoBecaAcademica.png";
-import Academica from "../assets/extras/Convocatoria Beca Académica.pdf";
-import Compañeros from "../assets/extras/Convocatoria Beca Compañeros.pdf";
-import Deportivas from "../assets/extras/Convocatoria Beca Derpotiva-Cultural.pdf";
-import Familia from "../assets/extras/Convocatoria Beca Familia.pdf";
-
-import { URL_ASSETS_FINANZAS } from "../config/constants";
+import { obtenerUrlConvocatoriaBeca } from "../services/convocatoriasBecas";
 
 interface Descuento {
   rango: string;
@@ -35,6 +30,7 @@ interface BecaInfo {
   descuentos?: Descuento[];
   casos?: string[];
   meritos?: Merito[];
+  convocatoriaUrl?: string;
 }
 
 interface BecasInfoType {
@@ -71,6 +67,7 @@ function Becas() {
         "linear-gradient(145deg, #B8860B 0%, #DAA520 50%, #FFD700 100%)",
       lightGradient:
         "linear-gradient(135deg, rgba(255,215,0,0.1) 0%, rgba(218,165,32,0.1) 100%)",
+      convocatoriaUrl: obtenerUrlConvocatoriaBeca("academica"),
     },
     familia: {
       id: "familia",
@@ -89,6 +86,7 @@ function Becas() {
         "linear-gradient(145deg, #C41E3A 0%, #DC143C 50%, #FF6B6B 100%)",
       lightGradient:
         "linear-gradient(135deg, rgba(255,107,107,0.1) 0%, rgba(220,20,60,0.1) 100%)",
+      convocatoriaUrl: obtenerUrlConvocatoriaBeca("familia"),
     },
     compañeros: {
       id: "compañeros",
@@ -101,6 +99,7 @@ function Becas() {
         "linear-gradient(145deg, #2E8B57 0%, #3CB371 50%, #4ECDC4 100%)",
       lightGradient:
         "linear-gradient(135deg, rgba(78,205,196,0.1) 0%, rgba(60,179,113,0.1) 100%)",
+      convocatoriaUrl: obtenerUrlConvocatoriaBeca("compañeros"),
     },
     deportiva: {
       id: "deportiva",
@@ -117,6 +116,7 @@ function Becas() {
         "linear-gradient(145deg, #1E4D6B 0%, #2A6F8B 50%, #3B9EBF 100%)",
       lightGradient:
         "linear-gradient(135deg, rgba(168,230,207,0.1) 0%, rgba(59,158,191,0.1) 100%)",
+      convocatoriaUrl: obtenerUrlConvocatoriaBeca("deportiva"),
     },
   };
 
@@ -129,12 +129,13 @@ function Becas() {
   }, [slides.length]);
 
   useEffect(() => {
-    if (selectedBeca) {
-      setIsInfoVisible(true);
-    } else {
-      const timer = setTimeout(() => setIsInfoVisible(false), 300);
-      return () => clearTimeout(timer);
-    }
+    const delay = selectedBeca ? 0 : 300;
+    const timer = window.setTimeout(
+      () => setIsInfoVisible(Boolean(selectedBeca)),
+      delay,
+    );
+
+    return () => window.clearTimeout(timer);
   }, [selectedBeca]);
 
   useEffect(() => {
@@ -339,7 +340,7 @@ function Becas() {
                             </div>
                             <div className="divEnlace1">
                               <a
-                                href={Academica}
+                                href={selectedBeca.convocatoriaUrl}
                                 target="_blank"
                                 className="EnlaceResultado"
                                 rel="noopener noreferrer"
@@ -373,7 +374,7 @@ function Becas() {
                           </div>
                           <div style={{ marginTop: 20 }}>
                             <a
-                              href={Familia}
+                              href={selectedBeca.convocatoriaUrl}
                               target="_blank"
                               className="EnlaceResultado"
                               style={{
@@ -420,7 +421,7 @@ function Becas() {
                           </div>
                           <div style={{ marginTop: 20 }}>
                             <a
-                              href={Compañeros}
+                              href={selectedBeca.convocatoriaUrl}
                               target="_blank"
                               className="EnlaceResultado"
                               style={{
@@ -469,7 +470,7 @@ function Becas() {
                             </div>
                             <div style={{ marginTop: 20 }}>
                               <a
-                                href={Deportivas}
+                                href={selectedBeca.convocatoriaUrl}
                                 target="_blank"
                                 className="EnlaceResultado"
                                 style={{
@@ -562,7 +563,7 @@ function Becas() {
                         </div>
                         <div className="divEnlace1">
                           <a
-                            href={Academica}
+                            href={selectedBeca.convocatoriaUrl}
                             target="_blank"
                             className="EnlaceResultado"
                             rel="noopener noreferrer"
@@ -596,7 +597,7 @@ function Becas() {
                       </div>
                       <div style={{ marginTop: 20 }}>
                         <a
-                          href={Familia}
+                          href={selectedBeca.convocatoriaUrl}
                           target="_blank"
                           className="EnlaceResultado"
                           style={{
@@ -643,7 +644,7 @@ function Becas() {
                       </div>
                       <div style={{ marginTop: 20 }}>
                         <a
-                          href={Compañeros}
+                          href={selectedBeca.convocatoriaUrl}
                           target="_blank"
                           className="EnlaceResultado"
                           style={{
@@ -687,7 +688,7 @@ function Becas() {
                       </div>
                       <div style={{ marginTop: 20 }}>
                         <a
-                          href={Deportivas}
+                          href={selectedBeca.convocatoriaUrl}
                           target="_blank"
                           className="EnlaceResultado"
                           style={{
