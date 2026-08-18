@@ -27,7 +27,7 @@ import ComiteEtica from "./pages/ComiteEtica.tsx";
 import Egresados from "./pages/Egresados.tsx";
 import InformesFinancieros from "./pages/InformesFinancieros.tsx";
 import GuiasPago from "./pages/GuiasPago.tsx";
-import Agent from './components/Agent';
+// import Agent from './components/Agent';
 import CulturaPaz from "./pages/CulturaPaz.tsx";
 import CentroInformacion from "./pages/CentroInformacion.tsx";
 import BackButton from "./components/BackButton.tsx";
@@ -74,7 +74,6 @@ function App() {
 
   return (
     <Router basename="/">
-
       <ScrollToTop />
       <SEO />
       {!isMobile && <NavContacto />}
@@ -83,15 +82,17 @@ function App() {
         position="bottom-right"
         color="#18817d"
         hoverColor="#18817d"
-        size={isMobile ? "small" : "medium"} 
+        size={isMobile ? "small" : "medium"}
         excludePaths={excludedRoutes}
       />
-  
-      <Agent
+
+      {/*
+        <Agent
         position="bottom-right"
         size={isMobile ? "small" : "medium"} 
         excludePaths={excludedRoutes}
-      /> 
+        /> 
+      */}
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/Carrera/:nombre" element={<CarreraPage />} />

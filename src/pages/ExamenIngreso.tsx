@@ -1,6 +1,7 @@
 import "./Resultados.css";
 import bannerResultados from "../assets/banner/bannerResultados.jpg";
-import ResultadosPDF from "../assets/extras/RESULTADOS JUNIO 2026.pdf";
+import ResultadosPrimerExamen from "../assets/extras/ResultadoPrimerExamen.pdf";
+import ResultadoSegundoExamen from "../assets/extras/ResultadoSegundoExamen.pdf"
 
 
 function ExamenIngreso() {
@@ -17,12 +18,12 @@ function ExamenIngreso() {
       <section className="content-vinculacion resultados-section">
         <div className="resultados-card">
           <div className="resultados-header">
-            <h1>Resultados del Examen de Ingreso</h1>
+            <h1>Resultados del Primer Examen de Ingreso</h1>
           </div>
 
           <div className="resultados-actions">
             <a
-              href={ResultadosPDF}
+              href={ResultadosPrimerExamen}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-resultados primary"
@@ -31,7 +32,7 @@ function ExamenIngreso() {
             </a>
 
             <a
-              href={ResultadosPDF}
+              href={ResultadosPrimerExamen}
               download
               className="btn-resultados secondary"
             >
@@ -40,7 +41,38 @@ function ExamenIngreso() {
           </div>
 
           <div className="pdf-frame">
-            <iframe src={ResultadosPDF} title="Resultados Junio 2026" />
+            <iframe src={ResultadosPrimerExamen} title="Resultados Primer Examen" />
+          </div>
+        </div>
+      </section>
+
+      <section className="content-vinculacion resultados-section">
+        <div className="resultados-card">
+          <div className="resultados-header">
+            <h1>Resultados del Segundo Examen de Ingreso</h1>
+          </div>
+
+          <div className="resultados-actions">
+            <a
+              href={ResultadoSegundoExamen}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-resultados primary"
+            >
+              Ver PDF
+            </a>
+
+            <a
+              href={ResultadoSegundoExamen}
+              download
+              className="btn-resultados secondary"
+            >
+              Descargar
+            </a>
+          </div>
+
+          <div className="pdf-frame">
+            <iframe src={ResultadoSegundoExamen} title="Resultados Segundo Examen" />
           </div>
         </div>
       </section>

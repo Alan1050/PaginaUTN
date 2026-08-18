@@ -87,7 +87,7 @@ function HomePage() {
         localStorage.setItem("alertaBienvenidaMostrada", ahora.toString());
 
         Swal.fire({
-          title: "Conoce los resultados del examen de admisión",
+          title: "Conoce los resultados del primer y segundo examen de admisión",
           html: `
             <div style="text-align: center;">
               <img 
