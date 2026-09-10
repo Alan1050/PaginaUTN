@@ -127,9 +127,10 @@
 }
 
 /* ========== GRID DE PROGRAMAS ========== */
-.programas-grid {
+.programas-grid-vinculacion {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     gap: 30px;
     max-width: 1400px;
     margin: 0 auto 80px;
@@ -321,6 +322,70 @@
     transform: translateX(8px);
 }
 
+/* ========== DISTRIBUCIÓN HORIZONTAL DE TARJETAS ========== */
+.programas-grid-vinculacion .programa-card {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.programas-grid-vinculacion .card-content {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+    column-gap: 55px;
+    row-gap: 14px;
+    align-items: center;
+    min-height: 310px;
+    height: 100%;
+    padding: 40px 55px;
+    box-sizing: border-box;
+}
+
+.programas-grid-vinculacion .icon-container {
+    grid-column: 1;
+    grid-row: 1 / 4;
+    width: 190px;
+    height: 190px;
+    margin: 0 auto;
+}
+
+.content-vinculacion .programas-grid-vinculacion .programa-nombre {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+    justify-self: stretch;
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: left;
+    font-size: 1.65rem;
+}
+
+.content-vinculacion .programas-grid-vinculacion .programa-descripcion {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: center;
+    justify-self: stretch;
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: left;
+    font-size: 1.05rem;
+    flex-grow: 0;
+}
+
+.programas-grid-vinculacion .card-hover-info {
+    grid-column: 2;
+    grid-row: 3;
+    align-self: start;
+    justify-self: start;
+    width: min(100%, 460px);
+    box-sizing: border-box;
+    opacity: 1;
+    transform: none;
+    border-color: var(--programa-color);
+}
+
 /* ========== INFO ADICIONAL ========== */
 .info-adicional {
     max-width: 1000px;
@@ -418,7 +483,7 @@
 
 /* Pantallas grandes */
 @media (max-width: 1200px) {
-    .programas-grid {
+    .programas-grid-vinculacion {
         gap: 25px;
     }
     
@@ -450,10 +515,6 @@
     
     .banner-subtitle {
         font-size: 1.4rem;
-    }
-    
-    .programas-grid {
-        grid-template-columns: repeat(3, 1fr);
     }
     
     .content-vinculacion {
@@ -497,9 +558,20 @@
         font-size: 2rem;
     }
     
-    .programas-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .programas-grid-vinculacion {
         gap: 20px;
+    }
+
+    .programas-grid-vinculacion .card-content {
+        grid-template-columns: 150px minmax(0, 1fr);
+        column-gap: 30px;
+        min-height: 270px;
+        padding: 30px;
+    }
+
+    .programas-grid-vinculacion .icon-container {
+        width: 135px;
+        height: 135px;
     }
     
     .icon-container {
@@ -563,13 +635,52 @@
         width: 80px;
     }
     
-    .programas-grid {
+    .programas-grid-vinculacion {
         grid-template-columns: 1fr;
         max-width: 350px;
     }
     
     .card-content {
         padding: 25px;
+    }
+
+    .programas-grid-vinculacion .card-content {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        gap: 18px;
+        min-height: 0;
+        padding: 28px 24px;
+    }
+
+    .programas-grid-vinculacion .icon-container {
+        grid-column: 1;
+        grid-row: 1;
+        width: 110px;
+        height: 110px;
+    }
+
+    .content-vinculacion .programas-grid-vinculacion .programa-nombre {
+        grid-column: 1;
+        grid-row: 2;
+        align-self: center;
+        padding: 0;
+        text-align: center;
+        font-size: 1.25rem;
+    }
+
+    .content-vinculacion .programas-grid-vinculacion .programa-descripcion {
+        grid-column: 1;
+        grid-row: 3;
+        padding: 0;
+        text-align: center;
+        font-size: 0.95rem;
+    }
+
+    .programas-grid-vinculacion .card-hover-info {
+        grid-column: 1;
+        grid-row: 4;
+        justify-self: center;
+        width: 100%;
     }
     
     .icon-container {
@@ -645,6 +756,394 @@
         height: 30vh;
     }
 
+}
+
+/* ========== REDISEÑO BENTO DE PROGRAMAS ========== */
+.content-vinculacion {
+    overflow: hidden;
+    padding: clamp(60px, 7vw, 100px) clamp(20px, 4vw, 56px);
+    background:
+        radial-gradient(circle at 8% 12%, rgba(78, 205, 196, 0.11), transparent 24%),
+        radial-gradient(circle at 92% 90%, rgba(196, 167, 71, 0.12), transparent 27%),
+        linear-gradient(145deg, #f5faf9 0%, #ffffff 48%, #f8f8f5 100%);
+}
+
+.section-header-Vinculacion {
+    position: relative;
+    margin-bottom: 52px;
+    max-width: 820px;
+}
+
+.section-eyebrow-vinculacion {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 18px;
+    padding: 8px 16px;
+    color: #004335;
+    background: rgba(0, 67, 53, 0.08);
+    border: 1px solid rgba(0, 67, 53, 0.12);
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+.section-header-Vinculacion .section-title {
+    display: block;
+    margin: 0 0 18px;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: -1px;
+    text-transform: none;
+}
+
+.section-header-Vinculacion .section-description {
+    max-width: 680px;
+    margin: 0 auto;
+    color: #5e7a7e;
+    font-size: clamp(1rem, 1.4vw, 1.15rem);
+    line-height: 1.75;
+}
+
+.section-header-Vinculacion .title-decoration {
+    margin-top: 26px;
+}
+
+.programas-grid-vinculacion {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: none;
+    gap: 24px;
+    max-width: 1400px;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+.programas-grid-vinculacion .programa-card {
+    grid-column: span 6;
+    min-height: 330px;
+    height: auto;
+    border: 1px solid rgba(0, 67, 53, 0.08);
+    border-radius: 32px;
+    background:
+        radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--programa-color) 15%, transparent), transparent 34%),
+        #ffffff;
+    box-shadow: 0 16px 40px rgba(0, 67, 53, 0.08);
+}
+
+.programas-grid-vinculacion .programa-card:nth-child(n + 3) {
+    grid-column: span 4;
+    min-height: 385px;
+}
+
+.programas-grid-vinculacion .programa-card::after {
+    content: '';
+    position: absolute;
+    right: -70px;
+    bottom: -90px;
+    width: 210px;
+    height: 210px;
+    border: 1px solid color-mix(in srgb, var(--programa-color) 24%, transparent);
+    border-radius: 50%;
+    transition: transform 0.6s ease, background-color 0.6s ease;
+}
+
+.programas-grid-vinculacion .programa-card:hover {
+    transform: translateY(-12px);
+    border-color: color-mix(in srgb, var(--programa-color) 45%, transparent);
+    box-shadow: 0 28px 60px color-mix(in srgb, var(--programa-color) 18%, transparent);
+}
+
+.programas-grid-vinculacion .programa-card:focus-visible {
+    outline: 3px solid var(--programa-color);
+    outline-offset: 5px;
+}
+
+.programas-grid-vinculacion .programa-card:hover::after {
+    transform: scale(1.22);
+    background: color-mix(in srgb, var(--programa-color) 8%, transparent);
+}
+
+.programas-grid-vinculacion .programa-card::before {
+    height: 6px;
+    transform: none;
+}
+
+.programas-grid-vinculacion .card-content {
+    display: grid;
+    grid-template-columns: 160px minmax(0, 1fr);
+    grid-template-rows: auto auto auto 1fr auto;
+    grid-template-areas:
+        "icon category"
+        "icon title"
+        "icon description"
+        "icon space"
+        "icon action";
+    column-gap: 34px;
+    row-gap: 10px;
+    align-items: center;
+    min-height: 330px;
+    padding: 38px;
+}
+
+.programas-grid-vinculacion .programa-card:nth-child(n + 3) .card-content {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto 1fr auto;
+    grid-template-areas:
+        "icon"
+        "category"
+        "title"
+        "description"
+        "space"
+        "action";
+    justify-items: center;
+    min-height: 385px;
+    padding: 34px 30px 30px;
+}
+
+.programa-indice {
+    position: absolute;
+    top: 20px;
+    right: 26px;
+    z-index: 0;
+    color: color-mix(in srgb, var(--programa-color) 13%, transparent);
+    font-size: 4.8rem;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -5px;
+    transition: color 0.4s ease, transform 0.4s ease;
+}
+
+.programa-card:hover .programa-indice {
+    color: color-mix(in srgb, var(--programa-color) 22%, transparent);
+    transform: translateY(5px);
+}
+
+.programas-grid-vinculacion .icon-container,
+.programas-grid-vinculacion .programa-card:nth-child(n + 3) .icon-container {
+    grid-area: icon;
+    width: 145px;
+    height: 145px;
+    margin: 0;
+}
+
+.programas-grid-vinculacion .programa-card:nth-child(n + 3) .icon-container {
+    width: 125px;
+    height: 125px;
+    margin-bottom: 4px;
+}
+
+.programa-categoria {
+    grid-area: category;
+    justify-self: start;
+    padding: 6px 11px;
+    color: var(--programa-color);
+    background: color-mix(in srgb, var(--programa-color) 10%, white);
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.programas-grid-vinculacion .programa-card:nth-child(n + 3) .programa-categoria {
+    justify-self: center;
+}
+
+.content-vinculacion .programas-grid-vinculacion .programa-nombre {
+    grid-area: title;
+    align-self: end;
+    padding: 0;
+    color: #1a2e35;
+    font-size: clamp(1.35rem, 2vw, 1.75rem);
+    line-height: 1.25;
+}
+
+.content-vinculacion .programas-grid-vinculacion .programa-card:hover .programa-nombre {
+    color: #1a2e35;
+}
+
+.content-vinculacion .programas-grid-vinculacion .programa-descripcion {
+    grid-area: description;
+    align-self: start;
+    padding: 0;
+    font-size: 0.98rem;
+    line-height: 1.6;
+}
+
+.programas-grid-vinculacion .programa-card:nth-child(n + 3) .programa-nombre,
+.programas-grid-vinculacion .programa-card:nth-child(n + 3) .programa-descripcion {
+    justify-self: center;
+    text-align: center;
+}
+
+.programas-grid-vinculacion .card-hover-info {
+    grid-area: action;
+    align-self: end;
+    justify-self: start;
+    width: auto;
+    min-width: 190px;
+    padding: 11px 18px;
+    background: color-mix(in srgb, var(--programa-color) 4%, white);
+    box-shadow: none;
+    opacity: 1;
+    transform: none;
+    border: 1px solid color-mix(in srgb, var(--programa-color) 55%, transparent);
+    font-size: 0.82rem;
+    letter-spacing: 1.5px;
+    transition: background-color 0.35s ease, border-color 0.35s ease, transform 0.35s ease;
+}
+
+.programas-grid-vinculacion .programa-card:nth-child(n + 3) .card-hover-info {
+    justify-self: stretch;
+    width: 100%;
+}
+
+.programa-card:hover .card-hover-info {
+    color: var(--programa-color);
+    background: color-mix(in srgb, var(--programa-color) 14%, white);
+    border-color: var(--programa-color);
+}
+
+.programas-grid-vinculacion .card-hover-info span,
+.programas-grid-vinculacion .card-hover-info .arrow-icon {
+    color: inherit;
+}
+
+.programas-grid-vinculacion .card-hover-info .arrow-icon {
+    stroke: currentColor;
+}
+
+@media (max-width: 1100px) {
+    .programas-grid-vinculacion .programa-card,
+    .programas-grid-vinculacion .programa-card:nth-child(n + 3) {
+        grid-column: span 6;
+    }
+
+    .programas-grid-vinculacion .programa-card:last-child {
+        grid-column: 4 / span 6;
+    }
+
+    .programas-grid-vinculacion .programa-card:nth-child(n + 3) .card-content {
+        min-height: 370px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-vinculacion {
+        padding: 54px 20px;
+    }
+
+    .section-header-Vinculacion {
+        margin-bottom: 38px;
+    }
+
+    .programas-grid-vinculacion {
+        grid-template-columns: 1fr;
+        max-width: 560px;
+        gap: 18px;
+    }
+
+    .programas-grid-vinculacion .programa-card,
+    .programas-grid-vinculacion .programa-card:nth-child(n + 3),
+    .programas-grid-vinculacion .programa-card:last-child {
+        grid-column: 1;
+        min-height: 0;
+    }
+
+    .programas-grid-vinculacion .card-content,
+    .programas-grid-vinculacion .programa-card:nth-child(n + 3) .card-content {
+        grid-template-columns: 110px minmax(0, 1fr);
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+            "icon category"
+            "icon title"
+            "icon description"
+            "action action";
+        justify-items: stretch;
+        column-gap: 22px;
+        min-height: 0;
+        padding: 28px 24px 24px;
+    }
+
+    .programas-grid-vinculacion .icon-container,
+    .programas-grid-vinculacion .programa-card:nth-child(n + 3) .icon-container {
+        width: 105px;
+        height: 105px;
+        margin: 0;
+    }
+
+    .programas-grid-vinculacion .programa-card:nth-child(n + 3) .programa-categoria,
+    .programas-grid-vinculacion .programa-card:nth-child(n + 3) .programa-nombre,
+    .programas-grid-vinculacion .programa-card:nth-child(n + 3) .programa-descripcion {
+        justify-self: start;
+        text-align: left;
+    }
+
+    .programas-grid-vinculacion .card-hover-info,
+    .programas-grid-vinculacion .programa-card:nth-child(n + 3) .card-hover-info {
+        justify-self: stretch;
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    .programa-indice {
+        top: 18px;
+        right: 22px;
+        font-size: 3.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-vinculacion {
+        padding: 46px 15px;
+    }
+
+    .section-eyebrow-vinculacion {
+        font-size: 0.66rem;
+        letter-spacing: 1.2px;
+    }
+
+    .programas-grid-vinculacion .card-content,
+    .programas-grid-vinculacion .programa-card:nth-child(n + 3) .card-content {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas:
+            "icon"
+            "category"
+            "title"
+            "description"
+            "action";
+        justify-items: center;
+        padding: 28px 22px 22px;
+    }
+
+    .programas-grid-vinculacion .programa-categoria,
+    .programas-grid-vinculacion .programa-card:nth-child(n + 3) .programa-categoria,
+    .content-vinculacion .programas-grid-vinculacion .programa-nombre,
+    .content-vinculacion .programas-grid-vinculacion .programa-descripcion,
+    .programas-grid-vinculacion .programa-card:nth-child(n + 3) .programa-nombre,
+    .programas-grid-vinculacion .programa-card:nth-child(n + 3) .programa-descripcion {
+        justify-self: center;
+        text-align: center;
+    }
+
+    .programa-indice {
+        font-size: 3rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .programa-card,
+    .programa-card::after,
+    .programa-icon,
+    .icon-glow,
+    .icon-ring,
+    .programa-indice,
+    .card-hover-info,
+    .arrow-icon {
+        transition: none;
+    }
 }
 
 /* Estilos para el foco y accesibilidad */

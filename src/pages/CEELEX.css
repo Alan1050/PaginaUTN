@@ -105,13 +105,11 @@
     text-transform: uppercase;
 }
 
-.title-emoji {
+.title-emoji-CEELEX {
     font-size: 2.8rem;
-    background: linear-gradient(145deg, #0A192F, #1E3A5F);
     padding: 15px;
     border-radius: 50%;
     color: white;
-    box-shadow: 0 10px 30px rgba(10, 25, 47, 0.2);
 }
 
 .section-subtitle-ceelex {
@@ -691,13 +689,13 @@
 /* ========== CONTACTO Y UBICACIÓN ========== */
 .section-contacto {
     width: 100%;
-    max-width: 1400px;
+    max-width: 1600px;
 }
 
 .contacto-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 48px;
 }
 
 .ubicacion-card,
@@ -709,6 +707,13 @@
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.section-contacto .ubicacion-card,
+.section-contacto .contacto-card {
+    min-height: 720px;
+    padding: 60px;
+    box-sizing: border-box;
 }
 
 .ubicacion-card::before,
@@ -796,6 +801,7 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+    min-width: 0;
 }
 
 .contacto-item-etiqueta {
@@ -808,12 +814,153 @@
 
 .contacto-email,
 .contacto-telefono,
-.contacto-facebook {
+.contacto-facebook,
+.contacto-dato,
+.contacto-extension {
     color: #0A192F;
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 500;
     transition: all 0.3s ease;
+    overflow-wrap: anywhere;
+}
+
+.contacto-extension {
+    color: #5e7a7e;
+    font-size: 1rem;
+}
+
+.contacto-dato {
+    line-height: 1.5;
+}
+
+/* Aísla el contacto de CEELEX de estilos globales de otras páginas. */
+.content-ceelex .section-contacto {
+    max-width: 1280px;
+}
+
+.content-ceelex .section-contacto .contacto-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.content-ceelex .section-contacto .contacto-card {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    align-content: start;
+    min-height: auto;
+    padding: clamp(32px, 4vw, 54px);
+    text-align: left;
+    background:
+        radial-gradient(circle at 8% 10%, rgba(255, 215, 0, 0.08), transparent 28%),
+        #ffffff;
+}
+
+.content-ceelex .section-contacto .ubicacion-card {
+    min-height: 600px;
+    padding: 45px;
+}
+
+.content-ceelex .section-contacto .contacto-card:hover {
+    transform: none;
+}
+
+.content-ceelex .section-contacto .contacto-icono,
+.content-ceelex .section-contacto .contacto-titulo,
+.content-ceelex .section-contacto .contacto-item-correos {
+    grid-column: 1 / -1;
+}
+
+.content-ceelex .section-contacto .contacto-icono {
+    width: 88px;
+    height: 88px;
+    margin-bottom: 4px;
+}
+
+.content-ceelex .section-contacto .contacto-emoji {
+    font-size: 2.5rem;
+}
+
+.content-ceelex .section-contacto .contacto-titulo {
+    margin: 0 0 14px;
+    font-size: 2rem;
+}
+
+.content-ceelex .section-contacto .contacto-item {
+    align-items: flex-start;
+    min-width: 0;
+    padding: 22px;
+    background: #f8fafc;
+    border: 1px solid rgba(10, 25, 47, 0.08);
+    border-radius: 18px;
+    transition: transform 0.3s ease, border-color 0.3s ease,
+        box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.content-ceelex .section-contacto .contacto-item:hover {
+    background: #ffffff;
+    border-color: rgba(255, 215, 0, 0.7);
+    box-shadow: 0 12px 28px rgba(10, 25, 47, 0.09);
+    transform: translateY(-4px);
+}
+
+.content-ceelex .section-contacto .contacto-item-correos {
+    background: linear-gradient(145deg, rgba(10, 25, 47, 0.04), rgba(255, 215, 0, 0.07));
+}
+
+.content-ceelex .section-contacto .contacto-item-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    background: #ffffff;
+    border: 1px solid rgba(10, 25, 47, 0.08);
+    border-radius: 14px;
+    font-size: 1.45rem;
+}
+
+.content-ceelex .section-contacto .contacto-item-contenido {
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    width: 100%;
+    text-align: left;
+}
+
+.content-ceelex .section-contacto .contacto-item-etiqueta {
+    color: #0A192F;
+    font-weight: 800;
+}
+
+.content-ceelex .section-contacto .contacto-email {
+    display: block;
+    max-width: 100%;
+    padding: 0;
+    color: #0A192F;
+    font-size: clamp(0.95rem, 1.5vw, 1.08rem);
+    font-weight: 500;
+    background: transparent;
+    border-radius: 0;
+    overflow-wrap: anywhere;
+}
+
+.content-ceelex .section-contacto .contacto-email:hover {
+    color: #b89b00;
+    background: transparent;
+    transform: translateX(5px);
+}
+
+.content-ceelex .section-contacto .contacto-telefono,
+.content-ceelex .section-contacto .contacto-facebook,
+.content-ceelex .section-contacto .contacto-dato,
+.content-ceelex .section-contacto .contacto-extension {
+    overflow-wrap: normal;
+    word-break: normal;
 }
 
 .contacto-email:hover,
@@ -1051,6 +1198,26 @@
     .contacto-card {
         padding: 30px;
     }
+
+    .section-contacto .ubicacion-card,
+    .section-contacto .contacto-card {
+        min-height: auto;
+        padding: 35px;
+    }
+
+    .content-ceelex .section-contacto .contacto-grid,
+    .content-ceelex .section-contacto .contacto-card {
+        grid-template-columns: 1fr;
+    }
+
+    .content-ceelex .section-contacto .contacto-card {
+        min-height: auto;
+        padding: 35px;
+    }
+
+    .content-ceelex .section-contacto .contacto-item {
+        grid-column: 1;
+    }
     
     .cta-content-ceelex {
         padding: 50px 30px;
@@ -1097,7 +1264,7 @@
         font-size: 1.8rem;
     }
     
-    .title-emoji {
+    .title-emoji-CEELEX {
         font-size: 2rem;
         padding: 12px;
     }
@@ -1127,6 +1294,30 @@
     
     .contacto-item:hover {
         transform: none;
+    }
+
+    .content-ceelex .section-contacto .contacto-card {
+        gap: 14px;
+        padding: 24px 18px;
+        border-radius: 28px;
+    }
+
+    .content-ceelex .section-contacto .contacto-item {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 17px;
+        text-align: left;
+    }
+
+    .content-ceelex .section-contacto .contacto-item:hover {
+        transform: none;
+    }
+
+    .content-ceelex .section-contacto .contacto-item-icono {
+        width: 42px;
+        height: 42px;
+        font-size: 1.25rem;
     }
     
     .cta-titulo {

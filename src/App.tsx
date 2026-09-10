@@ -35,6 +35,7 @@ import ExamenIngreso from "./pages/ExamenIngreso.tsx";
 import SEO from "./components/SEO.tsx";
 import Mir from "./pages/Mir.tsx";
 import Documentacion from "./pages/SidOut.tsx";
+import Posgrados from "./pages/Posgrados.tsx";
 
 function ScrollToTop() {
   const { pathname, search, hash } = useLocation();
@@ -105,6 +106,7 @@ function App() {
         <Route path="/CEELEX" element={<CEELEX />} />
         <Route path="/ECECUT" element={<ECECUT />} />
         <Route path="/Resultados" element={<ExamenIngreso />} />
+        <Route path="/Posgrados" element={<Posgrados />} />
         <Route
           path="/ExtensionUniversitaria"
           element={<ExtensionUniversitaria />}

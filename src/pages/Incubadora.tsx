@@ -85,7 +85,7 @@ function Incubadora() {
         <div className="section-antecedentes">
           <div className="section-header-incubadora">
             <h2 className="section-title-incubadora">
-              <span className="title-emoji">📜</span>
+              <span className="title-emoji-Incubadora">📜</span>
               Antecedentes
             </h2>
             <div className="title-decoration-incubadora">
@@ -149,7 +149,7 @@ function Incubadora() {
         <div className="section-sectores">
           <div className="section-header-incubadora">
             <h2 className="section-title-incubadora">
-              <span className="title-emoji">🏢</span>
+              <span className="title-emoji-Incubadora">🏢</span>
               Sectores Económicos
             </h2>
             <p className="section-subtitle">
@@ -187,7 +187,7 @@ function Incubadora() {
         <div className="section-servicios">
           <div className="section-header-incubadora">
             <h2 className="section-title-incubadora">
-              <span className="title-emoji">⚙️</span>
+              <span className="title-emoji-Incubadora">⚙️</span>
               Servicios
             </h2>
             <div className="title-decoration-incubadora">
@@ -219,14 +219,44 @@ function Incubadora() {
             <p className="cta-descripcion">
               Conviértela en realidad con el apoyo de nuestra incubadora
             </p>
-            {/*
-                            <Link to="/contacto" className="cta-button-incubadora">
-              <span>Solicita información</span>
-              <svg className="cta-arrow" viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </Link>
-                */}
+
+            <div
+              className="contacto-incubadora"
+              aria-label="Formas de contacto"
+            >
+              <a
+                className="contacto-item-incubadora"
+                href="mailto:incubadoradenegocios@utnay.edu.mx"
+              >
+                <span className="contacto-icono-incubadora" aria-hidden="true">
+                  ✉️
+                </span>
+                <span className="contacto-contenido-incubadora">
+                  <span className="contacto-etiqueta-incubadora">
+                    Correo electrónico
+                  </span>
+                  <span className="contacto-dato-incubadora">
+                    incubadoradenegocios@utnay.edu.mx
+                  </span>
+                </span>
+              </a>
+
+              <a
+                className="contacto-item-incubadora"
+                href="tel:3112119800"
+                aria-label="Llamar al 311 211 9800, extensión 3400"
+              >
+                <span className="contacto-icono-incubadora" aria-hidden="true">
+                  📞
+                </span>
+                <span className="contacto-contenido-incubadora">
+                  <span className="contacto-etiqueta-incubadora">Teléfono</span>
+                  <span className="contacto-dato-incubadora">
+                    311 211 9800 <small>EXT. 3400</small>
+                  </span>
+                </span>
+              </a>
+            </div>
           </div>
         </div>
       </section>

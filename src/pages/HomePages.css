@@ -263,26 +263,9 @@
     object-position: center;
 }
 
-.gradiente-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, #0A514C, transparent);
-}
 
-.texto-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50px;
-    transform: translateY(-50%);
-    color: white;
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 255, 34, 0.5);
-    max-width: 40%;
-}
+
+
 
 .Acces h1 {
     color: white;
@@ -293,11 +276,6 @@
     margin: 20;
 }
 
-/* ============================================== */
-/* AJUSTAR ESTILOS PARA TABLETS GRANDES */
-/* ============================================== */ 
-
-/* ========== MEDIA QUERIES MEJORADAS ========== */
 
 /* Pantallas Ultra-wide (4K) */
 @media (min-width: 2000px) {

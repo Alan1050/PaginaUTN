@@ -17,7 +17,7 @@ function Accesos() {
         <a href="/Becas"><img src={logoBecas} alt="Becas" /></a>
         <a href="https://utnay.edu.mx/recorrido/" target='_blank'>
         <img src={logoRecorrido} alt="Recorrido" /></a>
-        <a href=""><img src={logoInvestigacion} alt="Investigación" /></a>
+        <a href="/Posgrados"><img src={logoInvestigacion} alt="Investigación" /></a>
       </div>
       <div className='ContainerButton2'>
         <a href="https://transparencia.utnay.edu.mx/" 

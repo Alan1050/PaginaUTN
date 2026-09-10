@@ -26,38 +26,32 @@ function CEELEX() {
       nombre: "Presencial",
       emoji: "🏛️",
       descripcion: "Clases en nuestras instalaciones",
-      icono: "🎯",
     },
     {
       nombre: "Virtual",
       emoji: "💻",
       descripcion: "En línea desde cualquier lugar",
-      icono: "🌐",
     },
     {
       nombre: "Sabatino",
       emoji: "📅",
       descripcion: "Fines de semana para tu comodidad",
-      icono: "⚡",
     },
   ];
 
   const certificaciones = [
     {
       nombre: "TOEFL ITP",
-      emoji: "📜",
       descripcion: "Certificación internacional de inglés",
       nivel: "Internacional",
     },
     {
       nombre: "Certificaciones alineadas al MCER",
-      emoji: "🎓",
       descripcion: "Marco Común Europeo de Referencia",
       nivel: "Europeo",
     },
     {
       nombre: "Evaluaciones institucionales",
-      emoji: "✅",
       descripcion: "Con respaldo universitario",
       nivel: "Nacional",
     },
@@ -84,7 +78,7 @@ function CEELEX() {
     },
     {
       titulo: "Estándares Internacionales",
-      emoji: "🌍",
+      emoji: "💼",
       descripcion: "Programas alineados al MCER",
     },
     {
@@ -116,9 +110,6 @@ function CEELEX() {
         {/* Introducción */}
         <div className="section-intro">
           <div className="intro-card">
-            <div className="intro-icono">
-              <span className="intro-emoji">🌎</span>
-            </div>
             <div className="intro-texto">
               <p className="intro-parrafo">
                 El <strong>CEELEX</strong> de la Universidad Tecnológica de
@@ -142,7 +133,7 @@ function CEELEX() {
         <div className="section-idiomas">
           <div className="section-header-ceelex">
             <h2 className="section-title-ceelex">
-              <span className="title-emoji">🗣️</span>
+              <span className="title-emoji-CEELEX">🗣️</span>
               Idiomas que ofrecemos
             </h2>
             <p className="section-subtitle-ceelex">
@@ -192,7 +183,7 @@ function CEELEX() {
         <div className="section-modalidades">
           <div className="section-header-ceelex">
             <h2 className="section-title-ceelex">
-              <span className="title-emoji">📚</span>
+              <span className="title-emoji-CEELEX">📚</span>
               Modalidades
             </h2>
             <p className="section-subtitle-ceelex">
@@ -213,9 +204,6 @@ function CEELEX() {
                   <span className="modalidad-emoji-grande">
                     {modalidad.emoji}
                   </span>
-                  <span className="modalidad-icono-pequeno">
-                    {modalidad.icono}
-                  </span>
                 </div>
                 <h3 className="modalidad-nombre">{modalidad.nombre}</h3>
                 <p className="modalidad-descripcion">{modalidad.descripcion}</p>
@@ -228,7 +216,7 @@ function CEELEX() {
         <div className="section-certificaciones">
           <div className="section-header-ceelex">
             <h2 className="section-title-ceelex">
-              <span className="title-emoji">🏆</span>
+              <span className="title-emoji-CEELEX">🏆</span>
               Certificaciones oficiales
             </h2>
             <p className="section-subtitle-ceelex">
@@ -244,9 +232,6 @@ function CEELEX() {
           <div className="certificaciones-grid">
             {certificaciones.map((cert, index) => (
               <div key={index} className="certificacion-card">
-                <div className="certificacion-icono">
-                  <span className="certificacion-emoji">{cert.emoji}</span>
-                </div>
                 <div className="certificacion-contenido">
                   <h3 className="certificacion-nombre">{cert.nombre}</h3>
                   <p className="certificacion-descripcion">
@@ -278,7 +263,7 @@ function CEELEX() {
         <div className="section-dirigido">
           <div className="section-header-ceelex">
             <h2 className="section-title-ceelex">
-              <span className="title-emoji">👥</span>
+              <span className="title-emoji-CEELEX">👥</span>
               ¿A quién va dirigido?
             </h2>
             <p className="section-subtitle-ceelex">
@@ -305,7 +290,7 @@ function CEELEX() {
         <div className="section-ventajas">
           <div className="section-header-ceelex">
             <h2 className="section-title-ceelex">
-              <span className="title-emoji">⭐</span>
+              <span className="title-emoji-CEELEX">⭐</span>
               ¿Por qué elegir CEELEX?
             </h2>
             <div className="title-decoration-ceelex">
@@ -330,28 +315,16 @@ function CEELEX() {
           </div>
         </div>
 
-        {/* Contacto y Ubicación */}
+        {/* Contacto */}
         <div className="section-contacto">
           <div className="contacto-grid">
-            <div className="ubicacion-card">
-              <div className="ubicacion-icono">
-                <span className="ubicacion-emoji">📍</span>
-              </div>
-              <h3 className="ubicacion-titulo">Ubicación</h3>
-              <p className="ubicacion-texto">
-                Universidad Tecnológica de Nayarit
-                <br />
-                Carretera Federal 200 Km 9, Xalisco, Nayarit
-              </p>
-            </div>
-
             <div className="contacto-card">
               <div className="contacto-icono">
                 <span className="contacto-emoji">📞</span>
               </div>
               <h3 className="contacto-titulo">Contacto</h3>
 
-              <div className="contacto-item">
+              <div className="contacto-item contacto-item-correos">
                 <span className="contacto-item-icono">📧</span>
                 <div className="contacto-item-contenido">
                   <span className="contacto-item-etiqueta">Correo:</span>
@@ -371,15 +344,40 @@ function CEELEX() {
               </div>
 
               <div className="contacto-item">
+                <span className="contacto-item-icono">☎️</span>
+                <div className="contacto-item-contenido">
+                  <span className="contacto-item-etiqueta">Teléfono:</span>
+                  <a href="tel:+523112119800" className="contacto-telefono">
+                    311 211 9800
+                  </a>
+                  <span className="contacto-extension">
+                    Ext. 2400, 24001 y 2408
+                  </span>
+                </div>
+              </div>
+
+              <div className="contacto-item">
                 <span className="contacto-item-icono">📱</span>
                 <div className="contacto-item-contenido">
                   <span className="contacto-item-etiqueta">WhatsApp:</span>
                   <a
-                    href="https://wa.me/523111396384"
+                    href="https://wa.me/523113961384"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="contacto-telefono"
                   >
-                    (311) 3961384
+                    311 396 1384
                   </a>
+                </div>
+              </div>
+
+              <div className="contacto-item">
+                <span className="contacto-item-icono">🕘</span>
+                <div className="contacto-item-contenido">
+                  <span className="contacto-item-etiqueta">
+                    Horario de atención:
+                  </span>
+                  <span className="contacto-dato">09:00 a 17:00 hrs.</span>
                 </div>
               </div>
 
@@ -398,25 +396,6 @@ function CEELEX() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* CTA Final */}
-        <div className="section-cta-ceelex">
-          <div className="cta-content-ceelex">
-            <h3 className="cta-titulo">¡Comienza hoy mismo!</h3>
-            <p className="cta-descripcion">
-              Aprende un nuevo idioma con los mejores, certifica tu conocimiento
-              y abre puertas al mundo
-            </p>
-            {/*
-            <Link to="/contacto" className="cta-button-ceelex">
-              <span>Solicita información</span>
-              <svg className="cta-arrow" viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </Link>
-            */}
           </div>
         </div>
       </section>

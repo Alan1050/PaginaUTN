@@ -1,32 +1,50 @@
 // import { Link } from 'react-router-dom';
+import { useState } from "react";
 import "./MovilidadEstudiantil.css";
 import bannerMovilidad from "../assets/banner/bannerMovilidad.jpg";
+import experiencia3 from "../assets/experienciasMovilidad/Experiencia3.jpg";
+import experiencia4 from "../assets/experienciasMovilidad/Experiencia4.jpg";
+import experiencia5 from "../assets/experienciasMovilidad/Experiencia5.jpg";
+import experiencia6 from "../assets/experienciasMovilidad/Experiencia6.jpg";
+import experiencia7 from "../assets/experienciasMovilidad/Experiencia7.jpg";
+import experiencia8 from "../assets/experienciasMovilidad/Experiencia8.jpg";
+import experiencia9 from "../assets/experienciasMovilidad/Experiencia9.jpg";
+import experiencia10 from "../assets/experienciasMovilidad/Experiencia10.jpg";
+
+const experiencia1 = new URL(
+  "../assets/experienciasMovilidad/Experiencia1.JPG",
+  import.meta.url,
+).href;
+const experiencia2 = new URL(
+  "../assets/experienciasMovilidad/Experiencia2.JPG",
+  import.meta.url,
+).href;
 
 function MovilidadEstudiantil() {
+  const [experienciaActiva, setExperienciaActiva] = useState(0);
+  const [mostrarIntroduccionCompleta, setMostrarIntroduccionCompleta] =
+    useState(false);
+
   const paisesAcademicos = [
     {
       nombre: "Canadá",
       emoji: "🇨🇦",
       bandera: "🍁",
-      descripcion: "Intercambio académico",
     },
     {
       nombre: "Chile",
       emoji: "🇨🇱",
       bandera: "🌶️",
-      descripcion: "Intercambio académico",
     },
     {
       nombre: "Perú",
       emoji: "🇵🇪",
       bandera: "🏔️",
-      descripcion: "Intercambio académico",
     },
     {
       nombre: "Colombia",
       emoji: "🇨🇴",
       bandera: "☕",
-      descripcion: "Intercambio académico",
     },
   ];
 
@@ -35,31 +53,27 @@ function MovilidadEstudiantil() {
       nombre: "España",
       emoji: "🇪🇸",
       bandera: "💃",
-      descripcion: "Estancias profesionales",
+
     },
     {
       nombre: "Las Bahamas",
       emoji: "🇧🇸",
       bandera: "🏝️",
-      descripcion: "Estancias profesionales",
     },
     {
       nombre: "Colombia",
       emoji: "🇨🇴",
       bandera: "☕",
-      descripcion: "Estancias profesionales",
     },
     {
       nombre: "Estados Unidos",
       emoji: "🇺🇸",
       bandera: "🗽",
-      descripcion: "Estancias profesionales",
     },
     {
       nombre: "Y más...",
       emoji: "🌎",
       bandera: "✨",
-      descripcion: "Más destinos",
     },
   ];
 
@@ -97,6 +111,71 @@ function MovilidadEstudiantil() {
     },
   ];
 
+  const experiencias = [
+    {
+      imagen: experiencia1,
+      titulo: "Intercambio cultural en Corea del Sur",
+      descripcion:
+        "Una experiencia de movilidad que permite descubrir nuevas tradiciones, ampliar la visión del mundo y crecer dentro y fuera del aula.",
+    },
+    {
+      imagen: experiencia2,
+      titulo: "Bienvenida académica en Colombia",
+      descripcion:
+        "Estudiantes de movilidad celebran el encuentro entre culturas y el inicio de una etapa llena de aprendizaje y nuevas amistades.",
+    },
+    {
+      imagen: experiencia3,
+      titulo: "Nuevas conexiones internacionales",
+      descripcion:
+        "La movilidad estudiantil también crea vínculos personales y profesionales que acompañan a nuestros estudiantes durante toda su formación.",
+    },
+    {
+      imagen: experiencia4,
+      titulo: "Estancia profesional en el extranjero",
+      descripcion:
+        "Nuestros estudiantes llevan sus conocimientos a escenarios internacionales y conocen de cerca la operación de empresas de clase mundial.",
+    },
+    {
+      imagen: experiencia5,
+      titulo: "Formación en entornos reales",
+      descripcion:
+        "Cada jornada de práctica fortalece las competencias técnicas, la seguridad profesional y la capacidad de adaptarse a nuevos retos.",
+    },
+    {
+      imagen: experiencia6,
+      titulo: "Aprendizaje en equipo",
+      descripcion:
+        "Compartir experiencias con profesionales de otros lugares enriquece el aprendizaje y abre nuevas perspectivas de colaboración.",
+    },
+    {
+      imagen: experiencia7,
+      titulo: "Excelencia gastronómica internacional",
+      descripcion:
+        "La práctica en cocinas profesionales permite perfeccionar técnicas y aprender de estándares internacionales de calidad y servicio.",
+    },
+    {
+      imagen: experiencia8,
+      titulo: "Desarrollo de habilidades profesionales",
+      descripcion:
+        "La dedicación, la creatividad y la atención al detalle se convierten en herramientas esenciales durante una estancia internacional.",
+    },
+    {
+      imagen: experiencia9,
+      titulo: "Una experiencia compartida",
+      descripcion:
+        "El trabajo junto a equipos multiculturales fortalece la comunicación, el liderazgo y el sentido de comunidad profesional.",
+    },
+    {
+      imagen: experiencia10,
+      titulo: "Encuentro entre México y Colombia",
+      descripcion:
+        "La movilidad crea puentes entre países y reúne a estudiantes que comparten el entusiasmo por aprender y conocer nuevas culturas.",
+    },
+  ];
+
+  const experienciaSeleccionada = experiencias[experienciaActiva];
+
   return (
     <>
       <div className="banner-container-movilidad">
@@ -111,9 +190,6 @@ function MovilidadEstudiantil() {
         {/* Introducción */}
         <div className="section-intro-movilidad">
           <div className="intro-card-movilidad">
-            <div className="intro-icono-movilidad">
-              <span className="intro-emoji-movilidad">✈️</span>
-            </div>
             <div className="intro-texto-movilidad">
               <p className="intro-parrafo-movilidad">
                 Se ha impulsado la proyección de sus estudiantes promoviendo{" "}
@@ -125,7 +201,12 @@ function MovilidadEstudiantil() {
                 Colombia, fortaleciendo su formación académica, cultural y
                 personal en Instituciones de Educación Superior.
               </p>
-              <p className="intro-parrafo-movilidad">
+              <p
+                id="contenido-adicional-movilidad"
+                className={`intro-parrafo-movilidad intro-parrafo-adicional-movilidad${
+                  mostrarIntroduccionCompleta ? " visible" : ""
+                }`}
+              >
                 Asimismo, gracias a la vinculación con empresas internacionales,
                 nuestros estudiantes han sido aceptados para realizar{" "}
                 <span className="texto-destacado-movilidad">
@@ -135,6 +216,25 @@ function MovilidadEstudiantil() {
                 más, ampliando sus oportunidades de desarrollo profesional en
                 contextos reales y multiculturales.
               </p>
+              <button
+                type="button"
+                className="intro-leer-mas-movilidad"
+                onClick={() =>
+                  setMostrarIntroduccionCompleta((estadoActual) => !estadoActual)
+                }
+                aria-expanded={mostrarIntroduccionCompleta}
+                aria-controls="contenido-adicional-movilidad"
+              >
+                {mostrarIntroduccionCompleta ? "Leer menos" : "Leer más"}
+                <span
+                  className={`intro-leer-mas-icono-movilidad${
+                    mostrarIntroduccionCompleta ? " abierto" : ""
+                  }`}
+                  aria-hidden="true"
+                >
+                  ↓
+                </span>
+              </button>
             </div>
           </div>
         </div>
@@ -162,10 +262,9 @@ function MovilidadEstudiantil() {
               <div key={index} className="pais-card-movilidad">
                 <div className="pais-icono-movilidad">
                   <span className="pais-emoji-movilidad">{pais.emoji}</span>
-                  <span className="pais-bandera-movilidad">{pais.bandera}</span>
+
                 </div>
                 <h3 className="pais-nombre-movilidad">{pais.nombre}</h3>
-                <p className="pais-descripcion-movilidad">{pais.descripcion}</p>
                 <div className="pais-barra-movilidad"></div>
               </div>
             ))}
@@ -197,10 +296,9 @@ function MovilidadEstudiantil() {
               >
                 <div className="pais-icono-movilidad">
                   <span className="pais-emoji-movilidad">{pais.emoji}</span>
-                  <span className="pais-bandera-movilidad">{pais.bandera}</span>
+
                 </div>
                 <h3 className="pais-nombre-movilidad">{pais.nombre}</h3>
-                <p className="pais-descripcion-movilidad">{pais.descripcion}</p>
                 <div className="pais-barra-movilidad"></div>
               </div>
             ))}
@@ -229,11 +327,7 @@ function MovilidadEstudiantil() {
           <div className="beneficios-grid-movilidad">
             {beneficios.map((beneficio, index) => (
               <div key={index} className="beneficio-card-movilidad">
-                <div className="beneficio-icono-movilidad">
-                  <span className="beneficio-emoji-movilidad">
-                    {beneficio.emoji}
-                  </span>
-                </div>
+
                 <div className="beneficio-contenido-movilidad">
                   <h3 className="beneficio-titulo-movilidad">
                     {beneficio.titulo}
@@ -247,28 +341,67 @@ function MovilidadEstudiantil() {
           </div>
         </div>
 
-        {/* Importancia del idioma */}
-        <div className="section-idioma-movilidad">
-          <div className="idioma-card-movilidad">
-            <div className="idioma-icono-movilidad">
-              <span className="idioma-emoji-movilidad">🗣️</span>
+        {/* Galería de Experiencias */}
+        <div className="section-galeria-movilidad">
+          <div className="section-header-movilidad">
+            <h2 className="section-title-movilidad">
+              Experiencia Jaguar
+            </h2>
+            <p className="section-subtitle-movilidad">
+              Conoce algunos de los momentos que nuestros estudiantes han
+              vivido alrededor del mundo.
+            </p>
+            <div className="title-decoration-movilidad">
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
-            <div className="idioma-contenido-movilidad">
-              <h3 className="idioma-titulo-movilidad">El idioma es la llave</h3>
-              <p className="idioma-texto-movilidad">
-                El contar con un adecuado nivel de idioma extranjero representa
-                un{" "}
-                <span className="texto-destacado-movilidad">factor clave</span>{" "}
-                para acceder a un mayor número de oportunidades, ya que facilita
-                la integración académica, laboral y cultural en el país de
-                destino.
-              </p>
-              <div className="idioma-badge-movilidad">
-                <span className="idioma-badge-icono">🔑</span>
-                <span className="idioma-badge-texto">
-                  Aprende idiomas, abre fronteras
+          </div>
+
+          <div className="galeria-movilidad">
+            <figure className="galeria-destacada-movilidad">
+              <div className="galeria-imagen-contenedor-movilidad">
+                <img
+                  key={experienciaSeleccionada.imagen}
+                  src={experienciaSeleccionada.imagen}
+                  alt={experienciaSeleccionada.titulo}
+                  className="galeria-imagen-principal-movilidad"
+                />
+                <span className="galeria-contador-movilidad">
+                  {String(experienciaActiva + 1).padStart(2, "0")} /{" "}
+                  {String(experiencias.length).padStart(2, "0")}
                 </span>
               </div>
+              <figcaption
+                id="descripcion-experiencia-movilidad"
+                className="galeria-descripcion-movilidad"
+                aria-live="polite"
+              >
+                <h3>{experienciaSeleccionada.titulo}</h3>
+                <p>{experienciaSeleccionada.descripcion}</p>
+              </figcaption>
+            </figure>
+
+            <div
+              className="galeria-opciones-movilidad"
+              aria-label="Seleccionar experiencia"
+            >
+              {experiencias.map((experiencia, index) => (
+                <button
+                  key={experiencia.imagen}
+                  type="button"
+                  className={`galeria-miniatura-movilidad${
+                    experienciaActiva === index ? " activa" : ""
+                  }`}
+                  onClick={() => setExperienciaActiva(index)}
+                  aria-pressed={experienciaActiva === index}
+                  aria-controls="descripcion-experiencia-movilidad"
+                  aria-label={`Ver ${experiencia.titulo}`}
+                >
+                  <img src={experiencia.imagen} alt="" />
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                </button>
+              ))}
             </div>
           </div>
         </div>
@@ -276,9 +409,6 @@ function MovilidadEstudiantil() {
         {/* Contacto */}
         <div className="section-contacto-movilidad">
           <div className="contacto-card-movilidad">
-            <div className="contacto-icono-movilidad">
-              <span className="contacto-emoji-movilidad">📬</span>
-            </div>
             <div className="contacto-contenido-movilidad">
               <h3 className="contacto-titulo-movilidad">
                 ¿Quieres vivir esta experiencia?
@@ -344,27 +474,6 @@ function MovilidadEstudiantil() {
                 <span className="frase-comillas-movilidad">"</span>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* CTA Final */}
-        <div className="section-cta-movilidad">
-          <div className="cta-content-movilidad">
-            <h3 className="cta-titulo-movilidad">
-              ¡Tu aventura internacional comienza aquí!
-            </h3>
-            <p className="cta-descripcion-movilidad">
-              Prepárate para vivir una experiencia única que transformará tu
-              futuro profesional
-            </p>
-            {/*
-                            <Link to="/contacto" className="cta-button-movilidad">
-              <span>Solicita información</span>
-              <svg className="cta-arrow-movilidad" viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </Link>
-            */}
           </div>
         </div>
       </section>

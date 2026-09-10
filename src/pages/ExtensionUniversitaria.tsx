@@ -1,17 +1,79 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import { Link } from 'react-router-dom';
 import "./ExtensionUniversitaria.css";
 import bannerExtension from "../assets/banner/bannerExtension.jpg";
+import { URL_ASSETS_INSTALACIONES } from "../config/constants";
 
 function ExtensionUniversitaria() {
   const [activeTrainingSection, setActiveTrainingSection] =
     useState<string>("diplomados");
+  const [calendarMonth, setCalendarMonth] = useState(
+    () => new Date(new Date().getFullYear(), new Date().getMonth(), 1),
+  );
+  const [selectedCalendarDate, setSelectedCalendarDate] =
+    useState<Date | null>(null);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedInstalacion, setSelectedInstalacion] = useState<string | null>(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isModalOpen]);
 
   const toggleTrainingSection = (section: string) => {
     setActiveTrainingSection((current) =>
       current === section ? "" : section,
     );
   };
+
+  const calendarDays = Array.from({ length: 42 }, (_, index) => {
+    const firstDay = new Date(
+      calendarMonth.getFullYear(),
+      calendarMonth.getMonth(),
+      1,
+    );
+    const mondayOffset = (firstDay.getDay() + 6) % 7;
+
+    return new Date(
+      calendarMonth.getFullYear(),
+      calendarMonth.getMonth(),
+      index - mondayOffset + 1,
+    );
+  });
+
+  const changeCalendarMonth = (offset: number) => {
+    setCalendarMonth(
+      (current) =>
+        new Date(current.getFullYear(), current.getMonth() + offset, 1),
+    );
+  };
+
+  const goToCurrentMonth = () => {
+    const today = new Date();
+    setCalendarMonth(new Date(today.getFullYear(), today.getMonth(), 1));
+    setSelectedCalendarDate(today);
+  };
+
+  const isSameCalendarDay = (first: Date, second: Date) =>
+    first.getFullYear() === second.getFullYear() &&
+    first.getMonth() === second.getMonth() &&
+    first.getDate() === second.getDate();
+
+  const calendarMonthLabel = new Intl.DateTimeFormat("es-MX", {
+    month: "long",
+    year: "numeric",
+  }).format(calendarMonth);
+
+  const calendarWeekdays = ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"];
 
   const diplomados = [
     "Administración de recursos humanos",
@@ -81,34 +143,111 @@ function ExtensionUniversitaria() {
 
   const espaciosAlquiler = [
     {
-      nombre: "Auditorio (50 personas)",
+      nombre: "Auditorio Chico",
       emoji: "🏫",
       capacidad: "50",
       color: "#2A9D8F",
+      fotosId: "AuditorioChico",
     },
     {
-      nombre: "Auditorio (150 personas)",
+      nombre: "Auditorio Grande",
       emoji: "🏛️",
       capacidad: "150",
       color: "#2A9D8F",
+      fotosId: "AuditorioTurismo",
     },
     {
       nombre: "Auditorio de vinculación",
       emoji: "🎭",
       capacidad: "250",
       color: "#E76F51",
+      fotosId: "AuditorioVinculación",
     },
     {
       nombre: "Poliforum",
       emoji: "🏟️",
       capacidad: "Multiusos",
       color: "#E9C46A",
+      fotosId: "Poliforum",
     },
     {
       nombre: "Salas de capacitación",
       emoji: "📚",
       capacidad: "20-40",
       color: "#2A9D8F",
+      fotosId: "SalaCapacitación",
+    },
+  ];
+
+  const fotosInstalaciones = [
+    {
+      id: "AuditorioTurismo",
+      prefijo: "AuditorioTurismo/",
+      fotos: [
+        {
+          name1: "AuditorioTurismo1.jpg",
+          name2: "AuditorioTurismo2.jpg",
+          name3: "AuditorioTurismo3.jpg",
+          name4: "AuditorioTurismo4.jpg",
+          name5: "AuditorioTurismo5.jpg",
+          name6: "AuditorioTurismo6.jpg",
+        },
+      ],
+    },
+    {
+      id: "AuditorioChico",
+      prefijo: "AuditorioChico/",
+      fotos: [
+        {
+          name1: "AuditorioChico1.jpg",
+          name2: "AuditorioChico2.jpg",
+          name3: "AuditorioChico3.jpg",
+          name4: "AuditorioChico4.jpg",
+          name5: "AuditorioChico5.jpg",
+          name6: "AuditorioChico6.jpg",
+        },
+      ],
+    },
+    {
+      id: "AuditorioVinculación",
+      prefijo: "AuditorioVinculacion/",
+      fotos: [
+        {
+          name1: "AuditorioVinculacion1.jpg",
+          name2: "AuditorioVinculacion2.jpg",
+          name3: "AuditorioVinculacion3.jpg",
+          name4: "AuditorioVinculacion4.jpg",
+          name5: "AuditorioVinculacion5.jpg",
+          name6: "AuditorioVinculacion6.jpg",
+        },
+      ],
+    },
+    {
+      id: "Poliforum",
+      prefijo: "Poliforum/",
+      fotos: [
+        {
+          name1: "Poliforum1.jpg",
+          name2: "Poliforum2.jpg",
+          name3: "Poliforum3.jpg",
+          name4: "Poliforum4.jpg",
+          name5: "Poliforum5.jpg",
+          name6: "Poliforum6.jpg",
+        },
+      ],
+    },
+    {
+      id: "SalaCapacitación",
+      prefijo: "SalaCapacitacion/",
+      fotos: [
+        {
+          name1: "SalaCapacitacion1.jpg",
+          name2: "SalaCapacitacion2.jpg",
+          name3: "SalaCapacitacion3.jpg",
+          name4: "SalaCapacitacion4.jpg",
+          name5: "SalaCapacitacion5.jpg",
+        },
+      ],
     },
   ];
 
@@ -149,9 +288,6 @@ function ExtensionUniversitaria() {
         {/* Introducción */}
         <div className="section-intro-extension">
           <div className="intro-card-extension">
-            <div className="intro-icono-extension">
-              <span className="intro-emoji-extension">🌉</span>
-            </div>
             <div className="intro-texto-extension">
               <p className="intro-parrafo-extension">
                 La <strong>Extensión Universitaria</strong> es el conjunto de
@@ -159,9 +295,9 @@ function ExtensionUniversitaria() {
                 vincula con{" "}
                 <span className="texto-destacado-extension">
                   estudiantes, egresados, sector empresarial, sector
-                  gubernamental y público en general
-                </span>
-                , fortaleciendo la colaboración y contribuyendo al desarrollo
+                  gubernamental y público en general,
+                </span>{" "}
+                fortaleciendo la colaboración y contribuyendo al desarrollo
                 académico, social y productivo.
               </p>
             </div>
@@ -204,32 +340,12 @@ function ExtensionUniversitaria() {
               <span className="title-emoji-extension">🎓</span>
               Servicios de Capacitación
             </h2>
-            <p className="section-subtitle-extension">
-              Educación continua para el desarrollo profesional
-            </p>
+
             <div className="title-decoration-extension">
               <span></span>
               <span></span>
               <span></span>
             </div>
-          </div>
-
-          <div className="capacitacion-intro-card">
-            <p className="capacitacion-intro-texto">
-              La Universidad Tecnológica de Nayarit, a través del área de{" "}
-              <strong>Educación Continua</strong>, ofrece programas
-              especializados de Capacitación y Actualización para el Sector
-              Productivo y Público en general, en la modalidad de{" "}
-              <span className="texto-destacado-extension">
-                cursos, talleres y diplomados
-              </span>
-              .
-              <br />
-              <br />
-              Además de los programas abiertos, se atienden las necesidades
-              específicas de las empresas, diseñando el Curso o Diplomado de
-              acuerdo a ellas.
-            </p>
           </div>
 
           {/* Diplomados */}
@@ -288,7 +404,7 @@ function ExtensionUniversitaria() {
             >
               <h3 className="subtitulo-extension">
                 <span className="subtitulo-icono">📋</span>
-                Programas de capacitación en:
+                Programas de capacitación
               </h3>
               <span className="extension-training-toggle" aria-hidden="true">
                 {activeTrainingSection === "capacitaciones" ? "−" : "+"}
@@ -315,21 +431,46 @@ function ExtensionUniversitaria() {
               </div>
             )}
           </div>
-
           {/* Beneficios de capacitación */}
-          <div className="beneficios-capacitacion-card">
-            <h3 className="beneficios-titulo">
-              <span className="beneficios-icono">✨</span>
-              Beneficios
-            </h3>
-            <div className="beneficios-grid">
-              {beneficiosCapacitacion.map((beneficio, index) => (
-                <div key={beneficio} className="beneficio-item">
-                  <span className="beneficio-numero">{index + 1}</span>
-                  <p className="beneficio-texto">{beneficio}</p>
+          <div
+            className={`beneficios-section extension-training-accordion ${
+              activeTrainingSection === "beneficios" ? "active" : ""
+            }`}
+          >
+            <button
+              type="button"
+              className="extension-training-header"
+              onClick={() => toggleTrainingSection("beneficios")}
+              aria-expanded={activeTrainingSection === "beneficios"}
+              aria-controls="extension-beneficios-content"
+            >
+              <h3 className="subtitulo-extension">
+                <span className="subtitulo-icono">✨</span>
+                Beneficios
+              </h3>
+              <span className="extension-training-toggle" aria-hidden="true">
+                {activeTrainingSection === "beneficios" ? "−" : "+"}
+              </span>
+            </button>
+
+            {activeTrainingSection === "beneficios" && (
+              <div
+                className="extension-training-content extension-beneficios-content"
+                id="extension-beneficios-content"
+              >
+                <div className="beneficios-grid beneficios-accordion-grid">
+                  {beneficiosCapacitacion.map((beneficio, index) => (
+                    <div
+                      key={beneficio}
+                      className="beneficio-item beneficio-item-accordion"
+                    >
+                      <span className="beneficio-numero">{index + 1}</span>
+                      <p className="beneficio-texto">{beneficio}</p>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            )}
           </div>
         </div>
 
@@ -395,48 +536,191 @@ function ExtensionUniversitaria() {
 
             <div className="espacios-grid">
               {espaciosAlquiler.map((espacio, index) => (
-                <div
+                <a
+                  href="/"
                   key={index}
-                  className={`espacio-card `}
-                  style={
-                    { "--espacio-color": espacio.color } as React.CSSProperties
-                  }
+                  className="espacio-link"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setSelectedInstalacion(espacio.fotosId);
+                    setSelectedImageIndex(0);
+                    setIsModalOpen(true);
+                  }}
                 >
-                  <div className="espacio-icono">
-                    <span className="espacio-emoji">{espacio.emoji}</span>
+                  <div
+                    className={`espacio-card `}
+                    style={
+                      {
+                        "--espacio-color": espacio.color,
+                      } as React.CSSProperties
+                    }
+                  >
+                    <div className="espacio-icono">
+                      <span className="espacio-emoji">{espacio.emoji}</span>
+                    </div>
+                    <h4 className="espacio-nombre">{espacio.nombre}</h4>
+                    <div className="espacio-capacidad">
+                      <span className="capacidad-icono">👥</span>
+                      <span className="capacidad-texto">
+                        {espacio.capacidad}
+                      </span>
+                    </div>
+                    <p style={{ backgroundColor: "var(--espacio-color)", color: "white", padding: "10px", borderRadius: "5px", margin: "10px 0" }}>
+                      Ver Fotos
+                    </p>
                   </div>
-                  <h4 className="espacio-nombre">{espacio.nombre}</h4>
-                  <div className="espacio-capacidad">
-                    <span className="capacidad-icono">👥</span>
-                    <span className="capacidad-texto">{espacio.capacidad}</span>
-                  </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>
         </div>
 
-        {/* CTA Final */}
-        <div className="section-cta-extension">
-          <div className="cta-content-extension">
-            <h3 className="cta-titulo-extension">
-              ¿Necesitas nuestros servicios?
-            </h3>
-            <p className="cta-descripcion-extension">
-              Capacitación especializada, servicios CEDPAI o alquiler de
-              espacios, estamos listos para colaborar contigo
-            </p>
-            {/*
-            <Link to="/contacto" className="cta-button-extension">
-              <span>Solicita información</span>
-              <svg className="cta-arrow-extension" viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </Link>
-            */}
+        {/* Calendario de Convocatorias */}
+        <div className="section-calendar-extension">
+          <div className="section-header-extension calendar-section-header">
+            <h2 className="section-title-extension">
+              <span className="title-emoji-extension">🗓️</span>
+              Calendario de Convocatorias
+            </h2>
+            <div className="title-decoration-extension">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+
+          <div className="calendar-card-extension">
+            <div className="calendar-toolbar-extension">
+              <div>
+                <span className="calendar-eyebrow-extension">
+                  Agenda mensual
+                </span>
+                <h3 className="calendar-month-extension">
+                  {calendarMonthLabel}
+                </h3>
+              </div>
+
+              <div className="calendar-controls-extension">
+                <button
+                  type="button"
+                  className="calendar-today-extension"
+                  onClick={goToCurrentMonth}
+                >
+                  Hoy
+                </button>
+                <div className="calendar-navigation-extension">
+                  <button
+                    type="button"
+                    onClick={() => changeCalendarMonth(-1)}
+                    aria-label="Ver mes anterior"
+                  >
+                    ‹
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => changeCalendarMonth(1)}
+                    aria-label="Ver mes siguiente"
+                  >
+                    ›
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="calendar-grid-extension" role="grid">
+              {calendarWeekdays.map((weekday) => (
+                <div
+                  className="calendar-weekday-extension"
+                  role="columnheader"
+                  key={weekday}
+                >
+                  {weekday}
+                </div>
+              ))}
+
+              {calendarDays.map((day) => {
+                const isCurrentMonth =
+                  day.getMonth() === calendarMonth.getMonth();
+                const isToday = isSameCalendarDay(day, new Date());
+                const isSelected =
+                  selectedCalendarDate !== null &&
+                  isSameCalendarDay(day, selectedCalendarDate);
+
+                return (
+                  <button
+                    type="button"
+                    role="gridcell"
+                    key={day.toISOString()}
+                    className={`calendar-day-extension${
+                      isCurrentMonth ? "" : " is-outside-month"
+                    }${isToday ? " is-today" : ""}${
+                      isSelected ? " is-selected" : ""
+                    }`}
+                    onClick={() => {
+                      setSelectedCalendarDate(day);
+                      if (!isCurrentMonth) {
+                        setCalendarMonth(
+                          new Date(day.getFullYear(), day.getMonth(), 1),
+                        );
+                      }
+                    }}
+                    aria-label={new Intl.DateTimeFormat("es-MX", {
+                      dateStyle: "full",
+                    }).format(day)}
+                    aria-selected={isSelected}
+                  >
+                    <span>{day.getDate()}</span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
+
+      {isModalOpen && selectedInstalacion && (
+        <div className="modal-overlay-instalaciones" onClick={() => setIsModalOpen(false)}>
+          <div className="modal-content-instalaciones" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close-instalaciones" onClick={() => setIsModalOpen(false)}>
+              &times;
+            </button>
+            <div className="modal-gallery-layout">
+              {(() => {
+                const fotoData = fotosInstalaciones.find((f) => f.id === selectedInstalacion);
+                if (!fotoData) return null;
+                const images = Object.values(fotoData.fotos[0]);
+                
+                return (
+                  <>
+                    <div className="modal-main-image-container">
+                      <img
+                        src={`${URL_ASSETS_INSTALACIONES}/${fotoData.prefijo}${images[selectedImageIndex]}`}
+                        alt="Vista principal de instalación"
+                        className="modal-main-image"
+                      />
+                    </div>
+                    <div className="modal-thumbnails-container">
+                      {images.map((name, idx) => (
+                        <div
+                          key={idx}
+                          className={`modal-thumbnail-wrapper ${idx === selectedImageIndex ? "active" : ""}`}
+                          onClick={() => setSelectedImageIndex(idx)}
+                        >
+                          <img
+                            src={`${URL_ASSETS_INSTALACIONES}/${fotoData.prefijo}${name}`}
+                            alt={`Miniatura ${idx + 1}`}
+                            className="modal-thumbnail-image"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </>
+                );
+              })()}
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

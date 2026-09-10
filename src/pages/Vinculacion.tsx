@@ -12,7 +12,8 @@ function Vinculacion() {
   const programas = [
     {
       id: "incubadora",
-      nombre: "Incubadora de Empresas",
+      nombre: "Incubadora de Negocios",
+      categoria: "Emprendimiento",
       icono: iconoIncubadora,
       descripcion: "Impulsa tu idea de negocio con asesoría y recursos",
       link: "/Incubadora",
@@ -23,6 +24,7 @@ function Vinculacion() {
     {
       id: "ceelex",
       nombre: "CEELEX",
+      categoria: "Idiomas",
       icono: iconoCELEX,
       descripcion:
         "Centro de Enseñanza Especializado en Lenguas Extranjeras - Aprende idiomas",
@@ -34,6 +36,7 @@ function Vinculacion() {
     {
       id: "ececut",
       nombre: "ECECUT",
+      categoria: "Educación continua",
       icono: iconoECECUT,
       descripcion: "Educación Continua - Cursos y diplomados",
       link: "/ECECUT",
@@ -44,6 +47,7 @@ function Vinculacion() {
     {
       id: "eu",
       nombre: "Extensión Universitaria",
+      categoria: "Formación integral",
       icono: iconoEU,
       descripcion: "Aprende en la empresa y estudia en la universidad",
       link: "/ExtensionUniversitaria",
@@ -54,6 +58,7 @@ function Vinculacion() {
     {
       id: "movilidad",
       nombre: "Movilidad Estudiantil y Estadías",
+      categoria: "Experiencia global",
       icono: iconoMovilidad,
       descripcion: "Intercambio nacional e internacional",
       link: "/MovilidadEstudiantil",
@@ -75,11 +80,8 @@ function Vinculacion() {
 
       <section className="content-vinculacion">
         <div className="section-header-Vinculacion">
-          <h2 className="section-title">Programas de Vinculación</h2>
-          <p className="section-description">
-            Explora nuestros programas y descubre cómo la Universidad
-            Tecnológica de Nayarit te conecta con el mundo profesional
-          </p>
+          <h2 className="section-title">Vinculación Universitaria</h2>
+
           <div className="title-decoration">
             <span></span>
             <span></span>
@@ -87,12 +89,12 @@ function Vinculacion() {
           </div>
         </div>
 
-        <div className="programas-grid">
+        <div className="programas-grid-vinculacion">
           {programas.map((programa) => (
             <Link
               key={programa.id}
               to={programa.link}
-              className="programa-card"
+              className={`programa-card programa-card-${programa.id}`}
               style={
                 {
                   "--programa-color": programa.color,
@@ -112,6 +114,9 @@ function Vinculacion() {
                   <div className="icon-ring"></div>
                 </div>
 
+                <span className="programa-categoria">
+                  {programa.categoria}
+                </span>
                 <h3 className="programa-nombre">{programa.nombre}</h3>
                 <p className="programa-descripcion">{programa.descripcion}</p>
 
@@ -129,19 +134,6 @@ function Vinculacion() {
               </div>
             </Link>
           ))}
-        </div>
-
-        <div className="info-adicional">
-          <div className="info-card">
-            <h3 className="Tit-Info-Adicional-Vinculacion">
-              ¿Por qué Vinculación?
-            </h3>
-            <p className="text-adicional-vinculacion">
-              La vinculación es el puente entre tu formación académica y el
-              éxito profesional. A través de nuestros programas, tendrás acceso
-              a experiencias que transformarán tu carrera.
-            </p>
-          </div>
         </div>
       </section>
     </>

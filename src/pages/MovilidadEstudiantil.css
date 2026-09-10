@@ -108,11 +108,9 @@
 
 .title-emoji-movilidad {
     font-size: 2.8rem;
-    background: linear-gradient(145deg, #0A3D62, #155C8C);
     padding: 15px;
     border-radius: 50%;
     color: white;
-    box-shadow: 0 10px 30px rgba(10, 61, 98, 0.2);
 }
 
 .section-subtitle-movilidad {
@@ -204,8 +202,72 @@
     margin-bottom: 0;
 }
 
+.intro-parrafo-adicional-movilidad {
+    display: block;
+}
+
+.intro-leer-mas-movilidad {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    margin: 24px auto 0;
+    padding: 12px 24px;
+    cursor: pointer;
+    color: #0A3D62;
+    font-size: 1rem;
+    font-weight: 700;
+    background: rgba(78, 205, 196, 0.12);
+    border: 1px solid #4ECDC4;
+    border-radius: 50px;
+    transition: color 0.25s ease, background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.intro-leer-mas-movilidad:hover,
+.intro-leer-mas-movilidad:focus-visible {
+    color: white;
+    background: #0A3D62;
+    box-shadow: 0 8px 20px rgba(10, 61, 98, 0.2);
+    transform: translateY(-2px);
+}
+
+.intro-leer-mas-movilidad:focus-visible {
+    outline: 3px solid rgba(78, 205, 196, 0.45);
+    outline-offset: 3px;
+}
+
+.intro-leer-mas-icono-movilidad {
+    display: inline-block;
+    font-size: 1.15rem;
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
+
+.intro-leer-mas-icono-movilidad.abierto {
+    transform: rotate(180deg);
+}
+
+@keyframes introContenidoAparece {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .texto-destacado-movilidad {
     color: #0A3D62;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    border-bottom: 3px solid #4ECDC4;
+    padding-bottom: 2px;
+}
+
+.texto-destacado-movilidad2 {
+    color: #b7e1ff;
     font-weight: 700;
     position: relative;
     display: inline-block;
@@ -409,6 +471,187 @@
     color: #5e7a7e;
     line-height: 1.6;
     margin: 0;
+}
+
+/* ========== GALERÍA DE EXPERIENCIAS ========== */
+.section-galeria-movilidad {
+    width: 100%;
+    max-width: 1400px;
+}
+
+.galeria-movilidad {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 460px;
+    gap: 24px;
+    width: 100%;
+}
+
+.galeria-destacada-movilidad {
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+    height: 680px;
+    margin: 0;
+    overflow: hidden;
+    background: white;
+    border: 1px solid rgba(10, 61, 98, 0.12);
+    border-radius: 30px;
+    box-shadow: 0 20px 45px rgba(10, 61, 98, 0.12);
+}
+
+.galeria-imagen-contenedor-movilidad {
+    position: relative;
+    min-height: 0;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at center, rgba(78, 205, 196, 0.16), transparent 58%),
+        #08491646;
+}
+
+.galeria-imagen-principal-movilidad {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    animation: galeriaFadeIn 0.35s ease;
+}
+
+.galeria-contador-movilidad {
+    position: absolute;
+    right: 22px;
+    bottom: 20px;
+    padding: 9px 15px;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    background: rgba(5, 35, 53, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
+    backdrop-filter: blur(8px);
+}
+
+.galeria-descripcion-movilidad {
+    position: relative;
+    min-height: 120px;
+    padding: 24px 30px 25px 34px;
+    box-sizing: border-box;
+    background: white;
+    border-left: 5px solid #4ECDC4;
+}
+
+.galeria-descripcion-movilidad h3 {
+    margin: 0 0 8px;
+    color: #0A3D62;
+    font-size: 1.35rem;
+    font-weight: 800;
+}
+
+.galeria-descripcion-movilidad p {
+    margin: 0;
+    color: #5e7a7e;
+    font-size: 1rem;
+    line-height: 1.55;
+}
+
+.galeria-opciones-movilidad {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    height: 680px;
+    padding-right: 8px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scroll-snap-type: y proximity;
+    scrollbar-color: #4ECDC4 rgba(10, 61, 98, 0.1);
+    scrollbar-width: thin;
+}
+
+.galeria-opciones-movilidad::-webkit-scrollbar {
+    width: 8px;
+}
+
+.galeria-opciones-movilidad::-webkit-scrollbar-track {
+    background: rgba(10, 61, 98, 0.08);
+    border-radius: 10px;
+}
+
+.galeria-opciones-movilidad::-webkit-scrollbar-thumb {
+    background: linear-gradient(#0A3D62, #4ECDC4);
+    border-radius: 10px;
+}
+
+.galeria-miniatura-movilidad {
+    position: relative;
+    flex: 0 0 300px;
+    width: 100%;
+    height: 200px;
+    padding: 0;
+    overflow: hidden;
+    cursor: pointer;
+    box-sizing: border-box;
+    background: #0a3d626f;
+    border: 3px solid transparent;
+    border-radius: 18px;
+    opacity: 0.72;
+    scroll-snap-align: start;
+    transition: opacity 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.galeria-miniatura-movilidad img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.galeria-miniatura-movilidad span {
+    position: absolute;
+    right: 8px;
+    bottom: 7px;
+    display: grid;
+    width: 31px;
+    height: 31px;
+    place-items: center;
+    color: white;
+    font-size: 0.78rem;
+    font-weight: 800;
+    background: rgba(5, 35, 53, 0.82);
+    border-radius: 50%;
+}
+
+.galeria-miniatura-movilidad:hover,
+.galeria-miniatura-movilidad:focus-visible,
+.galeria-miniatura-movilidad.activa {
+    opacity: 1;
+    border-color: #4ECDC4;
+    box-shadow: 0 10px 22px rgba(10, 61, 98, 0.2);
+}
+
+.galeria-miniatura-movilidad:hover img {
+    transform: scale(1.06);
+}
+
+.galeria-miniatura-movilidad:focus-visible {
+    outline: 3px solid #0A3D62;
+    outline-offset: 2px;
+}
+
+.galeria-miniatura-movilidad.activa {
+    transform: translateX(-3px);
+}
+
+@keyframes galeriaFadeIn {
+    from {
+        opacity: 0.35;
+        transform: scale(1.015);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* ========== IDIOMA ========== */
@@ -830,6 +1073,10 @@
     .paises-grid-movilidad {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .galeria-movilidad {
+        grid-template-columns: minmax(0, 1fr) 210px;
+    }
     
     .idioma-card-movilidad,
     .contacto-card-movilidad {
@@ -866,10 +1113,49 @@
         font-size: 2rem;
         flex-direction: column;
     }
+
+    .intro-parrafo-adicional-movilidad {
+        display: none;
+    }
+
+    .intro-parrafo-adicional-movilidad.visible {
+        display: block;
+        animation: introContenidoAparece 0.35s ease;
+    }
+
+    .intro-leer-mas-movilidad {
+        display: flex;
+    }
     
     .paises-grid-movilidad,
     .beneficios-grid-movilidad {
         grid-template-columns: 1fr;
+    }
+
+    .galeria-movilidad {
+        grid-template-columns: 1fr;
+    }
+
+    .galeria-destacada-movilidad {
+        height: 620px;
+    }
+
+    .galeria-opciones-movilidad {
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+        padding: 4px 0 10px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x proximity;
+    }
+
+    .galeria-miniatura-movilidad {
+        flex-basis: 130px;
+    }
+
+    .galeria-miniatura-movilidad.activa {
+        transform: translateY(-3px);
     }
     
     .idioma-card-movilidad,
@@ -900,7 +1186,7 @@
 
 @media (max-width: 576px) {
     .banner-container-movilidad {
-        height: 50vh;
+        height: 30vh;
     }
     
     .banner-title-movilidad {
@@ -951,6 +1237,29 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+    }
+
+    .galeria-destacada-movilidad {
+        height: 560px;
+        border-radius: 22px;
+    }
+
+    .galeria-descripcion-movilidad {
+        min-height: 145px;
+        padding: 20px 22px 22px 25px;
+    }
+
+    .galeria-descripcion-movilidad h3 {
+        font-size: 1.15rem;
+    }
+
+    .galeria-descripcion-movilidad p {
+        font-size: 0.92rem;
+    }
+
+    .galeria-miniatura-movilidad {
+        flex-basis: 105px;
+        height: 86px;
     }
     
     .idioma-card-movilidad,
@@ -1012,8 +1321,14 @@
 /* ========== ACCESIBILIDAD ========== */
 @media (prefers-reduced-motion: reduce) {
     .banner-movilidad,
+    .intro-parrafo-adicional-movilidad,
+    .intro-leer-mas-movilidad,
+    .intro-leer-mas-icono-movilidad,
     .pais-card-movilidad,
     .beneficio-card-movilidad,
+    .galeria-imagen-principal-movilidad,
+    .galeria-miniatura-movilidad,
+    .galeria-miniatura-movilidad img,
     .contacto-item-movilidad,
     .cta-button-movilidad {
         transition: none;
