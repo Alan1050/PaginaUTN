@@ -115,7 +115,7 @@ function OfertaEducativa() {
       id: 14,
       label: "LPS",
       logo: LogoLPS,
-      division: "DIVISIÓN ECONÓMICO ADMINISTRATIVA",
+      division: "DIVISIÓN ELECTROMECÁNICA INDUSTRIAL",
     },
   ];
 
