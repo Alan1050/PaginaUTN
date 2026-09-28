@@ -4,8 +4,8 @@ import ImagenPrincipal from "../assets/banner/Index.jpg";
 import bannerGuias from "../assets/banner/bannerGuiasPago.jpg";
 import bannerBecas from "../assets/banner/bannerBecas.jpg";
 import bannerBiblioteca from "../assets/banner/bannerBiblioteca.jpg";
-import ImagenNuevaCarrera from "../assets/banner/alertResultados.jpg";
-import Swal from "sweetalert2";
+// import resultadosExamen from "../assets/banner/alertResultados.jpg";
+// import Swal from "sweetalert2";
 import Accesos from "../components/Accesos.tsx";
 import "./HomePages.css";
 import AvisoPrivacidad from "../components/AvisoPrivacidad.tsx";
@@ -78,6 +78,7 @@ function HomePage() {
     reiniciarTemporizadorCarrusel();
   };
 
+/*
   useEffect(() => {
     const mostrarAlertaBienvenida = () => {
       const ultimaAlerta = localStorage.getItem("alertaBienvenidaMostrada");
@@ -87,11 +88,11 @@ function HomePage() {
         localStorage.setItem("alertaBienvenidaMostrada", ahora.toString());
 
         Swal.fire({
-          title: "Conoce los resultados del primer y segundo examen de admisión",
+          title: "Conoce los resultados del primer, segundo y el examen de admisión de psicología",
           html: `
             <div style="text-align: center;">
               <img 
-                src=${ImagenNuevaCarrera}
+                src={resultadosExamen}
                 alt="Examen de Ingreso" 
                 style="max-width: 80%; border-radius: 10px; margin: 15px 0;"
               />
@@ -123,6 +124,7 @@ function HomePage() {
 
     return () => clearTimeout(timer);
   }, []);
+  */
 
   return (
     <>

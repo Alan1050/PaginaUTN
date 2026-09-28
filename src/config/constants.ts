@@ -4,3 +4,4 @@ export const URL_ASSETS_FINANZAS = "https://assets.utnay.edu.mx/InformesFinancie
 export const URL_ASSETS_MIR = "https://assets.utnay.edu.mx/MIR";
 export const URL_ASSETS_PLANES_ESTUDIO = "https://assets.utnay.edu.mx/PlanesEstudio";
 export const URL_ASSETS_INSTALACIONES = "https://assets.utnay.edu.mx/Instalaciones";
+export const URL_ASSETS_DIPLOMADOS = "https://assets.utnay.edu.mx/convocatoriasDiplomados";

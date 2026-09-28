@@ -195,6 +195,7 @@ function Carrera() {
       tsu: "Técnico Superior Universitario en Microelectrónica",
       extension: "4003",
       facebook: "https://www.facebook.com/idgsutnay",
+      planEstudioPDF: `${URL_ASSETS_PLANES_ESTUDIO}/IMS.pdf`,
       label2:
         "Ingeniería en Tecnologias de la Información e Innovación Digital UT Nayarit",
       competencias: [
@@ -1036,7 +1037,7 @@ function Carrera() {
           },
           { id: "IA704", nombre: "Formulación de Proyectos de Tecnología" },
           { id: "IA705", nombre: "Fundamentos de Inteligencia Artificial" },
-          { id: "IA706", nombre: "Minería de Texto" },
+          { id: "IA706", nombre: "Optativa I" },
           { id: "IA707", nombre: "Seguridad Informática" },
         ],
       },
@@ -1049,9 +1050,8 @@ function Carrera() {
           { id: "IA803", nombre: "Electrónica Digital" },
           { id: "IA804", nombre: "Gestión de Proyectos de Tecnología" },
           { id: "IA805", nombre: "Informática Forense" },
-          { id: "IA806", nombre: "Análisis de Regresión" },
-          { id: "IA807", nombre: "Programación para Inteligencia Artificial" },
-          { id: "IA808", nombre: "Administración de Servidores" },
+          { id: "IA806", nombre: "Optativa II" },
+          { id: "IA808", nombre: "Administración de Servidores " },
         ],
       },
       {
@@ -1063,7 +1063,7 @@ function Carrera() {
           { id: "IA903", nombre: "Ciencia de Datos" },
           { id: "IA904", nombre: "Evaluación de Proyectos de Tecnología" },
           { id: "IA905", nombre: "Internet de las Cosas" },
-          { id: "IA906", nombre: "Sistemas Inteligentes" },
+          { id: "IA906", nombre: "Optativa III" },
           { id: "IA907", nombre: "Tecnologías Disruptivas" },
         ],
       },
@@ -3103,7 +3103,6 @@ function Carrera() {
                 </div>
 
                 {/* Plan De Estudios */}
-                {carreraSeleccionada.label !== "IMS" && (
                   <div className="Seccion" style={{ marginBottom: "3rem" }}>
                     <div
                       style={{
@@ -3657,19 +3656,7 @@ function Carrera() {
                       </div>
                     </div>
                   </div>
-                )}
-                {carreraSeleccionada.label === "IMS" && (
-                  <div>
-                    <h1 style={{ color: "${carreraSeleccionada.color}" }}>
-                      Estamos generando tu nueva carrera ideal
-                    </h1>
-                    <img
-                      src={trabajandoJaguar}
-                      style={{ width: "100%" }}
-                      alt=""
-                    />
-                  </div>
-                )}
+
               </div>
               <p
                 className="buttonFace"

@@ -1,8 +1,8 @@
 import "./Resultados.css";
 import bannerResultados from "../assets/banner/bannerResultados.jpg";
 import ResultadosPrimerExamen from "../assets/extras/ResultadoPrimerExamen.pdf";
-import ResultadoSegundoExamen from "../assets/extras/ResultadoSegundoExamen.pdf"
-
+import ResultadoSegundoExamen from "../assets/extras/ResultadoSegundoExamen.pdf"  
+import ResultadosPsicologia from "../assets/extras/ResultadosPsicologia.pdf"
 
 function ExamenIngreso() {
   return (
@@ -14,6 +14,37 @@ function ExamenIngreso() {
           className="banner-vinculacion"
         />
       </div>
+
+      <section className="content-vinculacion resultados-section">
+        <div className="resultados-card">
+          <div className="resultados-header">
+            <h1>Resultados del Examen de Psicología</h1>
+          </div>
+
+          <div className="resultados-actions">
+            <a
+              href={ResultadosPsicologia}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-resultados primary"
+            >
+              Ver PDF
+            </a>
+
+            <a
+              href={ResultadosPsicologia}
+              download
+              className="btn-resultados secondary"
+            >
+              Descargar
+            </a>
+          </div>
+
+          <div className="pdf-frame">
+            <iframe src={ResultadosPsicologia} title="Resultados Psicología" />
+          </div>
+        </div>
+      </section>
 
       <section className="content-vinculacion resultados-section">
         <div className="resultados-card">
@@ -41,7 +72,10 @@ function ExamenIngreso() {
           </div>
 
           <div className="pdf-frame">
-            <iframe src={ResultadosPrimerExamen} title="Resultados Primer Examen" />
+            <iframe
+              src={ResultadosPrimerExamen}
+              title="Resultados Primer Examen"
+            />
           </div>
         </div>
       </section>
@@ -72,7 +106,10 @@ function ExamenIngreso() {
           </div>
 
           <div className="pdf-frame">
-            <iframe src={ResultadoSegundoExamen} title="Resultados Segundo Examen" />
+            <iframe
+              src={ResultadoSegundoExamen}
+              title="Resultados Segundo Examen"
+            />
           </div>
         </div>
       </section>

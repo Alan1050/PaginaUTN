@@ -2,7 +2,18 @@ import React, { useState, useEffect } from "react";
 // import { Link } from 'react-router-dom';
 import "./ExtensionUniversitaria.css";
 import bannerExtension from "../assets/banner/bannerExtension.jpg";
-import { URL_ASSETS_INSTALACIONES } from "../config/constants";
+import {
+  URL_ASSETS_INSTALACIONES,
+  URL_ASSETS_DIPLOMADOS,
+} from "../config/constants";
+import eventosJson from "../data/eventosCalendario.json";
+
+interface CalendarioEvento {
+  id: string;
+  fecha: string;
+  titulo: string;
+  imagen: string;
+}
 
 function ExtensionUniversitaria() {
   const [activeTrainingSection, setActiveTrainingSection] =
@@ -16,6 +27,24 @@ function ExtensionUniversitaria() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedInstalacion, setSelectedInstalacion] = useState<string | null>(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+
+const [eventoActivo, setEventoActivo] = useState<CalendarioEvento | null>(null);
+
+useEffect(() => {
+  if (isModalOpen || eventoActivo !== null) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+}, [isModalOpen, eventoActivo]);
+
+// Función auxiliar para convertir un Date a "YYYY-MM-DD" en hora local
+const formatFechaLocal = (date: Date) => {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+};
 
   useEffect(() => {
     if (isModalOpen) {
@@ -565,7 +594,15 @@ function ExtensionUniversitaria() {
                         {espacio.capacidad}
                       </span>
                     </div>
-                    <p style={{ backgroundColor: "var(--espacio-color)", color: "white", padding: "10px", borderRadius: "5px", margin: "10px 0" }}>
+                    <p
+                      style={{
+                        backgroundColor: "var(--espacio-color)",
+                        color: "white",
+                        padding: "10px",
+                        borderRadius: "5px",
+                        margin: "10px 0",
+                      }}
+                    >
                       Ver Fotos
                     </p>
                   </div>
@@ -646,6 +683,12 @@ function ExtensionUniversitaria() {
                   selectedCalendarDate !== null &&
                   isSameCalendarDay(day, selectedCalendarDate);
 
+                // Buscar si hay un evento para este día
+                const fechaString = formatFechaLocal(day);
+                const eventoDelDia = eventosJson.find(
+                  (evt) => evt.fecha === fechaString,
+                );
+
                 return (
                   <button
                     type="button"
@@ -655,13 +698,17 @@ function ExtensionUniversitaria() {
                       isCurrentMonth ? "" : " is-outside-month"
                     }${isToday ? " is-today" : ""}${
                       isSelected ? " is-selected" : ""
-                    }`}
+                    }${eventoDelDia ? " has-event" : ""}`}
                     onClick={() => {
                       setSelectedCalendarDate(day);
                       if (!isCurrentMonth) {
                         setCalendarMonth(
                           new Date(day.getFullYear(), day.getMonth(), 1),
                         );
+                      }
+                      // Si hay un evento, abrir la alerta
+                      if (eventoDelDia) {
+                        setEventoActivo(eventoDelDia);
                       }
                     }}
                     aria-label={new Intl.DateTimeFormat("es-MX", {
@@ -670,6 +717,10 @@ function ExtensionUniversitaria() {
                     aria-selected={isSelected}
                   >
                     <span>{day.getDate()}</span>
+                    {/* Indicador visual de que hay un evento */}
+                    {eventoDelDia && (
+                      <div className="event-indicator-dot"></div>
+                    )}
                   </button>
                 );
               })}
@@ -679,17 +730,28 @@ function ExtensionUniversitaria() {
       </section>
 
       {isModalOpen && selectedInstalacion && (
-        <div className="modal-overlay-instalaciones" onClick={() => setIsModalOpen(false)}>
-          <div className="modal-content-instalaciones" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close-instalaciones" onClick={() => setIsModalOpen(false)}>
+        <div
+          className="modal-overlay-instalaciones"
+          onClick={() => setIsModalOpen(false)}
+        >
+          <div
+            className="modal-content-instalaciones"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="modal-close-instalaciones"
+              onClick={() => setIsModalOpen(false)}
+            >
               &times;
             </button>
             <div className="modal-gallery-layout">
               {(() => {
-                const fotoData = fotosInstalaciones.find((f) => f.id === selectedInstalacion);
+                const fotoData = fotosInstalaciones.find(
+                  (f) => f.id === selectedInstalacion,
+                );
                 if (!fotoData) return null;
                 const images = Object.values(fotoData.fotos[0]);
-                
+
                 return (
                   <>
                     <div className="modal-main-image-container">
@@ -717,6 +779,37 @@ function ExtensionUniversitaria() {
                   </>
                 );
               })()}
+            </div>
+          </div>
+        </div>
+      )}
+      {eventoActivo && (
+        <div
+          className="modal-overlay-instalaciones"
+          onClick={() => setEventoActivo(null)}
+        >
+          <div
+            className="modal-content-evento"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="modal-close-instalaciones"
+              onClick={() => setEventoActivo(null)}
+            >
+              &times;
+            </button>
+            <div className="evento-alerta-body">
+              <img
+                src={`${URL_ASSETS_DIPLOMADOS}/${eventoActivo.imagen}`}
+                alt={eventoActivo.titulo}
+                className="evento-alerta-imagen"
+              />
+              <h3 className="evento-alerta-titulo">{eventoActivo.titulo}</h3>
+              <p className="evento-alerta-fecha">
+                {new Intl.DateTimeFormat("es-MX", { dateStyle: "long" }).format(
+                  new Date(`${eventoActivo.fecha}T12:00:00`),
+                )}
+              </p>
             </div>
           </div>
         </div>
