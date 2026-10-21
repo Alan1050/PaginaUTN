@@ -11,7 +11,7 @@ import LogoITIID from '../assets/logos/ITIID.png';
 import LogoLAD from '../assets/logos/LAD.png';
 import LogoLGDT from '../assets/logos/LGDT.png';
 import LogoLGT from '../assets/logos/LGT.png';
-import LogoLINM from '../assets/logos/LINM.png';
+import LogoLINM from '../assets/logos/LNM.png';
 import LogoLSP from '../assets/logos/LSP.png';
 import LogoLPS from '../assets/logos/LPS.png';
 

@@ -312,6 +312,171 @@
               ]
             }
           ]
+        },
+        {
+          "id": "tercer-trimestre",
+          "name": "Tercer trimestre",
+          "folder": "TercerTrimestre",
+          "categories": [
+            {
+              "id": "contable",
+              "name": "Contable",
+              "folder": "InformacionContable",
+              "icon": "📘",
+              "files": [
+                {
+                  "id": "1estado-de-actividad-2er-tri-26-pdf",
+                  "name": "1 ESTADO DE ACTIVIDADES 2DO.TRI.26",
+                  "file": "1_estado_de_actividad_2do_tri_26.pdf",
+                  "type": "pdf"
+                },
+                {
+                  "id": "2-estado-de-situacion-financiera-3er-tri-26",
+                  "name": "2 ESTADO DE SITUACIÓN FINANCIERA 3ER.TRI.26",
+                  "file": "2_estado_de_situacion_financiera_3er_tri_26.pdf",
+                  "type": "pdf"
+                },
+                {
+                  "id": "3estado-de-variaciones-en-la-hacienda-publica-3er-tri-26-pdf",
+                  "name": "3 ESTADO DE VARIACIONES EN LA HACIENDA PÚBLICA 3ER. TRI. 2026.pdf",
+                  "file": "3_estado_de_variaciones_en_la_hacienda_publica_3er_tri_26.pdf",
+                  "type": "pdf"
+                },
+                {
+                  "id": "4estado-de-cambios-en-la-situacion-financiera-3er-tri-26-pdf",
+                  "name": "4 ESTADO DE CAMBIOS EN LA SITUACIÓN FINANCIERA 3ER. TRI. 2026.pdf",
+                  "file": "4_estado_de_cambios_en_la_situacion_financiera_3er_tri_26.pdf",
+                  "type": "pdf"
+                },
+                {
+                  "id": "5estado-de-flujos-de-efectivo-3er-tri-26-pdf",
+                  "name": "5 ESTADO DE FLUJOS DE EFECTIVO 3ER. TRI. 2026.pdf",
+                  "file": "5_estado_de_flujos_de_efectivo_3er_tri_26.pdf",
+                  "type": "pdf"
+                },
+                {
+                  "id": "6informe-sobre-pasivos-contingentes-3er-tri-26-pdf",
+                  "name": "6 INFORME SOBRE PASIVOS CONTINGENTES 3ER. TRI. 2026.pdf",
+                  "file": "6_informe_sobre_pasivos_contingentes_3er_tri_25.pdf",
+                  "type": "pdf"
+                },
+                {
+                  "id": "7_notas_a_los_estados_financieros_3er_tri_26-pdf",
+                  "name": "7 NOTAS A LOS ESTADOS FINANCIEROS 3ER. TRI. 2026.pdf",
+                  "file": "7_notas_a_los_estados_financiertos_3er_tri_26.pdf",
+                  "type": "pdf"
+                },
+                {
+                  "id": "8estado-analitico-del-activo-3er-tri-26-pdf",
+                  "name": "8 ESTADO ANALÍTICO DEL ACTIVO 3ER. TRI. 2026.pdf",
+                  "file": "8_estado_analitico_del_activo_3er_tri_26.pdf",
+                  "type": "pdf"
+                },
+                {
+                  "id": "9estado-analitico-de-la-deuda-y-otros-pasivos-3er-tri-26-pdf",
+                  "name": "9 ESTADO ANALÍTICO DE LA DEUDA Y OTROS PASIVOS 3ER. TRI. 2026.pdf",
+                  "file": "9_estado_analitico_de_la_deuda_y_otros_pasivos_3er_tri_26.pdf",
+                  "type": "pdf"
+                }
+              ]
+            },
+            {
+              "id": "presupuestal",
+              "name": "Presupuestal",
+              "folder": "InformacionPresupuestal",
+              "icon": "📊",
+              "files": [
+                {
+                  "id": "10estado-analitico-de-ingresos-3er-tri-26-pdf",
+                  "name": "10 ESTADO ANALÍTICO DE INGRESOS 3ER. TRI. 2026.pdf",
+                  "file": "10_estado_analitco_de_ingresos_3er_tri_26.pdf",
+                  "type": "pdf"
+                },
+                {
+                  "id": "11eaepe-clasificacion-administrativa-3er-tri-26-pdf",
+                  "name": "11 EAEPE CLASIFICACIÓN ADMINISTRATIVA 3ER. TRI. 2026.pdf",
+                  "file": "11_eaepe_clasificacion_administrativa_3er_tri_26.pdf",
+                  "type": "pdf"
+                },
+                {
+                  "id": "12eaepe-clasificacion-economica-3er-tri-26-pdf",
+                  "name": "12 EAEPE CLASIFICACIÓN ECONÓMICA 3ER. TRI. 2026.pdf",
+                  "file": "12_eaepe_clasificacion_economia_3er_tri_26.pdf",
+                  "type": "pdf"
+                },
+                {
+                  "id": "13eaepe-clasificacion-por-objeto-del-gasto-3er-tri-26-pdf",
+                  "name": "13 EAEPE CLASIFICACIÓN POR OBJETO DEL GASTO 3ER. TRI. 2026.pdf",
+                  "file": "13_eaepe_clasificacion_por_objetivo_del_gasto_3er_tri_26.pdf",
+                  "type": "pdf"
+                },
+                {
+                  "id": "14eaepe-clasificacion-funcional-3er-tri-26-pdf",
+                  "name": "14 EAEPE CLASIFICACIÓN FUNCIONAL 3ER. TRI. 2026.pdf",
+                  "file": "14_eaepe_clasificacion_funcional_3er_tri_26.pdf",
+                  "type": "pdf"
+                },
+                {
+                  "id": "15endeudamiento-neto-3er-tri-26-pdf",
+                  "name": "15 ENDEUDAMIENTO NETO 3ER. TRI. 2026.pdf",
+                  "file": "15_endeudamiento_neto_3er_tri_26.pdf",
+                  "type": "pdf"
+                },
+                {
+                  "id": "16interes-de-la-deuda-3er-tri-26-pdf",
+                  "name": "16 INTERES DE LA DEUDA 3ER. TRI. 2026.pdf",
+                  "file": "16_interes_de_la_deuda_3er_tri_26.pdf",
+                  "type": "pdf"
+                }
+              ]
+            },
+            {
+              "id": "programatico",
+              "name": "Programático",
+              "folder": "InformacionProgramatico",
+              "icon": "📈",
+              "files": [
+                {
+                  "id": "17-gasto-por-categoria-programatica-3er-tri-26-pdf",
+                  "name": "17 GASTO POR CATEGORÍA PROGRAMÁTICA 3ER. TRI. 2026.pdf",
+                  "file": "17_gasto_por_categoria_programatica_3er_tri_26.pdf",
+                  "type": "pdf"
+                },
+                {
+                  "id": "18-indicadores-pdf",
+                  "name": "18 INDICADORES.pdf",
+                  "file": "18_indicadores_3er_tri_26.pdf",
+                  "type": "pdf"
+                },
+                {
+                  "id": "19-programas-y-proyectos-de-inversion-pdf",
+                  "name": "19 PROGRAMAS Y PROYECTOS DE INVERSIÓN.pdf",
+                  "file": "19_programas_y_proyectos_de_inversion_3er_tri_26.pdf",
+                  "type": "pdf"
+                }
+              ]
+            },
+            {
+              "id": "otra-informacion",
+              "name": "Otros Informes",
+              "folder": "OtraInformacion",
+              "icon": "📈",
+              "files": [
+                {
+                  "id": "becas-2do-tri-26-pdf",
+                  "name": "3ER. AVANCE DE GESTIÓN 2026.pdf",
+                  "file": "3er_avance_de_gestion_2026.pdf",
+                  "type": "pdf"
+                },
+                {
+                  "id": "relacion-de-bienes-muebles-pdf-2026",
+                  "name": "BECAS 3ER. TRIMESTRE 2026.pdf",
+                  "file": "becas_3er_trimestre_2026.pdf",
+                  "type": "pdf"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
