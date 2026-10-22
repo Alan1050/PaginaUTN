@@ -1,5 +1,6 @@
 import "./OfertaEducativa.css";
 import { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 // Logos de las Carreras:
 import LogoIA from "../assets/logos/IA.png";
@@ -394,8 +395,8 @@ function OfertaEducativa() {
           <div className="carrerasGrid">
             {carrerasFiltradas.map((carrera) => (
               <div key={carrera.id} className="carreraCard">
-                <a
-                  href={`/Carrera/${carrera.label}`}
+                <Link
+                  to={`/Carrera/${carrera.label}`}
                   className="carreraLogoContainer"
                 >
                   <img
@@ -403,7 +404,7 @@ function OfertaEducativa() {
                     alt={`Logo ${carrera.label}`}
                     className="carreraLogo"
                   />
-                </a>
+                </Link>
               </div>
             ))}
           </div>

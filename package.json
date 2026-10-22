@@ -7,6 +7,7 @@
     "dev": "vite",
     "dev:api": "node server/agent-server.mjs",
     "build": "tsc -b && vite build",
+    "build:zip": "npm run build && rm -f dist.zip && cd dist && zip -r ../dist.zip . -x '*.DS_Store*' && cd ..",
     "lint": "eslint .",
     "preview": "vite preview"
   },

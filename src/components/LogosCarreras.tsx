@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './LogosCarreras.css';
 import LogoIA from '../assets/logos/IA.png';
 import LogoIAL from '../assets/logos/IAL.png';
@@ -74,29 +75,29 @@ function LogosCarreras() {
         <div className='LogosCarrerasContainer'> 
           <div className='LogosCarrerasGrid1'>
             {allLogos.slice(0, 7).map((logo: Logo) => (
-              <a 
+              <Link 
                 key={logo.id} 
-                href={`/Carrera/${logo.label}`} 
+                to={`/Carrera/${logo.label}`} 
                 onClick={() => handleLogoClick(logo.nombre, logo.label)}
                 aria-label={logo.alt}
                 className="logo-link"
               >
                 <img src={logo.src} alt={logo.alt} />
-              </a>
+              </Link>
             ))}
           </div>
           
           <div className='LogosCarrerasGrid2'>
             {allLogos.slice(7).map((logo: Logo) => (
-              <a 
+              <Link 
                 key={logo.id} 
-                href={`/Carrera/${logo.label}`} 
+                to={`/Carrera/${logo.label}`} 
                 onClick={() => handleLogoClick(logo.nombre, logo.label)}
                 aria-label={logo.alt}
                 className="logo-link"
               >
                 <img src={logo.src} alt={logo.alt} />
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -107,15 +108,15 @@ function LogosCarreras() {
         <div className='LogosCarrerasMobileContainer'>
           <div className='LogosCarrerasMobileGrid'>
             {allLogos.map((logo: Logo) => (
-              <a 
+              <Link 
                 key={logo.id} 
-                href={`/Carrera/${logo.label}`} 
+                to={`/Carrera/${logo.label}`} 
                 onClick={() => handleLogoClick(logo.nombre, logo.label)}
                 aria-label={logo.alt}
                 className="logo-link"
               >
                 <img src={logo.src} alt={logo.alt} />
-              </a>
+              </Link>
             ))}
           </div>
         </div>

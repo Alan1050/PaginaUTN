@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { URL_ASSETS_PLANES_ESTUDIO } from "../config/constants"
 import "./Carrera.css";
 
@@ -2594,8 +2594,8 @@ function Carrera() {
         }}
       >
         <h1 style={{ color: "#333" }}>Carrera no encontrada</h1>
-        <a
-          href="/"
+        <Link
+          to="/"
           style={{
             color: "#007bff",
             textDecoration: "none",
@@ -2603,7 +2603,7 @@ function Carrera() {
           }}
         >
           ← Volver a todas las carreras
-        </a>
+        </Link>
       </div>
     );
   }
@@ -3716,8 +3716,8 @@ function Carrera() {
             borderTop: "2px solid #eee",
           }}
         >
-          <a
-            href="/OfertaEducativa"
+          <Link
+            to="/OfertaEducativa"
             style={{
               backgroundColor: carreraSeleccionada.color,
               color: "white",
@@ -3738,7 +3738,7 @@ function Carrera() {
             }}
           >
             ← Volver a todas las carreras
-          </a>
+          </Link>
         </div>
       </div>
     </section>

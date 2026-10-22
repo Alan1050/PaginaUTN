@@ -1,4 +1,5 @@
 import './Accesos.css';
+import { Link } from 'react-router-dom';
 import logoVinculacion from '../assets/logos/LOGO VINCULACION.png';
 import logoBecas from '../assets/logos/LOGO BECAS.png';
 import logoRecorrido from '../assets/logos/LOGO RECORRIDO.png';
@@ -13,19 +14,19 @@ function Accesos() {
   return (
     <section className="accesos-container">
       <div className='ContainerButton1'>
-        <a href="/Vinculacion"><img src={logoVinculacion} alt="Vinculación" /></a>
-        <a href="/Becas"><img src={logoBecas} alt="Becas" /></a>
-        <a href="https://utnay.edu.mx/recorrido/" target='_blank'>
+        <Link to="/Vinculacion"><img src={logoVinculacion} alt="Vinculación" /></Link>
+        <Link to="/Becas"><img src={logoBecas} alt="Becas" /></Link>
+        <a href="https://utnay.edu.mx/recorrido/" target='_blank' rel="noopener noreferrer">
         <img src={logoRecorrido} alt="Recorrido" /></a>
-        <a href="/Posgrados"><img src={logoInvestigacion} alt="Investigación" /></a>
+        <Link to="/Posgrados"><img src={logoInvestigacion} alt="Investigación" /></Link>
       </div>
       <div className='ContainerButton2'>
         <a href="https://transparencia.utnay.edu.mx/" 
-        target='_blank'><img src={logoTransparencia} alt="Transparencia" /></a>
-        <a href="/ComiteEtica"><img src={logoComite} alt="Comité de Ética" /></a>
+        target='_blank' rel="noopener noreferrer"><img src={logoTransparencia} alt="Transparencia" /></a>
+        <Link to="/ComiteEtica"><img src={logoComite} alt="Comité de Ética" /></Link>
         <a href="https://forms.gle/ebbMNe2izfpJQMKd7" 
-        target='_blank'><img src={logoBuzon} alt="Buzón de Sugerencias" /></a>
-        <a href="/CulturaPaz"><img src={logoCultura} alt="Cultura de Paz" /></a>
+        target='_blank' rel="noopener noreferrer"><img src={logoBuzon} alt="Buzón de Sugerencias" /></a>
+        <Link to="/CulturaPaz"><img src={logoCultura} alt="Cultura de Paz" /></Link>
       </div>
     </section>
   );

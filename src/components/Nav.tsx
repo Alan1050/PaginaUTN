@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Nav.css";
 import LogoUTN from "../assets/logos/LOGOUTN.png";
 import LogoUTyP from "../assets/logos/LOGOUTYP.png";
@@ -9,6 +10,7 @@ import convocatoria from "../assets/extras/Convocatoria Ingreso 2026-2027.pdf";
 
 
 function Nav() {
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isAspirantesOpen, setIsAspirantesOpen] = useState<boolean>(false);
   const [isComunidadOpen, setIsComunidadOpen] = useState<boolean>(false);
@@ -72,9 +74,9 @@ function Nav() {
     setActiveMobileSubmenu(activeMobileSubmenu === menuName ? null : menuName);
   };
 
-  // Modificar la función handleSubmenuLinkClick para ser más específica
-  const handleLinkClick = (e: React.MouseEvent, href: string): void => {
-    e.stopPropagation(); // Importante: detener la propagación
+  // Función para navegación SPA con React Router
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href?: string): void => {
+    e.stopPropagation();
 
     // Cerrar todos los menús inmediatamente
     setIsAspirantesOpen(false);
@@ -85,13 +87,44 @@ function Nav() {
       closeMenu();
     }
 
-    // Si es un enlace interno, navegar manualmente
-    if (href.startsWith("/") || href.startsWith("http")) {
-      // Para enlaces internos
-      if (href.startsWith("/")) {
-        window.location.href = href;
+    const targetHref = href || e.currentTarget.getAttribute("href") || "";
+
+    // Si es un enlace interno, usar navegación de React Router sin recargar
+    if (targetHref.startsWith("/")) {
+      e.preventDefault();
+      if (targetHref.includes("#")) {
+        const [path, hash] = targetHref.split("#");
+        navigate(path);
+        setTimeout(() => {
+          const el = document.getElementById(hash);
+          if (el) el.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      } else {
+        navigate(targetHref);
       }
-      // Para enlaces externos, el <a> tag se encargará
+    }
+  };
+
+  // Manejo de clics en el menú móvil para SPA
+  const handleMobileMenuClick = (e: React.MouseEvent<HTMLDivElement>): void => {
+    const anchor = (e.target as HTMLElement).closest("a");
+    if (!anchor) return;
+
+    closeMenu();
+
+    const targetHref = anchor.getAttribute("href") || "";
+    if (targetHref.startsWith("/")) {
+      e.preventDefault();
+      if (targetHref.includes("#")) {
+        const [path, hash] = targetHref.split("#");
+        navigate(path);
+        setTimeout(() => {
+          const el = document.getElementById(hash);
+          if (el) el.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      } else {
+        navigate(targetHref);
+      }
     }
   };
 
@@ -739,6 +772,7 @@ function Nav() {
         id="mobile-menu"
         className={`MobileMenu ${isMenuOpen ? "active" : ""}`}
         aria-hidden={!isMenuOpen}
+        onClick={handleMobileMenuClick}
       >
         <ul>
           <li>

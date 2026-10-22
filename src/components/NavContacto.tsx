@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./NavContacto.css";
 
 function NavContacto() {
@@ -62,9 +63,9 @@ function NavContacto() {
             </div>
           </a>
 
-          <a href="/OfertaEducativa" className="nav-contacto-btn-oferta">
+          <Link to="/OfertaEducativa" className="nav-contacto-btn-oferta">
             <span>Oferta Educativa</span>
-          </a>
+          </Link>
         </div>
 
         <div className="nav-contacto-telefono">

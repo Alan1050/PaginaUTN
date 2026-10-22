@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import LogosCarreras from "../components/LogosCarreras.tsx";
 import ImagenPrincipal from "../assets/banner/Index.jpg";
 import bannerGuias from "../assets/banner/bannerGuiasPago.jpg";
@@ -146,10 +147,22 @@ function HomePage() {
             />
             <div className="slide-overlay">
               <div className="slide-contenido">
-                <a href={banner.botonLink} className="slide-boton">
-                  {banner.botonTexto}
-                  <span className="boton-flecha">→</span>
-                </a>
+                {banner.botonLink.startsWith("/") ? (
+                  <Link to={banner.botonLink} className="slide-boton">
+                    {banner.botonTexto}
+                    <span className="boton-flecha">→</span>
+                  </Link>
+                ) : (
+                  <a
+                    href={banner.botonLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="slide-boton"
+                  >
+                    {banner.botonTexto}
+                    <span className="boton-flecha">→</span>
+                  </a>
+                )}
               </div>
             </div>
           </div>
